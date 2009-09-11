@@ -1,0 +1,155 @@
+= Migration
+
+Nitro and Og are under constant development. Some times we 
+really have to introduce features that break the compatibility 
+with older versions. This documents describes the required 
+steps to port your application to the latest Nitro version.
+
+For more help, send your question to the mailing list:
+
+http://rubyforge.org/mailman/listinfo/nitro-general
+
+== 0.42.0 <- 0.41.0
+
+- Define separate actions for each status erros. Ie instead
+  of
+  
+  def error
+    ...
+  end
+  
+  define:
+  
+  def status_4xx
+   ..
+  end
+  def status_5xx
+    ..
+  end
+  
+  etc..
+
+- Nitro don't longer appends the Template compiler at the end
+of the compilation pipeline by default to allow you to use alternative
+template engines (or no template engine at all). If you use a 
+customized compilation pipeline, make sure that you include a
+Template transformation stage.
+
+- Use Sanitize.filter(html) instead of String.sanitize(html)
+
+
+== 0.41.0 <- 0.40.0
+
+This release is backwards compatible with 0.40.0. But please
+prefer to use the NITRO_MODE env variable instead of the 
+deprecated CONFIGURATION_MODE env variable.
+
+
+== 0.40.0 <- 0.31.0
+
+This version was in the making for ages, so there are some changes
+you need to make to port your application to the new version. Here 
+come some tips to help you:
+
+- Prefer to use 
+
+  $ nitro
+
+  instead of 
+
+  $ ruby run.rb
+
+  to start your application.
+
+- The 'Markup' compiler is renamed to 'MarkupCompiler' 
+
+- Use attr_accessor instead of property or prop_accessor.
+
+- Prefer to define elements like this:
+
+  class Nitro::Element
+    class MyElement
+    ..
+    end
+  end
+
+  instead of
+
+  class MyElement < Nitro::Element
+  end
+
+- Change
+  
+  def my_action
+    ..
+  end
+  ann :my_action, :view => :another_template
+  
+  to
+  
+  ann :my_action, :template => :another_template
+  
+  
+== 0.29.0 <- 0.28.0
+
+1. Please notice that Tag now resides in the Glue namespace, you 
+   will probably have to update your tables.
+   
+2. You have to be more careful with the hrefs you pass to
+   <render > and <?include ?>. Some times you have to pass
+   absolute paths (ie /this/is/my path) to get the correct
+   behaviour. Nitro is more strict in this version.
+   
+3. The routing rule format has changed slightly.
+
+
+== 0.27.0 <- 0.26.0
+
+1. If you use a custom compiler pipeline, notice that the interface
+has changes slightly:
+
+  def transform_template(template)
+    template = StaticInclude.transform(template)
+    template = Morphing.transform(template, self)
+#   template = LayoutCompiler.transform(template, self)
+    template = Elements.transform(template, self)
+    template = Markup.transform(template)
+    template = ScriptCompiler.transform(template, self)
+    template = Cleanup.transform(template)
+    template = Template.transform(template)
+  end
+
+you need to pass 'self' for some compilers.
+
+2. The helper script 'nitrogen' is removed. Use gen instead
+
+3. There is a new system for prototype/scriptaculous integration.
+Have a look at the flickr example for more details.
+
+
+== 0.21.2 <- 0.21.0
+
+1. The new 'nice' dispatching alogirthm is enabled by default. If
+your app needs more general url dispatching you can enable the
+old dispatcher with the following line:
+
+require 'nitro/dispatcher/general'
+
+
+== 0.21.0 <- 0.20.0
+
+1. The helper methods for starting the application and defining
+the compilation pipeline have changed. Have a look at 
+'examples/blog/run.rb' for an example.
+
+2. The conventions for the generated join table for many_to_many
+have changed, you may have to regenerate your schema.
+
+3. The builder functionality is provided by mixins now.
+
+4. The markup interpolators have changed. Instead of {{..}} use
+#(..) (sanitize) or #|..| (full markup). For details have a look
+at lib/nitro/compiler/markup.rb
+
+5. Actions no longer automatically redirect to the referer if the
+output buffer is empty. You have to manually redirect. There is an option to switch on the old behaviour though.

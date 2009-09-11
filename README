@@ -1,0 +1,20 @@
+== Nitro
+
+Nitro provides everything you need to create state-of-the-art
+Web 2.0 applications with ease and joy. Nitro applications are written
+using Ruby (server side) and Javascript (client side). Nitro is
+a super-framework that integrates the following sub-frameworks:
+
+* Raw, Web Application Middleware
+* Og, Object-Relational mapping and Object lifecycle manager
+* Facets, a library of useful Ruby utilities
+* JQuery, a lightweight and well designed Javascript library  
+
+On top of these, Nitro provides high level features and orchestrates
+everything together to help you build efective Web 2.0 applications
+as fast as possible.
+
+Nitro's source code is easy to understand and extend. More importandly
+your Nitro application source code is elegant, readable, consize
+and efficient. Nitro automagically provides most of the functionality
+for you.

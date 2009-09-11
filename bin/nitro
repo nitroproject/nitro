@@ -1,0 +1,238 @@
+#!/usr/bin/env ruby
+
+# TODO:
+#   - Currently we just pass command line option thru.
+#     It would be better to properly screen the options.
+
+$LOAD_PATH.unshift "lib"
+
+require "facets/command"
+require "facets/settings"
+
+# The default Nitro management script. Provides a number of
+# options for managing the lifecycle of Nitro applications.
+
+module Nitro
+
+  #
+
+  class NitroCommand < Console::MasterCommand
+    include UniversalOptions
+
+    # Typical application main file names.
+
+    APPLICATION_FILES = %w{ app.rb run.rb start.rb application.rb }
+
+    # Live mode?
+
+    attr_accessor :live
+
+    # Daemon
+
+    attr_accessor :daemon ; alias_method :d=, :daemon=
+
+    # Setup a cluster. The input is the size of the cluster.
+    #
+    # Example:
+    #
+    #   $ nitro --cluster=5
+    #
+    # starts 5 instances that listen to consecutive port numbers.
+
+    attr_reader :cluster
+
+    def cluster=(count)
+      @daemon  = true   # cluster implies daemon mode
+      @cluster = count.to_i
+    end
+
+    # Starting port offset.
+
+    def port_offset ; @port_offset.to_i ; end
+
+    def port_offset=(number)
+      @port_offset = number.to_i
+    end
+
+    # The default action, starts the application. You can
+    # alternatively use the start/run aliases.
+    #
+    # Examples:
+    #
+    #   $ nitro
+    #   $ nitro start
+    #   $ nitro run
+
+    def start(arguments, options)
+      if file = application_file
+        if ic = cluster
+          ic.times do |i|
+            exec_application(file, port_offset + i)
+          end
+        else
+          exec_application(file, port_offset)
+        end
+      else
+        puts "No application found!"
+        # FIXME: better error mesage and/or show default app!
+      end
+    end
+    alias_method :run,     :start
+    alias_method :default, :start
+
+    # State server.
+
+    def stateserver
+      return unless yes
+      if File.exist?("state.rb") and Dir[".d*.pid"].empty?
+        puts "Starting state server"
+        system "ruby #{ENV['RUBYOPT']} -Ilib state.rb --daemon"
+      end
+    end
+
+    # Dump the version of the framework.
+
+    def version
+      require "nitro"
+      puts "Nitro #{Nitro::Version}"
+      exit
+    end
+    alias_method :v, :version
+
+    # Stop all running application instances.
+
+    def stop
+      kill_processes("a*.pid")
+    end
+
+    # Restart all application servers.
+
+    def restart
+      stop()
+      start()
+    end
+
+    # Stop all running application instances and related
+    # servers (for example drb servers)
+
+    def kill
+      kill_processes("a*.pid")
+      kill_processes("d*.pid")
+    end
+
+    # Starts an IRB console attached to the web application.
+    #
+    # Example:
+    #
+    #   $ nitro console
+
+    def console
+      if RUBY_PLATFORM =~ /mswin32/
+        irb_name = "irb.bat"
+      else
+        irb_name = 'RUBYOPT="-rubygems -Ilib"; irb'
+      end
+
+      if f = application_file
+        ENV["NITRO_ADAPTER"] = "script"
+        exec "#{irb_name} -r #{f} -r irb/completion --noinspect"
+      end
+    end
+
+    # Create the skeleton for a new Nitro application.
+    #
+    # Example:
+    #
+    #   $ nitro create myapp
+
+    def create(arguments, options)
+      app_name = arguments.first
+
+      require "nitro" # here ???
+
+      path = File.expand_path(app_name)
+
+      if File.exists? path
+        STDERR.puts "ERROR: Path #{path} already exists! Aborting!"
+        exit 1
+      end
+
+      puts "Building a skeleton Nitro application in '#{path}'"
+
+      FileUtils.cp_r(Nitro.proto_path, path)
+
+      puts "Done"
+    end
+
+  private
+
+    # Find out the application main file.
+
+    def application_file
+      for f in APPLICATION_FILES
+        if File.exist? f
+          return f
+        end
+      end
+
+      return false
+    end
+
+    # Kill processes marked by .pid files.
+
+    def kill_processes(pattern = "*.pid")
+      Dir[File.join(".temp", pattern)].each do |f|
+        pid = File.basename(f, ".pid")[1..-1]
+        begin
+          puts "Killing process '#{pid}'"
+          system "kill -9 #{pid}"
+    #      Process.kill(-9, pid.to_i)
+        rescue => ex
+          # drink it!
+        ensure
+          File.unlink(f)
+        end
+      end
+    end
+
+    # Start the application server. If a cluster is defined,
+    # multiple instances of the application server are spawned.
+
+    def exec_application(file, port_offset=nil)
+      options = master_options
+
+      # don;t pass these options thru.
+      options.delete('cluster')
+      options.delete('port_offset')
+
+      # re-collect daemon attribute b/c cluster may have change it.
+      options['daemon']      = daemon
+      options['port-offset'] = port_offset if port_offset && port_offset > 0
+
+      cmd = "PORT_OFFSET=#{port_offset}; ruby #{ENV['RUBYOPT']} -Ilib #{file} #{options.to_console}"
+
+      # Mark this invocation with the application name.
+      # Useful to identify process when  runing ps on Unix. Use
+      # for example:
+      #
+      # ps aux | grep ruby
+
+      cmd << " --app=#{File.basename(Dir.pwd)}"
+
+      puts cmd if ENV["NITRO_DEBUG"]
+
+      system(cmd)
+    end
+
+    # Catch undefined options, will be handled by the application
+    # command object.
+
+    def option_missing(opt, arg = nil)
+      # drink it! were passing it on.
+    end
+
+  end
+
+end
+
+Nitro::NitroCommand.start(ARGV.dup)

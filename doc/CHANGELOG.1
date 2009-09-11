@@ -1,0 +1,2344 @@
+
+10-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/server/render.rb (#load_staticall_included): introduced. 
+  
+  * test/*: small fixes to make the tests work again.
+  
+  * lib/og/backend/mysql.rb: (#create_table) added code to auto create
+  the join_table.
+
+  * lib/og/backend/psql.rb: (#create_table) changed join_table code to 
+  be more compatible with the mysql driver.
+  
+09-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/*: included the nitro logo to both examples.
+  
+  * lib/og.rb (#enchant): save returns self to be chainable.
+  
+  * lib/og/meta.rb (#many_to_many): renamed,
+  generate enchant methods,
+  (#many_to_many): use inflector to find out names,
+  add_xxx method, cool, it works,
+  del_xxx,
+  clear_xxx,
+  $og_include_meta_language flag [k.nasis]
+
+  * lib/og/backends/psql.rb: use key1/key2 in join tables.
+  
+  * lib/og/backend.rb (#join_table): introduced.
+  
+08-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * improved comments to various files.
+  
+  * lib/nitro/builders/form.rb: introduced,
+  (#render): initial implementation.
+  
+  * lib/nitro/l10n.rb: small improvements.
+  
+  * lib/og/backends/psql.rb (#create_table): create join tables where needed.
+  
+  * lib/og/backend.rb (#self.encode): introduced.
+  
+  * lib/og/meta.rb (#has_and_belongs_to_many): introduced,
+  joins_with alias.
+  
+  * examples/blog/lib/blog.rb: (BlogEntry): simple markup for blog entries.
+  
+  * lib/glue/propery.rb (#__add_prop): __force_xxx reuses xxx= to allow 
+    for easier overrides.
+
+  * lib/nitro/builders/rss.rb: fixed namespace bug.
+  
+  * examples/blog/root/style.css: added pager.
+  
+  * examples/blog/app.rb: dont add app/lib dir in $LOAD_PATH.
+  
+  * examples/blog/env.rb: environment injection.
+  
+07-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/meta.rb: implemented has_one relation.
+  
+  * lib/nitro/server/render.rb: initial support for reloading services
+  in debug mode.
+  
+  * lib/nitro/service.rb: by default include scaffolding/filtering.
+  
+  * lib/xsl/ui.xsl: introduced new shader,
+  (x:pager-prev, x:prev-next, etc: implemeted,
+  (x:pager-pages): ULTRACOOL.
+  
+  * lib/og.rb: (#count) new enchant method.
+  
+  * lib/nitro/ui/pager.rb: updated to be compatible with latest code,
+  (#offset): added.
+
+06-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/filters.rb: (gen_filters_call_code): support
+  for module filters.
+  
+  * lib/nitro/l10n.rb: (LocalizationFilter): introduced.
+  
+  * lib/nitro/render.rb (#compile_http_method): check if filter chains
+  exists,
+  (#compile_xml_method): call filter chains.
+  
+05-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * yeah, i got some simple filtering working.
+  
+  * examples/blog/lib/blog.rb: no BlockMethods.
+
+  * lib/nitro/render.rb (#compile_http_method): call filter chains.
+  
+  * lib/nitro/filters.rb: (#prepend/append_aroundfilter): implemented,
+  (#gen_filters_call_code): implemented, preevaluates filter callers,
+  allow Filter.filter type of filtering.
+
+02-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/filters.rb: introduced.
+
+29-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/server/shaders.rb: yeah, added compile time ruby 
+  code evaluation.
+
+28-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/xsl/base.xsl: updated ob related macros,
+  x:ob-write-end.
+  
+  * lib/nitro/render.rb (#ob_start): start output buffer.
+  (#ob_end): end output buffer.
+  (#ob_write_end): introduced.
+
+26-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/application.rb: daemonize [fixed by elathan].
+
+25-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/shaders.rb: fix in RubyShader.
+
+24-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/builders/table.rb: Introduced table builder.
+  
+  * bin/proto: prototype app, introduced.
+  
+  * bin/new_app.rb: implemented,
+  better, just cp -R the proto dir.
+
+23-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.5.0 ---
+
+  * Rakefile: improved.
+  
+  * test/*: fixed directory structure,
+  fixed include N.
+  
+  * RELEASES: updated.
+  
+  * lib/nitro/scaffold.rb: add methods to the scaffolded class!
+  add view_uri method.
+  
+  * examples/blog/root/style.xsl: added RSS links.
+  
+  * examples/blog/lib/blog.rb (#view_uri): added.
+  
+  * lib/nitro/builders/rss.rb: introduced,
+  headers, list, render, default pubDate,
+  yeah it works,
+  Recoded builder to use the RSS library included in Ruby.
+  
+  * lib/nitro/builders: introduced.
+  
+  * lib/nitro/template.rb: scrapped.
+
+22-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/xsl/base.xsl: rendering-errors.
+  
+  * lib/nitro/server/render.rb (#render): rescue errors, flag with (error),
+  introduced rendering_errors,
+  (#log_error)
+  
+21-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/root/view_entry.xml: just cool :)
+  
+  * lib/nitro/server/dispatcher.rb (#process): removed api check,
+  dont set content-type.
+
+  * lib/nitro/server/webrick.rb (#do_GET): removed api check.
+  
+  * lib/nitro/server/render.rb (#template_for_method): implemented,
+  (#transform_template): renamed,
+  (RenderUtils#compile_method): catch invlaid methods, raise exception,
+  yeah, correctly handle dir/index.xhtml case,
+  fixed check for valid methods,
+  uses api.
+  (RenderUtils#split_path): extracts api.
+  (RenderUtils#compile_rest_method): implemented.
+  set content-type in render methods.
+  ULTRACOOL: the rest dispatcher works.
+  
+  
+  * lib/nitro/config.rb: $template_ext, $xml_template_ext,
+  $index_template.
+
+18-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/server/dispatcher.rb (#process): support for rpc.
+
+  * lib/nitro/server/webrick.rb (#referer): no shift,
+  (#do_GET): check for ^rpc case.
+  
+  * AUTHORS: updated.
+  
+  * RELEASES.og: written.
+  
+  * README.og: written.
+  
+  * Rakefile: updated to copy glue in the og distribution,
+  yeah, the Og distribution works.
+  
+  * lib/nitro/gfx.rb: moved to Gen.
+  
+  * lib/glue: introduced,
+  moved many files from lib/nitro/* and lib/nitro/utils/* here.
+
+17-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * README.og: introduced.
+  * RELEASES.og: introduced.
+  * ChangeLog.og: introduced.
+  
+  * lib/og/version.rb: introduced.
+  
+  * Rakefile: introduced Og GemSpec.
+
+16-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/backends/mysql.rb (#create_table): handles sql indices.
+
+  * lib/og/backends/psql.rb (#create_table): handles sql indices.
+  
+  * lib/og/meta.rb (MetaLanguage#sql_index): introduced.
+  
+  * yeah, scaffolding works!
+  
+  * lib/nitro/utils/inflector.rb: temporarily copied from rails.
+  
+  * lib/nitro/scaffold.rb: introduced,
+  (#scaffold): started working on this method,
+  cool append_features trick,
+  :noindex flag!
+
+15-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.4.1 ---
+
+  * README: updated.
+  
+  * examples/blog: better documentation.
+
+14-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * improved RDoc in many files.
+  
+  * lib/nitro/logger.rb: show full severity string.
+  
+13-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * lib/nitro/parts.rb: deprecated.
+  
+  * lib/og.rb: Og renamed to Database.
+  
+  * MAJOR: moved n dir to nitro dir.
+  
+  * MAJOR: moved og to a separate dir.
+  
+  * lib/p: removed.
+  
+  * lib/n/server/webrick.rb: moved from w, moved alod version
+  to .scrap.
+  
+  * lib/n/application.rb (#parse_arguments): improved help text.
+  
+  * lib/n/config.rb: :index by default mounts N:Service.
+  
+  * examples/tiny/*: recoded from scratch to work with the latest
+  code.
+  
+  * fixed problematic code from tc_properties.
+
+  * lib/n/og.rb: introduced N::Unmanageable marker module. 
+  
+  * examples/blog/config.rb: more comments,
+  $srv_address to make more visible.
+  
+12-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/config.rb: moved from webapp.rb.
+  
+  * examples/blog/conf/*: removed.
+
+11-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * Rakefile: use version.
+  
+  * lib/n/version.rb: introduced.
+  
+  * examples/blog/README: introduced.
+  
+  * examples/simple/*: removed.
+  
+  * lib/n/sync/*: moved to gen.
+  
+  * examples/blog/*: implemented many little things.
+  
+  * lib/n/server/shaders.rb (RubyShader#process): MEGA xform <ruby> as
+  ruby code marker, usefull in xslts :)
+  
+  * examples/blog/root/style.xsl: improved.
+
+  * lib/n/server/handlers/*: removed.
+  
+  * session works.
+  
+  * lib/n/server/dispatcher.rb (#process): create session,
+  only set content type if not exist,
+  (#process): added error reporting code.
+  
+  * lib/n/server/render.rb (#render_referer): implemented,
+  (#render): splits the query string,
+  (#render): handle the query.
+  (#compile_method): by default redirect_referer.
+  (#populate): implemented.
+  (RenderUtils#create_session): introduced,
+  (#redirect): prepend $srv_url if needed.
+  
+  * lib/n/server/w.rb (HTTPRequest#set_query): introduced,
+  (HTTPRequest#fill): moved populate here,
+  (#do_GET): rationalize cookies,
+  (#create_cookie): moved here, optimized and fixed!
+  
+  * examples/blog/lib/blog.rb (#del_comment): implemented,
+  (#login): implemented,
+  removed Blog,
+  (Common): added author.
+  
+  * lib/n/shaders.rb: (RubyShader#process): transform include commands,
+  (RubyShader#process): remove <root> elements.
+  
+  * lib/xsl/base.xsl: removed x:vblank, x:hblank, use xsl.
+  
+  * fuckin mega, i can include from xsl.
+  
+  * examples/blog/root/*: created sub pages.
+  
+  * examples/blog/root/index.xhtml: yeah i got an included fragment.
+  
+  * examples/blog/root/entry-form.xhtml: yeah i got an included fragment.
+
+10-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/root/view_entry.xhtml: introduced,
+  comments.
+  
+  * n/lib/og/meta.rb (#has_many): generate xxx_count method.
+  
+  * lib/n/og/backends/mysql.rb (#get_int): introduced.
+
+  * lib/n/og/backends/psql.rb (#get_int): introduced.
+  
+  * lib/n/og/connection.rb (#count): introduced,
+  optimized some methods by using directly the backend.
+  
+  * lib/n/server/w.rb (WEBrick::HTTPRequest#referer): added,
+  after some fixes, redirect works.
+
+  * lib/n/server/dispatcher.rb (#process): use begin-ensure.
+  
+  * examples/blog/lib/blog.rb (#del_entry): implemented,
+  added relations to the classes,
+  (#view_entry): introduced.
+
+  * lib/n/server/render.rb (#compile_method): dont check if method
+  exists, there are other caching tests.
+  (#render): honour $reload_scripts,
+  (#initialize): @params helper,
+  (#redirect): implemented,
+  (#redirect_referer): implemented
+
+  * examples/blog/root/index.xhtml: kinda working :)
+  
+  * examples/blog/root/style.xsl: implemented the xsl,
+  css float layout,
+  sidebar.
+
+  * examples/blog/root/style.css: implemented the css.
+
+09-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/root/index.xhtml: introduced.
+  
+  * lib/n/config.rb: 8080 for appserver in debug mode.
+  
+  * yeah, the dispatch system works.
+  
+  * lib/n/server/render.rb (#render): introduced,
+  (#split_path): introduced,
+  (#render_file): dont recompile,
+  (RenderUtils#compile_method): implemented.
+  (#render): can be used in method!
+
+  * lib/n/server/dispatcher.rb (#process): use $services,
+  include Render,
+  (#process): just delegate to render.
+  
+  * examples/blog/lib/blog.rb: improved service,
+  (BlogMethods#new_entry): works.
+  
+  * lib/n/service.rb: introduced.
+  
+  * lib/n/og/backends/psql.rb (#read_prop/#write_prop): rewritten to make
+  more general [b.candler]
+
+  * lib/n/og/backends/mysql.rb (#read_prop/#write_prop): rewritten to make
+  more general [b.candler]
+  
+08-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/server/dispatcher.rb (#process): store request, response,
+  (#process): more intelligent control/method decomposition.
+  
+  * lib/n/server/render.rb (#transform): use the shader pipeline,
+  yeah xslt is working again.
+  
+  * lib/n/server/filters.rb: cleaned up.
+  
+  * lib/n/server/shaders.rb: moved here,
+  (RubyShader): introduced,
+  (CompressShader): introduced,
+  (#<<): fixed,
+  (CompressShader#process): improved compression.
+  
+  * lib/n/shaders.rb: brand new shader system,
+  (XSLTShader): introduced.
+  
+  * examples/blog/root/style.xsl: introduced.
+  
+  * examples/blog/root/style.css: introduced.
+
+07-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/server/render.rb (#transform): first version,
+  yeah, i got an xhtml with multiple code segments rendered,
+  (#transform): intelligent compression/obfuscation of inline
+  xhtml.
+  
+  * changed many files to use File.xxx methods instead of the
+  removed StringUtils methods.
+  
+  * lib/n/utils/string.rb (#filename_from_path): removed,
+  (#directory_from_path): removed,
+  (#extension_from_path): removed,
+  (#unicode_to_iso88597): removed.
+  
+  * test/n/utils/tc_string.rb: removed tests from obsolete methods. 
+
+06-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/lib/blog.rb: introduced.
+  
+  * lib/n/server/render.rb: introduced,
+  (#render_file): kinda works.
+  
+  * lib/n/server/dispatcher.rb (#process): moved code from w.
+
+05-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/server/w.rb (do_GET): simple action synthesizer,
+  yeah parameter passing works,
+  action synthesis gets cached, 
+  action with template only works.
+  
+  * use .xhtml as an extension.
+
+04-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/server/w.rb (do_GET): implemented.
+  
+  * lib/n/og.rb: check respond_to?(:__props) more fault tolerant.
+  
+  * lib/n/parts.rb: no prop_accessor.
+  
+  * lib/n/server/appserver.rb (AppServerMixin): add default methods
+  for initialize.
+  
+  * examples/blog: experiments with layout.
+
+03-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/server/w.rb: introduced experimental webrick server.
+  (WebrickDispatcher): introduced.
+  
+  * examples/blog: introduced, will rethink layout.
+  
+  * benchmark: introduced.
+  
+  * lib/n/og.rb: MEGA, auto class manager works.
+  
+  * lib/n/og/backends/psql.rb (#write_prop): fixed YAML write when nil. 
+
+  * lib/n/og/backends/mysql.rb (#write_prop): fixed YAML write when nil. 
+  
+  * all examples run again.
+  
+  * lib/n/og/meta.rb: changed order of params.
+
+  * lib/n/properties.rb: changed order of params,
+  (#prop): works EXACTLY like attr now.
+  (#prop): class == object by default.
+
+02-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * yeah tests pass again.
+  
+  * lib/n/og/backends/psql.rb: updated to use new properties.
+
+  * lib/n/og/backends/mysql.rb: updated to use new properties.
+
+  * lib/n/properties.rb (Module): dont include __props by default,
+  (Module#prop): implemented new version,
+  (Module#__add_prop): renamed, gets reader/writer options.
+  (Module#add_meta): removed.
+  introduced prop_reader, prop_writer, prop_accessor,
+  more strict tests when defining property,
+  (Module): excellent, DONT override the standard include.
+  
+  * lib/n/og.rb: $og_auto_manage_classes introduced.
+
+01-11-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.3.0 ---
+  
+  * removed some dependencies from the Gem.
+  
+  * MAJOR: renamed og get/put to load/save.
+  
+  * lib/n/std.rb: removed most NilClass overrides [b.candler]
+  
+  * lib/n/og/connection.rb (#delete): fixed delete with no descendants,
+  og_pre_delete callback.
+  
+  * lib/n/og/backends/psql.rb (#read_prop): fixed YAML bug.
+
+  * lib/n/og/backends/mysql.rb (#read_prop): fixed YAML bug.
+  
+  * lib/n/og.rb (#enchant): all method,
+  (#manage_classes): introduced,
+  (#enchant): delete! method,
+  (#enchant): klass.save() method.
+  
+  * examples/og/run.rb: totally recoded the example to work with Og,
+  yeah the example fully works.
+  
+  * moved db files to .scrap
+  
+  * examples/simple: YEAH works with og.
+  
+  * lib/n/server/webrick.rb (#do_GET): og connection per request.
+
+31-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/og/backends/mysql.rb: converted to the new refactored code.
+
+  * lib/n/og/backend.rb (#eval_og_insert): moves the code here,
+  use a custom oid_generator,
+  factored out deserialize code,
+  pre/post_inser_update.
+  (#eval_og_update): generate callbacks.
+  
+  * lib/n/og/backends/psql.rb (#eval_og_insert): if the managed
+  object defines pre/post callbacks, insert them,
+  (OgUtils::oid_generation_code): introduced.
+  
+  * no __og, just og_xxx.
+
+30-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/og/backends/psql.rb (#write_prop): fixed,
+  (#initialize): autocreate database if not found,
+  made createdb/dropdb class methods.
+
+  * lib/n/og/backends/mysql.rb (#write_prop): fixed,
+  (#initialize): autocreate database if not found,
+  made createdb/dropdb class methods,
+  no transactions for mysql.  
+    
+  * lib/n/og/backend.rb (OgUtils#table): remove leading module,
+  (#transaction, #start, #commit, #rollback): working transaction 
+  support,
+  added missing methods from the backend implementations.
+  
+  * lib/n/og/meta.rb: introduced,
+  (#belongs_to): mega it works,
+  (#has_many): mega it works, INCREDIBLE,
+  (OgMetaLanguage): use a separate module,
+  (#has_many): correct calculation of linkback property,
+  update og_descendants
+  
+  * lib/n/og.rb (#enchant): more enchantments,
+  (#create_db!): introduced,
+  (#drop_db!): introduced,
+  (#pupdate!): enchant.
+    
+  * lib/n/og/connection.rb (#select): added,
+  (#select_all): added, can use sql without select,
+  (#delete): it fuckin works and deletes descendants too!
+  (#transaction, #start, #commit, #rollback): working transaction 
+  support,
+  removed all N::OgUtils.table crap.
+
+29-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/og/backends/mysql.rb: introduced,
+  create_table works,
+  fuckin mega, insert works,
+  excellent, deserialize works,
+  (#valid?): implemented
+  
+  * lib/n/og/backends/psql.rb: introduced,
+  yeah, i got a table created,
+  store Array,Hash,Object etc as text,
+  yeah, it inserts an object,
+  (#eval_og_deserialize): implemented,
+  (#map_fields): factored out.
+  (#valid?): implemented
+  
+  * lib/n/og/managed.rb: introduced.
+
+  * lib/n/og/backend.rb: introduced,
+  different exec/query/safe_exec/safe_query.
+  
+  * test/n/tc_og.rb: introduced.
+  
+  * lib/n/og/connection.rb: introduced,
+  (#update_properties): introduced and works,
+  (#getxxxx): get methods work,
+  (#get_all): works.
+  
+  * lib/n/og.rb: introduced the new O-R library a hybrid between
+  ndb and ActiveRecord,
+  (ManagedClassMeta): introduced,
+  (#enchant): nice :),
+  cool, use capitalize to get the Backend,
+  (#get_connection): use a thread-local variable,
+  (#put_connection): use a thread-local variable,
+  (#wrap_method): uses a connection from Thread.local,
+  (#convert): converts a normal object to a managed object,
+  (#manage): fixed bug with create_table,
+  (#enchant): YEAH, added the first enchantments :) 
+
+28-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/connection.rb (#create_schema, #drop_schema): removed.
+
+  * lib/n/managed.rb: fix in __db_read_row.
+
+  * lib/n/server/appserver.rb: show where app server is listening too.
+
+  * examples/simple/conf/*: greatly simplified configuration.
+
+  * lib/n/config.rb: moved many standard configurations
+  here.
+
+27-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/db.rb: dont require utils and connection by default.
+  
+  * lib/n/db/connection.rb (#count_children): use get_res_value,
+  greatly improved the organization and documentation.
+
+  * lib/n/db/mysql.rb: added latest psql fixes,
+  (#calc_fields): reimplemented,
+  (#get_res_value): introduced.
+
+  * test/n/tc_db_mysql.rb: many fixes.
+
+  * test/n/server/tc_filters.rb: added.
+
+  * lib/n/db/psql.rb (#retry_query): should raise after retries [b.candler],
+  (#retry_query, #next_oid): use //i in error checks [b.candler],
+  (#exec, #exec_clear): moved from connection,
+  removed PsqlBackend, overload DbConnection instead.
+  
+  * MAJOR: removed the App namespace module from many many files.
+  
+  * bin/new_project.rb: moved from etc/
+  
+  * lib/n/server: renamed from app, more standard naming.
+  
+  * lib/n/app/requestpart.rb: renamed.
+
+  * lib/n/app/webrick.rb: merged webrick-servlet.rb
+
+  * lib/n/server/PLAYBACK.txt: removed
+
+  * lib/n/server/RESEARCH.txt: removed
+
+26-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/app/dispatcher.rb: introduced for experiments in design.
+  
+  * lib/n/logger.rb: cleaned up formating with some Ruby magic.
+
+  * lib/n/shaders.rb (NilShader): name = nil for better dumps.
+
+  * lib/n/app/webrick-servlet.rb: alias :do_POST.
+
+  * Rakefile, added builder as required in the Gem.
+  
+  * lib/n/app/handlers/page-handler.rb (#transform_script):
+  support <?rb as marker [c.nasis]. 
+  
+25-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.2.0 ---
+
+  * test cases pass again.
+  
+  * lib/n/app/webrick-servlet.rb: fixed bug with default index,
+  better handler selection.
+  
+  * lib/n/db/utils.rb: prepend _ before tables. it was dangerous!
+  
+  * lib/n/db.rb: wrap drop table.
+  
+  * lib/n/db/psql.rb: use Base64.decode64.
+  
+  * examples/ndb/rub.rb: implemented.
+
+23-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/ndb/*: introduced.
+  
+  * lib/n/app/webrick-servlet.rb (#create_request): enforce default 
+  index if missing.
+  
+  * lib/n/config.rb: index_filename renamed from $srv_default_file.
+  
+  * lib/n/utils/string.rb (#extension_from_path): returns nil if no
+  exception.
+  
+  * lib/n/app/server.rb: info msg on start to let the admin know,
+  the server has started.
+  
+  * lib/n/app/webrick.rb: extend from App::Server.
+  
+  * examples/tiny/ctl: run without apache.
+  * examples/tiny/conf/config.rb: run without apache.
+  
+  * examples/simple/README: improved.
+
+22-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * README: updated.
+
+  * fixed many file permissions.
+
+  * examples/simple/conf/config.rb: fixes.
+
+  * examples/simple/app.rb: fixes.
+
+  * test/*: copied all tests here,
+  too many fixes to list to make all tests pass again.
+  
+  * Rakefile: fixed :install,
+  TestTask.
+  
+  * lib/n/tools: removed.
+  
+  * lib/n/app/request.rb: params alias for parameters. 
+  
+  * lib/xsl/ce.xsl: removed, not ready.
+
+  * lib/xsl/localization.xsl: deprecated.
+
+  * no need for action=#{request.uri} in forms.
+
+  * improved RDoc documentation to many, many souce files.
+
+21-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/db/make-release.sh: removed.
+  
+  * improved RDoc documentation to many, many, many source files.
+  
+  * lib/n/app/user.rb (AnonymousUser#role?): introduced.
+  
+  * lib/n/db/utils.rb (#write_prop): use base64 encoding.
+  
+  * lib/n/db/psql.rb (#read_prop): use base64 encoding.
+  
+  * Rakefile: added dependency for postgres-0.7.1 
+  
+  * doc/*: moved many txt files to the gen/doc directory.
+
+21-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.1.2 ---
+
+  * README: final changes before the release.
+  
+20-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/server/cluster.rb: removed.
+  
+  * lib/n/tools: cleaned up.
+  
+  * lib/n/ui/pager.rb: removed old N2 stuff.
+  
+  * examples/simple/env.rb: introduced and fixed.
+  
+  * reworked many source files to generate better rdoc.
+  
+  * packaged as a Gem.
+  
+  * Rakefile: read version from config,
+  fixed gem spec to include all files.
+  
+  * examples/tiny/*: introduced tiny example.
+  
+  * AUTHORS: introduced.
+  
+  * lib/n/app/handlers/page-handler.rb: FUCKIN INCREDIBLE, the xml 
+  parser was not needed, removed!!!
+  
+  * lib/n/shaders.rb: converted to use ruby-xslt.
+  
+  * README: started working on it.
+  
+  * MIT-LICENCE: added.
+
+19-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/app/webrick-servler.rb (#do_GET): better error handling.
+
+  * examples/simple/conf/apache.conf: cleaned.
+  
+  * examples/simple/*: working sitemap.
+  
+  * examples/simple/root/comments.si: introduced.
+  * examples/simple/root/comments-form.ss: introduced.
+  
+  * lib/xsl/base.xsl: deprecated old stuff,
+  removed <x:include> macro.
+  
+  * lib/db/psql.rb (#create_table): always create oid_seq and surpress  
+  the possible error,
+  better error reposritng in methods.
+  
+  * examples/simple/lib/lc-en.rb: introduced.
+  
+  * examples/simple/lib/methods.rb: introduced,
+  add_article.
+  
+  * examples/simple/lib/entities.rb: introduced.
+  
+  * lib/n/shaders.rc (NilShader): introduced.
+  (Shader): transform alias.
+  
+  * lib/n/app/user.rb: introduced,
+  (AnonymousUser): defined.
+  
+  * lib/n/app/handlers/page-handler.rb: use $default_shader,
+  (#calc_tag): check if shader exists,
+  (#transform_script): added support for nil shader,
+  (#transform_script): new ULTRA COOL method macro,
+  (#transform_script): mega, resolve dynamic includes too.
+  
+  * examples/simple/ctl: improved.
+  
+  * examples/simple: introduced,
+  copied some files from app to build the example,
+  use shaders,
+  use css.
+  
+  * etc/new-project.rb: introduced.
+  
+  * etc: moved from scripts.
+
+18-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/n/db/connection.rb (#match): use safe query.
+  
+  * lib/n/app/webrick-servlet.rb (#do_GET): even better error log.
+  
+  * lib/n/db.rb: added get_by_oid wrapper.
+  
+  * Rakefile: excellent builds tgs, zip and gem,
+  dont include .svn dirs,
+  RDocTask.
+  
+  * excellent, the reference app runs again.
+
+18-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/p: introduced
+  
+  * lib/xsl: copied the old shaders directory.
+  
+  * bin/cluster.rb: link to the cluster.
+  
+18-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * MAJOR CHANGE: recreated directory structure under /nitro
+  to make more compatible with other ruby projects.
+
+17-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * app/conf/debug-config.rb: no error_page when debugging to avoid
+  loops.
+  
+  * n/app/webrick-servlet.rb: better default error page,
+  greatly improved info on default error page.
+  
+  * documented many source files.
+  
+  * n/sitemap.rb: moved out of UI namespace,
+  (SitePage): added extra fields: real_uri, shader, level,
+  (SiteMap): fixed  to_s, extend from Hash.
+  
+  * n/app/handlers/page-handler.rb (#evaluate_script): dont use 
+  try_render,
+  overload_paths FUCKIN MEGA!
+
+  * n/app/handlers/page-handler.rb (#evaluate_script): dont use 
+  try_render,
+  overload_paths FUCKIN MEGA!
+
+  * started using :: for Ruby standard methods everywhere.
+
+  * Rakefile: introduced.
+
+  * n/utils/gfx.rb (#grab_exif): implemented.
+  
+  * app/env.rb: require "n/db/tools".
+  
+  * p/pictures/entities.rb (Picture#upload): introduced and improved
+  from original code.
+  
+  * p/files/entities.rb: added path prop accessor.
+
+  * p/pictures/methods.rb: introduced,
+  (#upload_picture): implemented.
+  
+  * p/pictures/part.rb: introduced
+  
+  * p/pictures/entities.rb: introduced
+  
+  * p/feeds/part.rb: introduced.
+  
+  * p/feeds: renamed from syndication.
+
+14-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/geoloc/entities.rb (#country_code_for_ip): introduced.
+  
+  * p/geoloc/scripts/geoip-to-db.rx: introduced and recoded.
+  
+  * n/db/tools.rb (DbTools): converted to class methods.
+  (DbTools#alter_table): improved,
+  after many fixes the alter table works even for non entities.
+
+13-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/db/managed.rb (Module#manage): dont define update methods 
+  for classes that do not define a primary key.
+  
+  * p/geoloc/methods.rb (distance): introduced and optimized.
+  
+  * converted all prop_accessors to the latest code.
+  
+  * n/db/psql.rb: create table works with new properties api
+
+  * n/.tc-properties.rb: introduced.
+
+  * n/properties.rb: removed sql_type,
+  (prop_accessor): changed signature.
+
+  * n/parts.rb: added documentation,
+  added dependencies variable in part.
+
+  * n/app/webrick-servlet.rb: get correct last_ip
+
+12-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/sync: introduced.
+  
+  * p/content/mixins.rb: Permissions -> ContentFlags.
+  
+  * p/files/part.rb: introduced.
+
+12-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/*: some fixes to make the mixins work again.
+
+12-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/glue/part.rb: correctly require methods.
+  
+  * n/mixins/*: removed
+  
+  * n/mixins/rankable.rb: moved to scrap.
+  
+  * p/content/mixins.rb: introduced copied existing modules.
+
+  * p/glue/mixins.rb: introduced copied existing modules.
+  
+  * n/mixins.rb: introduced, one file for all mixins.
+
+  * use module instead of namespace.
+  
+  * n/db/psql.rb: use safe_query in create/drop schema.
+
+  * n/db/*: tried to make compatible with mysql, failed.
+
+  * n/db/managed.rb (sql_index): improved.
+  
+11-10-2004  Elias Athanasopoulos  <elathan@navel.gr> 
+
+  * n/db/mysql.rb: Db backend for MySQL.
+  * n/.tc-db-mysql.rb: Test Unit for Db's MySQL backend.
+
+  * scrap/fix-geo-sql.rb: New script. It produces an SQL schema for a 
+  table with Geographical information about IP addresses.
+  * scrap/geo.csv: New file. Geographical Information about IP 
+  address in CSV format.
+  
+11-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * n/properties.rb: prop_accessor alias,
+  no trailing __ in __force methods.
+  
+  * p/content/entities.rb (Lockable): introduced,
+  (Versionable): introduced,
+  (Schedulable): introduced.
+
+11-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/db/psql.rb (#create_table): works with new sql_index.
+  
+  * n/db/managed.rb (Module#sql_index): redefined, accepts strings
+  and symbols, unique param + extrasql.
+  
+  * p/geoloc: introduced geoloc part.
+  
+  * app/root/m/msg: message big icons.
+  
+  * p/files: introduced part.
+  
+  * gems/ndb.gemspec: fixed to include all needed files.
+
+  * n/db/utils.rb (DbUtils#write_prop): support for Object,
+  Array, Hash objects.
+
+  * n/db/psql.rb (DbUtils#read_prop): support for Object, Array,
+  Hash objects.
+
+10-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * gems: dir introduced.
+
+  * n/README: introduced.
+
+  * cell.gemspec: gemspec for cell engine.
+
+  * ndb.gemspec: gemspec for db.
+
+  * n/parts.rb (#prepared_statements): introduced,
+  added comments.
+
+  * n/db/connection.rb: removed again sibling methods.
+
+  * n/db/psql.rb: EXCELLENT, mixin the backend into DbConnection.
+
+  * n/db.rb: support for multiple backends.
+
+
+  * n/db/mysql.rb: Db backend for MySQL.
+  n/.tc-db-mysql.rb: Test Unit for Db's MySQL backend.
+
+  * scrap/fix-geo-sql.rb: New script. It produces an SQL schema for a table with
+  Geographical information about IP addresses.
+  scrap/geo.csv: New file. Geographical Information about IP address in CSV format.
+  
+  
+
+  * n/db/mixins.rb: (Entity#__db_pre_insert): use next_oid
+
+  * n/db/README: slightly improved documentation.
+
+  * n/db/managed.rb: removed trailing __ from insert, update,
+  (#__db_eval_db_insert): use retry_query,
+  added more comments.
+
+  * n/utils/time.rb: removed sql related methods.
+
+  * n/db/connection.rb: moved many methods to n/db/psql.rb
+
+  * n/db/psql.rb: introduced,
+  (#initialize),
+  (#retry_query), (#safe_query)
+  (#close): extracted from n/db/connection.rb,
+  (#create_schema), (#drop_schema): introduced,
+  sql time/date methods,
+  (#next_oid): implemented,
+  better error messages
+  
+  * n/db/utils.rb (#resolve): removed,
+  moved method implementations to backends.
+  (#sql_table_to_class): removed,
+
+  * n/db/utils.rb: introduced, copied stuff from connection.
+
+  * n/db/connection.rb: cleaned up the code,
+  match? alias.
+  
+  * n/db.rb: made wrap_method and rest private,
+  removed unused methods,
+  cleaned up the code.
+  
+  * n/db/make-release.sh: make n/Db release.
+  
+  * app/root/s/simple/style.css: updated msg styles.
+  
+  * yeah, I got comments displayed.
+  
+  * n/utils/time.rb (#date_time): copied from old code and simplified.
+  
+  * p/users/entities.rb (User): icon -> to_icon
+  (User#to_html): introduced.
+  
+  * p/markup/censors.rb: updated.
+
+  * p/markup/part.rb: introduced, copied from def.rb
+  MarkupUtils.
+
+  * app/root/s/simple/shader.xsl (x:footer): correct w3c.validator
+
+07-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * correct :nodoc: all for test cases.
+
+  * n/db/*: added much more RDoc comments.
+
+  * created n/db distribution.
+  
+  * p/messages/def.rb: deleted.
+  
+  * n/.tc-db.rb: tests run again.
+
+06-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * more mass replaces to make older code work.
+
+  * p/messages/*: many many fixes to make it work again.
+  
+  * p/messages/methods.rb: introduced.
+
+06-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/messages/part.rb: introduced.
+
+  * app/conf/apache.conf: users redirect.
+
+  * p/users/methods.rb (#register_user): userprofile gets created correctly.
+  
+  * n/db/connection.rb (#retry_query): fixed,
+  (DbUtils#sql_write_prop): fixed Time, Date writing
+
+  * n/app/request.rb (Request#get_cookie): fixed unescape bug.
+
+  * app/root/s/simple/shader.xsl: top_ads,
+  introduced debug-options in footer,
+  rss, home link in header.
+
+  * app/root/s/simple/style.css: improved css.
+
+  * n/DOCS/css.txt: introduced, info about centering page.
+
+05-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/users/entities.rb (RoleOwner#add_role): fixed NASTY bug.
+
+  * p/users/methods.rb (#update_roles): introduced,
+  yeah, it works like cooler,
+  handel full clear.  
+
+  * p/glue/std.js: intoduced,
+  (cbSetAll): introduced.
+
+  * p/locales/lc-en.rb: added more strings.
+
+  * p/users/roles-form.ss: introduced
+
+04-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/slude/conf/debug-conf.rb: log to STDERR.
+
+  * app/root/s/simple/shader.xsl: use <noscript> to be compatible with
+  links.
+
+  * YEAH, editing with vi :)
+
+  * initialize(*args) for all db mixins.
+  
+  * n/app/webrick-servlet.rb: make error page work for .rx pages.
+  
+  * n/db.rb (#wrap_method): use an ensure clause, NASTY bug!
+
+  * n/db/connection.rb (#delete): use exec_clear.
+  
+  * p/users/entities.rb (RolesOwner): introduced,
+  (RolesOwner): moved level and stuff.
+  
+  * n/utils/time.rb (#sql_date): handle nil input.
+  
+  * n/parts.rb: $roles, roles().
+  
+  * p/content/entities.rb (Category): moved from category.rb
+  
+  * n/category.rb: removed compatibility stuff.
+
+03-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * p/users/methods.rb (#add_role): recoded,
+  (#del_role): recoded.
+  
+  * p/users/entities.rb (User#role?): introduced,
+  (Role): use char(16) for name,
+  (User#add_role): introduced,
+  (User#del_role): introduced.,
+  (Role#delete): class method to delete roles,
+  (UserGroup): introduced.
+  
+  * n/app/page-handler.rb (#transform_script): encode shader in cached 
+  transformed scripts,
+  also check the shader mtime.
+  
+  * scripts to prepare db distribution.
+  
+  * n/app/webrick-servlet.rb (WEBrick): overload HTTPRequest,
+  (HTTPRequest#parse_uri): overload to add rewrite support.
+  (#__rewrite): temp hack, 
+  (#__rewrite): made more flexible.
+  
+  * n/DOCS/bugs.txt: introduced.
+  
+  * p/users/part.rb: experimental rewrites.
+  
+  * n/parts.rb: use title/body like content unit,
+  (Part#initialize): call rewrites on init.
+  introduced $rewrites.
+  
+  * n/DOCS/todo.txt: introduced.
+  
+  * n/app/page-handler.rb (#transform_script): cache the transformed
+  scripts,
+  calculate super time, invalidate cache from subscripts, MEGA,
+  optimized to avoid loading .ss files for transformed.
+  
+  * app/.cache: introduced cache link.
+
+01-10-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/mixins/permissions.rb: introduced.
+  
+  * n/utils/time.rb (#parse_sql_date): handle nils.
+  
+  * n/db/connection.rb (#retry_query): dont allow infinite looped,
+  better catch the relation not exists exception.
+  
+  * n/ui/date-select.rb: fixes,
+  reverse order if yorder.
+  
+  * p/user/methods.rb (#handle_profile):  check for .store,
+  grab birthdate,
+  (#birthday_users): introduced,
+  gets multiparams.
+  
+  * n/db/connection.rb (#sql_write_prop): handle dates.
+  
+  * n/utils/time.rb (#sql_date): introduced,
+  (#parse_sql_date): introduced.
+  
+  * n/ui/date-select.rb: introduced.
+  
+  * p/users/icon-form.ss: introduced
+  * app/root/users/edit-icon.sx: introduced.
+  
+  * n/app/webrick-servlet.rb (#do_GET): ultracool internal redirect
+  to the error page.
+  
+  * app/root/glues/errors.sx: styled.
+  
+  * app/root/layout.css: static style.
+  
+  * p/glue/part.rb: introduced
+  * p/glue/methods.rb: same
+  
+  * app/root/glue: moved from system.
+  
+  * n/std.rb: removed CVSXXX methods.
+
+29-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/users/emails/reset-password.st: introduced.
+  
+  * app/users/emails/register.st: introduced.
+  
+  * n/utils/mail.rb (#send): made it work.
+  
+  * p/users/methods.rb (#signup_user): use the mail template,
+  (#register_user): send email,
+  (#reset_password): send email
+
+29-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/utils/template.rb: simple templating system.
+
+29-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * app/conf/apache.conf: moved from n/app.
+  
+  * app/conf/config.rb: requires files too.
+  
+  * removed $app_ prefix from some conf variables.
+  
+  * app/root/users/emails/signup.st: introduced template.
+  
+  * n/app/filters/autologin.rb: CHECK the password in the cookie, argh!
+  
+  * p/users/methods.rb (#set_password): introduced,
+  (#validate_password): introduced,
+  (#force_login): introduced
+  
+  * n/app/request.rb (Request#get): works like delete now.
+  
+29-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/app/request-part.rb: introduced, copied functionality from
+  request.
+  
+  * app/root/s/shader.xsl: use relative ref to base.xsl.
+  
+  * app/conf/config.rb: changed all refs to navel/,
+  removed $app_base_dir.
+
+28-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/db/connection.rb: include DbTools.
+  
+  * n/app/request.rb (#delete): rebuild qs only from parmeters with
+  String keys.
+  
+  * n/app/webrick-servlet.rb (#create_request): only set valid 
+  parameters to avoid having to use param?
+  
+  * app/app.rb: moved app stuff to config, removed appsrv.
+  * app/env.rb: updated
+  
+27-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/mixins/schedulable.rb: introduced.
+  
+  * p/users/methods.rb: _user postfix to methods,
+  (#ban_user): no method check,
+  use kick_user.
+  (#unban_user): no method check,
+  (#close_user): implemented,
+  (#open_user): implemented
+  
+  * MEGA, fixed many refs to args()/set_args().
+  
+  * n/app/request.rb: removed old apache stuff,
+  removed arg related stuff,
+  (RequestPart): local_path -> body.
+
+  * p/users/methods (#del_user): fixed.
+  
+  * n/db/connection.rb (DbConnection#get_by_oid): introduced, used by 
+  get.
+  
+  * n/app/fragment.rb: updated to be compatible with 
+  lru cache changes.
+  
+  * n/app/script.rb: updated to be compatible with 
+  lru cache changes.
+  
+  * n/app/handlers/page-handler.rb: updated to be compatible with 
+  lru cache changes.
+  
+  * n/utils/cache.rb: incorporated drak's changes,
+  simplified/beautyfied more.
+  
+  * n/app/session.rb (Session#login): check if user is banned.
+  
+  * n/db/connection.rb: (#get): also accept name.
+  
+  * n/db/mixins.rb: created and moved methods from managed. 
+  
+  * n/db/tools.rb: created and moved methods from connection.
+  
+  * ChangeLog: moved to the root of the repository.
+  
+  * n/app/request.rb: removed many old apache stuff,
+  (#delete): renamed consume method, se the delete name to make 
+  the request compatible with hashes. So more methods are useful
+  from the irb.
+  
+  * p/users/methods.rb (#register): create and populate UserData,
+  (#ban): introduced,
+  yeah ban kicks out!
+  
+  * n/db.rb: wrap exec, exec_and_clear,
+  more wraps.
+  
+  * n/utils/time.rb (#sql_timestamp): pass Time.now by default.
+  
+  * p/users/entities.rb (User#login): update userdata,
+  set last_ip.
+  (UserData#intialize): set good defaults,
+  (User): added flags,
+  (User): added magic,
+  (User#banned?): introduced,
+  (User#closed?): introduced
+
+23-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * yeah, user icons work :)
+  
+  * n/app/request.rb (RequestPart#save): return save part.
+  
+  * n/utils/gfx.rb (#create_thumbnail): greatly simplified
+  
+  * app/root/panel.ss: deleted
+
+  * n/utils/cache.rb: LRU, LRUSentinel -> Item, Sentinel.
+  
+  * n/app/fragment.rb: removed old code,
+  extend N::LRU.
+  
+  * n/app/script.rb: no defcode, pagecode variables,
+  (#__cache_put): just pass fragment.
+
+22-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/db/connection.rb (DbConnection#child): get one child!
+  
+  * n/db/managed.rb (ManagedChild): introduced this common case,
+  (Managed#__db_pk): return string.
+  (Managed#__update): uses __db_pk.
+  
+  * p/users/methods.rb (#register): create user profile,
+  create user data,
+  (#handle_profile): yeah, the profile gets updated.
+
+  * p/users/entities.rb (Settings): renamed UIProfile,
+  (Profile): added more props.
+  (BaseProfile): introduced.
+  (User): added extra fields.
+
+22-09-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * n/application.rb (Application#parse_arguments): Use optparse.
+
+  * app/ctl: Modified for optparse.
+
+  * scrap/user-convert.rb: New script. Convert OG users to DB users.
+  * scrap/user-report.rb: New script. Find users with duplicate emails.
+    
+22-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/app/request.rb (Request#set_errors): only set errors unless empty.
+  
+  * added many missing files in svn.
+
+21-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * FUCKIN MEGA, env works PERFECTLY!
+  
+  * n/app/cluster.rb: start a drb $sessions.
+  
+  * app/env.rb: yeah, use custom drb port, it participates in the cluster
+  now.
+  
+  * n/app/server.rb (ServerMixin#initialize): use $drb port form config,
+  connect to dbr $sessions.
+  
+  * n/app/filters/autologin.rb: del auth cookie when stale!
+  
+  * yeah, login-logout works correctly.
+  
+  * n/app/parts.rb: removed PartMethods alltogether.
+  
+  * n/app/session.rb (Session#login): call $sessions.logout,
+  no request param, not needed.
+  (Session#logout): fixed cluster update,
+  always del the nauth cookie,
+  no params, made more flexible.
+  (SessionManager): online_users -> online, 
+  more simplifications,
+  (SessionManager#session_for_name): fixed.
+  (Session#finalize): removed.
+  
+  * n/app/request.rb: renamed :ERRORS to "ERRORS",
+  (Request#redirect): enforce a meaningful deafult url,
+  (Request#set_errors): introduced,
+  pass errors as transaction entities to be more general,
+  (Request#get_cookie): fixed NASTY bug,
+  (Request#errors_to_a): fixed!
+  (Request#get_cookie): fixed get_cookie,
+  (Request#del_cookie): implemented.
+
+20-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * n/utils/cache.rb: totaly recoded algorithm,
+  yeah seems to work and pass the testcases,
+  extend from Hash to be more flexible, 
+  ultracool touch method.
+  
+20-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * made all test cases hidden files!
+
+20-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * n/app/response.rb: removed
+  * n/server/response.rb: same
+  * n/server/request.rb: same
+  * n/server/worker.rb: same
+  * n/server/protocol.rb: same
+  * n/server/proxy-server.rb: same
+    
+  * MAJOR, user the unified requestr everywhere!
+  
+  * n/app/webrick-servlet.rb: removed create_response,
+  (#do_GET): updated for unified request/response.
+  
+  * n/app/request.rb: removed more unneeded/n2 stuff,
+  use :ERRORS instead of "ERRORS"
+  MAJOR, in/out headers,
+  moved response methods in request,
+  yeah, IT works!,
+  (#update_entity): renamed set_entity!
+  
+  * n/mixins/moderated.rb: removed.
+  * n/id.rb: removed
+  * n/std.rb: renamed standard.rb
+
+20-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/web/*: removed the whole directory, YEAH!
+  
+  * app/appsrv.rb: updated
+  * app/env.rb: same
+  
+  * n/app/webrick-servlet.rb: removed experimental redirect stuff.
+  
+  * n/app/http.rb: removed, moved functionality to utils/http.
+  
+  * changed namespace in tooo many files to list.
+
+  * n/server/cluster/*: removed from repository.
+  
+  * copied all stuff from web/server to appserver.
+  
+  * n/web/utils: deleted from repository.
+  
+  * n/shaders/*: moved from web.
+
+20-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * moved scrap outside n.
+
+19-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * Changed tooo many files to log.
+
+  * app/requires.rb: removed more unneeded requires.
+  
+  * n/standard.rb (Object): removed init_modules,
+  (Kernel): pp_exception
+  
+  * n/utils/array.rb: N namespace, no n2 compatibility.
+  * n/utils/number.rb: same, ->number
+  * n/utils/time.rb: no n2 compatibility.
+  * n/utils/strings.rb: same
+  * n/utils/graphics.rb: ->gxf.rb, ->GfxUtils, same.
+  * n/utils/io.rb: removed, not needed!
+  * n/utils/probe.rb: removed, moved functionality to standard!
+  * n/utils/uri.rb: copied fromw web/utils, cleaned up.
+  * n/utils/http.rb: copied fromw web/utils, cleaned up.
+  
+  * n/appserver/request.rb: introduced,
+  removed unused n2 stuff.
+  
+  * app/app.rb: converted Slude to module!
+  
+  * n/appserver/server.rb: (AppServerMixin#initialize_app): introduced,
+  (AppServer#initialize): updated.
+  
+  * n/appserver/webrick.rb: converted to Module,
+  extend N::Server
+  
+  * n/standard.rb: require "pp"
+  
+  * app/env.rb: fixed!
+  
+  * app/ctl: cool, use the -C.. flag in ruby,
+  run cluster too.
+  
+  * app/appsrv.rb: $:.unshift("..") removed.
+  
+  * app/env.rb: $:.unshift("..") is more portable.
+
+  * n/appserver/cluster.rb: Implemented as application,
+  it works as daemon, yeah.
+  
+  * n/application.rb:  removed n2 compatibility,
+  recoded and simplified,
+  suicide -> stop,
+  fixed name-title confusion,
+  recoded restart,
+  no exit!
+  
+  * MAJOR CLEANUP of old n2 code in repository:
+  
+  * n/calendar.rb: removed
+  * n/index.sx: removed
+  * n/relations.rb: removed
+  * n/og.rb: removed
+  * n/math.rb: removed
+  * n/content.rb: removed
+  * n/web/mixins/*: removed
+  * n/web/sync/*: removed
+  * n/group.rb: removed
+
+17-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * YEAH, converted all R:: to N::
+  
+  * n/parts.rb: module P = namespace for parts,
+  register_part,
+  attr_accessors, props,
+  
+  * n/web/server/handlers/page-handler (#transform_script): dont 
+  encode *act* in actions.
+  
+  * app/logs: symbolic link.
+
+17-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/p: relative link!
+  
+  * app/logs: removed from repository, use a link instead.
+  
+  * app/root/index.sx: updated.
+  
+  * app/root/users/index.sx: introduced
+  
+  * p/users/lc-en.rb: added many strings.
+  
+  * n/web/server/handlers/page-handler: no need for *act*
+  
+  * app/root/s/simple/shader.xsl: use sitemap in header.
+  
+  * app/app.rb (#initialize_sitemap): cleanup, added users.
+  
+  * n/web/server/request.rb (Request#set_arg): value defaults to true
+
+16-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/conf/config.rb: localhost as smtp.
+  
+  * n/db/connection (DbConnection#match): introduced.
+  
+  * p/users/lc-en.rb: added strings.
+  
+  * p/users/def.rb (UsersActions#signup): introduced,
+  (Users#signup): test for reserved emails.
+  
+  * app/root/scripts/delta.rx: renamed from rb.
+  
+  * n/web/server/request.rb: consume! -> consume.
+  
+  * app/root/users/signup.sx: introduced, beautified
+  
+  * app/root/s/simple/style.css: introduced,
+  cool links markup,
+  logo,
+  cool navigation bar,
+  cleaned up layout divs.
+  
+  * app/root/s/simple/print.css: introduced
+  
+  * n/web/server/handlers/page-handler.rb: removed shadermanager ref,
+  dont keep pagecode/defcode in the generated script.
+  
+  * n/web/server/handlers/rx-handler.rb: deleted
+  * n/web/server/handlers/html-handler.rb: deleted
+  
+  * p/users/signup-form.ss: introduced
+  
+15-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/Changelog: more tab friendly.
+  
+15-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/app.rb: Cleaned up!
+  
+  * n/appserver/server.rb: cleaned up!
+  
+  * n/web/server/handlers.rb: (ScriptHandler#compile_script): introduced
+  (ScriptHandler#try_render): temp removed the error code from try render
+  as it was buggy!
+  
+  * n/appserver/apache.conf: updated
+  
+  * p/locales/def.rb: removed uneeded requires.
+  
+  * n/web/server/handlers/page-handler.rb: removed crappy old inject 
+  code 
+
+  * n/web/server/handlers/code-handler.rb: introduced,
+  after some fixes, it works!
+  
+  * n/utils/strings.rb: removed dpe to funnytran(!!),
+  (#to_greeklish): introduced.
+    
+  * n/parts.rb (#require_part): use 'p/' as prefix!
+  
+  * moved parts in a separate directory!
+  
+  * TOTALY CHANGED DIR STRUCTURE, remomoved n1 stuff, and much
+  of the n2 stuff.
+    
+  * CONVERTED REPOSITORY TO SUBVERSION!
+  
+  * app/conf/config: removed n1 deps,
+  use CodeHandler,
+  no HtmlHandler.
+
+14-09-2004  Elias Athanasopoulos  <elathan@navel.gr>
+  
+  * n/appserver/webrick.rb: Redirect webrick log to /dev/null.
+  * n/utils/graphics.rb (Graphics#create_thumbnail): Support animated GIFs
+  for avatars and for files < 60 KBs.
+
+  * n1/web/utils/html.rb: Do not require n2/web/utils/html.
+
+14-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n1/* : changed all refs to n1.
+  
+  * app/root/s/deviant/shader.xsl: javascript unescapes cookie! 
+  
+  * app/root/panel.ss: javascript fix.
+  
+  * YEAH, the new session is used!
+  
+  * n/web/server/request.rb (#user): updated,
+  (#anonymous): updated
+    
+  * n/root/locales/def.rb: use n/l10n.rb now
+  
+  * n/l10n.rb: added locales code.
+  
+  * n/web/server/session.rb (Session): keep user, extend from Hash,
+  no need for SKIP_AUTOLOGIN,
+  (Session#refresh): cleaned up,
+  yeah implemented all session methods,
+  (#login): implemented,
+  (#logout): implemented
+    
+  * n/web/server/handlers/page-handler.rb (#process): dont http cache if
+  $reload_scripts.
+    
+  * n/appserver/filters/autologin.rb: cleaned up,
+  use UsersActions.
+  
+  * n/root/users/def.rb (UsersActions#logout): use $users_auth_cookie,
+  delete the cookie on logout,
+  (UsersActions#login): implemented,
+  use session login/logout.
+  
+  * n/root/users/login.rx: introduced
+  
+  * n/db/connection.rb: Array, Hash -> bytea
+
+13-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * MAJOR: $session_manager -> $sessions.
+
+  * n/appserver/filters/autologin.rb: introduced.
+  
+  * n/db/managed.rb (Managed#eval_db_read_row): code to read a TrueClass
+  
+  * n/db.rb (Db#initialize): fixed bug in creating connections.
+  
+  * YEAH, i got a hello world with only n3 code (Cell).
+  
+  * app/conf/config.rb: $log -> app.log
+  
+  * app: Recoded directory for clean app (Slude).
+  
+  * app/ctl.sh: removed webrick refs.
+  
+  * n/root/users/def.rb (User): added fields,
+  (UsersActions#login): added,
+  (AnonymousUser): added, hmmm...
+  (User): Level Enumeration,
+  (User): attributes, hmmm...,
+  (User): first, last, full name.
+    
+  * n/db/connection.rb (DbConnection#delete_descendants): correctly handle
+  ParrentClass entities,
+  after many fixes seems to kinda work,
+  (DbUtils): boolean type, types with small cap!
+
+12-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/db/connection.rb (DbConnection): fixed bug in deserialize_one,
+  (DbConnection#transaction): introduced,
+  (DbConnection#delete): deletes descendants,
+  (DbConnection#delete_descendants): introduced
+  
+  * n/db.rb (Db#open): fixed nasty deserialize false bug!
+  
+  * n/db/managed.rb (Child, ParentClass): removed __parent_class,
+  (Managed): introduced #__ancestors_classes, #__descendants_classes
+  
+  * lets SLUDE!
+
+11-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/s/deviant/style.css: buttonc.
+  
+  * __meta__ -> __meta
+  
+  * __props__ -> __props
+  
+  * n/root/help/category.si,
+  n/root/help/def.rb: fixes to make it work with latest code.
+  
+  * n/web/server/handlers/page-handler.rb (#transform_script): AO, AS action
+  macros,
+  actions requests (*act*) are uncacheable.
+  
+  * n/root/db: introduced db part.
+
+10-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/requires.rb: removed unneeded requires.
+  
+  * app/root/faq/*: removed from CVS
+  * n/root/faq/*: same
+  * n/web/server/handlers/action-handler.rb: same
+  * n/utils/arrays.rb: same
+  
+  * n/root/help/def.rb (HelpPart): update_sitemap.
+
+  * n/root/help: RENAMED faq part to help,
+  after many changes seems to work!
+  
+  * n/root/admin/def.rb: introduced
+  
+  * use $DBG instead of $DEBUG (used by ruby argh!)
+  
+  * n/root/editor/def.rb: Introduced.
+  
+  * n/root/editor/js: yeah, use tinyMCE.
+
+09-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * u/utils/tc-cache.rb: introduced,
+  [], []=, delete, clear,
+  recoded, use included hash.
+  
+  * n/utils/cache.rb (LRUCache): implemented an LRUCache.
+  
+  * use SafeHash instead of SafeCache everywhere.
+  
+  * n/utils/hash.rb: splited from cache.rb, only hash utils.
+  
+  * introduced VENDOR, VENDOR_URL metadata for parts.
+  
+  * n/root/faq/def.rb (FaqActions): $application -> $lm
+  
+  * n/appserver/cluster.rb (Slm#set!): optional lm parameter.
+  
+  * app/root/faq/index.sx: restructured to avoid db queries in init
+  phase.
+  
+08-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/appserver/webrick: dont include Webrick module in the top scope,
+  use a custom logger!
+  
+  * after many many changes it kind works again!
+  
+  * use symbols for request args.
+  
+  * n/web/server/handlers/page-handler.rb (#transform_script): extract
+  initcode (<?i ... ?>) and define __init_render.
+  
+  * n/web/server/scripts.rb (#__calc_tag): introduced,
+  (#__calc_lm): former __last_modified,
+  (#__calc_tag): encode subscript tags too,
+  (#__etag): SUPER hash the etag!
+
+08-09-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * app/webrick.rb ($DEBUG): New constant.
+  * app/joy.rb ($DEBUG): Use it.
+  * n/(various files): Transform $log.debug "" to $log.debug "" if $DEBUG.
+  * n/db/connection.rb (alter_table): Implement.
+
+08-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/web/server/handlers/page-handler.rb (#transform_script): call 
+  __init_render for top level scripts.
+
+07-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/web/server/request.rb: script_hash -> tag.
+  
+  * n/appserver/webrick-servlet.rb (#do_GET): dont set response content
+  type if already set!
+  
+  * n/web/server/fragment.rb (#initialize): default parameters.
+  
+  * n/web/server/handlers/page-handler.rb (#process): dont http-cache
+  in admin mode,
+  (#eval_script): totaly changed fragment caching, memory based!
+  
+  * n/web/server/scripts.rb (#__init_render): introduced,
+  (#__last_modified): call sub __last_modifieds,
+  (#__last_modified): take script file last_modified into account.
+  (#__cache?): introduced.
+
+07-09-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * n/scrap/bot.rb: New file.
+  * n/scrap/xmlize.rb: New file.
+  * n/scrap/adjust-colors.rb: New file.
+
+06-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n1/og/backend (#get): Set pid from row data!
+  
+  * n/web/server/scripts.rb (#__lm_keys): removed
+  (#__last_modified): uses __lm.
+  
+  * removed _lm from lm keys.
+  
+  * dont encode the uid in etags, nothing to gain.
+  
+  * EXCELLENT: the new Cluster system DRAMATICALLY reduces
+  drb calls!
+  
+  * n/root/messages/def.rb (MessagesActions): Use $lm eveywhere
+  
+  * n/appserver/server.rb (#initialize): use the brand new cluster
+  functionality.
+
+  * n/appserver/cluster.rb: introduced,
+  CHash, SHash, 
+  Clm, Slm,
+  Yeah, kinda works!
+  (CHash#[]=): remove dead servers,
+  after A LOT of changes it now works!
+
+05-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/faq/index.sx (#__etag): experimental etag calculation
+  
+  * yeah, i got a highlevel lm calculated.
+  
+  * n/web/server/handlers/rx-handler.rb (#transform_script): made
+  compatible with new page-handler, 
+  cleaned up.
+
+  * n/web/server/request.rb (Request#get_lm): introduced,
+  (Request#set_lm): introduced,
+  save timestamp as integer to optimize  drb calls.
+  
+  * n/web/server/handlers/page-handler.rb (#process): Only send Etags
+  for cacheable pages,
+  (#get_cached_fragment): fixed bug with fragment_hash.
+
+04-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * YEAH i got the subscripts calculated.
+  
+  * n/web/server/webrick-servlet.rb (#create_request): dont keep 
+  $app_root_dir prefix!
+  
+  * n/web/server/request.rb (Request): top_script.
+
+  * n/web/server/script.rb (Script): sub_scripts,
+  TOO MANY changes to list.
+  
+  * n/appserver/webrick-servlet.rb (#do_GET): use fragment.
+  
+  * n/web/server/handlers/page-handler.rb (PageHandler#process): return fragment
+  (PageHandler#sub_process): same
+  (PageHanler#__include): use fragment,
+  YEAH, update sub_scripts,
+  TOO MANY changes to list,
+  transform/compile methods dont need request,
+  (#transform_script): calculate sub_scripts.
+
+03-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/panel.ss: dump user from cookie,
+  fully replaced user bar with javascript.
+  
+  * app/root/s/deviant/shader.xsl (<x:header>): parse nauth cookie.
+  
+  * n/web/server/handlers/page-handler.rb (PageHandler#transform_script):
+  added support for output buffers.
+  
+  * n/web/shaders/base.xsl: <x:ob-start />, 
+  <x:ob-end />
+  
+  * n/web/server/script.rb: cleaned up, comments.
+  
+  * JOY.GR 1st birthday.
+  
+02-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/s/deviant/print.css: fixed ref to simple.css
+  
+  * n/appserver/apache.conf: use keepalive,
+  SOS, use expires for images!!,
+  fix for css mime type.
+  
+  * COOL, i got not modified returned!
+  
+  * n/web/server/response.rb (Response#set_not_modified): yeah!
+  
+  * n/web/server/handlers/rx-handler.rb: updated to be compatible with
+  changes.
+  
+  * n/web/server/handlers/page-handler.rb:many changes to support HTTP Caching
+  (PageHandler#get_compiled_script): always returns a script (or Exception),
+  compiles the script if not exists.
+  (PageHandler#eval_script): gets passed script,
+  (PageHandler#sub_process): introduced, used in includes!
+  
+  * n/appserver/webrick-servlet.rb: added some experimental rewrite
+  code, ignore for the moment.
+  
+  * n/web/server/script.rb (Script#__etag): hook to calculate the ETag
+  for this page.
+  (Script#__last_modified): hook to calculate last modified for this 
+  script.
+
+01-09-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/s/deviant/shader.xsl: <x:error-log />
+  
+  * n/web/server/handlers/page-handler.rb (PageScript#__include):
+  updated to be compatible with latest changes,
+  less noise error report in include
+  
+  * n/web/server/handlers/rx-handler.rb (RxScript#__include):
+  updated to be compatible with latest changes.
+  
+  * n/web/server/handlers.rb (Handler#try_render): use request.log_error
+  
+  * n/web/server/request.rb (Request.log_error): special loging.
+  
+  * n/utils/strings.rb: converted to StringUtils.
+  
+  * app/fora/index.sx: link to rss.
+  * app/fora/forum.sx: same.
+  
+  * app/root/scripts/kick.rb: use session_for_user.
+  
+  * n/fora/rss.rx: render fora entities. 
+  
+  * n/syndication: introduced,
+  (SyndicationPart): same,
+  (RSS): same
+  
+  * n/syndication: introduced
+
+01-09-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * app/scripts/og-to-db.rb (cut_prefix, html_escape): New methods. Used
+  to cut the 'fora_' prefix from Forum#name and escape html tags in message
+  bodies.
+  * app/conf/debug-config.rb: Make $srv_url to point to 127.0.0.1. 
+  * n/root/markup/emoticons.rb: Switch 'smiley' with 'angel'.
+  
+  * n/ui/sitemap.rb (SitePage#initialize): Inherit realm from
+  parent if exists.
+  * n/ui/sitmap.rb (SiteMap#to_s): New method.
+  * n/ui/tc-sitemap.rb: Add testcase.
+  
+  * n/standard.rb (CVSVERSION, CVSDATE): New methods to trim common
+  CVS variables.
+  
+  * n/root/fora/def.rb: Use CVSVERSION/CVSDATE.
+  * n/faq/def.rb: Likewise.
+  * n/messages/def.rb: Likewise.
+  * n/users/def.rb:  Likewise.
+  * n/root/markup/censors.rb: Add more rules.
+  
+  * app/root/scripts/kick.rb: New script to kick out users.
+  * app/community/members/photo.sx: Add star members menu.
+  * app/scripts/og-to-db.rb: Emoticonize, html escape messages and cut 'fora_'
+  prefix fromm fora names.
+  * app/root/scripts/kick.rb: New script to kick out users.
+
+31-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/db/managed.rb (Relation): pclass, tclass => Strings.
+  
+  * n/root/fora/list.ss: ultra cool activity link!
+
+  * n/root/fora/fora.si: show moderators.
+
+  * n/root/fora/moderators-form.ss: show moderators.
+  
+  * app/root/fora/forum-form.sx: tabs.
+  
+  * n/root/locales/lc-en.rb: more locales.
+  * n/root/locales/lc-el.rb: same.
+  
+  * app/root/s/deviant/style.css: tabs-frame,
+  button-left
+  
+  * n/root/fora/def.rb (Forum#moderators): introduced,
+  (ForaActions#add_moderator): introduced,
+  (ForaActions#del_moderator): introduced
+      
+  * n/root/users/def.rb (Role): introduced,
+  (UsersActions#add_role): added, error checking, no dupplicates,
+  (UsersActions#del_role): added
+  
+31-08-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * n/ChangeLog: Formatting.
+
+30-08-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * n/scrap: New directory.
+  * n/scrap/exif_parser.rb: New script. 
+  * n/scrap/faq-parser.rb: New script.
+  * n/scrap/time-descr.rb: New script.
+
+  * app/ctl.sh: Modified to restart only Webrick when it is used
+  with the restart parameter.
+
+  * n/DOCS/pg.txt: Created a PostgreSQL Tips file.
+  
+30-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * n/fora/def.rb (ForumeMessage#__pre_insert): use thread_oid unstead
+  of pid to prepare sql traverse.
+  
+  * n/db/connection.rb (DbConnection#exec_and_clear): introduced,
+  (DbConnection#deserialize_all/one): clear resultset.
+  
+  * app/scripts/og-to-db.rb: moved from root/scripts,
+  optimized + cleaned code,
+  more fixes and it READS the old fora!,
+  call insert_into_tree,
+  set create_time, 
+  set fora/category description.
+  
+  * n/root/messages/def.rb: (Message): include ParentClass.
+  * n/category.rb: (Category): same
+
+  * n/db.rb: added more documentation.
+  
+  * app/root/scripts/delta.rb: better cleanup.
+  
+  * n/db/managed.rb: (Child, Relation, SqlTreeTraversable): pclass
+  is stored as String (the actual class name). was a NASTY BUG!,
+  (Child): use ony pid as index, the combined index wasnt used at all,
+  use class.to_s instead of class.name,
+  (ParentClass): extension to child.
+  
+  * n/db/mysql-managed.rb: removed
+  * n/db/mysql-connection.rb: removed
+  
+  * app/root/faq/search.sx: use the new search infrastructure.
+
+  * n/root/play: removed part for now.
+  
+  * app/root/fora/search.sx: introduced.
+  
+  * n/glue/def.rb (PartActions#search_basesql): creates a basesql for
+  searching,
+  (PartActions#search_basesql): pass extrasql,
+  (PartActions#search): search and return matching entities.
+
+29-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * YEAH, environments mostly work!
+  
+  * n/appserver/webrick.rb (WebrickAppServer#initialize): use
+    AppServerMixin.
+
+  * n/appserver/server.rb (AppServerMixin): intorduced
+  
+  * app/env.rb: incredible, rails like environment allows full access
+  to the appserver internals.
+  
+  * app/webrick.rb: rearranged requires to be more flexible.
+  
+  * app/app.rb: use the new more flexible configuration system.
+  * app/conf/live-config.rb: live configuration.
+  * app/conf/debug-config.rb: debug configuration.
+  
+  * n/root/messages/def.rb: new setup for message styles, more configurable
+  * n/root/messages/form.ss: same
+  
+  * app/conf/config.rb new setup for message styles
+  
+  * n/ui/sitemap.rb (SitePage): keep realm for each page.
+
+28-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * YEAH, favourites work with the new code.
+
+  * n/root/fora/favourites.si: use latest code
+
+  * n/root/fora/list.ss: use option_proc
+  
+  * n/db.rb: updated db method wrappers.
+  
+  * n/root/users/def.rb (FavouriteRelation): use target methods
+  from base relation.
+  
+  * n/db/connection.rb (DbConnection#get_join_fields): introduced,
+  read join fields in deserialize methods,
+  cleaned up code,
+  when calling drop_table on a sequenced entity, drop the sequence too.
+
+  * n/db/managed.rb (Managed#eval_db_read_row): made more fault tolerant
+  when properties change,
+  cleaned up code,
+  add join_fields in every managed object,
+  (Relation#targets_for_parent): cool, sets join_fields!,
+  (Relation#count_targets_for_parent): counts targets,
+  (RelationUtils): introduced, copied the above methods 
+
+  * n/root/fora/list.ss: fixed style handling
+  * n/root/messages/list.ss: same
+
+27-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * YEAH, the new db code seems to work!
+  
+  * n/root/fora/msg-list.si: fixed count sql
+  * n/root/messages/list.si: same
+  
+  * n/db/managed.rb (Managed#eval_db_read_row): uses fields order,
+  works with PGresult.
+
+  * n/properties: name = str representation of symbols.
+  
+  * n/db.rb (Db#entity_from_row): creates an entity from row,
+  added fields safe hash that stores managed class db fields order. 
+  
+  * n/db/connection.rb (DbUtils#sql_write_prop): handle nil case,
+  use exec(),
+  (DbConnection#calc_fields): calculate fiels order from db,
+  better handle empty results in safe/retry query!
+
+27-08-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * created grab_exif code helper, to extract photo metadata.
+  
+  * created a simple util to handle faqs.
+
+27-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/fora/activity.sx: use msg-list and latest code.
+  * n/root/fora/activity.si: removed, use msg-list.si instead. 
+
+  * n/db/connection.rb (DbUtils#count): count entities helper.
+  
+  * n/root/fora/def.rb (MessagesPart): defined LPKEYS 
+  * n/root/messages/def.rb (ForaPart): same 
+
+  * n/root/messages/list-panel.ss: recoded to be more flexible  
+  * n/root/messages/list.si: same
+  
+  * n/web/server/script.rb (Script#__init): Compile time initialization.
+
+  * n/db/connection.rb (DbUtils#sql_write_prop): Escape strings!
+  
+  * n/root/messages/def.rb (MessagesUtils#calc_pager) : 
+  new class with utils, calculates the pager and extrasql.
+
+26-08-2004  Elias Athanasopoulos  <elathan@navel.gr>
+
+  * n/root/faq/category.si: Localized.
+  * n/root/faq/search-faq-form.ss: Likewise.  
+  * n/root/faq/faq-form.ss: Likewise.
+  * n/root/faq/lc-el.rb: Added new locale entries.
+  * n/root/faq/lc-en.rb: Likewise.
+
+  * n/root/fora/activity.si: Localized.
+  * n/root/fora/admin-panel.ss: Likewise. 
+  * n/root/fora/fora.si: Likewise.
+  * n/root/fora/list.ss: Likewise.
+  * n/root/fora/msg-form.ss: Likewise.  
+  * n/root/fora/msg-list.si: Likewise.
+  * n/root/fora/panel.ss: Likewise.
+  * n/root/fora/lc-el.rb: Added new locale entries.
+  * n/root/fora/lc-en.rb: Likewise.
+
+  * n/root/messages/list-panel.ss: Localised.
+  * n/root/messages/list.si: Likewise
+  * n/root/messages/list.ss: Liewise.
+  * n/root/messages/lc-el.rb: Added new locale entries.
+  * n/root/messages/lc-en.rb: Likewise.
+  
+  * n/web/server/handlers/page-handler.rb (PageHandler#transform_script):
+  Make regular expressions non-greedy.
+
+26-08-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * app/root/fora/favourites.sx: fora favourites.
+
+  * n/root/glue/tools.ss: remove fav on click.
+
+  * n/appserver/webrick.rb: webrick version of appserver. Quite incredibly
+  by setting the bind address I got a MAJOR speedup.
+
+  * n/db/managed.rb (SqlTreeTraversable#__db_pre_insert): setup depth,
+  rgt, lft if not allready defined (bug).
+
+  * n/appserver/apache.conf: use navel user, mysql passwd and localhost 
+  to make compatible with other devs. 
+

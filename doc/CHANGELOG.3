@@ -1,0 +1,1314 @@
+11-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * proto/public/js/cookies.js: added.
+  
+  * lib/nitro/cookie.rb (#initialize): also get expires.
+
+10-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/request.rb (#has_key?): implemented.
+
+07-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/tc_controller.rb: ditto.
+
+  * lib/nitro/tc_dispatcher.rb: tmp fix for require order problem.
+  
+  * doc/README: updated.
+  
+  * doc/RELEASES: updated.
+
+  * test/nitro/tc_mail.rb: removed.
+  
+  * lib/nitro/mail.rb: moved to glue.
+
+06-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * proto/script/runner.rb: implemented.
+
+05-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (#render_template): implemented [mneumann].
+  
+  * lib/nitro/element.rb: prefix setting added,
+  (#start_tag/#end_tag): also work in prefix mode!
+
+04-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/template.rb: moved to glue.
+  
+  * lib/nitro/test.rb: $NITRO_NO_INVOKE added.
+  
+  * lib/nitro/test/testcase.rb (#controller): reimplemented to 
+  be similar to the og test helpers and more flexible,
+  no need for settings.rb.
+  
+  * lib/nitro/cache/output.rb (#expire_output): use the passed 
+  name as is.
+  
+03-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/server.rb (#start): accepts options hash [marcus].
+
+03-08-2005  Michael Neumann <mneumann@ntecs.de>
+
+  * lib/nitro/adapter/cgi.rb (#parse_params): add query parameters
+  to the post parameters.
+
+02-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/rss.rb: use markup instead of cgi.escape [lindsay].
+  
+01-08-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/cache/output.rb (#expire_output): fixed index bug.
+    
+  * lib/nitro/mixin/pager.rb: dont sent offset 0, works with
+  older versions of mysql.
+
+31-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+  
+  * lib/nitro/compiler.rb: fix, don't pass more parameters
+  than the method arity.
+
+  * lib/nitro/caching/output.rb: fixed indexindex.
+  
+  * test/nitro/tc_controller_aspect.rb: implemented.
+  
+  * proto/public/settings.xhtml: only display in debug mode for
+  security.
+  
+  * proto/public/error.xhtml: only display in debug mode for
+  security.
+  
+  * lib/nitro/runner.rb: added mode setting,
+  better handling of mode,
+  Run alias for Runner.
+
+30-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/pager.rb (#first_page?, #last_page?): 
+  implemented,
+  added more comments.
+  (#link_xxx_page): added helpers.
+  (#paginate): added support for Og::Collections.
+  
+  * proto/public/error.xhtml: updated.
+
+29-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/response.rb (#content_type): added.
+  
+  * lib/nitro/test/testcase.rb: recoded from scratch,
+  automatically build environment,
+  (#process): accept an option hash to be more flexible.
+  added process helpers,
+  add leading '/' if missing.
+
+  * lib/nitro/test/assertions.rb (#assert_response): reimplemented,
+  (#assert_METHOD): helpers added,
+  (#assert_output): reimplemented,
+  keep the old assertions, give more option.
+  (#assert_session): reimplemented,
+  (#assert_redirected): reimplemented.
+  (#assert_response): generalized.
+  (#assert_cookie): reimplemented.
+  
+  * lib/nitro/test*: renamed from testing.
+  
+  * test/nitro/tc_request.rb: added test case to test the 
+  new feature, as always I found some bugs :)
+  
+  * lib/nitro/request.rb: added method predicates for all 
+  request methods,
+  (#post_format): added,
+  (#xxx_post?): added a set of helper methods,
+  (#xml_http_request?): added,
+  (#domain): added,
+  (#subdomains): added.
+
+28-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.21.1 ---
+  
+  * lib/nitro/dispatcher/nice.rb (#dispatch): fixed.
+  
+  * doc/RELEASES: updated.
+  
+  * doc/MIGRATION: updated.
+
+27-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/markup.rb: cleaned up,
+  added setup_xxx_transformation helpers.
+  
+  * lib/nitro/server/runner.rb: added scgi support (--lhttpd-scgi)
+
+  * lib/nitro/adapter/scgi.rb: implemented.
+  
+  * lib/nitro/controller.rb: added some cookie helpers.
+  
+  * lib/nitro.rb: use nice dispatcher by default.
+  
+  * lib/nitro/dispatcher.rb: mode setting.
+
+  * lib/nitro/dispatcher/general.rb: introduced.
+  
+  * lib/nitro/dispatcher/nice.rb: introduced.
+  
+27-07-2005  Deborah Hooker <deb@ysabel.org>
+
+  * lib/nitro/server.rb: access_log attr_accessor.
+
+26-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/compiler.rb: more clever implicit nice urls.
+  
+  * lib/nitro/controller.rb (#alias_action): made standalone.
+  
+  * lib/nitro/dispatcher.rb (#dispatch): new algorithm,
+  more clever implicit nice urls.
+  
+25-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/markup.rb (#escape/#unescape): added.
+  
+  * proto/public/error.xhtml: temp fix, use ..markuper (ugh),
+  
+  * proto/public/robots.txt added.
+
+  * --- VERSION 0.21.0 ---
+
+  * doc/MIGRATION: updated.
+
+24-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/rss.rb (#rss): alias.
+  
+  * Rakefile: updated.
+  
+  * lib/nitro.rb (##run): reuse Server.run [ysabel].
+  
+  * lib/nitro/server/runner.rb (##run): removed [ysabel],
+  (#initialize): set @access_log [ysabel].
+
+22-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/adapter/wee.rb: customize the default Controller
+  [mneumann].
+  
+  * lib/nitro/compiler.rb (compile_action): greatly improved 
+  overloading/controller inheritance support.
+  
+  * lib/nitro.rb: added proto_path setting.
+  
+  * lib/nitro/dispatcher.rb (#add_controller): setup a reasonable
+  teplate root for controllers based on the mount point.
+  
+  * doc/MIGRATION: updated.
+  
+  * test/*: after the usual small fixes, all tests pass again.
+  
+  * lib/nitro/compiler.rb (#compile_actions): fixes in code
+  generation.
+  
+  * lib/nitro/mixin/markup.rb: made helper methods private.
+  
+  * test/nitro/tc_localization: removed.
+  
+  * test/nitro/builder/*: removed.
+  
+  * doc/README: updated.
+  
+  * converted all code to use spaces instead of tab.
+  
+  * ctabs.rb: implemented [mneumann].
+
+22-07-2005  Michael Neumann <mneumann@ntecs.de>
+
+  * lib/nitro/compiler.rb (#setup_template_transformation): alias.
+
+21-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/scaffold.rb: update for the new compiler.
+
+  * lib/nitro/controller.rb: update for the new compiler.
+  
+  * lib/nitro/compiler.rb: converted class methods to instance
+  methods,
+  (#compile): removed sync.
+  
+  * doc/RELEASES: updated.
+  
+  * doc/MIGRATION: introduced.
+
+20-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/adapter/wee.rb (Wee::Controller): reimplemented.
+  
+  * lib/nitro/compiler.rb: print the action return value if the 
+  buffer is empty and the return value is a String.
+  
+  * doc/RELEASES: updated.
+
+19-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/component/wee.rb: introduced.
+  
+19-07-2005  Michael Neumann <mneumann@ntecs.de>
+
+  * install.rb: fixes.
+
+18-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/form.rb: removed compact crap.
+  
+  * lib/nitro/adapter/cgi.rb: updated.
+  
+  * lib/nitro/adapter/fastcgi.rb: converted to latest,
+
+  * lib/nitro/template.rb: changed xslt interpolation macro
+  to #\..\
+  
+  * lib/nitro/mixin/markup.rb: reimplemented.
+  
+  * lib/nitro/compiler/markup.rb: implemented.
+
+  * lib/nitro/compiler/localization.rb: implemented.
+  
+  * lib/nitro/render.rb (#builder): introduced.
+  
+  * lib/nitro.rb (##run): fixed.
+  
+  * lib/nitro/server/run.rb: copied from runner.
+  
+  * lib/nitro/buffering.rb: removed.
+  
+  * lib/nitro/mixin/buffer.rb: moved here from buffering.
+  (#ob_end): return data.
+  (#buffer/#capture): implemented.
+  
+  * lib/nitro/render.rb (#build): ultra cool implementation, 
+  uses instance_eval if arity == 1.
+
+17-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro.rb (#run): reimplemented.
+  
+  * lib/nitro/conf.rb: removed.
+  
+  * yeah the Blog example runs after the changes.
+  
+  * lib/nitro/adapter/webrick.rb: major cleanup, converted
+  to new configuration system.
+  
+  * lib/nitro/server.rb: App in Nitro namespace,
+  use Runner,
+  access_log setting,
+  public_root setting,
+  (#run): recoded to catch parameters.
+  
+  * lib/nitro/runner.rb (#setup): setup from environment.
+  (#setup_xxx): attemt to configure from Ruby and/or YAML files,
+  (#load_external_configuration): implemented,
+  cleaned up, pass server arround.
+  
+16-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/rss.rb (RssBuilder): removed,
+  return descriptions.
+
+  * made the mixin/builder system more flexible.
+  
+  * lib/nitro/render.rb: no mixins in OutputBuffer,
+  renamed Mixins to Emmiter,
+  (#emit): new implementation,
+  removed cryptic #o method,
+  (#build): shortcut to the programmatic renderer.
+  
+  * lib/nitro/mixin/table.rb (TableBuilder): removed.
+
+  * lib/nitro/mixin/form.rb (FormBuilder): removed.
+  
+  * lib/nitro/mixin/xhtml.rb: implemented according to the new
+  builder,
+  (XhtmlString): removed,
+  (XhtmlBuilder): removed.
+
+15-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/xhtml.rb (#options): new, flexible 
+  implementation [drak].
+  
+  * lib/nitro/builder: removed, mixins do the same, lets keep
+  one name.
+  
+  * lib/nitro/output.rb: removed.
+  
+  * lib/nitro/render.rb: moved OutputBuffer here,
+  (#build): introduced,
+  improved #build implementation.
+  
+  * lib/nitro/mixin/*: converted all builders to mixins, droped
+  the Builder part from the name.
+  
+  * lib/nitro/mixin/form.rb: copied functionality from builder.
+  
+  * lib/nitro/render.rb: removed Rendering,
+  (#render_nothing): removed.
+
+14-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/compiler/squeeze.rb: implemented.
+  
+  * lib/nitro/localization.rb (##transform): implemented.
+  
+  * the blog example runs under the compiler.
+  
+  * lib/nitro/template.rb (#transform): alias.
+  
+  * lib/nitro/compiler.rb (#compile): added,
+  (#compile_template): implemented,
+  (#transform_template): implemented,
+  reload setting.
+  IMPORTANT: removed auto redirect on empty buffer,
+  better log errors.
+  (#setup_template_transform): implemented (COOL).
+  
+  * lib/nitro/template.rb: extension setting.
+  root stting, default setting.
+
+13-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/compiler.rb: introduced.
+  
+12-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * fixed :nodoc: bug.
+  
+  * --- VERSION 0.20.0 ---
+  
+  * doc/RELEASES: updated.
+  
+  * test/nitro/mixin/tc_pager.rb: added.
+  
+  * lib/nitro/mixin/pager.rb: copied old code,
+  added support for in-memory pagination,
+  small fixes: it WORKS!
+  
+  * lib/nitro/uri.rb: moved to glue.
+  
+  * lib/nitro/helper/*: moved to mixin/*
+  
+  * lib/nitro/builder/atom.rb: removed.
+
+11-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/mixin/pager.rb: introduced,
+  (Pager): introduced,
+  (PagerMixin): introduced,
+  (#paginate): implemented.
+  
+  * lib/nitro/mixin: introduced.
+    
+  * test/nitro/tc_dispatcher.rb: removed deprecated multiapi
+  tests.
+  
+  * test/*: many changes and fixes to pass again.
+    
+  * lib/nitro/adapter/webrick.rb (XhtmlFileAdapter): implemented,
+  don't return xhtml source [james_b].
+  
+  * doc/RELEASES: updated.
+
+09-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * doc/RELEASES: updated.
+  
+  * lib/nitro/helper/javascript.rb (#live_request): implemented,
+  get the href from the actual element.
+  (#autocomplete): implemented.
+  added effects.js to the default js libraries.
+  set autocomplete="off" with a behaviour.
+  
+08-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/helper/javascript.rb: introduced.
+  (#dragable): implemented,
+  yeah drag and drop works!
+  (#escape_javascript): added.
+  (#behaviour): ULTRA COOL added.
+
+07-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * proto/public/js/behaviour.js: introduced.
+
+  * proto/public/js/controls.js: introduced.
+
+  * proto/public/js/dragdrop.js: upgraded to latest version.
+
+  * proto/public/js/effects.js: upgraded to latest version.
+
+  * proto/public/js/effects2.js: deprecated.
+  
+  * proto/public/js/prototype.js: upgrated to latest version.
+  
+  * README: updated.
+
+06-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * test/nitro/tc_cookie.rb: added.
+  
+  * lib/nitro/cookie.rb: set path = '/' by default, fixes NASTY
+  session bug [mneumann].
+
+04-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/builder/rss.rb: small fixes.
+  
+03-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/controller.rb (#alias_action): added, experimental.
+  
+  * added more const_defined? checks.
+
+01-07-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/request.rb (#fetch): implemented as shorthand [drak].
+  
+  * lib/nitro/render.rb: added controller_name [mneumann].
+
+30-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * test/nitro/tc_server.rb: introduced and implemented.
+  
+  * lib/nitro/server.rb: don't use as singleton,
+  (Mounter): implements really cool CherryPy style publishing!
+  
+  * lib/nitro/controller.rb: added default action.
+
+29-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/dispatcher.rb (#update_routes): fixed.
+    
+  * lib/nitro/simple.rb: removed.
+  
+  * lib/nitro/part.rb: removed.
+
+28-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+  
+  * lib/nitro.rb (##start): implemented.
+  
+  * yeah, the new hello world example passes.
+  
+  * lib/nitro/controller.rb: moved SimpleController here,
+  removed the dangerous (and no longer needed) #inherited override,
+  SimpleController in Nitro namespace,
+  (ControllerMixin): started implementing,
+  renamed to Publishable.
+  
+  * started using the unless const_defined? trick.
+  
+  * lib/nitro/dispatcher.rb: simplified (no context passed),
+  (#dispatch): more natural mount points, no :root.
+  publish alias for add_controller.
+
+27-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/server.rb: introduced.
+
+27-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/element.rb: fixed bugs.
+
+  * lib/nitro/builder/form.rb: fixed bugs.
+
+25-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/helper/debug.rb: implemented.
+  
+  * lib/nitro/controller.rb: include HelperSupport.
+
+  * test/nitro/tc_helper.rb: introduced.
+  
+  * lib/nitro/helper.rb: introduced,
+  helper macro to make the helpers methods private,
+  (#include_auto_helpers): implemented.
+  (Helper): include debug helper by default.
+
+24-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/*: beutified/updated/commented many files.
+
+  * lib/nitro/element/java_script.rb: implemented.
+  
+  * doc/AUTHORS: updated.
+  
+  * proto/public/js/*: added scriptacoulous libraries.
+
+  * proto/public/settings.xhtml: cooler, shows all configuration
+  variables. [epiperak]
+  
+  * lib/nitro/*: started adding settings keywords everywhere.
+  
+  * lib/nitro/runner.rb: include configuration.
+
+23-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/markup.rb (MarkupShader): call expand_html.
+
+21-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching.rb: temporarily dissabled per controller
+  caching.
+
+20-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * README: facet/redcloth pointers. [bcandler]
+
+  * INSTALL: facet/redcloth pointers. [bcandler]
+
+17-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching.rb (##caching_enabled): added singleton
+  method too!
+
+  * --- VERSION 0.19.0 ---
+
+  * README: updated.
+  
+  * doc/RELEASES: updated.
+  
+  * lib/nitro/dispatcher.rb (#controller_for_class): added 
+  SUPERB new support for reloading!!! I LOVE IT!
+  
+  * lib/nitro/runner.rb (#setup_debug): call autoreload by default,
+  dissable caching in debug mode.
+  
+  * lib/nitro/caching/*: small fixes.
+
+  * lib/nitro/caching.rb (#caching_enabled): introduced.
+
+16-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * doc/RELEASES: updated.
+
+15-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * test/nitro/tc_controller.rb: fixed to pass again.
+  
+  * lib/nitro/flash.rb (#flash): made private.
+
+08-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/testing/testcase.rb: Og related fix.
+  
+  * lib/nitro/controller.rb: include flashing by default.
+  
+  * lib/nitro/flash.rb: introduced and implemented,
+  added aspects,
+  (#set_dirty): fixed flag.
+
+02-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * lib/nitro/element.rb: fixed a bug with capitalize.
+
+01-06-2005  George Moschovitis <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.18.0 ---
+
+  * test/*: some fixes to make the tests pass again.
+  
+  * fixed NASTY action_metadata bug.
+
+31-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (#redirect): fixed bug.
+
+30-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * doc/RELEASES: updated.
+  
+  * lib/nitro/render.rb (#redirect): fixed to work with gecko.
+
+  * lib/nitro/runner.rb: fixed daemonize support.
+
+29-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching: added global enable switch.
+
+27-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (#redirect): fixet to work behind a 
+  proxy!
+  
+  * lib/nitro/caching/output.rb (#expire_output): begin end block
+  to be more fault tolerant.
+
+26-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/runner.rb (#daemonize): implemented.
+  
+  * lib/nitro/caching/output.rb (#expire_output): introduced.
+  
+  * lib/nitro/adapter/webrick.rb: fixed request_uri calc bug!
+
+25-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching/output.rb: fixed filter problem.
+  
+  * lib/nitro/markup.rb (MarkupShader): for the moment
+  a simple alias for RedCloth.
+  
+  * lib/nitro/request.rb (#host): handle proxy case (forwarded).
+  
+  * ../rpc: removed from repository.
+  
+  * lib/nitro/service/xmlrpc.rb: copied from rpc.
+  
+  * lib/nitro/service.rb: copied from rpc,
+  (Service): renamed from WebService.
+
+24-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * bin/nitrogen: the Dir.ls_r were copied to facets so this is 
+  used.
+  
+  * lib/examples/README: introduced.
+
+23-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * proto/public/error.xhtml: show exact error line in template.
+  
+  * lib/nitro/errors.rb: better presentation, 
+  reverse transform the code.
+
+22-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/template.rb: improved template expansion, allows 
+  for reverse transform (useful for error logging).
+  
+  * lib/nitro/errors.rb: introduced,
+  (ActionCompileError): introduced,
+  (TemplateCompileError): introduced.
+  (#line_number): implemented.
+  
+  * lib/nitro/render.rb (#compile_action): separately compile the
+  action and the template.
+
+21-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * changes to many files to accomodate some dir changes.
+  
+  * lib/nitro/scaffold.rb: use tha facets inflector.
+  
+  * lib/nitro/render.rb (#compile_action): also try to find
+  templates in the proto dir,
+  try to find templates in all superclasses of the controller.
+  
+  * lib/nitro/controller.rb (#inherited): simplified,
+  set template root to point into proto in the default controller.
+
+20-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * moved examples outside of the nitro distribution.
+  
+  * examples/flash/: fixed root dir. [gmary]
+  
+  --- THE REVENGE OF SITH --- 
+
+19-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * started fixing various references to the renamed directories.
+  
+  * lib/nitro/part.rb: deprecated.
+  
+  * lib/nitro/builder: renamed from builders.
+
+  * lib/nitro/adapter: renamed from adapters.
+
+17-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/element.rb (#render): post proccesing to fix 
+  elements with no text expansion problem.
+  
+  * proto/src: added.
+
+  * bin/nitrogen: reimplemented, it now works with gems. The 
+  implementation is based on mneumanns wee script [james_b].
+
+16-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.17.0 ---
+
+  * cleanup.rb: updated.
+  
+  * doc/RELEASES: updated.
+  
+  * Rakefile: updated facets dependency.
+  
+15-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * doc/RELEASES: updated.
+
+13-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/shaders.rb (ElementShader): Yeah, it passes an
+  example page.
+  
+  * lib/nitro/element.rb: reimplemented render using the
+  StreamParser,
+  handles processing instructions,
+  yeah, it works again!,
+  added _view, _rendered attributes in element,
+  fixed nesting bug,
+  yeah, use render for template, it works!
+  fixed more nesting bugs.
+
+12-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/shaders.rb (ElementShader): implemented,
+  yeah, this parses a simple page.
+  
+  * test/nitro/tc_element.rb: implemented.
+  
+  * lib/nitro/element.rb: introduced,
+  (Element): introduced.
+  (ElementRender): introduced.
+  (#parse): implemented.
+  (StaticElement): implemented,
+  It works!!
+  better handle elements without attributes.
+
+11-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/no_xsl_blog/*: changes to make it work with new Og.
+  
+  * examples/blog/*: changes to make it work with new Og,
+  use hals if ...each trick in comments,
+  yeah it works.
+
+05-05-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/adapters/fastcgi.rb: use ensure to be more fault
+  tolerant.
+
+  * lib/nitro/adapters/webrick.rb: updated for new Og.
+  
+  * examples/blog/*: converted to new og code.
+
+30-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (#compile_action): better syntax error
+  handling, no infinite loops [drak].
+
+26-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb: hack-fixed :stop bug.
+
+21-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * proto/public/js/prototype.js: added.
+
+20-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  *  lib/nitro/render.rb: allow view overload.
+ 
+19-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/scaffold.rb: view_uri -> to_href.
+
+  * Rakefile: added facets dependency.
+
+  *  lib/nitro/render.rb (ActionExit): introduced.
+  catch stop.
+  (#compile_action): added param calculation code,
+  no return from template.
+
+18-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  *  lib/nitro/render.rb: response alias for context.
+  (#print): added as convenience method.
+
+  *  lib/nitro/request.rb (#raw_body): implemented.
+ 
+  * --- VERSION 0.16.0 ---
+    
+  * small fixes to make tests pass again.
+
+17-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/: updated.
+
+  * lib/nitro/render.rb: check again for action_template method.
+
+  * test/nitro/builders/tc_atom.rb: introduced.
+
+  * lib/nitro/builders/atom.rb: introduced.
+  (#build_atom): first implementation.
+
+  * lib/nitro/builders/xml.rb: added print alias,
+  use '!' postfix in default methods to avoid method namespace polution.
+  (#processing_instruction): added.
+
+16-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * now developing on UBUNTU Linux.
+
+15-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/no_xsl_blog/*: converted to make compaitble
+  with latest code.
+
+  * ../cleanup.rb: implemented.
+
+  * lib/nitro/controller.rb: improved DEF_FILE calculation to handle
+  more cases.
+
+  * examples/blog/*: yeah, with the latest aspects fixes
+  the example works again,
+  converted XmlController to latest code.
+  invalidate cache on deletes.
+
+  * test/*: fixes to make the tests pass.
+
+14-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/*: dont use controller.
+
+  * lib/nitro/controller.rb: removed [jamesb].
+
+  * examples/blog/src/models/content.rb: removed obsolete code.
+
+13-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/*: converted to use aspects.
+
+  * lib/nitro/render.rb (#compile_action): replaced filter chains
+  with advice generation.
+
+  * lib/nitro/controller.rb: use aspects instead of filters,
+  dont include Filtering.
+
+12-04-2005  Kostas Nasis  <kostas@nasis.com>
+
+  * misc aesthetic fixes.
+
+  * lib/nitro/markup.rb: small fixes.
+
+12-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/*: small fixes in docs.
+
+  * push_docs.rb: introduced.
+
+  * Rakefile: changed rdoc dir,
+  added Florian Gross's gems updater [flgr],
+  many fixes to make the updater work.
+
+  * releases.rb: utility to help with new releases,
+  cool, it uploads documentation.
+
+  * INSTALL: small update [ilias].
+
+11-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * created new public SVN repository, to allow for easier
+  patching by the community.
+
+  * examples/no_xsl_blog/*: small ns fixes. [james_b]
+
+10-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb: new encoding for action/template methods.
+
+  * lib/nitro/shaders.rb (XSLTShader#process): add a critical Logger.debug to 
+  give better info on the developer on template errors.
+
+  * lib/adapters/webrick.rb: no stupid logging by default on Unix.
+
+  * lib/nitro/dispatcher.rb (#controller_class_for): changed reloading algo,
+  improved reloading to reload superclasses,
+  improved reloading to remove actions,
+  even more fixes to the reloader.
+
+  * lib/nitro/conf.rb (#mount): added support for mounting other sites.
+  $nitro_environment: holds the configuration.
+
+09-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/og/tc_sqlserver.rb: check if sqlserver exists.
+  * test/*: small fixes to pass again.
+
+  * examples/ajax/*: small improvement.
+
+  * lib/nitro/runner.rb (Nitro##run): added this elegant helper.
+
+  * proto/public/scaffold: added.
+
+  * examples/blog/*: works without API,
+  content_type works again,
+  use the new runner.
+
+  * lib/nitro/dispatcher.rb: removed the concept of API from the dispatcher,
+  will be implemented with controller reuse.
+
+  * examples/blog/src/controller.rb (XmlController): introduced.
+
+  * lib/nitro/render.rb (#compile_action): better error reporting,
+  removed concept of API.
+
+  * lib/nitro/response.rb (#add_cookie): made more flexible.
+
+  * lib/nitro/testing/assertions.rb (#assert_has_cookie): implemented,
+  (#assert_has_no_cookie): implemented,
+  (#assert_cookie_equal): implemented.
+
+  * lib/nitro/testing/context.rb (Response): added more helpers.
+
+08-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * hack-fixed dynamic require bug that used to fuckup RDoc.
+
+  * Rakefile: fixed VERSION bug,
+  removed flexob, extensions, ruby-breakpointer dependencies [james_b],
+  bumped required Ruby version.
+
+  * lib/nitro/testing/testcase.rb: include Nitro by default.
+
+  * test/*: many fixes to work again.
+
+  * MAJOR: changed the namespace from N to Nitro.
+
+  * examples/no_xsl_blog/*: some small improvements, synced with blog 
+  example.
+
+  * lib/nitro/ui/*: updated some code (will be removed soon).
+
+  * lib/nitro/ui/date-select.rb: removed.
+
+  * lib/nitro.rb: include Glue in the Nitro namespace.
+
+  * lib/nitro/cluster.rb: removed.
+
+07-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/testing/assertions.rb: 
+  (#assert_redirect): implemented.
+  (#assert_no_redirect): implemented.
+  (#assert_session_has): implemented.
+  (#assert_session_has_no): implemented.
+  use implicit context
+  (#assert_output_match): implemented.
+  (#assert_output_no_match): implemented.
+  (#assert_status_ok): implemented.
+  use format_msg: to make more flexible.
+  (#assert_session_equal): implemented.
+
+  * examples/blog/test/tc_blog.rb: introduced.
+
+  * lib/nitro/testing/context.rb: introduced.
+  (Request): added testing helpers.
+  (Response): added testing helpers.
+  (Context): override session.
+
+  * lib/nitro/render.rb: body alias for out.
+
+  * lib/nitro/adapters/cgi.rb: no socket lookup.
+
+  * lib/nitro/adapters/fcgi.rb: no socket lookup.
+
+07-04-2005 James Britt  <james_b@neurogami.com>
+
+  * investigated nasty cgi/testunit/flexmock bug.
+
+06-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/testing.rb: introduced.
+
+  * lib/nitro/testing/testcase.rb: introduced.
+
+  * lib/nitro/testing/assertions.rb: introduced.
+
+05-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (#compile_action): keep old action in @parent_action_name.
+
+  * lib/nitro/shaders.rb: handle ' delimeters. [james_b]
+
+  * lib/nitro/template.rb: handle ' delimeters. [james_b]
+
+  * test/nitro/tc_controller.rb: added extra tests.
+
+  * integrated james' CGI patch.
+
+05-04-2005 James Britt  <james_b@neurogami.com>
+
+  * proto/public/cgi.rb: cgi runner.
+
+  * lib/nitro/adapters/cgi.rb: added support for standalone cgi.
+
+  * lib/nitro/runner.rb: added support for cgi.
+
+04-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * bin/nitro: fix
+
+  * bin/nitrogen: fix
+
+  * --- VERSION 0.15.0 ---
+
+  * Rakefile: added nitrogen executable.
+
+  * examples/blog/public/fcgi.rb: fixed for path.
+
+  * doc/RELEASES: updated.
+
+  * bin/new_form.rb: deprecated.
+
+  * bin/new_app.rb: deprecated.
+
+  * bin/nitrogen: implemented.
+
+  * bin/nitro: implemented to start default application,
+  use -rubygems.
+
+03-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (#compile_action): handle __ separators,
+  (#template_for_action): fixed to look into subdirectories.
+
+  * test/nitro/tc_dispatcher.rb: added more tests.
+
+  * lib/nitro/dispatcher.rb (#dispatch): updated to 
+  handle actions in subdirs.
+  
+  * doc/RELEASES: updated.
+
+01-04-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * some fixes to make the tests pass again.
+
+  * doc/RELEASES: updated.
+
+  * doc/AUTHORS: updated.
+
+  * README: updated.
+
+  * examples/no_xsl_blog/*: added localization support.
+
+  * examples/*: fixed for default environment.
+
+  * lib/nitro.rb: setups a default environment [james_b].
+
+  * lib/nitro/environment.rb: introduced and implemented.
+
+01-04-2005 James Britt  <james_b@neurogami.com>
+
+  * lib/nitro/controller.rb: fixed DEF_FILE calc for win32.
+
+31-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blig/src/controller.rb (#toggle_locale): implemented.
+
+  * examples/blog/*: added localization support.
+
+  * test/nitro/localization.rb: introced and implemented tests.
+
+  * lib/nitro/localization.rb: worked on this,
+  (Locale): introduced,
+  yeah localization kinda works,
+  added support for sprintf interpolation.
+  support for procs as localization agents,
+  added some documentation.
+  (LocalizationShader): introduced.
+  (LocalizationFilter): reimplemented,
+  fixed default locale.
+  added support for parsing localization rules from yaml files.
+
+30-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/*: use the new, easier/powerful way to set
+  the template root.
+
+  * lib/nitro/caching/stores.rb (FileStore): better handling of
+  cache_root.
+
+  * lib/nitro/controller.rb (#method_missing): use the class
+  template_root,
+  many changes to handle the template_root here.
+
+  * lib/nitro/scaffold.rb (#scaffold):
+  added new, edit, form default methods,
+  save: implemented.
+  override default rendering if a template is provided.
+
+  * lib/nitro/shaders: introduced.
+
+29-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/shaders.rb: cleaned up old code,
+  (MorphingShader): introduced,
+  (ElementsShader): introduced,
+  implemented times morphing,
+  after a lot of experiments got the regexp right.
+  each morphing,
+  if/unless morphing.
+
+  * lib/nitro/render.rb: add base to template root.
+
+  * lib/nitro/dispatcher.rb: return base.
+
+  * lib/nitro/part.rb: reintroduced.
+
+  * worked a lot on the high level framework.
+
+28-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/template.rb: added support for erb style interpolators <% %>.
+
+  * --- VERSION 0.14.0 ---
+
+  * lib/nitro/controller.rb (#inherited): made compatible with Win32.
+
+  * examples/why_wiki/run.rb: set pwd.
+
+  * examples/wee_style/run.rb: set pwd.
+
+  * proto/*: introduced,
+  moved public inside proto,
+  moved run.rb inside,
+  mover conf inside.
+
+  * doc/RELEASES: updated.
+
+  * examples/blog/src/xsl/base.xsl: added <cache> tag.
+
+  * examples/*: fixed lhttpd.conf files.
+
+  * examples/blog/src/controller.rb (#cache_invalidator): added,
+  cache_output for login as an example.
+
+  * lib/nitro/adapters/webrick.rb: fix,
+  fix: dont send paths with '.' to nitro.
+
+25-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching/invalidation.rb: introduced.
+
+  * lib/nitro/adapters/webrick.rb: removed obsolete code.
+  removed WEBrick::HTTPRequest override.
+  (#handle_file): implemented.
+  (#handle): fixed ensure close.
+  
+  * conf/lhttpd.conf: ultra cool cache aware rewrite rule.
+  cleaned up a LOT.
+
+  * conf/apache.conf: introduced, added cache aware rewrite
+  rule.
+
+24-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * conf/lhttpd.conf: introduced.
+
+  * conf: introduced.
+
+  * Rakefile: more intelligent handling of versions. [drak]
+
+  * test/nitro/filters.rb: added more tests for the newly fixed
+  bugs.
+
+  * lib/nitro/filters.rb: SUPER FIX: use the new and correct
+  way to introduced inheritable attributes.
+  fixed problem with filters when reload = true.
+
+  * lib/nitro/caching/fragments.rb: fixed cattr bug. 
+
+  * lib/nitro/caching/actions.rb: fixed :only bug. 
+
+  * lib/nitro/caching.rb: require action caching.
+
+23-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/testing: introduced.
+
+  * INSTALL: updated, added ref to required libs. [dyoder]
+
+22-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching/actions.rb (#cache_action): implemented using text filters.
+
+  * lib/nitro/render.rb (#render_text): introduced.
+
+  * lib/nitro/filters.rb: pass options in arround filters.
+
+  * lib/nitro/caching/fragments.rb (#cache): set key for fragments.
+
+  * examples/blog/public/index.xhtml: added caching for entries.
+
+  * lib/nitro/caching/stores.rb (FileStore): implemented.
+
+  * doc/RELEASES: updated.
+
+21-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/tiny/public/upload.xhtml: added as an example of
+  uploads.
+
+  * lib/nitro/adapters/cgi.rb (#parse_multipart): implemented.
+  Yeah! i got an image uploaded,
+  better handling of multiparams,
+  cool: define to_s to perform a read.
+
+  * lib/nitro/request.rb (#post?): added.
+  (#content_length): added.
+
+  * lib/nitro/caching/stores.rb: introduced.
+  (MemoryStore): implemented.
+
+  * lib/nitro/adapters/webrick.rb (#do_GET): make REQUEST_URI more compatible with 
+  fastcgi.
+  (#do_GET): use Cgi.parse_parameters to make more compatible with 
+  fastcgi, and prepare for the abstract multipart parsing.
+
+  * lib/nitro/filters.rb: converted the rest of the filter methods.
+  (#gen_filters_call_code): fixed single symbol handling.
+
+  * lib/nitro/controller.rb: added Caching in Controller.
+
+  * lib/nitro/caching/output.rb: introduced,
+  yeah i got output for a page cached.
+
+  * lib/nitro/caching/action.rb: introduced.
+
+  * lib/nitro/caching/fragment.rb: introduced,
+  (#cache_fragment): implemented.
+  (#cache): added.
+  (Fragments): added methods here to avoid polution.
+
+  * lib/nitro/caching: introduced dir.
+
+20-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/nitro/tc_filters.rb: introduced and implemented,
+  added test for inheritable filters.
+
+  * lib/nitro/filters.rb (Filter): introduced structure,
+  (#append_after_filter, ..): handle options too,
+  (#gen_filters_call_code):  pass action, handle options,
+  fixed filter add code.
+  added :only and :except options.,
+  added support for String filters.
+  made Filters inheritable!
+
+  * lib/nitro/render.rb: keep action name in render.
+  (#render_nothing): implemented.
+
+19-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/caching.rb: introduced,
+  (Output): introduced.
+
+17-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * CHANGELOG: branched from 'doc/ChangeLog.1'.

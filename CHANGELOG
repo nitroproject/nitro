@@ -1,0 +1,239 @@
+Sat Feb  2 16:01:44 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Added more needed dependencies to the gemspec files.
+
+Sat Feb  2 15:56:25 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Removed remaining glue references.
+
+Wed Jan 30 18:03:58 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Improved dist scripts.
+
+Wed Jan 30 17:36:51 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Removed some debug code.
+
+Fri Jan 25 17:48:38 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Misc fixes.
+
+Fri Jan 18 17:12:10 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Minor stuff.
+
+Mon Jan 14 18:09:25 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Mon Jan 14 17:58:27 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Fixed command line parsing [trans].
+
+Mon Jan 14 09:25:45 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Made taggable more flexible and reusable.
+
+Fri Jan 11 18:00:55 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Fri Jan 11 11:28:39 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Yeah, after 2 years removed glue in favour of Facets ;-)
+
+Fri Jan 11 00:38:46 EET 2008  transfire@gmail.com
+  * added meta/*.roll files
+
+Fri Jan 11 00:37:19 EET 2008  transfire@gmail.com
+  * final elimination of glue
+
+Wed Jan  9 17:52:05 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Small stuff.
+
+Mon Jan  7 12:00:42 EET 2008  George Moschovitis <gmosx@reizu.com>
+  * Keep the action annotation easily accessible. Use the title annotation in auto syndication.
+
+Tue Dec 18 12:58:14 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Different behaviour of cookie in debug mode to make localhost/0.0.0.0/127.0.0.1 work (arne)
+
+Mon Dec 17 16:16:54 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Pass fragments included from a skin through the ElementFilter first. Allows for much more powerful skins!!!
+
+Sat Dec 15 14:01:22 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Sat Dec 15 13:55:03 EET 2007  transfire@gmail.com
+  * fixed store/sql.rb for instance_attributes
+
+Sat Dec 15 12:39:39 EET 2007  transfire@gmail.com
+  * instance_attributes fix
+
+Fri Dec 14 21:47:43 EET 2007  transfire@gmail.com
+  * preperation for 1.9
+
+Sun Dec  9 19:34:55 EET 2007  transfire@gmail.com
+  * latets work on atom feed
+
+Sun Dec  9 20:21:37 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * The compiler accepts '-' in the following element notation: <x:main-page> instead of <MainPage> or <x:main_page> that where accepted till now. For those that like to be more xml compliant.
+
+Fri Dec  7 18:19:20 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Thu Dec  6 13:06:08 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Reintroduced a simple fragment caching system.
+
+Tue Dec  4 15:23:55 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Added model hash in context, to keep private request scope variables and objects.
+
+Mon Dec  3 09:19:51 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Fri Nov 30 23:49:32 EET 2007  transfire@gmail.com
+  * atom.rb removed html escaping
+
+Fri Nov 30 13:53:14 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor, needs latest blow.
+
+Fri Nov 30 10:44:11 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Fixed checkbox helper + some minor stuff.
+
+Fri Nov 30 04:12:29 EET 2007  transfire@gmail.com
+  * atom and rollrc
+
+Thu Nov 29 17:19:43 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Don't double unescape in request.fill (fixes the stupid '+' double unescape bug).
+
+Wed Nov 28 14:54:37 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Tue Nov 27 07:31:40 EET 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Make Element ids automatically unique
+
+Wed Nov 28 06:24:22 EET 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Update proto to use the new filename extensions (htmlx, cssx -> html, css)
+
+Tue Nov 27 17:33:17 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor fix in checkbox helper.
+
+Tue Nov 27 10:28:03 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Mailer uses .html templates (no more .htmlx)
+
+Mon Nov 26 10:31:37 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Converted hello example to use the latest template extensions.
+
+Mon Nov 26 02:27:28 EET 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Fix create skeleton
+
+Sun Nov 25 13:42:50 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Updated CHANGELOG.
+
+Sun Nov 25 13:36:05 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * MAJOR change: use .html extension for html templates, (.css for css templates, etc). We now use xxxx.inc.html for includable html templates (ie not accessible at the top level for security reasons). Works infinitely better with default editor highlighting modes.
+
+Tue Nov 20 15:21:05 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Resolved some conflicts.
+
+Mon Nov 19 01:05:24 EET 2007  transfire@gmail.com
+  * minor space removals
+
+Fri Nov 16 14:19:14 EET 2007  transfire@gmail.com
+  * fixed to nitro command
+
+Tue Nov 20 12:21:32 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Include encode_uri in template filter so we can precompile uri expansions (ie #[R relation, :delete] instead of the run time interpolatin #{R relation, :delete})
+
+Tue Nov 20 12:16:43 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Handle <br /> in html filter, escape values in form helper.
+
+Fri Nov 16 17:28:14 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Misc templ fixes.
+
+Thu Nov 15 17:19:15 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Make taggable more fault tollerant (chops the tag_string).
+
+Thu Nov 15 13:31:53 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Removed aspects.new.rb (an older aspects version).
+
+Wed Nov 14 19:11:52 EET 2007  transfire@gmail.com
+  * reduced glue and uses opod
+
+Tue Nov 13 17:34:08 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Added missing glue/main.rb, fixes in uri/update_request_uri.
+
+Tue Nov 13 15:37:51 EET 2007  transfire@gmail.com
+  * added script/ and global_logger.rb
+
+Tue Nov 13 15:20:00 EET 2007  transfire@gmail.com
+  * Whole mess of stuff.
+
+Sat Nov 10 23:05:40 EET 2007  transfire@gmail.com
+  * fix nitro command
+
+Tue Nov 13 10:24:49 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Fixed SUPER NASTY base64/escape cookie session store bug, thanks bill! [bill kerry]
+
+Sun Nov 11 23:03:16 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Removed tmail (use the new gem instead).
+
+Sat Nov 10 16:59:39 EET 2007  transfire@gmail.com
+  * Rewrote nitro command to work with Facets 2.1
+
+Sat Nov 10 03:48:22 EET 2007  transfire@gmail.com
+  * parts moved to top level
+
+Fri Nov  9 19:05:10 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Change in  cookie.
+
+Wed Nov  7 17:54:47 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Many cookie related fixes. Don't send multiple versions of the same cookie. Fixed NASTY cookie session store bug (use context.no_sync! to allow for actual deletion of the session cookies).
+
+Mon Nov  5 12:42:40 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Removed dangerous Controller::xxx lookup in elements.
+
+Sun Nov  4 13:03:47 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * GET/POST params are again Hash.
+
+Sun Nov  4 12:38:43 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Misc fixes in admin part.
+
+Sat Nov  3 21:51:33 EET 2007  rob@robmela.com
+  * update_part_require_paths
+
+Fri Nov  2 17:15:22 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Thu Nov  1 16:37:52 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Did I say argh?? 
+
+Thu Nov  1 16:33:28 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Argh...
+
+Thu Nov  1 10:51:24 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Moved part out of nitro.
+
+Thu Nov  1 10:34:58 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Wed Oct 31 03:30:46 EET 2007  transfire@gmail.com
+  * Vexing autoload and a mis-spelled "intialize"
+
+Wed Oct 31 13:07:32 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Added support for alpha sorting in tag.
+
+Tue Oct 30 23:11:33 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Improved handling of :through join class. Have a look at the new spec file. More work is needed here.
+
+Tue Oct 30 22:06:17 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Various changes.
+
+Tue Oct 30 21:50:40 EET 2007  transfire@gmail.com
+  * A little more 50.
+
+Tue Oct 30 01:01:43 EET 2007  transfire@gmail.com
+  * Further work to 0.50.
+
+Mon Oct 29 04:24:26 EET 2007  transfire@gmail.com
+  * fix nitro command
+
+Mon Oct 29 03:43:12 EET 2007  transfire@gmail.com
+  * continued updates for 0.50
+
+Sun Oct 28 23:26:36 EET 2007  George Moschovitis <gmosx@reizu.com>
+  * Small fix to make bin/nitro run again. Everything seems to run now.
+
+Sun Oct 28 09:43:14 EET 2007  transfire@gmail.com
+  * Facets 2 Conversion
+
+Sat Oct 27 20:29:05 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Branch version of Nitro (experimental features)

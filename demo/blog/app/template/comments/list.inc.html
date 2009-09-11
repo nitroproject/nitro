@@ -1,0 +1,5 @@
+<h3>#{post.comments.size} comments</h3>
+
+<?r for comment in post.comments ?>
+  <?include href="/comments/comment" ?>
+<?r end ?>

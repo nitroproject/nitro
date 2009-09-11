@@ -1,0 +1,130 @@
+
+
+h2. Nitro
+
+
+* integrate vlad, rack, sequel_low level?
+
+* status page.
+* deprecate path overloading functionality.
+* reuse more mature/general low level ruby libraries.
+* make compatible with capistrano and backgroundrb.
+
+* mime-types gem.
+
+* add __FILE__, __LINE__ to all evals (Ola Bini)
+* set the Nitro execution mode as early as possible (in nitro.rb?)
+* push redirect target.
+* content.user = User.current_user saves ths object !!
+* search controller parents for element_namespace override.
+* allow for explicit rendering of .inc files.
+* automatically pass host to the Mailers?
+* do cookies work correctly for localhost ? (they do for 0.0.0.0)
+* date/time form control.
+* have a separate Controller::Mixin class that gets included by default in
+  all controllers?
+* make compiler filters compiler aspects for consistency.
+* autostamp css/javascript files with modification time.
+* remove template_stack_functionality, too complex, no-one (?) uses it.
+* remove usage of ObjectSpace (does not work well with JRuby)
+* somehow use/integrate Capistrano.
+* investigate simply_helpful
+* catch Og not found errors and return 404.
+* remove auto escaping from request parameters.
+* use htmlentities gem.
+* Auto generate Atom/GData for xml requests.
+* automatic CGI.escapes where needed (redirects, request parameters, etc)
+* use Dir.tmpdir
+* nitro exec option.
+* support this: <?include href="/comment/list" with="obj = article" ?>
+* move markup back to glue.
+* Optimize settings lookup.
+* In elements compiler, Class.by_name also returns top level 
+  classes, how can we fix this?
+* add method to setup error responses (set http response status)
+* automatically set a template root relative to the controller definition file location.
+* check for autoreloads in custom template roots.
+* keep nitro mode in environment, dont pass as param.
+* store caching relation hints.
+* auto load controller files for loaded models.
+* setup with yaml
+* if a template is added (and didn't exist) the auto-reloader does.
+  not detected (cannot 'link' it with an action)
+* device to delete all cached pages related to object / all.
+* move flash in session.
+* use catch/throw to exit from actions.
+* dont load by default files that are not usually needed (like og evolution for example)
+* refactor common code between webrick/mongrel.
+* allow multiple controllers to be mounted to the same mount point.
+
+h2. Og
+
+* implement Class.iterator (optimized, pull version of .all) 
+
+* On inherited classes tries to reuse the table of the super class (even without STI) temp workaround: use Unmanageable
+* cleanup sql.rb source file.
+* support views.
+* use a separate repo for Og.
+* what happens if a model defines Og methods like 'update' ?
+* optimize (== remove) many unneeded sql queries when setting relations.
+* reimplement missing validation options.
+* add support for transparent db sharding.
+* add support for transparent db replication.
+* remove const_missing after Og is started / the model gets enchanted.
+* polymorphic objects should be explicitly unmanaged. 
+* better handling of sql_constraint (the array thing) 
+* refers_to should be != has_one (doesn't keep reference!!)
+* has_one :create(_on_insert) option to automatically create 
+  the refered object on targer insert.
+* no need for :condition keyword in Entity.all / Entity.find
+* use one version of write_attr/quote and update quote for all adapters.
+* if no database exists, reset create_schema to true!
+* how to avoid excessivly calling the validation code.
+* no more excessive og.saves when setting relations (even trigger excessive sweepers)
+* when destroying a class remove from entities.
+* og device to allow removal of all tables related to a class.
+* og save/create drinks errors on invalid fields.
+* option to add automatic counter property for many_to_many and
+  joins_many relations.
+* user customizable session crypt.
+
+h2. Glue
+
+* Configuration.Module.Class barks.
+
+h2. Gen
+
+* web based application creator.
+* auto create styleguide using a css as input.
+
+-----
+
+h2. Done
+
+* better R, no need to pass controller, pass only controller, and no need to pass param key.
+* make 'nitro mongrel' work.
+* allow: self.set_attribute(:status, true)
+  use instance_variable_set!
+* add option to skip rewrites in webrick/mongrel adapters if running behinf lighttpd.
+* auto redirect_to_referer.
+* send error code on not found!
+* replace test unit tests with rspec? naaah...
+* replace all occurances of url with uri.
+* use extension to decide mime type?
+* 'nitro console' uses live and drinks errors.
+* Added Cookie based sessions (~~ Local store).
+* the examples require *serious* updating.
+* remove ruby-breakpoint dependency.
+* -d == --daemon.
+
+h2. Rejected
+
+* allow port setting like this: Server.cache_port = '+50' 
+  relative to application base port.
+* allow for port ranges for drb server, session servers and stuff like that.
+* new 'local' hash (like session/flash) but stores values in a 
+  cookie. -> not needed, the cookie based session store is a better 
+  solution.
+* deploy copies files in root dir, not in lib to get rid of LOAD_PATH 
+  unshifts -> naah will just mess up the directory.
+

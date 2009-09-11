@@ -1,0 +1,2902 @@
+== Version 0.50.0
+
+After many months in the making, the Nitro Development team is
+proud to announce this new version.
+
+Special thanks for this release fly to Jonathan Bach and Arne.
+
+Most notable changes:
+
+* Glue is totally deprecated in favour of Facets. Much of Glue
+  functionality is now included in the latest version of Facets.
+  More (generally useful) code from Nitro/Og will be included 
+  in Facets soon.
+   
+* Separated Web related functionality to the newly introduced
+  Raw (Ruby Apps for the Web) package. Nitro is now a simple holding
+  package for Raw, Og and Facets.
+
+* Og supports custom defined id attributes. As an example a UUID
+  based key is provided as a standard Ruby mixin module.
+  
+* You can now use templates to dynamically generate all kind of
+  formats. Files placed in the template folder are automatically
+  passed through the compiler pipeline (and optionally cached).
+  You can for example use standard Nitro templating constructs
+  in css or javascript files). For example, the css file:
+  
+  template/screen.css
+  
+  is expanded (and cached) to
+  
+  public/screen.css
+  
+  using Nitro's advanced templating features (ruby code, include,
+  morphers, caching, etc) to create reusable css files. Thanks
+  to precompilation this extra flexiblity comes for free.
+
+* The template files now use the standard extensions. For example
+  html template files use the .html extension instead of the older
+  .xhtml extension.
+  
+  Statically included files use the .inc.xxx extension (for example
+  .inc.html extension for html include files)
+  
+* Fixes in script adapter to make compatible with caching, allows 
+  for efficient, behind-the-scenes caching.
+  
+* Improved localization system.
+  
+* Improved Og's startup speed.
+
+* Og.save throws exception on error.
+
+* Total reimplementation of the Session system. Introduced a
+  groundbreaking Cookie/JSON session store that allows you to keep
+  session data in the client (great for distributed web apps). You
+  can even access session variables from the client using Javascript.
+  
+* Reimplemented scaffolding code as a mixin module.
+
+* Cleverly use Ruby's autoload to make the code more flexible.
+
+* Try to make the code in Nitro and Og more consistent, by using
+  the same names for equivalent objects and following more strict
+  Ruby coding conventions. We tried extremely hard to make Nitro/Og
+  code look like standard Ruby code. In the process we replaced
+  some existing DSL macros with equivalent, standard Ruby idioms.
+  This makes Nitro and Og even more accessible to new comers.
+  
+* Reimplemented Og's multithreaded strategy, this time it is much
+  more robust. Also fixes a reported memory leak.
+  
+* Removed old prototype/scriptaculous helpers and morphers. JQuery is
+  now the premium Javascript library for Nitro.
+
+* New super simple output caching system.
+
+* Introduced new reloader: elegant, orthogonal to the  dispatcher, 
+  monitors include files and just works ;-)
+  
+* Resource Representation Formats (allow for customized handling of resources)
+
+* Introduced brand new Compiler architecture.
+
+* Introduced new implementation for Router, simplified.
+
+* Introduced brand new clean and restful dispatcher. Automatically
+  handles REST convention without custom rewriting or Router
+  tricks.
+
+* Reorganized directory structure and the implementation from
+  scratch. You can now follow Nitro's internals much more easily.
+  
+* Brand new examples. More specifically, the new blog example
+  amptly demonstrates Nitro's elegance, succintness and power.
+  Browse the source code to find out why Nitro is the most elegant
+  and fast way to build your web applications.
+
+* Improved Logger. Instead of
+
+  Logger.info "My info message"
+  Logger.debug "My debug message"
+  etc
+  
+  you can use:
+  
+  info "My info message"
+  debug "My debug message"
+  
+  this allows you to override logging per class for powerful,
+  fine-grained debugging.
+  
+* Og: Added option :create_on_insert in has_one relations, 
+  to automatically create the target class by default.
+
+* New  html_filter utility enforces valid html constraints on
+  post/get data. Useful for more secure applications (you can 
+  never trust your users.
+  
+* Made encode_url much more flexible with some shortcuts: 
+  R(User, :login) == R(User::Controller, :login)
+  user = User[1]; 
+  R(user, :delete) == R(User::Controller, :delete, :oid, user.oid). 
+
+* Many changes to make Nitro compatible with the latest version
+  of Facets. The more important change is the new, efficient and more
+  robust, annotation/aspects implementation.
+
+* We have converted the old test case suite to RSpec specs. Specs
+  are much cleaner and in the process we have updated the tests to 
+  follow the latest source code developments. *NOTE* This release
+  does not include the spec suite. It will be included in the next
+  version.
+
+* Includes encode_uri in template filter so we can precompile uri 
+  expansions (ie #[R relation, :delete] instead of the run time 
+  interpolatin #{R relation, :delete})
+
+This version contains many many more features. Install the gem 
+and have fun.
+
+
+== Version 0.42.0
+
+Another evolutionary release.
+
+== Version 0.41.0
+
+This is a bug fix release. As it fixes some important bugs of the
+previous release, including a DOS vulnurability you are strongly
+advised to update your version. However, you will also find 
+a couple of new features:
+
+* Extended entity .finder method can now handle relations.
+
+  Post.find_by_title_and_forum_name(title,forumName)
+  
+  class Forum
+    property :name, String
+    has_many :posts, Post
+  end
+  
+  class Post
+    property :title, String
+    property :message, String
+    belongs_to :forum, Forum
+  end
+  
+  'forum' is the :forum from belongs_to, 'name' is a property from the
+  relations.  It creates a SQL subquery to find the correct forum_oid.
+
+* Added a simple call/answer mechanism that may be useful in some
+  cases. Will be improved in future versions.
+  
+
+== Version 0.40.0
+
+This is the biggest release yet! Tons of new wonderful features,
+code refactoring, bug fixes, documentation improvements and so
+much more.
+
+Special thanks for this release fly to Jonas Pfeniger, 
+Jonathan/Fabian Buch and Michael Fellinger.
+
+Most notable changes:
+
+* Fully transparent Og managed objects. No need to use the 
+  special property notation. Just use the standard attr_accessor
+  macro:
+  
+  class User
+    attr_accessor :name, String, :sql => 'VARCHAR(32)
+    attr_accessor :password, String
+    attr_accessor :age, :login_count, Fixnum
+  
+    belongs_to :group
+    has_many :comments
+    joins_many :categories
+  end
+  
+  Og automatically detects and manages this class!
+  
+* The Og adapter model was re-engineered from scratch. The new
+  adapter code is better refactored. It is now extremely easy to
+  write new adapters for various RDBMS systems.
+  
+* Og build mode. This avoids multiple sql queries when you are
+  'building' (ie attaching related objects) a new object.
+
+* You can now easily lookup Og entities by name:
+
+  u = User[1] # classic
+  
+  or
+  
+  u = User['gmosx'] # this works as well!
+  
+  for the new method to work you need to annotate the attribute
+  to use for named lookups:
+  
+  class User
+    attr_accessor :name, String, :key => true
+    ..
+  end  
+
+* Og set attribute, a nice helper to set only some attributes.
+
+  b = Book[1]
+  b.set_attribute :title => 'Hello' # updates only title in the DB
+  b.instance_attribute_set '@title', 'Hello' # Ruby style
+  b.set_attributes :title => '1', :hits => 3
+
+* Much more intelligent dispatcher now handles nested controllers
+  and many 'edge' cases. For example:
+  
+  Server.map = {
+    '/' => SiteController,
+    '/users' => UserController,
+    '/users/categories' => UserCategoryController,
+    '/users/comments' => UserCommentController
+    ...
+  }
+
+* Introduced the notion of Controls as extensions of the Elements
+  feature. The auto administration part was recoded to utilize 
+  the Controls system. Ooh, and the admin screens now display
+  validation errors.
+  
+* Introduced Console/Script adapter. This is a new adapter that
+  allows you to programmatically send http requests to Nitro. You
+  can send GET/POST/etc request to any action you like with 
+  any request parameters.
+  
+  This adapter is used in the console mode. You can access it 
+  through the $app variable.
+  
+  You can also use this adapter to perform sophisticated testing,
+  our specialized  automation scripts.
+
+* New and improved nitro command. Among many new features the
+  new command supports:
+  
+  * Easy setup of clusters:
+  
+    nitro --cluster 3 
+    
+    if the default port is 9000 starts 3 instances of the application
+    listening on 9000, 9001, 9002. This command is smart enough
+    to also name the instances for easy identification when you
+    give 'ps aux'.
+    
+    Useful for Mongrel/FastCGI deployment.
+    
+  * Automatic start of state servers. You need a 'state' server
+  if tou use Mongrel/Nitro to keep the distributed session and 
+  global variables and any other common data you want to use.
+  
+* Output cache cleanup. Just start the console
+
+  nitro console
+
+  and give:
+
+  $cache.cleanup
+
+
+* More flexible elements namespace selection, you can easier 
+  have multiple skins in your web app, per controller, per 
+  controller group etc. A low level example: 
+  
+  class MyController 
+    ann :self, :elements => CustomSkin
+  end
+    
+* More flexible configuration system. See the updated examples
+  for the details.
+  
+* Further improvements in the form builder. Among other things,
+  it now works better with flash parameters and handle errors.
+  
+* Greatly improved the Mongrel adapter. In fact nitro+mongrel
+  running behind apache is now the reference deployment method.
+  We have removed the unsupported SCGI adapter, please use
+  Mongrel instead.
+  
+* The StaticInclude compiler now handles recursive includes.
+
+* Brand new automatic administration part.The new implementation 
+  is much simpler, elegant and easier to extend. 
+
+* Many more bug fixes and smaller improvements.
+
+
+== Version 0.30.0
+
+Another pragmatic release. The Nitro development team worked over
+the submitted tickets and provided many bug fixes. More over, there
+are many small improvements along the codebase and as always
+we could not resist adding some cool new features. 
+
+Special thanks fly to Bryan Sotto for making this release
+possible!
+
+Most notable chages:
+
+* Nitro allows fine grained customization of the compiler 
+  tranformation pipeline per controller or even per action. 
+  Here come some examples:
+  
+  class MyController
+    ann :self, :transformation_pipeline => [MyTransformer, AnotherXForm]
+
+    ... 
+
+    def my_action
+      ...
+    end
+    ann :my_action, :transformation_pipeline => Compiler.transformation_pipeline.dup.shift(CustomXForm)
+   
+    ...
+  end
+  
+* Nitro automates integration testing by means of the new
+  session VCR feature that allows for easy proxy based 
+  functional testing. A typicall session goes like this:
+  
+  Start your app with:
+  
+  ruby run.rb --record myfile
+  
+  Then use your web browser to 'perform' your testing session.
+  You can used multiple browsers, concurrent users and hit all 
+  the pages in your app. At the end, just stop the server.
+  
+  In order to perform regression testing against this recorded
+  session just restart the server in playback mode:
+  
+  ruby run.rb --playback myfile
+  
+  Nitro automatically plays back the recorded session and logs
+  any errors or Exceptions.
+
+* Better Global variable implementation works better with
+  distributed stores (Drb, Memcached). Notice the new
+  Global.init and Global[:key].update { |v| } methods.  
+
+* Improved the Router implementation. One notable addition
+  is support for global router initialization:
+  
+  Router.rules = [
+    { :match => /~(.*)/, :controller => IdController, :action => :view, :params => [:name] }
+  ]
+
+* Cleaned up glue by removing files duplicating functionality
+  allready available in Facets. Moreover, we moved several 
+  generally useful files and methods from Glue to Facets.
+  
+* Replaced the old RSSHelper with the new FeedHelper. The new
+  implementation provides support for RSS, Atom, OPML. The
+  FeedHelper is backwards compatible with the old helper but
+  provides even more features. 
+  
+  class MyController
+    helper :feed
+  end
+  
+* Added Og query by example support. Query the database for an 
+  entity that matches the example. The example is a hash 
+  populated with the property values to search for.
+
+  The provided property values are joined with AND to build
+  the actual query.
+
+  Article.query_by_example :title => 'IBM%', :hits => 2
+  Article.find_with_properties :title => 'IBM%', :hits => 2
+
+* Added type casting support for Og aggregations and
+  calculations.
+  
+* Greatly improved the configuration system. One noteable 
+  (and extremely useful) new feature is that you can now 
+  customize classes before they are even defined:
+  
+  
+  Configuration.User.crypt_salt = 'HELLO'
+  require 'users'
+  
+  in users.rb:
+  
+  class User
+    setting :crypt_salt, :default => 'DF', :doc => 'The crypt salt'
+  end
+
+* Calculate rendering level in actions to allow for conditional
+  rendering in top level actions or sub-actions. Some helpers
+  are also provided:      
+  
+  def myaction
+    if request.is_top_level?
+      ...
+    end
+  end
+
+* Introduced an alternative more sophisticated (yet intuitive) 
+  form builder. While this new helper is still under construction,
+  it is already very useful. Here come some examples:
+
+  <!-- entity backed form -->
+    
+  <div id="myform">
+  #{form :object => @owner, :action => :save_profile do |f|
+    f.property :name, :editable => false
+    f.property :password
+    f.br
+    f.submit 'Update'
+  end}
+  </div>
+
+  <!-- form with virtual method (:multipart),
+       special controls (:select_file) -->
+  
+  <div id="myform">
+  #{form :method => :multipart do |f|
+    f.p {
+      f.label 'Select the new icon filename'
+      f.select_file :file, :label => 'Select icon'
+    }
+    f.p {
+      f.submit 'Change'
+    }
+  end}
+  </div>
+
+* More flexible Script generator, the developer can use most of 
+  its features without a Client subclass.
+  
+* Reimplemented session garbage collection.
+
+* Added many more RDoc comments to the source code.
+  
+* Many, many bug fixes.
+
+* Updated to latest Facets, Scriptaculous, Prototype.
+
+
+Please note that the project home page has been moved to:
+
+http://www.nitroproject.org
+
+
+== Version 0.29.0
+
+A bold step towards maturity. Great care was taken to 
+fix reported bugs and fine tune many aspects of Nitro and Og.
+As always some great new features where added. Special thanks fly
+to Jonas Pfenniger, Bryan Sotto, Rob Pitt and Guillaume 
+Pierronnet for making this release possible.
+
+Most notable changes:
+
+* Greatly improved error detection and report. Nitro now provides
+  line exact error reports at compile or run time, in actions
+  or templates. Stay tuned for more improvements in error 
+  handling.
+  
+* Nitro now supports a very useful url endoding/decoding system 
+  along with a Camping inspired R operator. This new system allows
+  you to refer to controllers and actions in your code, without
+  bothering about the enforced nice urls and rewrite/routing
+  rules. This allows you to write more robust code.
+  
+  Here are some examples:
+  
+  redirect R(UsersController, :login, :name, 'gmosx')
+  <a href="#{R(ForaController, :delete, :id, 3)}">delete</a>
+  
+  some more helpers and better integration of this feature
+  will be available soon.
+
+* To better support the URL codec, a new router was implemented.
+  The new version is both more powerfull and faster. Here are
+  some examples:
+
+  r.add_route(%r{rewritten/url/(.*)}, :controller => IdController, :action => :register, :param => :name) 
+  r.add_route(%r{another/zelo/(.*)/(.*)}, :controller => AdminController, :action => :kick, :params => [:name, :age])
+  r.add_route(%r{cool/(.*)_(.*).html}, :controller => AdminController, :action => :long, :params => [:name, :age])  
+
+* Og now supports calculations and aggregations. Here are some
+  examples:
+
+  User.min(:age)
+  User.average(:age)
+  User.maximum(:age)
+  User.min(:age, :group => :profession) # => [..] (aggregation)
+  User.sum(:age, :group => :role) # => [..]
+  
+  and more!
+
+* Improved template_root handling. Now Nitro automatically generates
+  a template_root stack for each controller / publishable object.
+  Of course the developer can fully customize this stack.
+  This is great for reusable modules of functionality (parts). Lets
+  say you have implemented a forum part. When you 'mount' the 
+  forum controller a path relative to the mount point is pushed 
+  in the template_root stack. When the dispatcher searches for
+  a template, it traverses the stack. In the described scenario
+  it first looks in the application template root, next in a template
+  root the points inside the part template root and then in the 
+  proto dir template root. The proto dir template root is automatically
+  pushed as the last root in the stack. This system facilitates
+  'object oriented sites'.
+  
+  Use the following method to customize the template_root.
+  
+  def self.setup_template_root(path)
+    ...
+  end 
+
+* Added support for JSP like application scoped (global) 
+  variables.
+  
+  def login
+    ...
+    global[:users] << current_user
+    application[:users] << current_user
+    ...
+  end
+  
+  The global/application hash is backed by any of the available
+  cache stores.
+  
+* Improved Taggable mixin, now provides more helpers and supports
+  tag garbage collection through reference counting.
+  
+* Added a new store for the generalized caching system that is
+  backed by a MemCache server. Useful to extract the last ounch 
+  of performance in a production environment. 
+
+* Fixes in the SCGI adapter.
+
+* Many Og bug fixes and optimizations.
+
+* More flexible static include compiler.
+
+* Improved testing support.
+
+* Integrated latest versions of Scriptaculous and Facets.
+
+* Many, many bug fixes and small improvements throughout the
+  code.
+  
+
+== Version 0.28.0
+
+A snapshot of the latest developments. As always, cool new 
+features were added, the code is refactored, the security increased
+and reported bugs fixed.
+
+Most notable changes:
+
+* New generalized caching system. The caching code is refactored
+in a new Glue system. At the moment, caches in memory, DRb, 
+filesystem and Og are provided. A memcache version will be available
+in the near future. The new caching system is used to implement
+Session stores, Og caching, Fragment caching, and Application scoped
+parameters. A useful DRb cache management script is provided to 
+manage multiple DRb caches.
+
+* Introduced a new Og Cacheable mixin. By including this mixin
+in your classes you make them eligible to Og caching. Here comes
+an example:
+
+class User
+  is Cachable
+  property :name, String
+  property :age, Fixnum
+end
+
+Cacheable reuses the new generalized caching system to provide
+various options for distributed caching. At the moment entities
+(instances of managed classes) are cached by their primary key.
+
+* Og now advanced quering using Ruby as the data query language 
+to complement the usage of Ruby as a data definition language 
+and provide an end-to-end Ruby solution. At the moment only 
+supported for the SQL based adapters. Here comes an example:
+
+  users = User.find do |user|
+    user.age > 10
+    user.any { 
+      name == 'George'
+      name == 'Stella'
+    }
+  end
+
+  # => SELECT * FROM oguser WHERE (oguser.age > 10 AND (oguser.name = 'George' OR oguser.name = 'Stella'))
+
+This feature uses the Caboose/EZ code by Ezra. Pure magic!
+
+* Og find now supports prepared statement like syntax:
+
+  User.find :condition => ['name LIKE ? and create_time > ?', 'g%', Time.now]
+  
+The interpolated values are automatically escaped to avoid
+SQL injection attacks.
+
+Some additional forms of find are supported:
+
+User.find [['name = ? and create_time > ?', 'gmosx', Time.now]
+User.find "name = 'gmosx'"
+
+and more.
+
+* Added experimental support for  deep copying (cloning) of Og 
+managed objects. This mechanism handles properties (annotated 
+attributes) and some relation types.
+
+* Integration of Facets 1.0.1. The new library features a better
+API and better implementation of various features.
+
+* Introduced experimental Mongrel adapter, just use:
+
+  ruby myapp.rb --mongrel
+  
+* Fixes in the SCGI/FCGI adapters.
+
+* Added schema evolution support to the SQLite adapter. All major
+Og adapter support automatic schema evolution, ie Og detects common
+types of changes in your Ruby code to automatically alter the 
+underlying schema  for you.
+
+* Introduced Og SQLite2 (legacy SQLite) adapter.
+
+* Added more test cases, and improved RDoc comments throughout
+the code.
+
+* Many, many bug fixes.
+
+
+== Version 0.27.0
+
+Once again we have a great mix of cool new features, along
+with bugfixes and a myriad of smaller improvements. Go and
+download the most advanced Ruby Web/ORM Framework you can find.
+
+Most notable changes:
+
+* Added groundbreaking client side action/scripting support:
+
+  class FlickrDemo < Nitro::Controller
+    helper :javascript
+
+    class Client
+      # Actions defined here are executed as javescript in the 
+      # browser.
+      def clear_me
+        hide :hide_me
+      end
+      
+      def grab
+        ajax_upadate ...
+      end
+    end
+  end
+      
+  in the template:
+  
+  <div id="hide_me">...</div>
+  <a client="clear_me">clear</a>    
+  
+  the client element is converted to a javascript call that
+  executes the code in the client action. A domain specific
+  language is provided for the client action to implement stuff
+  like ajax async updates, scriptaculous visual fx and more.
+    
+* A collection of morphers to work along with client actions.
+  Here are some examples:
+
+  <!-- make a div draggable -->  
+  <div id="hello" draggable="true">Drag me</div>
+  
+  <!-- autocomplete a text field -->
+  <input type="text" name="tags" auto_complete="true" /> 
+  
+  in the controller:
+  
+  def tags_auto_complete
+    %{
+    <ul>
+      <li>navel</li>
+      <li>nitro</li>
+      <li>sexy</li>
+    </ul>
+    }
+  end
+
+  More stuff is coming in future versions.
+
+* Greatly imporoved the Elements system. The ElementMixin module
+  is auto-injected if missing. Nitro automatically transforms
+  xhtml template files in the Element.template_root into 
+  Element classes for even better separation of code and design.
+  A simple Rails style layout helper is implememnted on top of 
+  the general and powerful Elements mechanism for people familiar
+  with Rails.
+
+* New WebFile system. Uploading files and handling photos was
+  never easier:
+  
+  class Photo
+    is Timestamped
+    is Taggable
+    property :title, String
+    property :file, WebFile, :magick => { :small => '64x64', :medium => '128x128' }
+  end
+
+  # the upload action
+  
+  def upload
+    photo = Photo.assign(request)
+    photo.save  
+  end
+  
+  This saves the photo, and creates 2 thumbnails. You can easily 
+  access the photo and thumbnails like this:
+  
+  <img src="#{photo.file_medium_thumbnail}" />
+  <img src="#{photo.file_small_thumbnail}" />
+  
+  ie obj.{propertyname}_#{thumbname}_thumbnail
+  
+* Og live collections support accumulation. Here is an example:
+
+  class Category
+    has_many :projects
+  end
+  
+  class Project
+    has_many :clients
+  end
+  
+  class Client
+  end
+  
+  clients = category.projects.clients 
+  
+  # => returns all clients for this category!
+
+* Improved TableHelper, better configurability, more skinnable,
+  sorting support and more.
+
+* Added some intelligent auto-discovery features to minimize the 
+  setup code. For example helpers are automatically loaded, and
+  the template_root is auto-discovered.
+
+* Optimized the autoreloading system to only reload the dirty 
+  files. In fact the new autoreloading system is so efficient
+  that it is enables by default even in live/production mode.
+
+* Add Flickr, a great new example that shows off the new 
+  javascript integration and AJAX features of Nitro.
+
+* Added Gallery example to demonstrate the new WebFile 
+  functionality.
+   
+* Improved the generated RDOC comments.
+
+* Fixes in CGI adapter.
+
+* Added evolution support to the KirbyBase adapter.
+
+* Updated to scriptaculous 1.5.1
+
+* Scaffolding - auto admin interface improvements.
+
+* Added setup.rb for non-gem installation (experimental). 
+
+* Added ACGI adapter (experimental). 
+
+
+== Version 0.26.0
+
+Another step closer to web programming nirvana. This release
+features completely recoded scaffolding, an auto admin system,
+a recoded template-morphing system, a new intelligent dispatcher
+that handles both nice urls and general structure, and so much 
+more. Moreover, this is the release with the most community
+contributions. Download now!
+
+Most notable changes:
+
+* New, intelligent dispatcher handles nice urls automatically,
+  without explicit rewrite rules. At the same time, it handles
+  sub directories, so you are free to design your app's
+  structure as you like.
+  
+* New template morphing implementation. The morphing compiler
+  is fully customizable. You can implement your own morphers and
+  add them to the morphing system, here for example is the
+  new selected_if morpher:
+  
+  <option value="1" selected_if="@cond">opt1</option>
+  
+  becomes
+  <?r if @cond ?>
+    <option value="1" selected="selected">opt1</option>
+  <?r else ?>
+    <option value="1">opt1</option>
+  <?r end ?>
+  
+* New Sweeper mixin. Using this mixin allows you to keep
+  the cleanup logic in one place. This logic is called
+  automagically by many default Nitro/Og methods (for example
+  Og insert/update, scaffolding, etc). You can fully customize
+  the behaviour.
+  
+  class Article
+    include Sweeper
+    
+    def sweep_affected(action = :all)
+      expire_affected_output('articles/view')
+      ...
+    end
+  end
+  
+  a = Article[1]
+  a.title = 'New'
+  a.save # => calls expire_affected.
+  
+  This mixin is typically used to automatically clean up output 
+  caching files from the filesystem, but you can use it to remove
+  temp rows from the database, or temp objects from a drb server
+  or anything you like.
+  
+* Searchable mixin. Include this mixin to your classes to make
+  them searchable by the auto administration system.
+  
+* Added two new session managers (OgSession, FileSession), 
+  cleaned up the session code.
+  
+* Better validations implementation. Cleaner code, less evals,
+  more flexible and easier to extend.
+   
+* New scaffolding / auto administration system. The implementation
+  is much cleaner and easier to customize. It leverages the latest
+  advancements (dispatcher, sweeper, etc) and adds search support,
+  pager, breadcrumps and more. You can define your own controls 
+  to handle properties and relations. Stay tuned for more stuff 
+  in the near future.
+
+* New Og revisable mixin. Just include this mixin in your classes
+  and get db backed revision support for free. Here comes an
+  example:
+  
+  class Article
+   is Revisable
+   property :body, String, :revisable => true
+   property :title, String
+  end
+
+  Automatically generates the Revision class (and the 
+  backend schema):
+ 
+  class Article::Revision
+ 
+  article.revisions
+ 
+  article.revise do |a|
+    a.title = 'hello'
+    a.body = 'world'
+  end
+ 
+  article.rollback(4)
+
+* Bug fixed KirbyBase Og adapter. This works great with the
+  new 2.5 gem.
+
+* Added more rational defaults, and many predefined options to
+  minimize the amount of setup needed to get your app running. Of
+  course you can still customize just about everything in Nitro.
+
+* Improvements to PostgreSQL automatic generation of foreign key 
+  constraints.
+
+* Added evolution support to the MySql store.
+
+* Upgrated to Prototype 1.4 and Scriptaculous 1.5
+
+* Updated the examples, check out the improved blog and why_wiki 
+  examples.
+
+* Many, many, many bug fixes and smaller improvements.
+
+   
+== Version 0.25.0
+
+This is the first in a series of releases focused on stability 
+and refinement. Many bugs where fixed, the high level api was 
+improved where needed, and we still got some small but incredibly
+useful new features. Enjoy!
+
+Most notable changes:
+
+* Support for constrained / scoped queries in Og, here are
+  some examples:
+  
+  User.with_scope(:condition => 'age > 2') {
+    users = User.all
+  }
+  
+  Users.articles.find "title LIKE %t%" # => constrain i users articles.
+  
+* Dynamic auto generators, you can now query the database in
+  English:
+  
+  User.find_by_name_and_age('gmosx', 'age')
+  User.find_or_create_by_name_and_age(...)
+
+* Added experimental version of a new schema evolution system. Assuming 
+  evolve_schema = true and evolve_schema_cautious = false
+
+  * With this patch, on application startup, fields are added and deleted.
+  * During run-time, if the file containing Og.setup is touched, fields are added.
+  * Fields are _not_ deleted during run-time, only at application startup.
+
+  a the moment this works only in the PostgreSQL store, support for more
+  stores is coming in the next versions. Thanks to Rob Pitt and Bryan Sotto 
+  for this feature.
+
+* Template morphing now handles nested elements, an example:
+
+  <div if="@user.admin?">
+    <ul>
+      <li each="role in @user.roles" />
+    </ul>
+  </div>
+
+* Added some useful helpers to make the code you write cleaner,
+  here are some examples:
+  
+  class Article
+    is Taggable
+    
+  instead of
+  
+  class Article
+    include Og::Taggable
+    
+  or
+  
+  class MainController
+    helper :pager, :javascript, :sitemap
+    
+  instead of
+  
+  class MainController
+    include Nitro::PagerHelper
+    include Nitro::JavascriptHelper
+    ...
+    
+  and stuff like that...
+    
+* New, improved, clean taggable implementation. This new implementation
+  supports polymorphism.
+  
+  class Article
+    is Taggable
+  end
+  
+  class Photo
+    is Taggable
+  end
+   
+  ...
+  
+  t = Tag.find_by_name('new')
+  t.articles
+  t.photos
+  
+* Added useful StaticInclude as a separate compiler module to act
+  as the first stage in the compilation pipeline.
+  
+* Integrated latest versions of Prototype, Scriptaculous, KirbyBase
+  and facets.
+
+* General code cleanup and refactoring.
+
+* Many, many bug fixes, including security fixes.
+    
+
+== Version 0.24.0
+
+A snapshot of the latest developments. This version features 
+tons of big and small features and bug fixes that were 
+implemented during the last month. Special thanks fly to
+Tom, Chris, Guill, Rob, Aleksi, and all others that sent
+patches and code.
+
+Most notable additions:
+
+* Totaly recoded annotation / property system. The property
+  system is now based on Facet annotations and inheritors.
+  You can now annotate every object, attribute or method
+  in Nitro. For example you can annotate your actions with
+  routing rules or sitemap strings etc, etc. One unified
+  system for annotations and metadata is used throughout
+  the whole Framework.
+  
+  Here is an example:
+  
+  class A
+    attr_accessor :val
+    ann :val, :klass => String
+    ann :self, :doc => 'Self annotation'
+  end
+  
+  A.ann.val.class => String
+  A.ann.self.doc =>
+  
+  if A.ann.val[:class] 
+  
+  etc, etc...
+
+* Implemented one of the most requested features. An Og
+  frontend for KirbyBase. The KirbyBase store does not yet
+  support all features, but is really useful. For example
+  it can power the Spark wiki example. Switching between
+  KirbyBase, Mysql, Postgres, Sqlite, etc by changing
+  one line of code is really cool ;-)
+  
+* Better Seperation of Concerns for Og managed classes. Og
+  can now annotate and handle classes from other libraries.
+  Lets say you have the following class:
+  
+  class User
+    attr_accessor :name
+    attr_accessor :body
+  end
+  
+  Using Ruby's open classes and Nitro's advanced annotation
+  system you can easily prepare this class for Og management
+  
+  class User
+    ann :user, :klass => String
+    ann :body, :klass => String
+  end
+  
+  or even better:
+  
+  class User
+    property :user, String
+    property :body, String
+  end
+  
+  This style promotes SOC: You define your classes in one
+  place and annotate them for Og in another place.
+  
+* Introduced a simple code generation framework. Two example
+  generators are included:
+  
+  * app: generates the directory structure for a new
+    nitro application.
+    
+  * form: generates an xhtml form for a Ruby class.
+    This generator leverages the annotations of the
+    object class.
+
+* Improved scaffolding code and django style auto 
+  administration system. The new scaffolder supports all
+  Og relation types and provides an intuitive DHTML 
+  interface for editing.
+  
+* SCGI (http://python.ca/nas/scgi/protocol.txt) support. 
+  Thanks to a refactoring of Nitro's cgi code this 
+  version integrates with Zed Shaw's SCGI adapter. This 
+  provides FastCGI's performance with an easy 
+  installation.
+
+* Experimental HTTP streaming support. Here is a 
+  simple example:
+
+  def index
+    response.content_type = "text/plain"
+    stream do
+      5.times do |i|
+        print "#{i}"*10000 + "\n"
+        sleep 1
+      end
+    end
+  end
+
+* Simple Og automatic evolution system. Lets say you have a class Article
+
+  class Article
+    property :title, String
+    property :nbody, String
+    property :dumy, Fixnum
+  end
+  
+  lets you want to change your 
+  class to this one:
+
+  class NewArticle
+    property :ntitle, String
+    property :nbody, String
+    property :new, Float
+  end
+
+  First you export the database:
+  
+  og.export
+
+  Then you import the database. Some rules
+  are needed when renaming classes or properties. 
+  New properties or deleted properties are handled
+  automatically.
+
+  rules = {
+    :Article => {
+      :self => :NewArticle, # rename the class
+      :title => :ntitle,
+      :body => :nbody
+    }
+  }
+  og.import :evolution => rules
+
+  Thats all. In a future version this will be integrated into
+  the default runner scripts.
+
+* Og helpers to create simple rdbms management scripts. Here 
+  is an example:
+
+  mysql "-u root -p", <<-END
+    drop database if exists weblog_development;
+    create database weblog_development;
+    grant all on weblog_development.* to #{`id -un`.strip}@localhost;
+  END
+  
+  At the moment this is only available for Mysql.
+
+* Added support for dynamic CSS using Nitro's advanced templating
+  system. Create the dynamic CSS file with an .csst extension in
+  your template root.
+  
+  <?r
+  green = '#79b500'
+  background = '#fff'
+  ?>
+  
+  .page {
+    background: #{green}
+    
+    <?r 10.times do ?>
+      padding: 5px;
+    <?r end ?>
+    
+    // or even
+    
+    <% 3.times do %>
+      margin: 5px;
+    <% end %>
+  }
+  ..
+  
+  then, add this line in run.rb:
+  
+  Compiler.precompile 'style.css'
+  
+  The CSS file will be regenerated automatically whenever the
+  template changes...
+
+* Updated to support latest Prototype, Scriptaculous etc.
+
+* Cleaned up Og implementation.
+
+* Fixed minor Ruby 1.8.3 compatibility issues.
+
+* Even better integration with Ruby Facets.
+
+* Tons of bug fixes and small but useful features.
+
+
+== Version 0.23.0
+
+The summer vacations are over and there is a brand new Nitro 
+release. There is a preview of the new Scaffolder (also handles
+Og relations), support for Tagging (folksonomy), lots of small 
+features and improvements and many bug fixes. Additionally, the 
+code has been restructured to utilize the excellent Nano and Mega
+support libraries.
+
+Most notable additions:
+
+* Scaffolding reloaded. The scaffolding infrastructure is 
+reimplemented to generate more flexible code. The automatically
+generated forms allow for visualization and editing of 
+Og relations such as HasMany and BelongsTo.
+
+For example when rendering a BelongsTo relation all possible 
+parents are presented with a select element. When rendering a 
+HasMany relation a list of all children is presented.
+
+Moreover, an experimental admin component is provided. Just add the
+line:
+
+require 'part/admin'
+
+and surf
+
+http://www.mysite.com/admin
+
+To enter a simple administration screen. 
+
+WARNING: This feature is considered a preview and will be 
+improved in a future version.
+
+* Major cleanup in the Glue subproject. Some files are moved
+to the nano/mega project. Nano/Mega is now used throughout 
+Nitro and really makes development so much easier.
+
+* Introduced Og Taggable mixin. It was never easier to add
+tagging to your application.
+
+  class Article
+    include Og::Taggable
+    ..
+  end
+
+  article.tag('navel', 'gmosx', 'nitro')
+  article.tags
+  article.tag_names
+  Article.find_with_tags('navel', 'gmosx')
+  Article.find_with_any_tag('name', 'gmosx')
+
+  t = Article::Tag.find_by_name('ruby')
+  t.articles
+  t.articles.count
+
+For an example usage of this Mixin, consult the Spark sources.
+
+* Added support for relative and absolute URLs in redirects
+and renders. This feature simplifies the creation of reusable
+components.
+
+* Support for assigning compound objects from the request. Here 
+is an example:
+
+  class Article
+    property :title, String
+    property :body, String
+  end
+
+  <form>
+    <input type="text" name="article.title" />
+    <input type="text" name="article.body" />
+  </form>
+
+  article = request.assign('article')
+
+Alternatively you can use the article[title] article[body]
+notation.
+
+* Added simple Benchmarking mixin.
+
+* Added support for 'evolving' a single Og managed class. Useful
+when you are in development mode and change your schema.
+
+* Added support for session garbage collection.
+
+* Many many small bug fixes in Og and Nitro.
+
+
+== Version 0.22.0
+
+A snapshot of the latest developments. Many requested features
+where implemented, and many reported bugs fixed.
+
+* The much requested Og 'reverse mode' is implemented. Og's 
+domain specific language and API is extended to allow fine-grained 
+customization of the schema-to-objects mapping. Og can now handle 
+most of the legacy schemas you can throw at it. Here is an 
+example:
+
+class User
+  property :name, String, :field => :thename, :uniq => true
+  property :password, String
+  property :age, Fixnum, :field => :age3    
+  has_many Comment, :foreign_field => :user
+  set_table :my_users
+  set_primary_key :name, String
+end
+
+class Comment
+  property :cid, Fixnum
+  property :body, String
+  belongs_to User, :field => :user
+  set_table :my_comments
+  set_primary_key :cid
+end
+
+As you can see, even relation fields can be customized. For 
+higher level customization you can overload methods like #table,
+#field_for_property etc.
+
+* Og now handles multiple connections to multiple stores even 
+in thread safe mode. This means you can now have objects serialized
+in different RDBM systems in the same application. Or you can have
+some objects managed by an RDBMS store and others by a FAST 
+in-memory store. You can still have relations between objects in
+different stores. An example:
+
+mysql = Og.setup(:store => :mysql, ..)
+psql = Og.setup(:store => :psql, ..)
+
+class User
+  has_many Comment
+end
+
+class Comment
+  belongs_to User
+end
+
+mysql.manage_class User
+psql.manage_class Comment
+
+user.comments << comment
+
+* Greatly improved support for testing and test-driven-development.
+A reworked testing infrastructure for controllers is in place.
+Moreover, support for Og fixtures and automatic test database
+setup is provided. Fixtures can be defined with yml or csv files.
+
+For an example of the testing infrastructure check out the 
+Spark 0.4.0 sources. Spark is a Wiki powered by Nitro.
+
+* Reworked mailer implementation. The new mailer allows for 
+incoming email handling. Here is an example:
+
+class Mailman < Glue::Mailer
+  def receive(mail)
+    article = Article.new(mail.subject, mail.body)
+    article.category = Category.find_by_name(mail.to.split('@').first)
+    article.save
+  end
+end
+
+* Added script/runner in proto as a convenience to running
+ruby code in your application environment.
+
+* Many fixes in the caching infrastructure.
+
+* Many fixes in the XMLRPC service infrastructure.
+
+* Many smaller changes and feature implementations that make
+development with Nitro so much more pleasurable.
+
+
+== Version 0.21.2
+
+This is mainly a bug fix release. Some minor features are 
+implemented:
+
+* Pluggable dispatchers. A new dispatcher that implicitly handles
+nice urls is enabled by default. You can easily change to the
+old general dispatcher though.
+
+* Better markup setup.
+
+* Cookie Helpers.
+
+* Important bug fixes in Og.
+
+
+== Version 0.21.0 was released on 25-07-2005
+
+Nitro goes from strength to strength as the community gets bigger.
+Great new features were introduced and a lot of effort 
+was spend on cleaning up Nitro's implementation and polishing
+'little things'. Many patches were contributed by the community
+to make this is a release you will love!
+
+Some notable changes:
+
+* New compiler pipeline replaces the obscure shader mechanism. A
+  compiler object is responsible for transforming a controller action
+  and or the associated xhtml templates to a special ruby method
+  that will respond to given urls with the action output. Using
+  the aspect oriented features of Nitro or the specialized pipeline
+  setup method a developer can easily customize the compilation
+  stage to meet his needs. Here are some examples:
+  
+  Compiler.setup_template_transformation do |template|
+    template = Elements.transform(template)
+    template = Localization.transform(template)
+    template = Markup.transform(template)
+    template = Template.transform(template)
+  end
+
+  or 
+  
+  Compiler.before "puts 'Compiling'", :on => :compile
+  Compiler.after "puts 'Template processed'", :on => :transform_template
+  Compiler.wrap Benchmark, :on => compile
+  Compiler.before :my_method, :on => compile
+  
+  Special rendering effects where never easier. If you need run
+  time effects, just intercept the Render object.
+    
+* Integrated the new configuration system that was previewed in 
+  the last release. All the configuration settings are now accessible
+  either through the owner class or from the global Configuration
+  variable using Ruby's metaprogramming features.
+  
+  Moreover, Nitro now dynamically decides the configuration mode
+  (debug, stage, live/production) from environment variables or
+  command line arguments so depolying your application is easier
+  than ever: just run svn update on the live server, the application
+  will grab the correct configuration parameters automatically.
+  Of course you can use svn's advanced features to rollback to 
+  earlier versions if you experience problems. The mode specific
+  configuration settings are defined either on ruby files or
+  yaml files or both.
+  
+  Point your browser to http:://my.app.com/settings to browse
+  the settings for your application.
+
+* Og dynamic queries. You can inject caclulated or join attributes
+  to your objects. Here is an example:
+  
+  class Item
+    property :quantity, Fixnum
+    property :unit_price, Float
+    
+    def initialize(quantity, unit_price)
+      @quantity = quantity
+      @unit_price = unit_price
+    end
+  end
+  
+  Item.create 2, 3.0
+  item = Item.find_one :select => 'quantity*unit_price as total_price'
+  item.total_price # => 6.0
+  
+  Please note that total_price is a dynamically injected 
+  attribute. Now you can combine SQL's powerful query features
+  with the simplicity and elegance of Og.
+
+* Og customized join tables allows you to use any Ruby object
+  as the join relation between other objects. Here comes an 
+  example:
+  
+  class Category
+    property :title, String
+  end
+
+  class Article
+    property :title, String
+  end
+  
+  class ArticleToCategory
+    property :rate, Float
+    has_one Article
+    has_one Category
+  end
+  
+  c1 = Category.create
+  c2 = Category.create
+
+  a = Article.create
+  a.categories.add(c1, :rate => 2.3) 
+  a.categories.add(c2, :rate => 1.2) 
+
+  for c in a.categories
+    p a.category_join_data(c).rate
+  end
+  
+* Og collections size() is now optimized.
+
+* Og join code support refactoring. The new code is easier to read,
+  more customizable and generates more efficient code by default.
+
+* Nitro automatically assings reasonable template_roots on
+  Controllers based on mount points. Moreover, the template_root
+  overloading feature was improved. If you cant to reuse an
+  existing controller but customize the view rendering by using
+  different templates for some actions, just assign a different
+  template root for this controller, and put the custom templates
+  inside that dir. The custom templates 'override' the templates
+  of the parent controller (templates for non customized actions
+  come from the parent's controller template_root). Creating
+  a library of reusable controllers (parts) was never easier.
+  
+* Major cleanup of the nitro source code, removed many files.
+
+* Greatly improved Wee integration makes Nitro the premium 
+  container for Wee components. Have a look at the updated
+  wee example.
+  
+* Improved builder mechanism for programmatic rendering. The new
+  builder resuses the controller helper mixins thanks to extensive
+  refactoring of the implementation. Here is an example:
+  
+  class MyController
+    def index
+      build do 
+        labels = ['George', 'Stella', 'Renos']
+        html {
+          head {
+            title 'A simple test'
+          }
+          body {
+            10.times {
+              strong 'Hello World'
+              i 'Hello World222'
+            }
+            select(:id => 'names') {
+              options :labels => labels, :selected => 1
+            }
+          }
+        }
+      end
+    end
+    
+* Improved helper integration. Helpers are now accessed either
+  as mixins or through the builder mechanism.
+  
+  #{form entity}
+  #{options :labels => [..], :values => [..], :selected => 1}
+  
+  or
+  
+  #{emit :form entity}
+  #{emit :options :labels => [..] ...}
+
+* Reimplemented the markup mixin to make this more flexible. You
+  can easily customize the markup logic that is applied by the
+  markup macros.
+
+* Updated the documentation.
+    
+* Fixed all reported or discovered bugs, many smaller 
+  improvements.
+
+  
+== Version 0.20.0 was released on 12-07-2005
+
+Another superb release! State of the art AJAX/Javascript support,
+Wee components / programmatic renderer integration, a beginners
+tutorial, self documenting configuration and many important bug 
+fixes. Don't forget to check out our new community site at
+http://www.nitroproject.org
+
+Some notable changes:
+
+* Ajax is THE buzzword at the moment, and Nitro provides the 
+  best support you can find. Nitro fully separates the behaviour
+  from the template using the behaviour.js library and allowing
+  for dynamic injection of ajax functionality. The generated code
+  contains clean html and all the javascript organized in a
+  single <script> block. Here is an example:
+  
+  in the Controller:
+  
+  def index
+    # Inject functionality to the DOM elements of the template.
+    
+    behaviour '#alert', %{
+      el.onclick = function() {
+        alert('Hello world');
+      }    
+    }  
+    auto_complete :country # convert to autocomplete field
+    live :live # convert to async link!
+    draggable :dragger, :revert => false
+  end    
+
+  def a_simple_action
+    puts 'LIVE!'
+  end
+  
+  def country_auto_complete # data for auto complete.
+    %{
+    <ul>
+      <li>Greece</li>
+      <li>England</li>
+      ...
+    </ul>
+    }
+  end
+  
+  in the Template:
+  
+  <label>Enter a country:</label>
+  <input type="text" id="country" />
+  <div id="country_auto_complete" class="auto_complete"> </div>
+  
+  Behaviour example:<br />
+  <button id="alert">Click to alert</button>
+
+  Drag and Drop example:<br />
+  <div id="dragger">DRAG ME</div>
+
+  Live/Asynchonous request (AJAX) example:<br />
+  Here comes a <a id="live" href="a_simple_action">live link</a>.<br />
+  (Check out the log to see the action called in the background!)
+
+  All you have to do is define id's for your DOM elements. Here
+  comes the generated code:
+  
+  <label>Enter a country:</label>
+  ...
+  (Check out the log to see the action called in the background!)
+
+  <script type="text/javascript">
+      var _behaviours = {
+      '#alert': function(el) { 
+      el.onclick = function() {
+        alert('Hello world');
+      }    
+      },'#country': function(el) { 
+      el.autocomplete = 'off';
+     
+      },'#live': function(el) { 
+        el.onclick = function() {
+          new Ajax.Request(el.href, {});
+          return false;
+        }
+       }
+      }
+      Behaviour.register(_behaviours);    
+        
+      new Ajax.Autocompleter('country', 'country_auto_complete', 'country_auto_complete');
+      new Draggable('dragger', {revert:false});
+  </script>
+  
+  See how a normal <a> tag is converted transparently to an Ajax request.
+  The prototype, scriptacoulous and behaviour js libraries are used.
+
+  The ajax support in this release is a PREVIEW. Stay tuned for
+  major improvements (and some surprises) in the next version.
+
+* Wee Components integration. Nitro now transparently integrates
+  Wee components. This is truly a win-win situation. Wee applications
+  can use Nitro's infrastructure. Nitro applications can use 
+  extremely reusable, stateful Components. For a demonstration 
+  check out the new Wee example in the examples distribution! 
+  Wee 0.9.0 is needed!
+  
+  Even better interoperability with Wee is coming soon. Nitro
+  plays well with the others, and always provides more options.
+
+* Mixins are modules of functionality that can be mixed into
+  Controllers. The developer can explicitly include Mixins or
+  use Nitro conventions to have helper Mixins automatically 
+  included:
+  
+  class MyController
+  ..
+  end
+  
+  module MyControlllerMixin
+    # gets automatically mixed in
+  end
+  
+  This works just like Og Mixins.
+
+* Brand new, self-documenting configuration system. There is a new
+  keyword for defining configuration settings:
+  
+  Here is an example:
+  
+  class Render
+    setting :template_extension, :default => 'xhtml', :doc => 'The default template extension'
+  end
+
+  class Session
+    setting :store, :default => 'memory', :doc => 'The session store'
+  end
+  
+  You can configure the Application using ruby code or yaml files:
+  
+  Render.template_extension = 'xhtml'
+  Session.store = 'drb'
+  
+  or
+  
+  Render:
+    template_extension: xhtml
+  Session:
+    store: drb
+    
+  You can access all defined settings:
+  
+  Configuration.settings.each { |s| ... }
+  
+  You can view the settings of the application along with documentation
+  on the following url:
+  
+  www.myapp.com/settings
+  
+  This feature is also a PREVIEW. Will be used a lot more in the 
+  next release.
+  
+* CherryPy style published objects. Nitro allows you to publish
+  any Ruby object. Here is the new hello world example:
+  
+  class HelloWorld
+    def index 
+      print 'Hello World'
+    end
+    
+    def add(val)
+      print "added: #{val + 2}"
+    end
+  end
+  
+  App.start(HelloWorld)
+    
+  Now, point your browser to localhost:/ or localhost/add?val=2
+  
+  If you need the advanced controller functionality just extend
+  your published object from the Controller base class. The normal
+  heuristics to decide which method is safe to publish are aplied.
+
+* CherryPy-style dispatcher configuration, provides another way
+  to define mounting points for Controllers and published objects.
+  Here is an example:
+  
+  server = Server.new
+  server.root = MainController              # /
+  server.root.fora = ForaController          # /fora
+  server.root.wiki = WikiController          # /wiki
+  server.root.really.deep = DeepController  # /really/deap
+
+* Improved pager interface. Thanks to the new PagerMixin, presenting
+  paged lists is easier (and as efficient) than ever:
+  
+  items, pager = paginate(Article, :per_page => 5, :order => 'date DESC')
+  
+* Added better sql injection protection in Og sql stores.
+
+* Fixed Mysql store reconnect bug.
+
+* Og falls back to pure ruby adapters for Mysql and Postgres, to 
+  make it easier to run out of the box. Please, don't forget to 
+  switch to the natively compiled adapters for production sites.
+
+* This is surely the most request feature: Nitro Step by Step
+  by James Britt, a beginers guide to Nitro. Available in the
+  brand-new, Nitro-powered, www.nitroproject.org Community wiki.
+
+* New examples: The totaly recoded and ultra cool ajax example,
+  a Wee/Nitro example and the new Hello world example.
+
+* Cleaned up a lot of source files.
+  
+* Many, many, many bug fixes and small improvements. This release
+  fixes all reported bugs in the spirit of out zero-bug tolerance
+  philosophy.
+  
+
+== Version 0.19.0
+
+Og reloaded part 2: Another superb release introducing a balanced 
+mix of innovative new features, common but useful stuff and bug 
+fixes. 
+
+Some notable changes:
+
+* Og polymorphic relations. A groundbreaking feature made possible
+  by Og's unique design and Ruby's power. Let's use an example 
+  to explain the concept:
+  
+  class Comment
+    ...
+    belongs_to Object # polymorphic marker
+  end
+  
+  class User
+    ...
+    has_many Comment
+  end
+  
+  class Article
+    ...
+    has_many Comment
+  end
+  
+  u = User.new
+  u.comments << User::Comment('Hello')
+  
+  a = Article.new
+  a.comments << Article::Comment('Wow!')
+  
+  User::Comment and Article::Comment where automatically created
+  by Og and are serialized in different tables (also automatically
+  created by Og). This is the  next step in DRY!
+
+* Og now supports inheritance using the well known Single Table
+  Inheritance pattern. Thanks to Og's advanced design the pattern
+  is fully encapsulated:
+  
+  class Document
+    ...
+    schema_inheritance
+  end
+  
+  class Article < Document
+    ..
+  end
+  
+  class Photo < Document
+    ..
+  end
+  
+  Document.all # => includes Articles and Photos
+  Article.all # => only Articles
+  
+  User.documents # => Articles and Photos
+  User.documents(:type => Photo) # => only photos.
+
+  Btw, this feature is orthogonal to the polymorphic relations
+  feature just described, giving the developer great 
+  flexibility.
+
+* Added SUPERB support for auto reloading, the new system 
+  can detect source changes everywhere! Based on original
+  code by Michael Neumann.
+    
+* Introduced the concept of Flash, a temporal store where
+  objects that should be kept alive for the next request are
+  saved.
+
+* Recoded the Blog example to use the Elements system for 
+  shading instead of XSLT. The new code runs easier under Windows
+  (so the no_xsl_blog example is now removed). Here comes an 
+  example:
+  
+  <Page>
+    <Box>
+      Please login as an author by entering the blog password.
+      <br />
+      The password is: <b>#{Blog.password}</b>.
+    </Box>
+    
+    <Error>#@error</Error>
+    ...
+  </Page>
+
+  The <Page> tag is supported by the Page Ruby class to do the
+  programmatic rendering of templates or logic code:
+  
+  class Page
+    def render
+      ...
+    end
+  end
+
+  This system can be used to create a library of useful 
+  components to abstract common tasks.
+  
+* The updated Blog example demonstrates how easy it is to write
+  webservices using Nitro and the experimental Service feature.
+  The code is so short, so lets paste it here:
+  
+  module BloggerApi
+    SBlog = Struct.new(:url, :blogid, :blogName)
+
+    def blogger__getUsersBlogs(appkey, username, password)
+      Blog.all.collect { |b| SBlog.new('http://www.gmosx.com', b.oid, b.title) }    
+    end
+  end
+
+  module MetaWeblogApi
+    def metaWeblog__newPost(blogid, username, password, content, publish)
+      entry = BlogEntry.new(content['title'], content['description'])
+      entry.blog = Blog[blogid]
+      entry.save
+      entry.oid
+    end  
+  end
+
+  module MovableTypeApi
+    SCategory = Struct.new(:categoryId, :categoryName)
+
+    def mt__getCategoryList(blogid, username, password)
+      blog = Blog[blogid]
+      blog.categories.collect { |c| SCategory.new(c.oid, c.title) }
+    end
+
+    def mt__setPostCategories(postid, username, password, categories)
+      cid = categories.first['categoryId']
+      BlogEntry.update(postid, "category_oid=#{cid}")
+      true
+    end
+  end
+  
+  class ApiController < Nitro::XmlRpcService
+    include BloggerApi
+    include MovableTypeApi
+    include MetaWeblogApi
+  end
+
+  That's all!
+  
+* Integrated an SQLite3 patch by Ghislain Mary.
+
+* Integrated PostgreSQL binary data patch by Michael Neumann.
+
+* Fixed all reported bugs.
+
+
+== Version 0.18.0 was released on 01/06/2005. 
+
+Mainly a bug fix release. Many small improvements were 
+implemented. All reported bugs were fixed, as well as bugs found 
+during the deployment of a live application. For more information
+consult the detailed changelog. Thanks to Julien Perrot for small
+patches.
+
+Some notable changes:
+
+* Some changes to make Webrick a valid solution for powering
+  a production server. The full page output caching was improved 
+  and support for daemonizing the server was added. Support
+  for running as a proxy target (behind an apache server) was also
+  added. 
+  
+* Thread safe mode was added again in Og. This works nice with
+  the Webrick server.
+  
+* New order macro in Og to set default ordering for each
+  entity. The has_many collections respects the order setting.
+  
+* Improved error reporting.
+
+* Support for template_root overloading. Lets say you have
+  the following Controller hierarchy:
+  
+  Controller > MyController > SpecificController.
+  
+  The template roots of the 3 controller are searched in reverse
+  order. So by adding a template file in the SpecificController
+  template root you can override a default action in the base
+  Controller. For convienience the base Controller points to
+  the Proto directory. This is experimental.
+
+* Provide the examples as a separate distribution to make it
+  easier for Ruby newbies to find them.
+
+* Bug fixes in the Elements system.
+
+* Improved the nitrogen generator command. Just run
+
+  nitrogen app ~/the/target/path
+  
+  to create a skeleton application.
+  
+* Cleaned up some source files.
+
+
+== Version 0.17.0 was released on 16/05/2005. 
+
+The biggest release yet, featuring the brand new implementation
+of Og. Due to the many changes this should be considered a preview
+release, a stabilized version is expected shortly. Bug reports and
+comments on the new features are especially appreciated. Many 
+thanks to Michael Neumann, Dan Yoder and other hackers on the mailing 
+list for ideas and suggestions that made this version possible.
+
+Most notable Og additions:
+
+* Extremely clean source code. Better names are used thorougout.
+  Extra care was taken to make all features more orthogonal.
+  
+* Brand new relation mechanism. The 'enchanting' of entities 
+  (managed classes) happens in multiple passes to be more
+  flexible. Totaly separated graph/metadata creation and serialization
+  code generation. The Graph metadata can be used for advanced
+  scaffolding, testing and more.
+
+* Support for fully customizable primary keys. You are no longer
+  forced to use xxx_oid primary keys. Appart from the extra 
+  flexibility this feature provides, this is an essential step
+  towards the planed 'reverse engineering' mode that will allow the
+  use of existing schemas with Og.
+  
+* More elegant inspection mechanism. Example:
+
+  Article.relation(:user) # => Og::BelongsTo(...)
+  Article.relations # => [...]
+  Article.properties # => [...]
+
+* Joins_many relation, as an alias for one way, join table relations.
+
+* Support for 'active' collections. Active collection are
+  synchronized with the backend Store and provide a more elegant
+  interface and the opportunity for 'session' caching:
+  
+  article.comments << Comment.new
+  
+  instead of 
+  
+  article.add_comment(Comment.new) # this is also allowed though.
+  
+  p article.comments
+  p article.comments.size # the results of the first query is cached
+
+* Eager relations.
+
+  comments = Article.comments(:include => User)
+
+  for comment in comments
+    p comment.user.name
+  end
+  
+  Elegantly solves the N+1 query problem by using one join
+  query.
+
+* No need for forward references when defining relations. Now,
+  the following code magically works:
+  
+  class User
+    has_many Comment # works even though Comment is not defined!
+  end
+  
+  class Comment
+    belongs_to User
+  end
+   
+* Use inflection where possible to infer missing configuration
+  options. For example
+  
+  class Article
+    belongs_to User # infects relation name :user
+    ...
+    
+* New, lean and mean Store interface. The code needed to teach 
+  Og how to  serialize objects to backend store is dramatically
+  reduced. The new interface is SQL agnostic, so non SQL-RDBM's 
+  stores are possible.
+  
+* SQL agnostic querying interface, compatible with non-sql 
+  Stores. Here is an example:
+  
+  Article.find(
+    :condition => 'hits > 2 AND rate > 3', 
+    :order => 'title',
+    :offset => 30,
+    :limit => 10
+  )
+
+* More elegant (and non-sql store compatible) way for selective 
+  updates:
+
+  article.title = 'Changed'
+  article.hits += 1
+  article.update(:title, :hits)
+
+* New, in-memory store that support all features. This is a pure
+  ruby solution useful for experimentation. It will also serve
+  as the base for the forthcoming madeleine Store implementation.
+
+* Allow for multiple stores in one application. A great example,
+  mysql_to_psql is provided. This example uses Og's powerfull
+  features to automatically convert a Mysql database to a 
+  PostgreSQL database. Database migration was never easier.
+  
+* Uses the excellent Facets utility collection to further
+  clenup and minimize the code.
+
+* Managed classes or Entities should include the EntityMixin
+  or extend the Entity class. Example:
+  
+  class Article < Entity
+    ..
+  end
+  
+  class Article 
+    include EntityMixin
+  end
+  
+  This is done to avoid the Module module like in earlier
+  versions of Og. However, Og is can infer the need to include
+  the Managed mixin in typical cases:
+  
+  class Article
+    property :title, String 
+    # when a property is defined Og automatically converts the
+    # class to an Entity
+  end
+  
+  class Article < AnExistingManagedEntity
+    # also includes the mixin
+    ...
+    
+  class Article
+    include AModuleThatDefinesProperties
+    ...
+
+* Improved support for og_delete interception.
+
+* Support for nested transactions.
+
+Check out the file test/og/tc_store.rb for a demonstration of
+the new features.
+
+And some Nitro additions:
+
+* Integrated the Facets library, and started donating some Glue
+  code to this project.
+  
+* Integrated the Prototype object oriented javascript library.
+
+* Included a preview implementation of the new tag library 
+  system, called Elements. This is based on an original idea
+  by Dan Yoder. This feature is expected to change substantially
+  in the next version. In the meantime here is an example:
+  
+  <Page>
+    Here is a <b>nice</b> page.
+    <br />
+    <Box>
+      This is #{variable}.
+      <?r if admin ?>
+        hello admin
+      <?r end ?>
+    </Box>
+  </Page>
+  
+  The tags <Page> and <Box> automatically instantiate objects
+  of class Page and Box that handle the rendering. This is an
+  alternative to the XSLT templating system and can also be used
+  to implement some reusable components. The hierarchical structure
+  of the elements is available to each object to facilitate 
+  advanced rendering tricks. Just like the XSLT shader the Elements
+  transformation is preapplied to the page to avoid the overhead
+  at runtime.
+  
+* Fixed many reported bugs.
+
+
+== Version 0.16.0 was released on 16/04/2005.
+
+A snapshot of the latest developments. Many, many subtle improvements,
+new features and a major cleanup of the source code. Thanks to 
+James Britt for significantly contributing to this release.
+
+Most notable additions:
+
+* Aspect Oriented Programming support. This new system
+  is used to reimplement features such as Controller filters,
+  Og callbacks and Og observers. By using this unified
+  system you can now add Observers to controllers and use
+  a metalanguage for wraping Og object callbacks:
+
+  class Controller
+     pre :force_login, :where => :prepend
+     wrap Benchmark, :on => :index
+     post :taraa, :on => login
+  end
+ 
+  module Timestamped
+     pre :on => :og_insert { |this| this.create_time = Time.now }
+    pre :on => :og_update { |this| this.update_time = Time.now }
+    pre :on => [:og_insert, :og_update] { |this| this.create_time = Time.now }
+  end
+
+  This feature will be used extensivelly  in future versions
+  to improve logging, the shaders and more.
+
+* Added support for Test Driven Development. Many helpers
+  and utility methods are added to the standard TestCase
+  class, more will come in a future version:
+
+  handle(
+    '/login', 
+    request = { 'password' => Blog.password }
+  )
+  assert_redirect
+  assert_session_has(:owner)
+  assert_session_equal(:username, 'George Moschovitis')
+  assert_has_cookie('nauth')
+  assert_has_no_cookie('wow')
+  assert_cookie_equal('nauth', 'just an example, not used :)')
+
+* CGI adapter (by James Britt)
+
+* Major cleanup of the source. Converted the N namespace to
+  Nitro, to be more compatible with other Ruby projects. 
+
+* Add Og Timestamped mixin.
+
+* Og improvements.
+
+* Improved runner helper.
+
+* Improved reloading support.
+
+* Improved the Gem installation process.
+
+* Fixed all reported bugs.
+
+
+== Version 0.15.0 was released on 04/04/2005.
+
+A great release. Many cool new features and tons of subtle 
+improvements. We also welcome a new core developer, Anastastios 
+Koutoumanos, who's first contribution is the new SqlServer adapter.
+
+Most notable additions:
+
+* Advanced localization support:
+
+  locale_en = {
+    'See you' => 'See you',
+    :long_paragraph => 'The best new books, up to 30% reduced price',
+    :price => 'Price: %d %s',
+    :proc_price => proc { |value, cur| "Price: #{value} #{cur}" }
+  }
+
+  locale_de = {
+    'See you' => 'Auf wieder sehen',
+    ...
+  }
+
+  lc = Localization.get
+  lc['See you'] -> See you
+  lc[:price, 100, 'euro'] -> Price: 100 euro
+  lc = Localization.get[:de]
+  lc['See you'] -> Auf wiedersehen
+ 
+  Using the LocalizationShader you can have templates like this:
+
+  <h1>[[This is a localized]] String</h1>
+  <p>
+     do you [[:like]] this?
+  </p>
+
+  All strings enclosed in [[ ]] are replaced with localized
+  versions (honouring the session locale). Check out the updated
+  blog example.
+
+* Dynamic/Parametrised mixins. A great extension to Ruby's mixin
+  feature. The Og::list implementation is replaced with the new
+  Orderable dynamic mixin, here is an example:
+
+  class Comment
+    property :body, String
+    belongs_to :article, Article
+    include Orderable, :scope => article
+  end
+
+  c.move_higher
+
+  The Orderable mixin uses the :scope parameter to dynamically alter
+  the methods appended to the Comment class. This new feature will be 
+  used throughout the platform.
+
+* NestedSets mixin:
+
+  class Comment
+    include NestedSets
+  end
+
+  or
+
+  class Comment
+    include Hierarchical, :method => :nested_sets
+  end
+
+  c.add_comment(child_comment)
+  c.full_children
+  c.direct_children
+  c.children
+ 
+  this is a reimplementation of the SqlTraversable mixin
+  available in older versions.
+
+* Improved templating system. Now allows <% %> intrerpolators
+  and provides a number of html morphing effects:
+
+  <div if="admin">
+    admin interface
+  </div>
+
+  <ul>
+    <li each="u in @users">#{u.first_name} #{u.last_name}
+  </ul>
+
+  and more...
+
+* Og provides an SqlServer adapter out of the box.
+
+* Improved scaffolding code (still a lot more to come).
+
+* Build default environment, introduced nitro and nitrogen 
+  commands to help new users.
+
+* Many, many small improvements and fixes.
+
+
+== Version 0.14.0 was released on 28/03/2005.
+
+This release fixes *important* bugs amd improves various
+aspects of the platform. Moreover, we included some 
+great *new* features for your pleasure.
+
+Most notable additions:
+
+* Fixed IMPORTANT bug in property inheritance.
+
+* Fine grained caching. Nitro allows you to cache
+  whole pages (output caching), actions and fine-grained
+  fragments. 
+
+  class MyController < Controller
+    cache_output :my_action
+
+    def my_action
+    end
+  end
+
+  Stores the whole page created by the my_action method
+  to the disk to be displayed by the web server thus completely 
+  Nitro and Ruby.
+
+  or 
+
+  <strong>Here is some cached code</strong>
+  <cache>
+    <ul>
+    <?r for a in Article.all ?>
+      <li>#{a.title}: #{a.body}</li>
+    <?r end ?>
+    </ul>
+  </cache>
+
+  or
+
+  <strong>Another one</strong>
+  <?r cache('variant', :admin => session[:admin]) do ?>
+    ...
+  <?r end ?>
+
+  Cached fragments can be stored in memory, filesystem.
+
+  While this feature is fully operational, the API will be finalised in 
+  the next version.
+
+* Introduced support for Og mixins. In this version a List
+  mixin is provided:
+
+  class Article
+    has_many :comments, Comment, :order => 'position DESC'
+  end
+
+  class Comment
+    belongs_to :article, Article
+    acts_as_list :scope => :article
+  end
+
+  An AR compatible API is provided. An alternative
+  API is planned for the near future to give you more choice.
+
+* Reimplemented filtering infrastructure, allows
+  for inheritance, conditional application of filters
+  (:only/:except) modifiers, more performant Filters
+  as Strings and more.
+
+* Fixed multipart support in fastcgi, added file upload
+  example (tiny example).
+
+* The webrick adapter reuses the fastcgi infrastructure, making
+  the adapters more compatible with each other.
+
+* Added many useful Og enchant methods.
+
+* Cleaned up configuration files for lighttpd/apache.
+
+* More compatible with win32.
+
+* Fixed examples and all reported bugs.
+
+
+== Version 0.13.0 was released on 17/03/2005.
+
+A snapshot of the latest code. The Nitro project is now
+split in three gems (nitro, og, glue) and the code is 
+better separated. Many changes were made to make programming
+with Nitro more similar to Rails, to make the platform
+more accessible to newcomers. A conversion of ActionMailer
+and an AJAX example are also included.
+
+* Introduced Mailer subsystem:
+
+  class MyMailer < Mailer
+    def registration_email(to, username, password)
+      @from = 'system@nitroproject.org'
+      @to = to
+      @subject = 'Registration information'
+      @body.username = username
+      @body.password = password
+    end
+  end
+
+  the tempate (registration_email.xhtml):
+
+  Hello #{username}
+
+  Thanks for registering, your password is '#{password}'
+
+  Then use it like this:
+
+  MyMailer.deliver_registration_email('gmosx@nitroproject.org', 'gmosx', 'rulez')
+
+  For more information, check out the updated blog example.
+
+* AJAX example, demonstrates how to use ajax techniques with 
+  Nitro. A simple Google Suggest style UI is implemented.
+
+* Use a Rails compatible directory structure. Check out
+  the updated blog example. Please note that Nitro does not
+  force a directory structure (see an alternative structure
+  in the no_xsl_blog example).
+
+* Optional separate template_root/public_root for extra security.
+
+* Further code cleanup and bug fixes.
+
+ 
+== Version 0.12.0 was released on 07/03/2005.
+
+A careful blend of new features and subtle improvements
+to the existing infrastructure. Some important bugs where
+fixed aswell.
+
+Most notable additions:
+
+* Nitro allows the definition of metadata for each action.
+  Routing (rewrite) rules, parameter constrains, hierarchy information
+  and custom data can easily be attached to actions:
+
+  def view
+    @entry = Article[@oid]
+  end
+  action :view, :route => /view\/(.*)/, 'oid' => 1
+
+  just browse
+
+  view/1
+
+  and @oid is automatically initialized with request['oid']
+
+  Browse the source to see how to add additional constrains,
+  more is comming in the next version. This feature replaces 
+  the non portable ParseTree implementation. The scaffolder
+  is updated to generate routings for nice urls.
+
+* Og automatically generates finders for all properties, for
+  even easier (and portable) querying:
+
+  class Article
+    property :title, :body, String
+    property :hits, Fixnum
+    property :create_time, Time
+  end
+
+  you get the finders:
+
+  Article.find_by_title
+  Article.find_by_body
+  Article.find_by_hits
+  Article.find_by_create_time
+
+  The finders take into account the unique constrain, to return
+  an array or just an object as needed.
+
+* Og introduces lifecycle observers to avoid 'poluting' the model
+  objects with excess functionality. You can use every object
+  as observer (duck typing) or extend from an AR style Observer
+  class. The observer callbacks are precompiled in the lifecycle
+  methods only if defined, so the perfomance is not affected
+  in the general case.
+
+* Factored out templating engine, can now be used in stand-alone
+  mode. Usefull for example to render email templates etc:
+
+    template = %q{
+      Hello #{user}
+
+      dont forget the following facts:
+      
+      <?r for item in items ?>
+        <li>#{item}</li>
+      <?r end ?>
+    }
+
+    user = 'gmosx'
+    items = %w{ nitro is really great }
+    out = '' # the rendered template comes here.
+
+    Template.process(template, :out, binding)
+
+* New options in the default runner: 
+  
+  --render crawls a web application and renders all pages
+  as static html files. Allows you to leverage Nitro's 
+  advanced templating features to generate static sites.
+
+  --crawl spiders the application, useful for testing.
+
+* Better error page, with more information (see blog example).
+
+* Fixed Og bug: multiple many_to_many relations with the
+  same target class.
+
+* further code cleanup, improved examples and more.
+
+
+== Version 0.11.0 was released on 28/02/2005.
+
+The platform continues to evolve and now supports the 
+Apache web server and the Oracle database out of the box.
+This version features improved documentation, important
+bug fixes  and many subtle improvements to make programming
+even more enjoyable. Many thanks to Matt Bowen for his help
+with this release.
+
+Most notable additions:
+
+* Configuration files for Apache/FastCGI.
+
+* Og documentation (doc/og_tutorial.txt, doc/og_config.txt)
+  
+* Actions with parameters:
+
+  def list(username, oid)
+    ...
+  end
+
+  http://www.mysite.com/list?username=tml;oid=2
+
+  calls list() with the correct parameters, no need to 
+  use request['oid'], just use oid.
+
+  def list(username, oid)
+    puts oid # oid == request['oid']
+  end
+
+  WARNING: this feature requires the ParseTree library which
+  is not compatible with Windows. For the moment, this feature 
+  is dissabled by default. To enable this feature, set 
+  Nitro.resolve_action_arguments = true.
+
+* New session store system, DRb sessions (stored in an independent
+  DRb server) are reimplemented.
+
+  Session.store_type = :drb
+
+* TableBuilder helps in creating html tables.
+
+* Integrated builders with the programmatic render. For example:
+
+   <div class="mytable">
+     #{o.build_table(:id => 'my_tab', :headers => headers, :values => values)
+   </div>
+
+  or
+   
+   <p>
+     <b>Object Form</b>
+     #{o.build_form(obj)}
+   </p>
+
+* Og Oracle adapter.
+
+* Og provides advanced metadata for the managed objects
+
+   class Article
+     property :title, String
+     property :body, String
+     has_many :comments, Comment
+   end
+
+   par = Article.properties_and_relations
+   => [Property(:title), Property(:body), Og::HasMany(:comments)]
+
+   par[2].klass
+   => Comment
+
+   par[2].meta[:linkback]
+   => :article_oid
+
+* Og Typemacros, here is an example:
+
+   def VarChar(size)
+     return String, :sql => "NOT NULL VARCHAR(#{size})"
+   end
+
+   property :title, VarChar(30)
+
+* Option for faster startup, skip schema check.
+
+* Many small Og improvements and fixes.
+
+* FastCGI adapter bug fixes.
+
+* New example, why's wiki, from a cool post at
+  http://redhanded.hobix.com
+
+* IMPORTANT security fixes.
+
+
+== Version 0.10.0 was released on 15/02/2005.
+
+Another strong release featuring a completely recoded Og
+implementation and redesigned Og adapter (formely backend) 
+system. An SQLite3 adapter is also provided. Moreover the
+Nitro installation process is improved, and many small
+changes make the framework more elegant and easier to 
+use: the updated examples reflect this!
+
+Most notable additions:
+
+* Improved Og implementation (cleaner code) and new Og 
+  adapter subsystem.
+
+* New SQLite3 Og adapter, improvements in MySQL and PostgreSQL 
+  adapters (WARNING: needs version 1.1.0 of Sqlite3-Ruby).
+
+* Added install.rb for easier installation of the tar.gz distribution.
+
+* Better GemSpec for easier installation by RubyGems.
+
+* Action/template/xsl auto-reloading system in debug mode,
+  new implementation, works again.
+
+* New Nitro configuration system, with rational default
+  parameters.
+
+* --console option attaches an irb session to a running
+  instace of an application (works again).
+
+* Og supports optional typechecking by using property metadata.
+
+* request alias for context to be compatible with older
+  versions of nitro and Webrick/jsp and other frameworks.
+
+* Improved the examples, cleaner code, work from any
+  directory.
+ 
+* Removed more obsolete code and improved directory
+  structure.
+
+* and many more smaller fixes.
+
+WARNING: If you used an earlier version of Og you
+may need to drop your database and let Og recreated it
+automatically.
+
+
+== Version 0.9.5 was released on 04/02/2005.
+
+A bug fix release.
+
+* Fixed nasty Windows deadlock bug.
+
+* Experimental Wee-style example (will be updated in the next version).
+
+* Changed default port to 8069 (8080 was to common).
+
+* Small fixes and improvements.
+
+
+== Version 0.9.3 was released on 01/02/2005.
+
+A *very* important release. A new abstract rendering
+pipeline is introduced. This pipeline allows for multiple
+adaptors (WEBrick, fastcgi are included). 
+
+Many classes have be rewritten using *clean* code, 
+and the  directory structure has improved again. All 
+unused and obsolete files have been removed. A new 
+version of the Blog example was included. This version 
+does not use XSLT and runs on Windows. 
+
+If you havent seen Nitro or you had problems with an 
+earlier version, this is the time to revisit this 
+project!
+
+Most notable additions:
+
+* Drastically improved source code readability.
+
+* New abstract rendering pipeline. Benefits:
+  
+  * multiple adaptors.
+  * better unit tests.
+  * optimized memory allocation.
+  * more modular desing.
+
+* FastCGI support (tested with Lighttpd).
+
+* no_xsl_blog example.
+
+  This new example is easier to setup, even on Windows.
+  This also demonstrates that Nitro does NOT force
+  the use of XSLT.
+
+* No global variables used for nitro configuration.
+
+* Updated the docs to better reflect the rappidly
+  evolving codebase.
+
+* Og metalanguage relations insert metadata into 
+  the target class, useful for advanced scaffolders.
+
+* Og refer_to meta-language command. 
+
+* Many bug fixes and small optimizations.
+
+The next version will stabilize the Nitro api.
+
+
+== Version 0.8 was released on 12/01/2005.
+
+A snapshot of the latest code. Cool new features,
+many fixes and improvements in older features. Many thanks
+to Michael Neumann for giving intelligent suggestions
+and finding small bugs.
+
+Most notable additions:
+
+* New automatic validation system:
+
+  class User
+    prop_accessor :name, :password, String
+    validate_confirmation :password
+    validate_length :name, :range => 2..12
+  end
+
+  u = User.new(...)
+  unless u.valid?
+    p u.errors.on(:name)
+    p u.errors[:password]
+  end
+  
+* Programmatic xhtml rendering. This is an alternative
+  method of rendering that is usefull in building 
+  components and helpers. This is a preview implementation.
+
+  options = ['Male', 'Female']
+  o.select(:name => 'sex') { 
+    o.options(options, selected = 1) 
+  }
+
+  options = { 'Male' => 'm', 'Female' => 'f' }
+  o.select(:name => 'sex') { 
+    o.options(options, selected = 1) 
+  }
+
+  o.html {
+    o.p(:class => 'header') { o.b('Hello') }
+  }
+
+* No global variables in Og. 
+
+* Recoded Og to allow for future support of multiple databases 
+  (even on different RDBMS systems) on a single application.
+
+* Improved Blog example demonstrates latest advancements.
+  (You have to drop the database of earlier versions!)
+
+* More unit tests.
+
+* Supports Ruby 1.8.2
+
+* Integrated extensions/dev-utils by Gavin Sinclair.
+
+* Integrated blankslate by Jim Weirich.
+
+* And many IMPORTANT bug fixes.
+
+  
+== Version 0.7 was released on 27/12/2004.
+
+A snapshot of the latest code. Many fixes and new features result
+in a more mature product. Many thanks to the ruby hackers that sent
+suggestions and patches used in this release!
+
+Most notable additions:
+
+* Improved win32 compatibility (Tiny example runs out of the box).
+* Binary content example (Flash, needs ruby-ming installed to run).
+* Totaly recoded prop_accessor mechanism, avoids polution of the Module
+  class.
+* prop_accessors for Modules, allows synthesizing of managed objects
+  from Mixins.
+* new automatically generated methods in Og.
+* MockDatabase leverages the FlexMock object for easier unit testing.
+* Integrated the cool Breakpointer library by Florian Gross.
+* Markup mixin to automatically expand/compact generalized markup code.
+* new_form wizard.
+* Statically (compile time) included subscripts.
+* Important bug fix in redirects.
+
+and many many bugfixes! :)
+
+== Version 0.6 was released on 13/12/2004.
+
+This is a preview release, the api for the new features is not 
+finalized. This early release gives other developers to offer suggestions
+on the final form of those features.
+
+Most notable additions:
+
+* Og many_to_many relations with auto generation of the join table.
+* Og has_one relation.
+* PHP-style nested output buffering.
+* Rails-style Filters.
+* autoreload services.
+* complile time evaluation of ruby code in templates.
+* improved pager ui.
+* initial version of FormBuilder.
+* initial version of new_app wizard.
+* Improved Blog example.
+
+and... the nitro logo :)
+
+
+== Version 0.5 was released on 23/11/2004.
+
+Many new features:
+
+* Stand-alone Og distribution.
+* Scaffolding.
+* Og RDBMS index support (works again).
+* improved render/dispatcher.
+* REST/XML dspatcher.
+* RssBuilder.
+* Improved BLOG example.
+* Many fixes.
+
+
+== Version 0.4.1 was released on 15/11/2004.
+
+A MAJOR revision! The rendering engine was recoded from 
+scratch and now features Rails-style actions. Some older features
+are not yet converted to the new engine though. Other new stuff 
+includes a fully working / cool looking Blog example, a programmable 
+shader pipeline, automatic object manager in Og, improved directory 
+structure, bug fixes, many changes to make it easier to switch from 
+Rails, and many many more cool improvements for you to find out in 
+the detailed ChangeLog.
+
+
+== Version 0.3.0 was released on 01/11/2004.
+
+An important revision! Nitro now includes the first version
+of a brand new ObjectRelational mapping library called 
+Og (ObjectGraph) that combines the best features of Active
+Record and NDB. A fully working MySQL adapter is also provided.
+Moreover the code base is further cleaned up. Small improvements 
+to the application configuration system.
+
+
+== Version 0.2.0 was released on 25/10/2004.
+
+Greatly improved RDoc documentation. Cleaned up many source files,
+and improved the directory structure to be more compatible with
+other Ruby projects. Introduced a test suite. Important bug fixes
+in NDB. Tiny example no longer requires apache so should run out
+of the box.
+
+
+== Version 0.1.2 was released on 21/10/2004.
+
+The first public version. Features 2 examples and limited
+documentation. The aim of this release is to make the project known
+to the Ruby Community. We hope that the Ruby hackers will respond
+with valueable suggestions and ideas.

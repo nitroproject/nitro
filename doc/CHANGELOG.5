@@ -1,0 +1,3256 @@
+Sat Oct 27 20:23:46 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Removed head dir.
+
+Sat Oct 27 20:22:26 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Removed branch dir.
+
+Sat Oct 27 19:47:52 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added branch dir. We will use this directory to make Nitro compatible with facets 2.0 (and then finalize 0.50)
+
+Sat Oct 27 19:45:02 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Moved current repo in the head directory.
+
+Thu Oct 25 17:44:02 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Default ordering in timestamped.
+
+Tue Oct 23 15:02:57 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Introduced a simple asset helper.
+
+Tue Oct 23 11:25:31 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Fix in taggable.
+
+Mon Oct 22 17:56:09 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Sun Oct 21 23:43:09 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to the atom serializer to make the validator happy. Still, doesnt work 100% as expected.
+
+Sun Oct 21 16:39:35 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * ATOM: check respond_to?(:author), service.rb: issue warning when there is no model annotation on the controller
+
+Sat Oct 20 11:47:13 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Resolved conflict.
+
+Sat Oct 20 11:43:39 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplememted atom serializer. (still does not work 100% correctly :( )
+
+Fri Oct 19 11:47:56 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Fix CGI and FastCGI adapter
+
+Thu Oct 18 09:40:02 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Conflict fixes.
+
+Thu Oct 18 09:40:59 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes.
+
+Thu Oct 18 09:36:23 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in syndication formats.
+
+Sun Oct 14 14:11:25 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use debug options in stage mode.
+
+Tue Oct 16 12:46:17 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added a simple string censoring utility.
+
+Tue Oct 16 11:37:52 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Improved atom syndication (title) + don't show author emails.
+
+Fri Oct 12 16:15:11 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor
+
+Fri Oct 12 06:13:53 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Alphabetize the setting listing - should help finding ourway around?
+
+Thu Oct 11 18:07:15 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Thu Oct 11 09:18:07 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor change in admin part.
+
+Wed Oct 10 18:06:12 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Wed Oct 10 16:10:41 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Validation length, removed a hack fix from elements, needs rethinking.
+
+Wed Oct 10 11:06:57 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added flash_errors? helper.
+
+Wed Oct 10 09:23:42 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Mon Oct  8 00:17:34 EEST 2007  Chris Scheper <prpht9@gmail.com>
+  * examples of use added to rdoc for Og::Model
+
+Mon Oct  8 18:13:18 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor stuff in new helper.
+
+Mon Oct  8 08:55:54 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Thu Oct  4 11:41:08 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Removed again action returns string behaviour, it fucks up auto syndication and other features.
+
+Wed Oct  3 10:34:45 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Let the HTML format report 'charset=utf-8' when $KCODE='UTF8'
+  When I set $KCODE='UTF8', I expect all subsystems to use utf-8.
+  It's POLS, it's "just standard Ruby", it's how it IMHO should be.
+
+Mon Oct  1 23:56:24 EEST 2007  rob@robmela.com
+  * webfile_upload_dir_fix
+
+Mon Oct  1 14:49:32 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * FormHelper RDoc update
+
+Sun Sep 23 09:55:35 EEST 2007  Thomas Leitner <t_leitner@gmx.at>
+  * Fixes the problem of passing params to a form action
+
+Sun Sep 23 09:18:04 EEST 2007  Thomas Leitner <t_leitner@gmx.at>
+  * Fix AttributeUtils to only assign given values, not all
+  AttributeUtils#populate_object assigns values to properties only if they are in the given values hash. However, it assigns values to relations regardless of their being in the values hash - this has been fixed.
+
+Fri Sep 21 18:55:39 EEST 2007  Thomas Leitner <t_leitner@gmx.at>
+  * Removed unused code parts
+
+Fri Sep 21 18:52:36 EEST 2007  Thomas Leitner <t_leitner@gmx.at>
+  * Add support for populating a Date field
+
+Fri Sep 21 18:39:04 EEST 2007  Thomas Leitner <t_leitner@gmx.at>
+  * 
+  Fix broken +/- links in FloatControl
+  The links did not work correctly since the float values were always converted to integers.
+
+Tue Oct  2 09:15:06 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Fri Sep 28 12:11:36 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Fix pre/post parsing in create_table_indices and two minor changes
+
+Tue Sep 25 18:34:18 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor
+
+Fri Sep 21 15:50:11 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Converted some more specs from .old_test
+
+Fri Sep 21 15:24:32 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added some old Og specs, temporarily removed dbi spec.
+
+Wed Sep 19 16:48:14 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor
+
+Tue Sep 18 16:17:12 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Bring Dispatcher constructor with Georges earlier patch to use "" as root controller mount path, include unit test
+
+Tue Sep 18 16:16:34 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Update the RDoc rake task, use rake rdoc:all
+
+Wed Sep 19 11:56:52 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Wed Sep 19 11:55:43 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Wed Sep 19 11:51:50 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added conf directory to the hello example to avoid the logger error.
+
+Wed Sep 19 11:50:59 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * As requested, re-enabled the action returns string behaviour. [james_b/dan]
+
+Wed Sep 19 10:30:49 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Fixed marks OGTABLE patch. [mark]
+
+Tue Sep 18 17:32:21 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Recoded Og create_field_map, this sixes the duplicate select bug. More cleanup is needed. Thanks to Mark for spotting this. [mark]
+
+Tue Sep 18 16:45:05 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Fixed trailin '/' dispatcher bug [leitner].
+
+Tue Sep 18 15:11:14 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Small fixes in the blog example.
+
+Tue Sep 18 12:48:17 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor, added character type.
+
+Tue Sep 18 09:51:02 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Add quote_column/table required method placeholder.
+
+Mon Sep 17 16:30:56 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added child helper in element.
+
+Sun Sep 16 07:02:07 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Add test for empty string dispatching to Root#index
+
+Sat Sep 15 16:56:16 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Quick fix for redirect to empty string URI (redirect to index of root controller)
+
+Thu Sep 13 16:23:36 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Introduced attr helper to make dynamic Elements easier to create. [rmela]
+
+Thu Sep 13 11:19:38 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Integrated JQuery 1.2 (Kicks ass)
+
+Thu Sep 13 11:18:54 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Refactored validation error handling in the new control system.
+
+Thu Sep 13 08:30:24 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Separate Og start options hash from Og.manager_options
+  Consecutive 'Og.start' no longer pollutes Og.manager_options
+
+Wed Sep 12 17:40:47 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * The dispatcher should not bark when accepting uris with dots. Let's make jonathan happy ;-) [jonathan]
+
+Wed Sep 12 15:00:04 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Incoming Mailer now uses TMail (great for parsing attachments ;-))
+
+Wed Sep 12 14:51:16 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Introduced vendor directory, added TMail code.
+
+Wed Sep 12 01:51:02 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * PostgreSQL specific type removed - is handled in adapter.
+
+Mon Sep 10 14:15:56 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Bugfix in define_force_attr_for
+
+Mon Sep 10 11:19:57 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added favicon in proto app (get rid of some file missing error messages).
+
+Mon Sep 10 10:40:37 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Bring the proto-app welcome page up to date.
+  - Remove references to examples that are no longer included
+  - Change 'xhtml' to 'htmlx'
+
+Mon Sep 10 10:34:31 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * include Nitro in the proto app.rb
+
+Mon Sep 10 10:54:55 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Show errors in conf, exit app. [rmela]
+
+Sat Sep  8 14:07:01 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Move default :evolve_schema => :warn from ./og/lib/og/store.rb to ./og/lib/og.rb
+
+Fri Sep  7 13:44:50 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Allow override of the default session store [bill kelly].
+
+Fri Sep  7 13:31:27 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * A 'hack' fix, the form_error helper removes the :ERRORS from the flash (to avoid concatenating the same errors again and again). A more elegant solution will be needed.
+
+Fri Sep  7 12:52:52 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * validation_errors returns nil for valid attrs, initial support to show attribute errors in controls.
+
+Thu Sep  6 16:59:52 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor fix [renzi].
+
+Thu Sep  6 15:32:51 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * A default option in the select helper, added the "--" hack in query_by_example.
+
+Thu Sep  6 13:56:31 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Introduced experimental concept of ModelUI.
+
+Thu Sep  6 13:13:06 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Call Aspects.setup from the Og spec helper, added timestamped spec.
+
+Thu Sep  6 11:18:28 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Some minor source code fixes.
+
+Thu Sep  6 08:36:30 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * DBI adapter default connection specs[_^[_][D[_^[_][D[_^[_][D[_^[_][D[_^[_][D[_^[_][D
+
+Thu Sep  6 08:14:48 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Changes to spec helper for dbi adapter
+
+Thu Sep  6 07:54:57 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Add initialize and disconnect to DBI adapter.  DBI trace if $DBG.
+
+Thu Sep  6 07:46:29 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Resolve inconsistent setup of default opt
+
+Wed Sep  5 15:47:28 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Conflict resolving.
+
+Tue Sep  4 17:56:11 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * proto template path now includes "app"
+
+Tue Sep  4 14:12:14 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Fix colorful logging, don't output ANSI color codes for nothing
+
+Wed Sep  5 15:18:30 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Small changes to make tests pass.
+
+Wed Sep  5 15:06:25 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Fixed *nasty* bug in ann_attr + added test.
+
+Wed Sep  5 14:34:39 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Changes in flash, some more controls.
+
+Wed Sep  5 12:00:18 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Fix default template dir [arne].
+
+Tue Sep  4 13:10:22 EEST 2007  Mark Van De Vyver <mvyver@gmail.com>
+  * Initial commit of Og::DbiAdapter and first spec
+
+Tue Sep  4 17:50:24 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor.
+
+Tue Sep  4 16:26:57 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Worked a bit on the new control helper.
+
+Tue Sep  4 11:28:40 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * flash_error transparently converts validation_errors to arrays.
+
+Mon Sep  3 11:28:51 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Helper dir for tests, minor stuff. [arne]
+
+Thu Aug 30 17:50:22 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Minor stuff.
+
+Thu Aug 30 15:09:26 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Introduced two new command line options in Nitro (--part-install, --part-uninstall) to manual force custom install/cleanup procedures for parts.
+
+Thu Aug 30 10:56:41 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added missing --record/--playback parameters.
+
+Wed Aug 29 15:35:20 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Simple textarea helper.
+
+Tue Aug 28 10:51:52 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added small unit test for flash.
+
+Tue Aug 28 10:39:01 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Added flash_error helper.
+
+Mon Aug 27 18:02:15 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Small fixes.
+
+Mon Aug 27 14:51:39 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Updated to latest version of JQuery (1.1.4)
+
+Mon Aug 27 14:40:51 EEST 2007  George Moschovitis <gmosx@reizu.com>
+  * Quickly ported some functionality from the old form helper to the new one.
+
+Sun Aug 26 12:36:00 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small stuff.
+
+Fri Aug 24 16:02:05 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Re-added validate_confirmation.
+
+Fri Aug 24 15:23:27 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added comments to explain the improved behaviour of save.
+
+Fri Aug 24 14:19:21 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Temporarily dissabled auto (REST-style) action expansion. It is dangerous, should only happen in 'API' calls. We have to decide what constitutes an 'API' call.
+
+Fri Aug 24 14:12:16 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Show the controller when logging the compilation of a method, (plus an experimental change in request).
+
+Fri Aug 24 12:51:35 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Preserver request parameters helper.
+
+Fri Aug 24 11:41:10 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added favicon.ico to the blog example to acoid a distracting error message.
+
+Fri Aug 24 10:56:43 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added more renders to the new form helper.
+
+Wed Aug 22 18:14:40 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Experimental: intoduced some ansicode magic in the Logger.
+
+Wed Aug 22 13:55:08 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Work in progress. New simpler and more useful form helper.
+
+Wed Aug 22 13:47:30 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed flash system. (But I will have to revisiti the flash implementation, it needs improvements)[_^[_]:wq
+
+Wed Aug 22 10:41:23 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Localization returns the key string for untranslated strings.
+
+Wed Aug 22 10:17:39 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small improvement in startup messages.
+
+Tue Aug 21 18:15:05 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Rake task for rdoc generation.
+
+Tue Aug 21 17:07:11 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added table name quoting in Og (makes using no 'og' prefix safe).
+
+Tue Aug 21 16:22:07 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved default localization implementation.
+
+Tue Aug 21 14:59:32 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Application.current
+
+Tue Aug 21 13:17:39 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More advanced (and developer friendly) template_filters_pipeline manipulation.
+
+Tue Aug 21 12:49:20 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added template_filter_pipeline manipulation methods + tests.
+
+Mon Aug 20 16:14:18 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some command line options shortcuts (-d for --daemon, -a for --adapter etc, etc)
+
+Mon Aug 20 15:10:47 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc stuff.
+
+Mon Aug 20 11:59:24 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored og tests with a 'fixture'.
+
+Mon Aug 20 11:36:39 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed ruby-breakpoint dependency
+
+Mon Aug 20 11:34:16 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc changes.
+
+Mon Aug 13 18:53:53 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed NASTY cache expire bug.
+
+Mon Aug 13 17:13:00 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Logger.replace, correct logging format for daemonized live application.
+
+Sun Aug 12 15:08:46 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed gen dependency from Nitro gem. [rui]
+
+Sat Aug 11 21:25:38 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Update gemspecs and rake_task/dist.rake to build correct gems.
+
+Sat Aug 11 12:54:47 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed Og queries selecting only specific fields, added some initial Og tests. [rui miguel]
+
+Fri Aug 10 12:40:43 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved console feedback when running a Nitro application in a cluster configuration.
+
+Fri Aug 10 12:22:28 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed bug in Admin part.
+
+Fri Aug 10 11:08:53 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added dummy test in nitro.
+
+Fri Aug 10 10:59:36 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Create initial testing infrastructure in og, nitro, glue.
+
+Thu Aug  9 23:27:49 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed nasty output buffer bug in render. This was manifestated as 'errors not shown in sub-controller errors". [rui miguel]
+
+Thu Aug  9 15:52:19 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small bugfix.
+
+Thu Aug  9 15:50:00 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix to make nitro run w/o Og (makes hello example run again).
+
+Thu Aug  9 15:37:56 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed buggy router (added test).
+
+Thu Aug  9 15:35:46 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use "" instead of "/" for the root path in the dispatcher. Less error prone, no need for squeeze all over the place (that you may forget).
+
+Wed Aug  8 21:31:25 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixex multi-child elements, a separate id is assifnged to each child, and the @_children dictionary holds all children.
+
+Wed Aug  8 19:56:02 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Report attempts to mount invalid controllers.
+
+Wed Aug  8 19:41:02 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Og.initialized?, allow Nitro start without Og.
+
+Wed Aug  8 19:28:33 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc stuff, simple cookie test.
+
+Mon Aug  6 20:11:25 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some cleanup, removed script compiler filter.
+
+Mon Aug  6 20:03:06 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small improvement in nitro command.
+
+Sun Aug  5 12:20:40 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up various stuff.
+
+Sun Aug  5 12:05:45 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * New test.rake, test/helper.rb and a first test case.
+
+Sun Aug  5 11:10:30 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Restarted raw tests from scratch, temporarily moved old stuff to .old_tests
+
+Sat Aug  4 21:00:56 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Include local lib dir when running nitro console.
+
+Fri Aug  3 19:36:18 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed Logger.* prefix from many places, some code cleanup here and there.
+
+Fri Aug  3 19:20:20 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved logger, timestamp logger entries in live mode, removed many Logger.* prefixes.
+
+Fri Aug  3 18:34:00 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated TODO.
+
+Mon Jul 23 22:57:22 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Merged markup spec and markup tc, 1 spec fails
+
+Mon Jul  9 19:47:08 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Fixed cookie spec, see ML 08-07-07
+
+Sun Jul  8 15:40:22 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Minor cosmetics (style convention)
+
+Sun Jul  8 15:37:59 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted mounter (4 pass) and compiler (1 fails)
+
+Tue Jul 31 11:05:37 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up proto.
+
+Thu Jul 19 10:06:43 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Call Aspects.setup in helper, more flexible db password in tests/examples.
+
+Tue Jul 17 10:18:06 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed error reporting (status_500/status_400, etc...)
+
+Tue Jul 17 10:03:58 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix infinite loop case in render handle_error (handler itself has an error).
+
+Tue Jul 17 09:59:02 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored render(/render_action) between render and adapter.
+
+Wed Jul 11 12:54:33 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Tue Jul 10 12:37:33 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix evolution + STI
+
+Mon Jul  9 18:17:58 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Remove some duplicate methods from sql.rb
+
+Mon Jul  9 18:15:28 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Clean up collection.rb, adding delete by oid
+
+Mon Jul  9 18:11:05 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Add recursive delete for objects
+
+Mon Jul  9 18:35:26 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Better error reporting on failures by using __FILE__, __LINE__ for relation evals
+
+Mon Jul  9 18:34:51 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Hide controls of hierarchical mixin attributes
+
+Mon Jul  9 18:21:45 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Don't expect writeable primary key
+
+Mon Jul  9 18:21:15 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Add a transaction_raise which doesn't swallow errors but hands them down the chain (but still rolls back on errors)
+
+Mon Jul  9 18:19:35 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Don't ovverride instance variables unconditionally when doing a find(:include for example where the included class has same named attributes
+
+Mon Jul  9 18:12:00 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * don't use empty string for empty value when quoting, use NULL
+
+Mon Jul  9 18:09:56 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * relation, use .to_sym to avoid some rare cases of a string inside relation
+
+Mon Jul  9 18:05:07 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * accept options for .select and .select_one and hand them down to store.select(_one)
+
+Mon Jul  9 18:02:54 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * use .insert instead of .save when using .create (fixes bug with non-standard pks)
+
+Mon Jul  9 18:01:09 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * fix revisable, quote pks correctly
+
+Sun Apr 29 11:01:00 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Enable custom aggregation queries
+  This patches allows the overriding of the :select option, this is also
+  needed for the refers_many relation.
+
+Sun Apr 29 10:49:55 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Add optional options to joins_many .count
+
+Sun Jul  8 15:52:59 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * adapt pager spec to new pager
+
+Sun Jul  8 14:54:49 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * In of specs : setup->before, added og_teardown
+
+Sun Jul  8 14:46:49 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Deleted test/adapter/raw_post1.bin
+
+Sun Jul  8 14:41:30 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted request testcase, deleted adapter/tc_webrick stub
+
+Tue Jul 10 09:44:31 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Better default doctype (HTML 4.01) in proto.
+
+Tue Jul 10 09:40:33 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix.
+
+Tue Jul 10 08:42:27 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated elements documentation, use a dictionary to store _element children [arne].
+
+Sat Jul  7 21:01:58 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * [og] better error reportin in joins_many + nil-bugfix
+
+Wed Jul  4 11:05:41 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed forced Og bug [rmela].
+
+Mon Jul  2 12:10:37 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed pager helper. test for ancestors.include? Og::Model.
+
+Mon Jul  2 11:44:25 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Glycerin script for the blog example.
+
+Mon Jul  2 11:44:04 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved some files around.
+
+Sat Jun 30 13:02:13 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Fixed IfMorpher, def self.key;"each";end -> def self.key;"if";end
+
+Thu Jun 28 22:32:14 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Raw::Pager spec fixup, green
+
+Thu Jun 28 00:13:36 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Brainless test-to-spec : controller/aspects, view/pager
+
+Wed Jun 27 20:27:42 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Typo: ribust -> robust
+
+Wed Jun 27 15:20:29 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Mark mysql error as error, not info.
+
+Wed Jun 27 15:18:54 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small improvements in the blog example. Added glycerin.rb helper script.[_^[_]:w
+
+Wed Jun 27 13:53:58 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Written skeleton of doc/RELEASES for the upcoming version. Lists the more important changes. Still under construction.
+
+Wed Jun 27 11:59:00 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor cleanup.
+
+Wed Jun 27 10:11:22 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor changes to make example easier to run. [arne]
+
+Tue Jun 26 14:21:08 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Check if template exists, else use app/template. Fixes WSOD problem in blog [james_b].
+
+Tue Jun 26 14:17:45 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved blog example, added auto syndication and export to JSON. More fault tolerant ATOM exporter.
+
+Tue Jun 26 13:40:45 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated CHANGELOG.
+
+Mon Jun 25 11:02:18 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use nitro/part/xx instead of part/xx [james_b].
+
+Sun Jun 24 09:54:30 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix glycerin.rb, remove gen from load path, add load path for part/admin
+
+Sun Jun 24 09:39:40 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Og.manager must be non-nil in nitro/application.rb
+
+Sat Jun 23 18:13:11 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Make webfile spec runnable, prepare for better tests
+
+Sat Jun 23 15:41:19 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted webfile test
+
+Sat Jun 23 14:57:19 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Changed og/spec/helper to work with script/lib/
+
+Sat Jun 23 15:22:07 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix bug in compiler, George please check, controller spec fixes
+
+Sat Jun 23 13:16:51 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Updated aspects spec to new lib/spec location
+
+Sat Jun 23 13:09:13 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted from test to spec, adapted to new script/lib/spec location
+  cookie; controller; context converted
+
+Sat Jun 23 13:07:27 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Put helpers in script/lib
+
+Sat Jun 23 10:10:53 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Bring specs up to date with cgi.rb changes
+
+Sat Jun 23 10:03:06 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fill uuid_polymorphic with a non-implemented spec
+
+Thu Jun 21 10:06:57 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Don't allow xxx.yyy structured parameters, only xxx[yyy]
+
+Wed Jun 20 23:42:58 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Make nitro aspects spec pass, George please recheck
+
+Wed Jun 20 23:25:59 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix rest of Raw specs, all specs green
+
+Wed Jun 20 22:56:01 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix cgi spec + fix cgi
+
+Tue Jun 19 20:26:52 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted tc_cgi to spec/cgi, 19 specs - 6 fail
+
+Wed Jun 20 10:32:40 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some minor stuff
+
+Wed Jun 20 10:27:47 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added more blog files, added caching in blog example, better error reporting  in mysql driver.
+
+Tue Jun 19 12:50:17 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Work on the new blog example. Cleanup in the proto dir.
+
+Tue Jun 19 02:10:44 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed old blog example files, the proto app uses the new Nitro logo.
+
+Mon Jun 18 17:57:16 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Hack fixed an annoying problem in the compiler. Check out the comments for some details. Updated hello example.
+
+Sun Jun 17 20:21:46 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted tc_caching to spec/controller/caching
+
+Sun Jun 17 19:22:48 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Made structure of spec/ dir resemble raw/
+
+Sun Jun 17 18:56:11 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted Raw specs to new infrastructure/syntax
+
+Sun Jun 17 18:54:40 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Converted exisiting Nitro specs to new syntax/infrastructure
+
+Sun Jun 17 18:45:15 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Changed include Raw::TableHelper to Raw::Mixin::TableHelper in glue/builder/xml
+
+Sun Jun 17 18:43:48 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Added require 'facets/core/module/is' in raw.rb
+
+Sun Jun 17 18:41:32 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Fixed rake for specs in subdirs
+
+Sun Jun 17 18:33:52 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Run individual tests with rake test:project:filename
+
+Sun Jun 17 16:59:20 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Added glue loadpath in script/helper/spec
+
+Sun Jun 17 18:34:42 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * remove setup/db.rb and make spec/relation.rb pass
+
+Sun Jun 17 18:22:28 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * split spec for store, make them pass
+
+Sun Jun 17 18:06:10 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Make :evolve :full to add needed columns in orderable
+
+Sun Jun 17 17:56:00 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix single-inheritance + spec
+
+Sun Jun 17 17:54:47 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * @thread_safe was always set to `true`, insert a `raise` in manager when with_store will yield nil
+
+Sun Jun 17 17:53:51 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Remove test directory
+
+Sun Jun 17 15:27:42 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Created script/helper/spec, to be included in specs, sets up loadpath, loads rSpec
+
+Sun Jun 17 17:30:19 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Rest of the specs converted, many failing though
+
+Sun Jun 17 16:58:45 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Many more specs
+
+Sun Jun 17 14:50:49 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Revamp join.rb spec, fix bug in postgresql returning text pks when inserting
+
+Sun Jun 17 13:55:47 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix Ez specs
+
+Sat Jun 16 17:29:22 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * join, types, has_one_create_on_insert specs, join failing horribly why?
+
+Sat Jun 16 17:00:09 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * build, camel case, delete all, ez, finder, has many  specs, property => attr_acc
+
+Sat Jun 16 15:52:39 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * aggregation sepcs, accumulation specs, cacheable specs
+  cacheable fails horrible, because `after_enchant` of cacheable seems not
+  to be called.  This also tries to unify cacheable spec.
+
+Sat Jun 16 15:02:06 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Revise Optimistic Locking spec, failing because Aspects `pre` fails somehow
+
+Sat Jun 16 14:48:45 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Automatic translation of all specs to new RSpec version
+
+Sat Jun 16 14:47:27 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix hierarchical spec + fix bug in hierarchical
+
+Sat Jun 16 14:46:54 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * accumulator spec translated
+
+Sat Jun 16 14:46:00 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Fix psql insert bug
+
+Sat Jun 16 13:38:20 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Rake test/spec basic setup, ported from ramaze
+
+Sat Jun 16 14:03:11 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Rough translations of the Model folder to specs
+
+Sat Jun 16 12:58:55 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Bring Spec configuration to newest version
+
+Fri Jun 15 15:42:58 EEST 2007  Arne Brasseur <arne@arnebrasseur.net>
+  * Moved apply/build/cleanup/ctabs from script to rake_tasks, added rakefile
+
+Thu Jun 14 13:23:16 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated CONTRIBUTORS
+
+Thu Jun 14 12:06:59 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Wed Jun 13 11:12:40 EEST 2007  Arne Brasseur <arne at arnebrasseur dot net>
+  * Fixed Part.require
+
+Wed Jun  6 17:06:18 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved transaction support in Mysql, applied psql fix to the sqlite adapter aswell.
+
+Wed Jun  6 09:32:57 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Transaction save psql store
+
+Wed May 30 00:26:59 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed --webrick option [arne].
+
+Mon May 28 20:00:49 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some missing files.
+
+Sun May 20 12:50:13 EEST 2007  Brian Davis <brian.william.davis@gmail.com>
+  * Allow arbitrary joins_many relations
+  
+  Appends the relation name to the end of named many_to_many and joins_many relations, allowing multiple distinct joins_many relations with the same component classes. 
+
+Tue May 22 13:34:13 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in script adapter to make compatible with caching, allows for efficient, behind-the-scenes caching.
+
+Tue May 22 01:08:08 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * more fault tolerant controler/model enchant code.
+
+Sun May 20 18:46:02 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Sun May 20 13:48:52 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added cool new asset filter.
+
+Sun May 20 13:48:22 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Many small fixes.
+
+Sun Apr 29 10:59:56 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * bugfix, integer oids werent saved correctly anymore
+
+Sun Apr 29 10:50:49 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * small fix in refers_to, wasn't saving self correctly.
+
+Sun Apr 29 10:40:53 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * Startup speed patch, removes many unnecessary calls to ann()
+  See thread:  http://rubyforge.org/pipermail/nitro-general/2007-April/007605.html
+
+Sun Apr 29 10:19:07 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * small glue format validation fix
+  This removes the nil checking from validate_format, should use
+  validate_value for that.  Also don't use .source on the regex.
+
+Mon Apr 30 13:47:47 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * make aggregations and :include work together
+
+Thu Apr 19 13:45:42 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Throw ValidationError on save.
+
+Mon Apr 16 20:40:17 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed nasty request.uri bug in the Mongrel adapter.
+
+Sun Apr  1 01:19:14 EEST 2007  rmela@robmela.com
+  * table_create_tbody_fix
+  If Og started but no Og objects method would throw an exception which was not handled.
+
+Sun Apr 15 20:23:45 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes in join and taggable.
+
+Fri Apr 13 10:14:37 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some changes in proto
+
+Fri Apr 13 10:13:47 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Hack fixed join/joins_many code to work with custom primary keys.
+
+Wed Apr 11 11:02:41 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible code in elements.
+
+Wed Apr 11 11:01:12 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed updated field in atom serialization.
+
+Mon Apr  9 10:17:12 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added tag cleanup code in taggable, added initial code for Taggable spec.
+
+Sat Apr  7 13:50:06 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improve localization system, made it work with the latest nitro. Added insert_filter method to easily manipulate each Format's template_filter pipeline, working LocalizationFilter.
+
+Sat Apr  7 11:42:19 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in taggable.
+
+Thu Apr  5 12:38:07 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Made Og collections enumerable, better title in automatic autom syndication, request.full_uri and more...
+
+Tue Apr  3 20:00:23 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed nasty bug in --port_offset setting that kept cluster configurations from working correctly.
+
+Sun Apr  1 12:49:04 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to make polymorphic relations work. The implementation is a piece of crap :(
+
+Sun Apr  1 00:45:42 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some cleanup in Og polymorphic relations, now works with :polymorphic => true (along with the old version (, Object)). Added spec. Also fixed a nasty oid on insert bug.
+
+Wed Mar 28 14:16:37 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix mysql quote of nil values.
+
+Wed Mar 28 13:29:15 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Made custom_pk.rb spec pass [jonathan].
+
+Wed Mar 28 13:12:05 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix conflict in helper
+
+Tue Mar 27 09:10:24 EEST 2007  Jonathan Buch <jo@helloit.fi>
+  * POLS when using Og::VarChar()
+  * add new annotation :sql_type so VarChar doesn't have to use :sql
+    attr_accessor :name, VarChar(20), :unique => true
+    works now
+  * added annotation :null, so NotNull also doesn't use :sql
+  * 3 :control => :none in Revisable
+  * use glycerin setup script in spec/helper.rb instead of path unshift to Og
+  * make join-table creation less noisy
+
+Wed Mar 28 01:48:35 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to make general primary keys work, fixed insert bug [jonathan].
+
+Wed Mar 28 00:01:21 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Quote primary key in og_delete.
+
+Mon Jan 17 16:58:50 EET 2005  rmela
+  * HelloWorld_Should_Always_Work
+
+Tue Mar 27 22:41:10 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Handle xml/yaml/json post data, some cleanups in cgi.rb (many more to come).
+
+Mon Mar 26 14:40:37 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to support arbitraty promary keys (and UUID in particular).
+
+Mon Mar 26 13:02:04 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix and #store as #get_store aliaas.
+
+Mon Mar 26 13:00:38 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * << helper for manager, useful for writing db change scripts.
+
+Mon Mar 26 13:00:03 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Initial version of the UUID mixin.
+
+Mon Mar 26 12:59:00 EEST 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some changes to Og to prepare for UUID support.
+
+Tue Mar 20 12:44:10 EET 2007  Jonathan Buch <jo@helloit.fi>
+  * sql.rb changes
+  * remove duplicated write_attrs
+  * made write_attr_boolean return 'f' instead of NULL
+  * fix require in tc_timestamped
+  * add :extra_condition to .find (for use with set_find_options())
+    i.e. set_find_options(:extra_condition => 'time_deleted IS NULL')
+  * fix validate_format
+
+Fri Mar 23 22:45:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Pad nice parameter in dispatcher.
+
+Wed Mar 21 00:22:39 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented CSSFormat for dynamically generated css files. Adapted output caching to make more reusable.
+
+Tue Mar 20 11:41:08 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved ormsupport from facets to og/util/inflect. better organization of the og dir.
+
+Mon Mar 19 21:08:35 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fixes.
+
+Mon Mar 19 10:05:12 EET 2007  Judson Lester <nyarly@gmail.com>
+  * fixes: compartmentalizing fixture classes - 6/63
+
+Sun Mar 18 05:16:50 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Fixes for new API
+
+Sat Mar 17 18:52:15 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up sti.rb, moved into model, better interface. Moved unmanageable into model (and into Og::mixin)
+
+Sat Mar 17 18:23:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up og/model.rb a little bit.
+
+Wed Mar 14 01:41:46 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Unified many_to_many and joins_many specs
+  Until there's a useful distinction between m2m and jm, I can't see a reason to maintain seperate spec files
+
+Wed Mar 14 00:47:26 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Og::Exception
+  Added Og::Exception to og.rb and Og::Deleted to store.  Added a spec on Model for Og::Deleted's use, and
+  added code to SqlStore to fulfill it.
+
+Wed Mar 14 23:25:12 EET 2007  Judson Lester <nyarly@gmail.com>
+  * validation: uniques really work
+  Worth noting: the sense of the block to Validation::add_validation has been reversed.  It makes more sense
+  to me to return "true" if the validation passes.
+  
+  Also, I realize now that I have no idea what "validate_related" is supposed to do.
+
+Wed Mar 14 22:50:44 EET 2007  Judson Lester <nyarly@gmail.com>
+  * validation: unique nulls and numbers
+
+Wed Mar 14 22:40:37 EET 2007  Judson Lester <nyarly@gmail.com>
+  * validation: fixed null value unique colision
+  As it was, two null values both counted as unique.  As I understand it, that's wrong, in a SQL sense.
+  If you want that behavior, add a validate_value as well.
+  Also exposed by this fix: null values come back as empty strings.  Correct behavior?
+
+Fri Mar 16 13:41:01 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Wed Mar 14 22:47:06 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes.
+
+Wed Mar 14 19:20:25 EET 2007  Guilherme Antoniolo <antoniolo@gmail.com>
+  * quote column
+
+Wed Mar 14 20:52:20 EET 2007  Judson Lester <nyarly@gmail.com>
+  * store: fixes 1
+
+Tue Mar 13 12:13:06 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted more service formats.
+
+Tue Mar 13 00:44:33 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Validation fix
+  Not sure how, but "Validation::add_validation" got changed to "self.class.add_validation" which is incorrect.
+
+Tue Mar 13 10:15:03 EET 2007  Jonathan Buch <jo@helloit.fi>
+  * respect user defined :foreign_key annotation
+
+Mon Mar 12 20:04:10 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in admin part, refactored code in 'service' formats, made more flexible.
+
+Sun Mar 11 12:34:49 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed nasty cache cleanup bug.
+
+Sun Mar 11 12:26:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cookie expires, use -rubygems in nitro and more.
+
+Sat Mar 10 19:19:58 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix stupid Application error that forced the Webrick adapter.
+
+Sat Mar 10 11:38:21 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Call redirects on POST method (+ spec)
+
+Sat Mar 10 10:02:22 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated CONTRIBUTORS.
+
+Sat Mar 10 01:35:21 EET 2007  Brian Davis <brian.william.davis@gmail.com>
+  * many_to_many spec
+  Added a spec outlining proper multiple many_to_many relation behavior. Currently, this spec fails and fails hard. 
+
+Fri Mar  9 14:45:38 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in util/markup.rb + spec.
+
+Fri Mar  9 13:01:37 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor changes to the validation patch.
+
+Fri Mar  9 04:47:00 EET 2007  Judson Lester <nyarly@gmail.com>
+  * spec: cleanup, add validations
+
+Thu Mar  8 18:46:51 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  *  New implementation of Og Validations, unfinished.
+
+Thu Mar  8 04:12:23 EET 2007  Judson Lester <nyarly@gmail.com>
+  * spec: merge with Og changes
+
+Thu Mar  8 03:55:56 EET 2007  Judson Lester <nyarly@gmail.com>
+  * spec: store specifications split out
+  Interestingly enough, there are 5 failures out of 35 specs.
+
+Tue Mar  6 11:58:37 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sql: Accounting for custom primary keys in PSQL
+
+Tue Mar  6 03:56:38 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sql: cleanup OGTABLE + specs work better
+
+Tue Mar  6 03:25:12 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sql: cleanup - OGTABLE & oids
+
+Thu Mar  8 14:28:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Slightly improved Validation::Errors.
+
+Thu Mar  8 14:21:03 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added tidy helper. It seems to fuckup some htmls though.
+
+Thu Mar  8 14:20:32 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Simple ATOM dumper/loader.
+
+Wed Mar  7 22:12:35 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added temp_dir option in application, optimized updated!/touched! in Timestamped.
+
+Tue Mar  6 17:06:11 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improvements to the generated RDoc.
+
+Tue Mar  6 13:41:03 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes in Og test cases. Many more are needed.
+
+Tue Mar  6 13:28:33 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in encode_uri
+
+Tue Mar  6 11:42:00 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleverly use Ruby's autoload to make the code more flexible.
+
+Tue Mar  6 03:31:02 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sql: removing psql comment
+
+Tue Mar  6 03:29:57 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sql: postgres and threadsafe oids
+
+Sun Mar  4 09:14:44 EET 2007  Judson Lester <nyarly@gmail.com>
+  * spec: resolved some existing specs
+  Switched spec/store.rb and spec/sti_relation.rb over to isolated specifications.
+  As a result, discovered a couple of bugs in store.sql.
+
+Sat Mar  3 10:51:52 EET 2007  Judson Lester <nyarly@gmail.com>
+  * spec: Isolated specifications, silenced psql
+
+Sat Mar  3 03:43:30 EET 2007  Judson Lester <nyarly@gmail.com>
+  * spec: adding spec-helper
+  The first of several patches to add specs to Og.  Specifically trying to isolate spefications from each other, and
+  break them down into small chunks.
+
+Mon Mar  5 09:31:32 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Sun Mar  4 22:51:21 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * The reloader detects element include file changes.
+
+Sun Mar  4 22:47:33 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes and updates.
+
+Sat Mar  3 20:04:13 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Ensure log/.temp dirs extis, create temp files (like pids) in .temp, dont start a state server by default (made this an command line option --stateserver). Used the CookieSessionStore instead.
+
+Sat Mar  3 19:03:19 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Much better implementation of CookieSessionStore. Sends a separate cookie for the client.
+
+Sat Mar  3 10:58:41 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented DrbStore. By looking to the drbstore source it is easy to convert the rest of the stores.
+
+Sat Mar  3 10:53:05 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed reloader.
+
+Sat Mar  3 00:21:51 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented hybrid JSON/Marshal CookieSessionStore, partly readable at the client (!!!!!!!). A-M-A-Z-I-N-G.
+
+Fri Mar  2 16:02:52 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added experimental JSONCookieSessionStore, don't use yet.
+
+Fri Mar  2 15:54:07 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved new sessions implementation, re-added memory store.
+
+Fri Mar  2 13:45:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Totaly reimplementation of session system. Also introduced a new cookie based session store (will be the default).
+
+Thu Mar  1 13:46:09 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * request[] accepts symbols as keys.
+
+Thu Mar  1 13:45:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes
+
+Wed Feb 28 22:13:15 EET 2007  Judson Lester <nyarly@gmail.com>
+  * STI Relations again
+
+Wed Feb 28 09:46:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes.
+
+Tue Feb 27 22:34:20 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cool changes: the dispatcher mounter handles models, the old model scaffold code is now just a mixin, simplified the blog example.
+
+Tue Feb 27 21:10:37 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added again to og/spec dir.
+
+Tue Feb 27 21:09:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Further cleaned up the directory structure of the raw ad og projects.
+
+Tue Feb 27 13:19:12 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc Og stuff.
+
+Tue Feb 27 12:30:47 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sti reference
+  References from STI child classes now point across to other entities, including other STI children.
+  There's two questionable lines in Relation::enchant that strike me as ugly - but the refactoring to 
+  make them unnecessary would be quite serious for a mere aesthetic point
+
+Tue Feb 27 04:06:22 EET 2007  Judson Lester <nyarly@gmail.com>
+  * sti-relations: failing spec
+  Added a spec for a feature that I want: for relationships of STI children to function properly.
+  Moreoever, I'd like for relationships to STI children to function properly as well.  Right now the
+  spec fails, which means I'm allowed to write some code!
+
+Tue Feb 27 13:08:06 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More Og cleanup and fixes.
+
+Tue Feb 27 12:56:16 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed Og::Entity to Og::Model, to be more consistent with the rest of Nitro and easier for newcomers with AR / MVC experience.
+
+Mon Feb 26 23:32:56 EET 2007  Judson Lester <nyarly@gmail.com>
+  * with_store fixes
+  Added some explicit local variables to account for the with_store blocks.  SHould write some spec for
+  this...  Or at least update tests.
+  
+  Oh, and cleaned up some of the STI comment-outs
+
+Mon Feb 26 14:39:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some cleanups, removed more glue files.
+
+Mon Feb 26 13:03:15 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented Og's multithreaded strategy, should also fix the reported memory leak. [jonathan]
+
+Sun Feb 25 21:41:36 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes.
+
+Sun Feb 25 01:11:00 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Created sti.rb
+
+Sun Feb 25 01:09:29 EET 2007  Judson Lester <nyarly@gmail.com>
+  * STI Refactoring
+  Moving schema inheritance conditionals into the SchemaInheritance module
+
+Thu Feb 22 21:05:20 EET 2007  Judson Lester <nyarly@gmail.com>
+  * questionable-sti
+
+Sun Feb 25 13:51:42 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted all refs from Nitro to Raw. (Big patch ;-))
+
+Sun Feb 25 12:58:24 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved raw/lib/nitro to raw/lib/raw
+
+Sun Feb 25 12:54:40 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved glue dirs to nitro/mixin and og/mixn, use Nitro::Mixin and Og::Mixin namespaces.
+
+Sat Feb 24 23:28:30 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use debug/info/error as shortcuts for debugger, cleaner code and allows for customization. Response keeps the output buffer, added some info text when running the console (nitro console)
+
+Sat Feb 24 21:14:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Worked a bit more on the blog example.
+
+Sat Feb 24 12:27:31 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * At last, #render uses encode_uri, so does caching. The sweeper reuses the Caching code and has a better interface. POLS rules ;-)
+
+Sat Feb 24 11:39:01 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * nitro command pass over unrecognized parameters to the application.
+
+Fri Feb 23 23:55:39 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added simple rdoc script, minor cleanup to improve rdocs. a lot more is needed.
+
+Fri Feb 23 21:59:42 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in attr utils.
+
+Fri Feb 23 12:24:19 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Make spec output more readable.
+
+Fri Feb 23 12:12:48 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Rearanged some docs.
+
+Fri Feb 23 12:05:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Aspects preserver arity, this fixes a nasty encode_uri bug, added encode_uri spec.
+
+Thu Feb 22 22:56:15 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up argument/env parsing and nitro command. Script/Console adapter works again.
+
+Thu Feb 22 16:50:31 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * state.rb use facets/daemonize.
+
+Thu Feb 22 16:48:03 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use application instead of server everywhere.
+
+Thu Feb 22 16:01:04 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Worked more on aspects, still not happy with it.
+
+Thu Feb 22 14:15:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Thu Feb 22 14:13:22 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Aspects apply to local methods if no target is provided, fixed some small bugs.
+
+Thu Feb 22 13:34:45 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added nitro specs, simple spec for aspects. Fixed nasty aspects bug, the block is instance_evaled now.
+
+Thu Feb 22 12:33:52 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced spec dir. First spec (Publishable) helps identify a faster implementation of action_methods.
+
+Wed Feb 21 12:05:39 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Fixing postgresql
+
+Wed Feb 21 23:29:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved appserver to nitro, renamed to application.
+
+Wed Feb 21 22:25:12 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in flash.
+
+Wed Feb 21 19:29:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Make aspects more flexible, fixed action_methods, improved format callbacks.
+
+Wed Feb 21 14:26:16 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted the codebase to use the new safer (and more elegant, though slightly slower) aspects implementation.
+
+Wed Feb 21 10:32:45 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Changed many "property"s to "attr_accessor"s for consistency.
+
+Tue Feb 20 17:39:18 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Important fix in dispatcher, added RSS format.
+
+Tue Feb 20 14:31:12 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed simple example. Caching check ann(:action, :cache) annotation.
+
+Tue Feb 20 13:26:30 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed runner.rb, add argument parsing to server, temp solution.
+
+Mon Feb 19 23:00:48 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More cleanup, removed some obsolete code.
+
+Mon Feb 19 22:18:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Mailer works again, added MailTemplate. Needs some more cleanup though.
+
+Mon Feb 19 20:56:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some temp hack fixes. Moved mailer from glue to nitro.
+
+Mon Feb 19 20:01:30 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted mongrel adapter to latest.
+
+Mon Feb 19 19:53:23 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored some more common code to adapter.rb
+
+Mon Feb 19 19:30:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Separated Context from Render (at last).
+
+Mon Feb 19 18:48:26 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Reorganized some files, cleanup.
+
+Mon Feb 19 17:20:31 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes and small improvements, trying to make cull.gr run again.
+
+Sun Feb 18 23:34:33 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Mongrel adapter works again, cleaned up webrick and mongrel adapters, more to come.
+
+Sun Feb 18 22:52:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * New super simple output caching system and some source files reorganization.
+
+Sun Feb 18 19:26:28 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use ___super instead of ___control.
+
+Sun Feb 18 13:29:49 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fixes to make it run with latest facets. The source code extraction on error was buggy, so I removed it for the moment, better implementation is comming.
+
+Sun Feb 18 13:13:51 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to make compatible with facets 1.8.49 and daemonized support using the facets daemonized method to get rid of one more dependency.
+
+Sun Feb 18 12:11:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed old prototype/scriptaculous helpers and morphers.
+
+Sun Feb 18 12:01:13 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed gen to raw
+
+Fri Feb 16 23:38:00 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * New implementation of source extraction from errors.
+
+Fri Feb 16 12:05:10 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small reloader optimisation.
+
+Fri Feb 16 11:30:53 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc stuff.
+
+Fri Feb 16 11:13:47 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced new reloader: elegant, orthogonal to the  dispatcher, monitors include files and just works ;-)
+
+Thu Feb 15 14:22:53 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Organized new Nitro directory.
+
+Thu Feb 15 13:40:34 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced new nitro directory. A super-framework that integrates gen, og and facets.
+
+Thu Feb 15 13:39:53 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed nitro dir to gen.
+
+Thu Feb 15 13:21:39 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved glycerin into script
+
+Thu Feb 15 12:45:16 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed service.rb will be replaced by Nitro's new implicit web service capabilities.
+
+Thu Feb 15 12:22:11 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed buggy squeeze filter and misc stuff.
+
+Thu Feb 15 11:21:31 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Organized context related files in the context directory for better source code structure.
+
+Wed Feb 14 20:22:18 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved format system, now defines filter_templat and before_action/after_action for extra delivery. new implementation of auto serialization to atom/json etc... under construction.
+
+Wed Feb 14 18:59:37 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some more filters.
+
+Wed Feb 14 18:31:35 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Simple example that demonstrates how Nitro can be used like php for quick and dirty web apps.
+
+Wed Feb 14 18:31:12 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Initial test for auto json, ignore.
+
+Wed Feb 14 16:32:38 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Set correct content_type for formats.
+
+Wed Feb 14 11:39:58 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Reintroduced the hello world example.
+
+Wed Feb 14 11:39:38 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved blog example.
+
+Wed Feb 14 11:39:05 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in aspects, and some improvemnts in the blog example.
+
+Tue Feb 13 15:31:02 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Support action with parameters, support template override, fixes to make admin part work again.
+
+Tue Feb 13 14:40:13 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Tue Feb 13 14:36:04 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved action/template checkers to publishable, some fixes.
+
+Tue Feb 13 13:35:01 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Tue Feb 13 10:14:19 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Change in request.path calculation, fix in dispatcher.
+
+Tue Feb 13 09:19:06 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Tue Feb 13 09:18:06 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some skin files to the new blog example.
+
+Tue Feb 13 09:17:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Addded Judson's STI patch. [judson]
+
+Tue Feb 13 01:09:31 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added elements filter (slightly improved from old version), worked on the new blog example.
+
+Mon Feb 12 16:33:19 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some more files from the new example, under construction.
+
+Mon Feb 12 16:17:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Adapted proto dir.
+
+Mon Feb 12 16:11:16 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented / cleaned up morpher to make compatible with the new system.
+
+Mon Feb 12 14:31:28 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use Compiler Filters as instances (more flexible, canuse custom version of the filters).
+
+Mon Feb 12 12:45:36 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup and Cookie helper.
+
+Sun Feb 11 22:06:30 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved format, dispatcher, converted some more of the old compiler filters.
+
+Sun Feb 11 19:25:27 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * New Compiler filter architecture.
+
+Sun Feb 11 19:24:34 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Resource Representation Formats (allow for customized handling of resources, in progress)
+
+Sun Feb 11 19:24:05 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added new blog example.
+
+Sun Feb 11 19:22:42 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Big changes (in progress). Removed all old examples. Introduced brand new Compiler architecture. Clean efficient code and initiali support for REST.
+
+Sat Feb 10 15:07:25 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use the old hacky autoreload code in the new dispatcher. Will have to revisit this hack later.
+
+Sat Feb 10 14:54:52 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use consistently URI instead of URL throughout hte source code.
+
+Sat Feb 10 14:27:47 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes to make code work with latest changes.
+
+Sat Feb 10 13:40:28 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Optimized cookie to_s.
+
+Fri Feb  9 12:14:58 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use facets/settings instead of glue/configuration.
+
+Fri Feb  9 00:24:04 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Started refactoring the nitro adapters, initial changes in webrick/mongrel.
+
+Thu Feb  8 20:22:29 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed caching to cache.
+
+Thu Feb  8 20:06:13 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fixes.
+
+Thu Feb  8 13:17:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * New implementation of AppServer, do not use the crappy Runner class, improvements in Dispatcher/Router. Still under construction.
+
+Wed Feb  7 20:51:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved dispatcher, refactored dispatcher/mounter (now the preferred way to mount controllers).
+
+Tue Feb  6 22:45:08 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced new implementation for Router, simplified.
+
+Tue Feb  6 10:01:04 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * No cross-refs between Context/Server/Dispatcher.
+
+Tue Feb  6 00:53:44 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Enforced some consistency rules.
+
+Mon Feb  5 22:58:45 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added coding conventions text.
+
+Mon Feb  5 22:58:08 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Mon Feb  5 22:10:27 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced judson's eval-less version of sql.rb/mysql.rb. Needs fix in facets/aspects to work [judson].
+
+Sun Feb  4 13:45:58 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * New tc_dispatcher.rb
+
+Sun Feb  4 12:52:03 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed unused emitter functionality from render.
+
+Sat Feb  3 21:31:18 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use consistent require paths for Facets libraries.
+
+Sat Feb  3 00:48:38 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Sat Feb  3 00:43:13 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced brand new clean and restful dispatcher. In its early stages but seems to work. Better integration to come.
+
+Fri Feb  2 15:57:08 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Better proto dir.
+
+Fri Feb  2 15:54:14 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Render.redirect_on_empty == true by default, nitro automatically injects redirect_to_referer when the output buffer is empty!
+
+Fri Feb  2 14:13:59 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved proto dir, small fixes here and there.
+
+Fri Feb  2 01:56:28 EET 2007  Judson Lester <nyarly@gmail.com>
+  * missed an inspect...
+
+Fri Feb  2 01:49:16 EET 2007  Judson Lester <nyarly@gmail.com>
+  * evald string roundup
+  All of the eval_og_ methods have been pushed up into some mixed in modules that
+  get included into enchanted classes.  There may still be some orphaned methods etc,
+  but on the whole this looks a lot more manageable.
+
+Thu Feb  1 22:46:35 EET 2007  Judson Lester <nyarly@gmail.com>
+  * resolving repo pull
+
+Thu Feb  1 03:52:34 EET 2007  Judson Lester <nyarly@gmail.com>
+  * Mixin_enchant_sketch
+  This is the beginnings of a change from eval'd strings for enchantment and mixins with
+  a smidge of dynamic code.  Honestly, there's plenty of eval'd strings in Facets, which
+  is out of the scope of this attempt
+
+Fri Feb  2 00:27:01 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in include_as_property.
+
+Thu Feb  1 20:01:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved attributeutils to nitro/util.
+
+Thu Feb  1 19:56:01 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved autoreload to nitro/util
+
+Thu Feb  1 15:36:16 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed glue/html.
+
+Thu Feb  1 13:39:41 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to make more examples run again.
+
+Thu Feb  1 12:20:19 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to make more tests pass.
+
+Wed Jan 31 14:32:11 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use daemons 1.0.4 [pistos]
+
+Wed Jan 31 14:30:51 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Wed Jan 31 14:29:51 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Update to make compatible with facets 1.8.8
+
+Tue Jan 30 23:37:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed gen project.
+
+Tue Jan 30 23:33:03 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed nitro/version.rb
+
+Tue Jan 30 23:28:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added the --create myapp option to the nitro command.
+
+Tue Jan 30 21:04:09 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumped version, use >= for external dependencies in gemspec files.
+
+Tue Jan 30 15:34:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in mail.
+
+Mon Jan 29 19:54:54 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * This is a BIG patch. Many many changes to make Nitro compatible with the latest version of Facets. The new annotation (and ann_attr.rb) implementation is used now. Not fully tested yet.
+
+Thu Jan 25 01:57:48 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Made encode_url much more flexible with some shortcuts: R(User, :login) == R(User::Controller, :login), user = User[1]; R(user, :delete) == R(User::Controller, :delete, :oid, user.oid). Updated test case.
+
+Wed Jan 24 19:49:09 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Small changes on the previous patch.
+
+Tue Jan 23 20:16:25 EET 2007  lasso@lassoweb.se
+  * cache_pstore_v2
+
+Wed Jan 24 01:47:01 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Added option to include a text file in an element template, useful to reuse .xinc templates inside elements.
+
+Wed Jan 17 12:01:17 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Show entity oids in admin screen.
+
+Wed Jan 17 12:00:49 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Use a flag to skip sweepers (hack implementation, rethink).
+
+Mon Jan 15 13:01:25 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Don't overwrite create_time when inserting a timestamped object.
+
+Mon Jan 15 01:46:55 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in sql indices creation.
+
+Thu Jan 11 16:02:00 EET 2007  Fabian Buch <fabian@fabian-buch.de>
+  * proto fcgi.rb -> dispatch.fcgi
+  and changed shebang to #!/usr/bin/env ruby
+
+Fri Jan 12 10:59:57 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Thu Jan 11 15:56:08 EET 2007  Jonathan Buch <john@oxyliquit.de>
+  * f.attribute appends "_ctl" to the id. label now too [Malte]
+
+Tue Jan  9 11:09:30 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * bumped 2006 to 2007, bumped version to 0.42.0
+
+Fri Jan  5 14:53:05 EET 2007  Jonathan Buch <john@oxyliquit.de>
+  * logger fix, print argument error when $DBG
+  Also adds a testcase to tc controller params, thanks Kartesus.
+  Since any ArgumentError triggered the 'Wrong parameter count' error,
+  we better use $DBG to make the old error available when developing.
+
+Tue Jan  2 19:36:59 EET 2007  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved call/answer in separate file, slightly improved.
+
+Sun Dec 31 19:57:07 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed old sanitize code + html tokenizer from glue directory.
+
+Sat Dec 30 01:25:29 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * don't override sequence in psql adapter
+
+Sun Dec 31 17:01:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Make mysql escape a little safer (investigate this).
+
+Sun Dec 31 17:01:12 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better rendering of checkbox control.
+
+Sun Dec 31 17:00:48 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Set content_type / charset in outgoing emails.
+
+Thu Dec 28 19:40:34 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better error reporting in form attributes.
+
+Thu Dec 28 19:40:22 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in compiler.
+
+Thu Dec 28 14:56:12 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Full error reporting in live mode.
+
+Thu Dec 28 13:22:50 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added create_on_insert test case.
+
+Thu Dec 28 13:17:40 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added option :create_on_insert in has_one relations, to automatically create the target class by default. For example:
+
+Thu Dec 28 13:17:06 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Convienience helper in scaffold, automatically enchants all entities.
+
+Thu Dec 28 13:16:50 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated TODO.
+
+Wed Dec 27 23:45:52 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated html_filter.
+
+Wed Dec 27 18:11:04 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * some sti fixes, minor other stuff
+
+Wed Dec 27 16:56:33 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * WITHOUT OIDS for psql, psql < 8.0 add oid column without that
+
+Wed Dec 13 13:07:10 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * set force_boolean for populate_object (.assign) to true as default
+
+Wed Dec 13 13:03:12 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * fix nasty sti bug
+  it wanted the 'ogtype' field always as the first field.  Fix to not rely on
+  that.
+
+Wed Dec 13 13:02:15 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * sqlite enhancements
+
+Wed Dec 13 12:58:40 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix for sql.rb create_field map to make it even more general
+  also some minor enhancements in tcs
+
+Sat Dec  9 14:33:35 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * split method_missing in entity.rb
+  move functionality to 2 extra methods, find_by_() and find_or_create_by_() 
+
+Fri Dec  8 21:48:11 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * oracle fixes, resolve_limit_options works
+
+Fri Dec  8 20:17:06 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * sql.rb split create_table, oracle fixes
+
+Sun Dec 24 14:28:01 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix some bugs that prevernted admin to work.
+
+Sun Dec 24 14:26:39 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Security: auto html_filter all string parameters in request.fill. Use a new whitelist based version fo html filtering.
+
+Fri Dec 22 14:15:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * use ',' as tags separator by defautl as well.
+
+Wed Dec 20 17:41:08 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Dont pass resource uris to Nitro and don't try to handle Nitro uris with Webricks FileHandler.
+
+Wed Dec 20 17:13:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Made the Template transformation pluggable (and not added by default at the end of the transformation pipeline. This way alternative template engines may be used. [manveru]
+
+Wed Dec 20 12:53:32 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved markup.rb to util/markup.rb
+
+Wed Dec 20 12:46:01 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed old, unused scaffolding code.
+
+Wed Dec 20 12:18:26 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved spark and flare into example to cleanup the dir structure.
+
+Wed Dec 20 12:16:32 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed a @params bug.
+
+Wed Dec 20 12:16:09 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved sanitize into nitro/utils.
+
+Wed Dec 20 12:05:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed admin part sitepath bug [rayman].
+
+Mon Dec 18 18:04:39 EET 2006  manveru@weez-int.com
+  * support :psql again as store... it's nicer to type and doesn't break the old tutorials/configs anymore
+
+Mon Dec 18 13:22:34 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some more fixes to make get/post params work.
+
+Mon Dec 18 13:12:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Remove post/get params  fix.
+
+Fri Dec 15 13:06:19 EET 2006  Fabian Buch <fabian@fabian-buch.de>
+  * FeedHelper Atom with html content
+  Atom can contain html, but only if marked as that. This patch sets
+  the markup type of content to be always html (doesn't hurt if non-markup
+  text is provided). With this change it looks much nicer in many FeedReaders.
+  ATTENTION: changes API: provide markuped content to FeedHelper, it makes no
+  sense that the FeedHelper calls the markup() method, since not everyone
+  uses RedCloth for his/her markup (e.g. Oxy uses BlueCloth).
+
+Mon Dec 18 12:59:23 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some changes to the error handling code to return correct status codes. I am not happy with this at the moment, anyone  can improve this?
+
+Thu Dec 14 15:45:38 EET 2006  Fabian Buch <fabian@fabian-buch.de>
+  * WebFile: use more useful controls
+
+Wed Dec 13 11:21:36 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in taggable to_s, separate to_s_safe method (move this to greek.rb ?)
+
+Wed Dec 13 11:21:16 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  tagged 0.41.0
+
+Tue Dec 12 12:22:45 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc cleanup and doc updates.
+
+Tue Dec 12 12:14:10 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Tue Dec 12 12:11:37 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup.
+
+Mon Dec 11 12:53:36 EET 2006  manveru@weez-int.com
+  * added some tests for template.rb - still not enough...
+
+Mon Dec 11 12:52:04 EET 2006  manveru@weez-int.com
+  * rewrite of some gsub!s in template.rb, this should speed up the whole process. Also introduced SuperSafe(TM) delimter by using the MD5-hash of rand() (only once on startup, so no big deal) - this should make templating a whole lot more secure
+
+Fri Dec  8 11:37:27 EET 2006  manveru@weez-int.com
+  * use the proper symbol for postgresql-adapter in the og/test/CONFIG.rb
+
+Mon Dec 11 21:15:14 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * NITRO_LOG patch
+
+Fri Dec  8 12:56:03 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * fix reldelete tc (and extend a few others)
+
+Mon Dec 11 13:30:49 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes, use NITRO_MODE in nitro.
+
+Fri Dec  8 15:02:40 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix bug in template.rb
+  <require href="#{@foo}"> did not work (wasn't evaled)
+
+Thu Dec  7 22:55:55 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * oracle adapter preview
+
+Thu Dec  7 20:15:39 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * README og fix, STI fix, STI tc addition
+
+Wed Dec  6 19:04:14 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Change logging configuration
+  use NITRO_MODE for Configuration.mode, CONFIGURATION_mode is deprecated.
+  use NITRO_LOG env for specifying the log destination.
+
+Tue Nov 28 20:01:02 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Add mysql transactions (only does something with InnoDB tables)
+
+Fri Nov 17 12:23:46 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix bug in taggable, add Tag#tagged
+  module Taggable
+    many_to_many Tag
+  end
+  class User; is Taggable; end
+  class Category; is Taggable; end
+  
+  those two classes share the _SAME_ many_to_many relation object.
+  
+  Worked around that by specifying it in Taggable.included.
+  
+  TODO:  check for more possible errors of that kind.
+
+Thu Dec  7 09:16:20 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Thu Dec  7 08:50:13 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Hackk fixed some methods of EncodeUrl that where exposed as actions.
+
+Mon Dec  4 14:13:43 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Remove type checks in tc_cgi.rb, trust DuckTyping
+
+Mon Dec  4 14:05:14 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix DoS vulnerability in cgi.rb
+  This vulnerability is open to the public as JVN#84798830[1]. This is also
+  present in Ruby version < 1.8.5-p2.
+  [1] http://jvn.jp/jp/JVN%2384798830/index.html
+
+Thu Dec  7 08:17:55 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Manually applied Lars's cdata compiler fix. [lars]
+
+Thu Nov 23 15:57:41 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in encode_url + testcase.
+
+Wed Nov 22 13:05:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Separate encode_url + testcase.
+
+Wed Nov 22 13:04:51 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better sanitization in WebFile.
+
+Mon Nov 20 13:09:51 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed pager uri replacement, removed dependency to uri-utils (easily the oldest source  file in Nitro, from pre-nitro (ie netrino) days.
+
+Wed Nov 15 20:07:09 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * add testcase for taggable, failing
+
+Thu Oct 26 12:04:49 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Extended entity .finder method
+  Can now handle relations.
+  Post.find_by_title_and_forum_name(title,forumName)
+  
+  class Forum
+    property :name, String
+    has_many :posts, Post
+  end
+  
+  class Post
+    property :title, String
+    property :message, String
+    belongs_to :forum, Forum
+  end
+  
+  'forum' is the :forum from belongs_to, 'name' is a property from the
+  relations.  It creates a SQL subquery to find the correct forum_oid.
+
+Thu Oct 26 11:58:14 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Alternative create_with(hash) method
+  # An alternative creation helper, does _not_ call the
+  # initialize method when there are mandatory elements.
+
+Thu Oct 26 11:41:31 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Refactor SchemaInheritance
+  This patch avoids messing around with :ogtype within create_table(), the
+  property gets included into the class when SchemaInheritanceBase is
+  included into the base class.
+  This has a slight problem, it doesn't assure that the ogtype is the first
+  field in the database.  To accomodate for that, the eval_og_allocate()
+  method has been adapted.  This has to be revisited later, the current
+  approach is too inefficient.
+  It also removes the eval_og_allocate from the postgres adapter, the one
+  in sql.rb is the same.
+
+Wed Nov 15 21:17:32 EET 2006  Fabian Buch <fabian@fabian-buch.de>
+  * call/answer fix including testcase
+
+Fri Nov 17 14:34:12 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better file sanitize in WebFile.
+
+Thu Nov 16 11:57:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed refs to OgSystem :(
+
+Tue Nov 14 14:06:15 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed non existent (and needed) sitemap helper in Admin controller.
+
+Tue Nov 14 14:02:56 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added again call/answer implementation. I ws amazed to find out that people used this (!!!). I think it is broken though!
+
+Tue Nov 14 13:55:34 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Manually added Lars Olsson doctype fix. [lars]
+
+Tue Nov 14 13:55:05 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  tagged 0.40.0
+
+--- 0.40.0 ---
+
+Mon Nov 13 10:53:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor doc changes.
+
+Sun Nov 12 23:29:41 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Sun Nov 12 23:24:38 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor doc updates.
+
+Sun Nov 12 23:15:43 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fix in render.
+
+Sun Nov 12 22:20:48 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed non-working call/answer implementation.
+
+Sun Nov 12 22:15:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in blog example.
+
+Sun Nov 12 13:30:32 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor changes to the build systme as suggested by Fabian.
+
+Fri Nov 10 19:01:53 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added gemspecs and updated build system.
+
+Fri Nov 10 18:08:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Fri Nov 10 17:59:24 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Flare admin skin fix.
+
+Fri Nov 10 00:50:11 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated the docs.
+
+Fri Nov 10 00:40:26 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Fri Nov 10 00:38:32 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved flare/spark out of examples again (will cleanup in the next release), some more minor changes.
+
+Fri Nov 10 00:32:09 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes to make flare work again.
+
+Fri Nov 10 00:18:57 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Made mixin_get_parameters default to true!
+
+Mon Oct 30 16:19:33 EET 2006  Jonathan Buch <john@oxyliquit.de>
+  * Configurable action compiler
+  In Nitro::Compiler
+  
+  # This specifies if
+  #   def my_action(oid, val)
+  # should handle both
+  #   my_action/1/23
+  # and
+  #   my_action?oid=1;val=23
+  setting :mixin_get_parameters, :default => false
+  
+  # Treats
+  #   def my_action(oid, val)
+  # as
+  #   def my_action(oid = nil, val = nil)
+  setting :non_strict_action_calling, :default => false
+
+Sat Oct 28 16:48:33 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Bugfix for params and actions with arity 0
+  Since the same params are used for rendering included parts and the
+  /error page, actions with arity 0 have to be treated differently.
+
+Sat Oct 28 16:21:40 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Rework parameter handling
+  Quite big change on how parameters are handled.
+  
+  * Use new context.action_params instead of .query_params to distinguish
+    between GET params and the ones from nice urls.
+  * When route is given merge the route parameters into the GET params,
+    add route parameter values into .action_params.
+  * Change Router#decode_route to use Dictionary instead of Hash (to
+    preserve order, important for action arguments).
+  * action raises `ActionError, "Wrong parameter count"` on wrong usage.
+  * Uncommented testcases in tc_controller_params again
+  * Added testcase for routes (TODO: need more of those)
+  * Single line fix for tc_dispatcher, it still used NoActionError.
+
+Thu Nov  9 12:20:22 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed part System to part Admin.
+
+Sun Nov  5 11:27:09 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Use template everywhere (instead of view). For example the new template annotation is ann :my_action, :template => :the_templ instead of ann :my_action, :view => :the_templ Lets use consistent terminology throughout.
+
+Sun Nov  5 11:00:15 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible handling of flash[:ERRORS] in FormHelper.
+
+Sun Nov  5 10:59:49 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Check if file was given in WebFile.
+
+Sat Nov  4 17:00:45 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs
+
+Fri Nov  3 12:33:57 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved flash/spark into examples to cleanup top level dir.
+
+Thu Nov  2 09:24:17 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Don't save the target of refers_to (but we have to rethink this, check the comments).
+
+Thu Nov  2 09:14:30 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Optimize sql queries when setting refers_to/belongs_to relations (less saves). More to come.
+
+Thu Nov  2 08:11:22 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * System part saving handles relations now.
+
+Tue Oct 31 11:47:20 EET 2006  manveru@weez-int.com
+  * 'prevent overwriting an existing cache via Global.setup
+
+Tue Oct 31 11:44:57 EET 2006  manveru@weez-int.com
+  * fix small typo in why_wiki
+
+Mon Oct 30 09:19:24 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reverted to facets 1.4.3
+
+Fri Oct 27 16:03:02 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * move private statement in sqlite below query()
+  fixes at least one testcase
+
+Fri Oct 27 15:28:53 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix rescues
+  These `rescue => ex` blocks only catch certain errors, they didn't
+  catch errors from PGError when the -pr postgres extension is used.
+  Rewrote all those rescues to `rescue Object => ex`.
+
+Thu Oct 26 11:39:33 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix table_info(), return only first row
+
+Tue Oct 24 22:08:43 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Add table_exists? and table_info for psql/mysql/sqlite
+
+Sat Oct 28 11:36:12 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Use a local version of annotation, in an attempt to upgrade to the latest version of facets.
+
+Sat Oct 28 11:35:17 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor cleanup.
+
+Wed Oct 25 11:38:02 EEST 2006  manveru@weez-int.com
+  * Fix an exploitable bug in CGI multipart parsing which affects Ruby <= 1.8.5
+  when the input stream returns "" (empty string) instead of nil on EOF.
+  Certain malformed multipart requests leave the parser in a non-terminating
+  state, leaving the program vulnerable to denial of service attack. The fix
+  more carefully checks for input stream EOF.
+    affected: standalone CGI, Mongrel
+    unaffected: FastCGI, mod_ruby, WEBrick
+  
+  found and fixed by zedas
+
+Tue Oct 24 21:43:43 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * more checks in get/put_store
+  The original can lead to weird errors when Og.start gets called many times
+  and many stores are used concurrently.
+
+Tue Oct 24 21:19:04 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Change manage_classes, use less .managed_classes calls, add check for manageable?
+
+Tue Oct 24 20:57:27 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Add compatibility layer for postgres-pr and early postgres lib versions
+
+Tue Oct 24 20:46:37 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Rework Og.start() a little, add m.manage_classes(options[:classes])
+
+Tue Oct 24 18:41:45 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated why_wiki.
+
+Tue Oct 24 15:46:42 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated CHANGELOG.
+
+Tue Oct 24 11:25:00 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * You guessed it, more changes to examples ;-)
+
+Tue Oct 24 11:24:19 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More changes to examples, even more to come.
+
+Tue Oct 24 11:23:33 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Many changes to examples, flare, spark to convert to latest code, more to come.
+
+Tue Oct 24 09:20:32 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved system view dirs to template dirs.
+
+Mon Oct 23 14:52:53 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added set_attributes, instace_attribute_set methods in entity, for easy (and fast) update+save of attributes. Custom Mysql quote.
+
+Mon Oct 23 14:52:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some work on dispatcher for tc_params.
+
+Mon Oct 23 14:51:47 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updates in TODO.
+
+Thu Oct 19 18:29:57 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Multiple fixes to make Nitro tests pass. All pass except tc_session with Og cachse and tc_controller_params. Can anyone help with these  two?
+
+Thu Oct 19 12:24:53 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible controller_map setting. Allows presetting of controller maps in parts. Have a look at the system part for an example.
+
+Wed Oct 18 10:48:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Wed Oct 18 10:47:08 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More effective $cache.cleanup
+
+Tue Oct 17 22:12:59 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Many changes to make all Og tests pass with MySQL, yeah! Anyone can try prostgres/sqlite?
+
+Mon Oct 16 11:29:57 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * All Glue tests pass cleanly.
+
+Mon Oct 16 10:19:26 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added doc/TODO to offer a glimpse to the future of Nitro.
+
+Mon Oct 16 10:14:53 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Skip  redirects on ajax/rpc requests. Allows to write more reusable code.
+
+Sat Oct 14 20:07:14 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed all Admin/Scaffolding stuff. Lets clear the directory structure a bit ;-)
+
+Sat Oct 14 19:51:30 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added new System part that will replace old Admin part. The implementation is much simpler, it supports plugins and more. In general it is a better place for improvment. Ooh, and should startup faster too ;-)
+
+Fri Oct 13 16:27:56 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Mark instances started by the bin/nitro command with the application name for easy identification when running ps.
+
+Fri Oct 13 10:49:07 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved handling of index params in dispatcher, fixes bug when only template exists and no action (tiny example runs now ;-))
+
+Fri Oct 13 09:47:58 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in Global.
+
+Fri Oct 13 09:37:11 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted blog example.
+
+Fri Oct 13 09:06:25 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix: Made sweeper compatible with new cache scheme.
+
+Wed Oct 11 11:11:24 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in feed link calculation (no '//')
+
+Wed Oct 11 11:11:00 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in mailer outgoing.
+
+Sat Sep 30 18:09:21 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix Glue testcases, many failing though
+
+Fri Sep 29 16:43:24 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Revamp tc params to also allow POST requests, add POST multipart test
+
+Thu Sep 28 17:29:18 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Add test to tc params for action_methods / module including
+
+Thu Sep 28 17:26:21 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * repair Controller.action_methods
+
+Thu Sep 28 16:34:50 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Insert testcase for params, bugreport ray
+
+Thu Sep 28 01:38:15 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Change the way /index with parameters handled
+  This behaviour is documented in tc_controller_params.rb in the two tcs
+  test_index_handling and test_index_handling_bad.
+
+Tue Oct 10 14:16:35 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Replace refs to the old 9999 port with the new 9000 port.
+
+Tue Oct 10 14:11:54 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed some obsolete files.
+
+Tue Oct 10 11:45:27 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible elements namespace selection, you can easier have multiple skins in your web app, per controller, per controller group etc. Read the source for more details. A low level example: ann :self, :elements => CustomSkin. I will add some DSL macro for this though.
+
+Fri Sep 29 10:57:43 EEST 2006  manveru@weez-int.com
+  * this allows you to use the sqlite-memory-store (sqlite3) by setting the :name to ':memory:'
+
+Tue Oct  3 13:32:31 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix sti bug, used subclass name for foreign_key
+  Foo has_many Bar; User has_many Foo; Admin < User; Admin.foos #=> SQL
+  ERROR: DB error no such column: admin_oid, [SELECT * FROM ogcustomer WHERE admin_oid = 1]
+  
+  Thx to Rayman for catching that bug, added testcase as well
+
+Fri Sep 29 20:41:47 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Small tc reverse fix, also works on psql now!
+
+Mon Oct  9 22:34:39 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed emit labels in relation controls.
+
+Mon Oct  9 22:20:31 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Another cool flash helper, concat. Useful for error handling in cooperation with the new form builder features.
+
+Mon Oct  9 19:11:25 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Nitro unescapes request params (even for nice urls), more cases handled.
+
+Mon Oct  9 19:01:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved form builder error handling, more intuitive implementation of flash.push.
+
+Mon Oct  9 10:29:19 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in text_key/key annotation, it is handles correctly now.
+
+Sun Oct  8 11:56:28 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Form helper should ignore polymorphic_marker relations.
+
+Sun Oct  8 11:09:57 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * When deleting an Og entity load the object, so og_delete aspects can access instance variables. Useful for sophisticated cache sweepers.
+
+Sun Oct  8 11:09:26 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated scaffold model to use the new OgSystem stuff.
+
+Sun Oct  8 10:24:52 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * WebFile.override_files = true by default.
+
+Sun Oct  8 10:21:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Made strange router urls more compatible with Apache.
+
+Sun Oct  8 10:14:47 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * At last, output caching generates files, not directories. Improved apache/webrick/mongrel rewrite rules.
+
+Sat Oct  7 20:30:56 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added a nasty hack that fixes a truly nasty bug. For details read in the webrick/mongrel adapters. We must find a better solution though.
+
+Sat Oct  7 18:33:07 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reverted some changes in compiler/dispatcher, cleaned up the mess. Sorry Fabian, your changes where invalid, but I will make your updated testcases pass. Gimme some more time ;-)
+
+Sat Oct  7 10:02:02 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More correct calculation of managed_classes.
+
+Thu Oct  5 21:29:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some comments.
+
+Thu Oct  5 21:25:22 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added useful handle_static_files setting in Server. When running in production mode set to false (the frontend webserver should handle static files). Allows an ingenious rewrite rule to handle admin servers ;-)
+
+Mon Sep 25 23:37:52 EEST 2006  manveru@weez-int.com
+  * added nitro/tc_template for coming move of Glue::Template -> Nitro::Template
+
+Mon Sep 25 23:30:51 EEST 2006  manveru@weez-int.com
+  * added nitro/tc_markup (this will become important after the Glue::Markup -> Nitro::Markup move
+
+Fri Sep 29 19:48:16 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Make OgCache faster by adding primary_key index
+
+Thu Sep 28 12:23:24 EEST 2006  manveru@weez-int.com
+  *  The huge Template|Markup move from Glue to Nitro
+
+Thu Sep 28 14:20:58 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix tc_validation_loop
+
+Thu Sep 28 14:14:38 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix tc_reverse
+
+Thu Sep 28 14:12:26 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Add psql rollback/savepoints for transactions
+
+Thu Sep 28 13:57:56 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Try fix sti, ogtype resolution for mysql < 5, -pr psql
+
+Thu Sep 28 01:30:59 EEST 2006  manveru@weez-int.com
+  * add fatal failed testcases to the failed testcases :)
+
+Thu Sep 28 01:40:42 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix bug, used String for primary_key for psql auto generated values.
+
+Thu Sep 28 00:22:06 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix tc has_many
+
+Thu Sep 28 00:20:44 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix param handling and param testcases
+
+Thu Sep 28 00:02:46 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix tc controller, remove unnessessary action_methods
+
+Wed Sep 27 19:09:05 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix tc multi_validation and tc kirby.
+
+Wed Sep 27 19:05:18 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix tc primary key for psql, change sequence handling
+  Moves sequence description to a annotation for the primary key instead of
+  using a constant in the class.  Only uses sequences if the sql for the
+  pk includes the keyword SERIAL.  This does not account for manually
+  created sequences, TODO.
+
+Wed Sep 27 16:31:18 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix reverse tc, makes it pass for mysql
+
+Wed Sep 27 16:22:23 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix inheritance tc
+
+Wed Sep 27 16:21:49 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Fix sti for psql
+
+Fri Sep  8 17:08:00 EEST 2006  Alex Pooley <alex@msgpad.com>
+  * retry when sqlite database locked
+
+Wed Sep 27 15:21:19 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Make inline C in tc_cgi more robust
+
+Tue Sep 26 23:59:50 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * Add more tests to tc param
+
+Tue Sep 26 15:46:47 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * More and better testcases for params
+
+Tue Sep 26 14:44:53 EEST 2006  Jonathan Buch <john@oxyliquit.de>
+  * More testcases for tc_controller_params, refactor
+
+Tue Sep 26 00:01:46 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * support for request.local_net? to check if a request comes from a local network [3]
+  (RFC1918 + localhost) including testcase
+  idea by Manveru, algorithm by Jonathan and implementation by Fabian
+
+Tue Sep 26 00:06:47 EEST 2006  manveru@weez-int.com
+  * update to nitro/tc_dispatcher
+
+Mon Sep 25 23:37:34 EEST 2006  manveru@weez-int.com
+  * just a typo in nitro/tc_session
+
+Mon Sep 25 23:36:47 EEST 2006  manveru@weez-int.com
+  * updated to nitro/tc_render to reflect lots of changes in nitro-source
+
+Mon Sep 25 23:29:35 EEST 2006  manveru@weez-int.com
+  * updated nitro/tc_controller - will reflect the current ways of nitro a lot better
+
+Mon Sep 25 23:27:25 EEST 2006  manveru@weez-int.com
+  * updated nitro/tc_cgi (kashia added ruby-inline to make it faster) and some other fixes for it
+
+Mon Sep 25 23:23:00 EEST 2006  manveru@weez-int.com
+  * updated nitro/helper/tc_table
+
+Mon Sep 25 22:50:11 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * add testcase for nitros parameter-handling (finally) [2]
+  original by Manveru
+
+Wed Sep 13 12:47:40 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * gen part uses lib/ directory now
+  so parts reside in lib/part/partname
+  public stuff of parts are still in public/part/partname/
+
+Tue Oct  3 23:37:06 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed scgi adapter. This is not maintained anymore by the original author. You are advised to use the mongrel adapter instead.
+
+Mon Sep 25 16:51:27 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added nitro restart command.
+
+Mon Sep 25 16:18:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Nitro cluster command spawns correct number of app servders and implies daemon mode.
+
+Sun Sep 24 23:22:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed response cookies problem od the Mongrel  adapter.
+
+Sat Sep 23 05:48:59 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added part callbacks for more structures and flexible part initialization.
+
+Sat Sep 23 05:47:11 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved Global initialization, more flexible, in sync with session.
+
+Sat Sep 23 05:25:41 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved handling of Session.cache_type for flexible initialization.
+
+Fri Sep 22 21:45:12 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated configuration system to make more flexible, imporved drb sessions and Nitro initialization in general. Still some related work to do though (especially update the examples). Warning this patch will break your apps. Some text that will explain the small changes needed is forthcoming.
+
+Thu Sep 21 23:44:12 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved nitro command to handle state server, added kill option.
+
+Thu Sep 21 21:57:24 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some initial cache management (from the console) features.
+
+Thu Sep 14 12:11:50 EEST 2006  manveru@weez-int.com
+  * Make YAML-properties with postgresql work again
+
+Tue Sep 12 13:58:03 EEST 2006  manveru@weez-int.com
+  * notice about new script/test :)
+
+Tue Sep 12 10:08:38 EEST 2006  manveru@weez-int.com
+  * Huge refactoring of script/test.rb, to use the new capability just 'gem install popen4'
+
+Fri Sep  8 05:24:10 EEST 2006  manveru@weez-int.com
+  * added tc_primary_key (which fails right now, like every good tc should ;)
+
+Wed Sep  6 12:35:58 EEST 2006  manveru@weez-int.com
+  * fix little bug with parse_timestamp (utils.rb)
+
+Sat Aug 26 23:53:35 EEST 2006  nusgnaf@gmail.com
+  * Og close_store fix
+  We use @store to maintain database connection when Og.thread_safe is false and @pool when Og.thread_safe is 
+  true. Right now in close_store, we fall back to @store.close when @pool.empty? is true, that not correct, the 
+  following patch fixes this.
+
+Mon Aug 28 10:52:01 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * fixed bug in tc_store.rb
+
+Fri Aug 25 20:28:28 EEST 2006  manveru@weez-int.com
+  * making some other testcases pass again (issue with result of psql)
+
+Fri Aug 25 17:21:13 EEST 2006  manveru@weez-int.com
+  * making tc_build.rb pass again
+
+Fri Aug 25 02:59:25 EEST 2006  manveru@weez-int.com
+  * make aggregations work again (tc_aggregations_calculations)
+
+Thu Aug 24 17:24:41 EEST 2006  manveru@weez-int.com
+  * fixing STI
+
+Thu Aug 24 14:45:41 EEST 2006  manveru@weez-int.com
+  * adding some raise "Not implemented" in og/store.rb for empty methods
+
+Tue Aug 22 15:25:40 EEST 2006  manveru@weez-int.com
+  * minor change in tc_scope, still doesn't pass though
+
+Tue Aug 22 12:07:16 EEST 2006  manveru@weez-int.com
+  * changed script/test.rb so it runs the tests seperate (useful for og, if one test fails, not all others blow up)
+
+Tue Sep 12 15:43:44 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Fix scope bug in collection.rb, use count for finding number of joins_many relations
+
+Mon Sep 11 17:42:33 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Fix for deleting has_many belongs/refers_to relations
+
+Mon Sep 11 15:22:05 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * fix for deleting belongs_to relationships
+
+Mon Sep 11 14:23:15 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * add testcase for deleting relations
+
+Thu Sep  7 00:40:08 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * More small og test fixes
+
+Thu Sep  7 00:16:02 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Fix more og testcases
+
+Thu Sep  7 00:09:53 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * .save returns affected rows again, fix subclass creation in relation.rb
+
+Sun Sep  3 18:49:23 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Enable object annotating for custom styles in form attributes.
+  
+  Can be used like following:
+  
+  <?r
+   flash[:VERROR].errors.each do |sym,msg|
+     @obj.annotation sym => {:control_style => 'border:1px solid red;'}
+   end if flash[:VERROR]
+  ?>
+  
+  This traverses over validation errors and sets a red border around those
+  attributes with errors.
+  
+
+Sun Sep  3 14:24:05 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Replace pk.inspects by quote(pk)
+  
+  Fixes problems with text/integer keys.
+
+Sun Sep  3 14:12:01 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * One line fix for 'Various Changes' patch
+
+Sun Sep  3 01:49:49 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Various changes
+  
+  * Revise resolve_polymorphic_relations, remove FIXME, change the
+    eval to const_set.
+  * Change symbol_to_class to return nil when no matching class was 
+    found.
+  * Fix aggregation code, only use order_by when group_by is given.
+
+Sat Sep  2 19:44:58 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * minor fix for manage_classes
+
+Sat Sep  2 19:38:17 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * remove ObjectSpace search in manage_classes when classes are specified
+
+Wed Aug 30 21:09:23 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * OgKlass.create_with is now able to accept arrays for collections
+
+Tue Aug 29 01:10:05 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Fix bug with Pager and aggregations
+  
+  The option array got changed by the new aggregation code and in `paginate` the array got reused.  Testcase also attached.
+  
+  This patch also makes an alias named :limit for :per_page.  Makes paginate more compatible to other sql based functions.
+
+Mon Aug 28 02:20:13 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * minor testcase bugfixes
+
+Mon Aug 28 02:19:01 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * only use transactions in og_delete when cascading is activated
+
+Mon Aug 28 02:17:33 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Automatic deletion of many2many relationships when one side gets removed
+
+Mon Aug 28 02:10:57 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * add testcase for many to many relationships and deleting one side of the relationship
+
+Mon Aug 28 02:09:31 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * prop_accessor -> attr_accessor
+
+Mon Aug 28 01:35:58 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * fix taggable, reload needed when deleting tag
+
+Sat Aug 26 02:09:30 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * change all prop_accessor to attr_accessor
+
+Sat Aug 26 01:43:27 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * patch for many postgresql store errors, makes more tests pass
+  
+  Most importantly this changes the lookup rule for symbol_to_class in relation.rb, changes annotating of primary keys when invoked by `set_primary_key :name, String`.
+  
+  Minor enhanced test files, updated to new syntax etc.
+
+Fri Aug 25 20:25:22 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Add transaction, commit, rollback to psql adapter
+
+Fri Aug 25 18:51:21 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Let `def aggregation` use `resolve_options`
+  
+  It duplicated functionality already available in `resolve_options` and didn't know about join tables etc.
+
+Thu Aug 31 21:12:01 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Add Fabian Buch as contributor, rename nick Kashia to Jonathan
+
+Tue Sep 12 18:21:27 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fixes.
+
+Mon Sep 11 18:56:26 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * removed unmatched require in server.rb
+
+Mon Sep 11 18:55:57 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * fixed call/answer (render.rb) to work correctly [2]
+
+Mon Sep 11 18:50:26 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * FeedHelper fix that lets its unit test pass again [2]
+
+Mon Sep 11 18:48:51 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * removing "nil"-Strings from has_many and refers_to controls [2]
+  since you don't want "nil" for NULL in your database
+
+Mon Sep 11 18:45:44 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * webfile bugfix and to-be-improved tc_webfile.rb added [2]
+  also: don't override files by default
+  and more logical file permissions
+
+Mon Sep 11 18:38:11 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * adding generator for parts (gen part) [2]
+  
+  gen part partname
+  copies the given part to the current folder (so you should be
+  in your applications main folder) and moves the part's 
+  public files to public/part/partname
+
+Mon Sep 11 23:55:24 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * let mongrels request_uri and query_string behave like the ones of webrick and fcgi
+
+Sun Sep 10 22:20:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up many files.
+
+Sun Sep 10 00:28:14 EEST 2006  Pangloss <darrick@innatesoftware.com>
+  * Test for :serializable_attributes in Manager#manageable?
+
+Sun Sep 10 00:20:38 EEST 2006  Pangloss <darrick@innatesoftware.com>
+  * Update Og::Cacheable to use facets 1.4.5
+
+Sun Sep 10 11:48:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in exclude patch to get rid fo the warning.
+
+Fri Sep  8 21:24:29 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * adding option[:exclude] to all_attributes in form helper
+  now you can exclude single attribute
+  for example:
+  f.attributes(:exclude => :password) or
+  f.attributes(:exclude => [:password, :name])
+
+Sat Sep  9 10:05:15 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Allow label override in form helper.
+
+Sat Sep  9 09:57:51 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Thu Sep  7 22:58:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some improvements in caching and scaffolding.
+
+Tue Sep  5 23:03:21 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Access server from context (req/res)
+
+Tue Sep  5 23:02:08 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * New cluster friendly nitro script.
+
+Thu Aug 31 16:41:22 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * fix latest Runner bugs
+  ruby run.rb -m for example didn't work, it always used webrick unless Nitro.adapter was set
+
+Thu Aug 31 20:30:30 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some more fixes in the the new param parser, it works better with the router now.
+
+Wed Aug 30 22:18:49 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * FileControl and PasswordControl added
+
+Tue Aug 29 00:21:53 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for mongrel, execution modes and more in the nitro startup script (bin/nitro).
+
+Mon Aug 28 20:15:49 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Sat Aug 26 13:27:34 EEST 2006  Fabian Buch <fabian@fabian-buch.de>
+  * Alexander Lazic's Mongrel Adapter changes + mine
+  it uses Mongrel::Configurator to setup mongrel
+  Logger for a more unified look
+  fixes trap to use stop()
+
+Sat Aug 26 10:48:39 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed 'true' bug in sub-elements.
+
+Sat Aug 26 10:47:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small improvements in taggable.
+
+Fri Aug 25 22:55:59 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved sub-element functionality, add some comments to explain the usage.
+
+Thu Aug 24 20:54:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed src dir, moved path into lib. Cleaner layout and trnsparently supports my new webapp deployment script. nice ;-)
+
+Thu Aug 24 17:36:23 EEST 2006  manveru@weez-int.com
+  * tell evolution to accept the properties of its relatives
+
+Tue Aug 22 15:37:30 EEST 2006  Jonathan Buch <jonathan.buch@gmail.com>
+  * Added more FIXMEs for rescue Object and removed a few
+
+Sat Aug 19 17:02:58 EEST 2006  rff.rff@gmail.com
+  * removing spurious "p"
+
+Sat Aug 19 16:46:39 EEST 2006  [_\c3_][_\b9_]rff.rff@gmail.com
+  * better error handling for helper.rb
+
+Tue Aug 22 18:07:35 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some improvements in the new scaffolding code, auto detection of per model controllers.
+
+Sun Aug 20 12:32:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc small changes for improved robustness.
+
+Thu Aug 17 10:12:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Various validation related fixes and small improvements.
+
+Thu Aug 17 09:04:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Default error page sets 501 status
+
+Sat Jul 29 17:17:57 EEST 2006  rff.rff@gmail.com
+  * This patch contains the following changes:
+  
+  M ./nitro/lib/nitro/helper/form.rb +8
+
+Sat Jul 29 17:13:06 EEST 2006  rff.rff@gmail.com
+  * This patch refactors the code used in the scaffolded view to be usable as a single helper. 
+  It basically creates a div containing a list of li tags, each of one contains a message for each error in flash[:ERRORS]
+  
+  This patch contains the following changes:
+  
+  M ./nitro/lib/nitro/helper/form.rb +12
+
+Tue Aug  1 23:37:32 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Intuitive handling of text keys, allows code like u = User['gmosx'] and u = User[1] at the same time.
+
+Tue Aug  1 23:37:14 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * encode_url better handles index actions.
+
+Sun Jul 30 16:21:26 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some small fixes.
+
+Mon Jul 17 23:50:50 EEST 2006  bryan.a.soto@gmail.com
+  * bugfix-glue-validate_value
+  Ticket #44: http://devlab.oree.ch/trac/glycerin/ticket/44
+  Credit to matt DOT moriarity AT gmail DOT com.
+
+Sat Jul 29 13:54:08 EEST 2006  rff.rff@gmail.com
+  * fix conflict mongrel adapter
+
+Mon Jul 17 09:06:48 EEST 2006  bryan.a.soto@gmail.com
+  * bugfix-nitro-mongrel-adapter
+  Fixes multi-part form processing, which was broken by my previous patch. Basically, image uploads work now for mongrel.
+
+Sat Jul 29 13:49:33 EEST 2006  rff.rff@gmail.com
+  * fix conflict on "undescore" typo
+
+Tue Jul 11 04:07:02 EEST 2006  bryan.a.soto@gmail.com
+  * bugfix-nitro-ticket-43
+  Fixed a bug/type as suggested by rff_rff AT yahoo DOT it
+  http://devlab.oree.ch/trac/glycerin/ticket/43
+
+Tue Jul 11 04:03:50 EEST 2006  bryan.a.soto@gmail.com
+  * bugfix-nitro-ticket-34
+  Fixed as per billk AT cts DOT com suggestion on Ticket #34.
+  http://devlab.oree.ch/trac/glycerin/ticket/34
+
+Wed Jul  5 22:32:24 EEST 2006  rff_rff@yahoo.it
+  * navigation menu helper
+  This helper allows easy creation of xhtml/css based navigation menus, producing an xhtml that is suitable to be used with examples found at listamatic, and with automatic handling of "current page" highliting, setting proper xhtml for it.
+  
+  The helper adds two methods, one allows to create a menu like 
+   menu_for(HomeController, Pages, Feed)
+  and the other gives more fine grained control through:
+   menu_from_hash('/home'=>'Home Page', '/pages'=>'Wiki', '/feed/rss'=>'RSS2.0')
+  
+
+Sat Jun 10 01:06:20 EEST 2006  bryan.a.soto@gmail.com
+  * hack-enh-fcgi-rewind
+  A small hack to ensure that you can access the raw_body of a request, by converting the incoming stream to a StringIO if it doesn't respond to :rewind.
+
+Thu May 18 03:14:36 EEST 2006  bryan.a.soto@gmail.com
+  * test-fix-og-tc_ez
+  Fixes up the ez testcase Manveru submitted to make it run and pass.
+
+Sat May 13 14:10:40 EEST 2006  m.fellinger@gmail.com
+  * ez-fix for trueclass and testcase for it
+
+Sat May 13 14:09:45 EEST 2006  m.fellinger@gmail.com
+  * error-page-fix for source-preview
+
+Thu May 18 01:32:59 EEST 2006  bryan.a.soto@gmail.com
+  * test-fix-nitro-tc_render
+  Makes the TestController subclass Nitro::Controller so it get's the #encode_url method.
+
+Thu May 18 01:24:52 EEST 2006  bryan.a.soto@gmail.com
+  * adds-some-blank-lines-to-og-tc_setup
+
+Thu May 18 01:17:25 EEST 2006  bryan.a.soto@gmail.com
+  * gabrielle-renzis-linefeeds
+  Switches line endings from Dos to Unix.
+
+Sat Jul 29 13:25:34 EEST 2006  rff.rff@gmail.com
+  * solves the conflict between repo and devlab (Og.setup now handles arguments in 
+  a saner way and crashes ASAP when there is no chance to recover
+  
+
+Fri May  5 15:30:51 EEST 2006  surrender_it@yahoo.it
+  * crash-early Og.setup
+  This patch removed the Exception handling routine from Og.setup.
+  With the current code if an exception is raised during the execution of 
+  the method there is no crash, but the crash will happen every time someone references Og.manager, cause that variable won't be initialized .
+  This patch makes Og.setup crash as soon as possible, thus allowing faster diagnostics.
+  
+  The patch also adds a simple test case for Og.setup, which seem not tested anywhere, but the test case may need some love  for proper setup (it relies on glycerin as of now, cause loading CONFIG.rb seem to raise a strange exception related to mixed use of facets 1.3 and 1.0 on my box)
+  
+
+Fri May  5 04:02:06 EEST 2006  surrender_it@yahoo.it
+  * better test logging
+  As of now tests for Og swallow every error ingormation while not in $DBG mode,
+  this one-line patch allows visualization of logged informations at WARN level and more, which has little impact on the visualization of the tests and still allows quick diagnostics while staying out of $DBG
+
+Fri May 12 09:05:11 EEST 2006  bryan.a.soto@gmail.com
+  * add-ostruct-require
+  Adds missing ostruct require to testcase.rb.
+
+Wed May 10 09:05:46 EEST 2006  bryan.a.soto@gmail.com
+  * nitro-proto-page
+  Updates the intro page with a link to the rubyforge page for examples to be downloaded as suggested by James Britt.
+
+Sat Jul 29 11:39:54 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Made redirect_on_empty (buffer) true by default.
+
+Thu Jul 27 22:28:02 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More fault tolerant populate_attributes.
+
+Wed Jul 26 14:53:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added objects_to_options helper.
+
+Wed Jul 26 14:52:38 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Hack fixed fcgi/console Og polymorphic bug, will investigate later.
+
+Sun Jul 23 17:19:16 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fixes and cleanup.
+
+Fri Jul 21 00:18:17 EEST 2006  nusgnaf@gmail.com
+  * fragments_fix
+  kill the usage of @@cache in nitro/lib/nitro/caching/framents.rb,
+  use self.cache instead.
+
+Thu Jul 20 21:20:02 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Thu Jul 20 21:06:57 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved postgreslq adapter.
+
+Fri Jul 21 04:54:51 EEST 2006  nusgnaf@gmail.com
+  * form.fix
+  ensure we render all_attributes before we yield to block.
+
+Thu Jul 20 16:34:58 EEST 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * MysqlAdapter database creation
+
+Thu Jul 20 00:42:22 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More cleanup in Og files.
+
+Wed Jul 19 23:37:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small updates in source files, removed some obsolete files.
+
+Wed Jul 19 20:03:47 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better refactoring of last_insert_id/insert_sql.
+
+Wed Jul 19 19:38:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Further Og adapter refactoring.
+
+Wed Jul 19 18:34:44 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Mongrel large file fix. [fang sun]
+
+Tue Jul 18 23:25:42 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated source.
+
+Tue Jul 18 20:47:45 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added postgresql.rb main adapter file.
+
+Tue Jul 18 20:47:25 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated RELEASES.
+
+Tue Jul 18 18:54:06 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More source/doc updates.
+
+Tue Jul 18 18:45:16 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc doc/source updates.
+
+Tue Jul 18 01:09:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented postgresql adapter (not fully working yet).
+
+Tue Jul 18 01:08:31 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Further refactoring/cleanup of the Og adapter code.
+
+Tue Jul 18 01:07:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in examples to make work with latest code.
+
+Sun Jul 16 19:44:36 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added special resolve_polymorphic behaviour to many_to_many/joins_many relations.
+
+Sun Jul 16 19:06:28 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Even more intelligent dispatches, handles some more useful nice url cases. It rocks!
+
+Sun Jul 16 18:47:21 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible resolve_polymorphic_relations.
+
+Sun Jul 16 17:50:00 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Check for join tables even if main table exists to be make Og more self-healing (and adaptive to changin schemas).
+
+Sun Jul 16 16:06:32 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Polymorphic relations use again Owner::Class subclasses, but they are more flexible, there is no more the need for foreign_name declarations, plus cleaned up some Og code.
+
+Thu Jul 13 20:26:58 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Virtualized table_already_exists? for mysql and sqlite3 to allow a single create table method for both adapters (!!!).
+
+Thu Jul 13 20:11:43 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented the sqlite adapter under the new model.
+
+Thu Jul 13 20:10:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Remarkable refactoring/simplification of the Og adapter model. Cleaned up Mysql Adapter, more robust code.
+
+Wed Jul 12 19:42:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Options control now takes reverse dictonary as a parameter, more useful.
+
+Tue Jul 11 00:07:36 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * MAJOR, BACKWARDS UNCOMPATIBLE CHANGE: Polymorphic classes are not nested. Ie now ArticleComment is created instead of Article::Comment.
+
+Mon Jul 10 22:08:14 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added rename_schema method in Og evolution.
+
+Mon Jul 10 18:55:39 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed og evolution from og main dir to avoid confusion with store/evolution (renamed to dump.rb)
+
+Sun Jul  9 19:45:09 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc form helper and controls improvements.
+
+Sun Jul  9 19:44:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved StaticInclude compiler to handle recursive static includes (extremely useful).
+
+Sun Jul  9 11:31:38 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Sun Jul  9 11:23:57 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes in the admin templates.
+
+Sun Jul  9 11:09:05 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed old form helper code, added float control, some cleanup.
+
+Sat Jul  8 11:24:06 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added OptionsControl for attributes that take discreet options.
+
+Sat Jul  8 11:23:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated contributors.
+
+Sat Jul  8 10:38:14 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Extacted publishable.rb from controller.rb, added mount_path helper to publishable. [renzi]
+
+Thu Jul  6 23:42:17 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Thu Jul  6 23:41:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small render fix.
+
+Thu Jul  6 23:35:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for nested controllers, cleaned up render (no base), updated admin part to work with changes.
+
+Thu Jul  6 18:54:47 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added initial versions of scaffold/controller, scaffold/model.
+
+Wed Jul  5 22:31:30 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Changed render_template (for the moment uses a 'hack' implementation, but it works!) [james_b]
+
+Wed Jul  5 21:13:28 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Og load/reload handle nil primary keys (by returning nil).
+
+Sat Jul  1 10:24:25 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Simplified hidden method in xhtml helper.
+
+Fri Jun 30 22:07:11 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Applied james britt's mongrel patch.
+
+Thu Jun 22 20:52:14 EEST 2006  Kashia Buch <john@oxyliquit.de>
+  * author backwards compatibility (atom)
+  
+  Request by Fabian
+
+Tue Jun 27 16:52:25 EEST 2006  Jonas Pfenniger <jonas@stvs.ch>
+  * Added handle_sql_exception for MysqlAdapter#create_table
+
+Tue Jun 27 16:22:19 EEST 2006  Jonas Pfenniger <jonas@stvs.ch>
+  * Added String to Car's property in tc_inheritance.rb
+
+Tue Jun 27 16:20:17 EEST 2006  Jonas Pfenniger <jonas@stvs.ch>
+  * Removed Glue::Flexob testcase since it does't exist anymore
+
+Thu Jun 29 18:15:58 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed add_rule in dispatcher [james_b]
+
+Thu Jun 29 18:15:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed paramix-fix, not needed in facets 1.4.3
+
+Mon Jun 26 22:14:14 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Argh and again argh, extend OpenStruct instead of OpenObject in FileTemplate to fix weird and NASTY eval bug.
+
+Mon Jun 26 20:21:52 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * consoleapp -> command.
+
+Mon Jun 26 19:37:05 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Changes to make compatible with 1.4.2
+
+Tue Jun 20 09:51:44 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some new files.
+
+Tue Jun 20 09:47:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Applied patches by neokolor@gmx.de, plus some minor stuff. [neokolor@gmx.de]
+
+Sun Jun 18 13:25:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Deprecated RSS helper (use the new feed helper instead).
+
+Sun Jun 18 13:24:31 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated spark and flare examples to use the feed helper.
+
+Sun Jun 18 13:18:30 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated blog example to work with latest, slightly improved feed parser in the process.
+
+Sun Jun 18 12:00:54 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Allow override of style in controls (+ minor fixes).
+
+Tue Jun  6 00:11:52 EEST 2006  bryan.a.soto@gmail.com
+  * bugfix-mongrel-adapter-request-uri
+  Removes REQUEST_URI header manipulation and accomodates an upcoming change in Mongrel 0.3.13. An ugly class check... Lovely.
+
+Thu May 11 01:20:51 EEST 2006  bryan.a.soto@gmail.com
+  * more-mongrel-adapter-fixes
+  Fixes up static file serving.
+
+Wed May 10 09:04:39 EEST 2006  bryan.a.soto@gmail.com
+  * mongrel-fixes
+  Gives the Mongrel adapter some need updating.
+
+Fri Jun 16 11:27:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed Orderable to work with latest Og.
+
+Wed Jun 14 10:13:36 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Allow for relative/absolute expiration of affected cached pages for extra flexibity.
+
+Wed Jun 14 10:04:09 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in output caching (root setting).
+
+Wed Jun 14 09:16:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed evolution.rb to dump.rb to avoid confusion with the dynamic schema evolution feature.
+
+Wed Jun 14 09:14:51 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored og cloning to a separate file to keep entity.rb cleaner.
+
+Tue Jun 13 20:56:24 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added sendfile support to render. [jlambert]
+
+Tue Jun 13 20:56:06 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Taggable tagstring_linked.
+
+Tue Jun 13 09:06:49 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small changes in FeedHelper.
+
+Mon Jun 12 11:37:33 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed deprecated and buggy static include code from Template, the StaticInclude compiler is used instead.
+
+Fri Jun  9 11:38:34 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added {{..}} and #<..> aliases to #{R ..}.
+
+Fri Jun  9 11:19:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored webrick vcr functionality to a separate file.
+
+Wed Jun  7 18:24:38 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added again examples, flare, spark
+
+Wed Jun  7 04:13:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Using the new building code, fixed the admin hasmany/joinsmany control.
+
+Wed Jun  7 03:59:02 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented collection build mode for efficient object relation initialization w/o excessive saves.
+
+Tue Jun  6 10:57:31 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in template_for_action to avoid unhelpful error message on missing action (and symbol passed).
+
+Mon Jun  5 21:26:24 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added many new files.
+
+Mon Jun  5 21:24:11 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Many many changes (New control system, Emit labels in the controls, Relation controls (hack fix), Show form errors in admin screens, Removed credit lines, Updated docs, Og.destroy_schema, and more...) under heavy construction.
+
+Sun May 28 10:26:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Honour port in Mysql create/destroy [james_b]
+
+Fri May 26 12:46:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Mon May 22 13:32:04 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Mon May 22 13:29:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored and rationalized evolution support for sql stores.
+
+Mon May 22 09:41:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced new control system. Still under construction.
+
+Sun May 21 12:07:18 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in validation and scaffolding.
+
+Sat May 20 12:32:43 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * After some more fixes tc_store.rb passes ;-)
+
+Sat May 20 12:20:51 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in mysql insert.
+
+Sat May 20 11:58:37 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed finders.
+
+Sat May 20 11:47:29 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed some more problems.
+
+Sat May 20 11:11:53 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added join support, rationalized primary key setup.
+
+Fri May 19 10:47:22 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better support for non integer primary keys.
+
+Fri May 19 10:43:04 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to support update.
+
+Fri May 19 10:29:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Rationalized og_delete.
+
+Fri May 19 10:22:48 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to support reading.
+
+Fri May 19 09:30:07 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * After some more changes, a small example works ;-)
+
+Fri May 19 09:17:21 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Rationalized sql index definition: attr_accessor :age, Fixnum, :index => true, :pre_index => ..., :post_index => ...
+
+Fri May 19 09:07:01 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Major Og rewrite, updating to the new attribute system, cleaning the code and migrating to the new adapter model. Many many more changes. In progress.
+
+Thu May 18 10:01:01 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed alpha og stores.
+
+Thu May 18 09:59:07 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Many changes to support the switch to attributes instead of properties.
+
+Tue May 16 18:07:05 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Tue May 16 10:32:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved examples, spark, flare to a separate repository.
+
+Tue May 16 10:28:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed wee helper and example. Not really useful in Nitro, better use wee standalone + Og if you like Wee components (or wait for a Nitro solution).
+
+Tue May 16 10:23:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed controller_name from Render, user controller.mount_path instead.
+
+Tue May 16 10:16:15 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed: dont overwrite already defined methods in the new scaffold code.
+
+Tue May 16 10:15:08 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved R (encode_url) handles strings and entities. Redirect implicitly uses R. Form builder implicitly uses R for form actions.
+
+Mon May 15 09:54:39 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed name_to_jsfile (absolute url).
+
+Sat May 13 07:22:51 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reenabled format in Logger.
+
+Sat May 13 06:49:29 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some :nodoc: all to cleanup generated RDocs.
+
+Fri May 12 18:48:49 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumbed version number in many files.
+
+Fri May 12 18:37:54 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Wrote a detailed parts howto in RDoc form in parts.rb as requested by Jonas. To be improved after community feedback.
+
+Thu May 11 13:14:56 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Initial code for the new scaffolding system, *very* under construction, ignore for the moment.
+
+Wed May 10 13:28:36 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added a model macro to controllers that links related classes. At the moment it is used in the sweeper do delete cached pages from the linked controller base directory.
+
+Mon May  8 10:56:45 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed Session.current and Controller.current
+
+Sun May  7 19:07:15 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Store current context in a thread local variable, accesible through Context.current
+
+Sun May  7 11:57:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed glue/attribute, use Facet's cattr instead. Updated nitro/og source to make compatible.
+
+Sun May  7 09:20:34 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added script adapter file.
+
+Sun May  7 09:15:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed flexob and references to it, use Facet's OpenObject instead.
+
+Sat May  6 13:39:21 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed to ScriptAdapter, keep ConsoleAdapter alias.
+
+Sat May  6 13:20:10 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Yeah, the ConsoleAdapter kinda works now ;-)
+
+Sat May  6 12:55:03 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced new nitro command/runner that will replace the current spaghetti code. Based on facetes Console::Command. Also introduced the ConsoleAdapter.
+
+Sat May  6 11:00:52 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed accumulate (in facets).
+
+Sat May  6 10:55:26 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some small updates.
+
+Sat May  6 10:50:53 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  tagged 0.30.0
+
+Fri May  5 21:21:21 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Final cleanup before release, update to facets 1.3.3, reap 5.0
+
+Fri May  5 13:47:21 EEST 2006  transfire@gmail.com
+  * reap_5_update
+
+Wed May  3 23:54:57 EEST 2006  bryan.a.soto@gmail.com
+  * fix-nitro-global
+  Changes Global to refer to MemoryCache as ::Glue::MemoryCache.
+
+Wed May  3 23:48:50 EEST 2006  bryan.a.soto@gmail.com
+  * fix-tests-glue-fixtures-builder
+  Various fixes for fixtures tests. Specified glue namespace in builder.rb and fixed a typo in fixture.
+
+Wed May  3 22:51:59 EEST 2006  bryan.a.soto@gmail.com
+  * fix-scaffolding-orderable-check
+  Fixes scaffolding so that it checks to see if Glue defines the constant Orderable before referencing it.
+
+Wed May  3 22:27:01 EEST 2006  bryan.a.soto@gmail.com
+  * fix-test-og-cacheable-memcached
+  Adds a cache name and timeout to the MemCached tests. Ensures you don't get old results for the test.
+
+Wed May  3 22:19:51 EEST 2006  bryan.a.soto@gmail.com
+  * fix-test-glue-configuration
+  Comments a few lines of code with explanations. Basically, running these lines causes later tests to fail.
+
+Wed May  3 22:07:44 EEST 2006  bryan.a.soto@gmail.com
+  * test-fix-nitro-client-morpher
+  Changes client morpher tests to match the new method signature of Compiler.transform_template.
+
+Wed May  3 11:38:26 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More updates in docs, cleanup.
+
+Wed May  3 11:23:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed obsolete Rakefiles
+
+Wed May  3 11:22:04 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed cmdparse dependency.
+
+Mon May  1 20:05:34 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved form builder, added support for virtual methods and more.
+
+Mon May  1 20:05:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better rdoc comments in webfile.
+
+Mon May  1 12:56:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added the new form builder, improvet the submit helper.
+
+Mon May  1 12:41:09 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced new fine grained form builder. Still under construction though.
+
+Mon May  1 12:14:37 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added request.params? alias.
+
+Mon May  1 12:13:50 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Slightly improved Glue Builder.
+
+Sun Apr 30 19:34:16 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Sun Apr 30 14:10:20 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+
+
+>>> for older changes, have a look at doc/CHANGELOG.x
+

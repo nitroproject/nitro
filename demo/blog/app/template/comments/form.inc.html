@@ -1,0 +1,15 @@
+<div id="comment_form">
+  <form method="POST" action="{{Comment, :create}}">
+    <input type="hidden" name="post_oid" value="#{post.oid}" />
+    <p>
+      <label>Author</label>
+      <input type="text" name="author" style="width: 250px" />
+    </p>
+    <p>
+      <textarea name="body" style="width: 90%; height: 150px">Your comment here</textarea>
+    </p>
+    <p>
+      <input type="submit" value="Post" />
+    </p>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<div class="post">
+  <h2>#{post.to_link}</h2>
+  <div class="details">
+  by <strong>#{post.author}</strong>, #{post.create_time}
+  </div>
+  
+  #{post.body}
+  
+  <div class="options">
+    in #{post.category.to_link}, tags: none
+  </div>
+</div>

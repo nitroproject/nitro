@@ -1,0 +1,2702 @@
+Sat Apr 29 20:09:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+Sat Apr 29 20:08:26 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff.
+
+Sat Apr 29 09:58:29 EEST 2006  bryan.a.soto@gmail.com
+  * enh-nitro-test-fixtures
+  Adds param processing for get requests.
+
+Thu Apr 27 09:33:36 EEST 2006  bryan.a.soto@gmail.com
+  * fix-og-ez-sti
+  Adds manveru's test case and revises his solution, hopefully correctly.
+
+Thu Apr 27 09:32:00 EEST 2006  bryan.a.soto@gmail.com
+  * test-og-tc_aggregate_calculations
+  Gets rid of those stupid warnings.
+
+Tue Apr 25 08:46:29 EEST 2006  bryan.a.soto@gmail.com
+  * facets-1.3.2-update
+  Updates to facets 1.3.2 by removing the Glue namespace prefix from Nitro code.
+
+Mon Apr 24 09:37:55 EEST 2006  bryan.a.soto@gmail.com
+  * glue-aspects-removal-addendum
+  Changes a couple more requires that were missed earlier.
+
+Mon Apr 24 09:17:04 EEST 2006  bryan.a.soto@gmail.com
+  * gmosx-feed-style-fix-update
+  Brings George's style corrections up to date with the correct version of feed helper.
+
+Sun Apr 23 12:12:07 EEST 2006  fabian@fabian-buch.de
+  * FeedHelper atom time fix
+  removed to_rfc3339 in favour of iso8601
+
+Fri Apr 21 13:32:45 EEST 2006  fabian@fabian-buch.de
+  * FeedHelper initialize time via Time.at(0)
+  so should work on Windows too now :)
+
+Thu Apr 20 09:27:52 EEST 2006  bryan.a.soto@gmail.com
+  * logger-debug-update
+  Updates manveru's patch to current repo by resolving conflicts
+
+Wed Apr 12 16:15:32 EEST 2006  m.fellinger@gmail.com
+  * Adding 'if $DBG' for all Logger.debug messages
+
+Thu Apr 20 08:46:59 EEST 2006  bryan.a.soto@gmail.com
+  * manverus-ez-tests
+  Adds test cases manveru submitted on the mailing list.
+
+Tue Apr 18 22:45:59 EEST 2006  bryan.a.soto@gmail.com
+  * script-runner-enhancements
+  Various enhancements. Runs against darcs repo, allows multiple dirs to be ran, i.e. ./script/test.rb nitro og rather than only one at a time.
+
+Sat Apr 29 04:50:09 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Adapted yonas finegrained transformation pipeline patch to work with the latest code. Also added support for action specific pipelines, added more rdocs. See compiler.rb for the details.
+
+Thu Apr 27 20:19:02 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed unneeded ContextHelper.
+
+Thu Apr 27 20:17:48 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added more rdoc comments here and there, to clarify some parts of the Nitro code. More to come.
+
+Thu Apr 27 13:32:32 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed acgi stuff, not mature enough!
+
+Thu Apr 27 13:29:45 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Initial support for orderables in admin/scaffold pages.
+
+Thu Apr 27 13:14:59 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Rationalized explicitly unamanaged classes setup. Now including Og::Unmanageable marker only affects the class that includes it, not the descendants. Added some rdoc comments.
+
+Thu Apr 27 10:39:29 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed admin destroy option, used to delete_all.
+
+Tue Apr 25 18:46:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Og.setup= and Og.options= to allow configuring Og through a Configuration .yaml file.
+
+Tue Apr 25 14:08:19 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some tests for R fix.
+
+Tue Apr 25 14:02:05 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * FIX: R operator (encode_url) correctly handles actions with arity.
+
+Tue Apr 25 09:41:13 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * href_of helper accepts strings/symbols.
+
+Sun Apr 23 19:07:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Add href_of in xhtml helper.
+
+Sat Apr 22 11:26:29 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fill the params array with extra nils if params are missing to make auto nice urls more flexible and useful.
+
+Sat Apr 22 10:00:29 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * A simple script to perform mass file replacements.
+
+Sat Apr 22 10:00:00 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Changed all nitrohq refs to nitroproject refs.
+
+Sat Apr 22 00:00:46 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed toggling in default error page.
+
+Fri Apr 21 19:47:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added link_to helper in XHTML helper for easy linking to entities.
+
+Fri Apr 21 19:47:10 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better controller mount_path handling, removed Bryan's hack fix.
+
+Fri Apr 21 12:08:47 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * FIX: don't create tables for polymorphic_parent entities.
+
+Thu Apr 20 17:29:59 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed aspects from glue (in facets now), adapted nitro accordingly.
+
+Tue Apr 18 19:40:37 EEST 2006  Jonas Pfenniger <jonas@stvs.ch>
+  * [small fix] Nitro didn't start properly when Og was not used
+
+Wed Apr 19 14:01:33 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Aplied some coding convetions to the new feed helper.
+
+Tue Apr 18 21:14:10 EEST 2006  fabian@fabian-buch.de
+  * * new FeedHelper
+  . reimplementation of RssHelper to support all RSS versions
+  . very few code left of Georges original RssHelper
+  . supports RSS versions 0.91, 1.0 and 2.0
+  . supports Atom 1.0
+  . supports rough OPML 1.0
+  . should be backward compatible to the RssHelper for RSS 0.91 feeds
+  . just change "helper :rss" to "helper :feed" for access to all the new features
+  . not much tested yet, so be careful, but test a lot and report bugs
+  . big RDoc, so everyone knows how to use it
+  . more tests, but it still could use a lot more.. (but tests are no validator, right?)
+
+Tue Apr 18 17:56:29 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fix.
+
+Tue Apr 18 01:41:59 EEST 2006  bryan.a.soto@gmail.com
+  * glue-version-bump-0.30
+  Bump Glue::Version to 0.30.0
+
+Tue Apr 18 01:25:08 EEST 2006  bryan.a.soto@gmail.com
+  * test-fix-tc_aggregations_calculations
+  Modifies test case for tc_aggregations_calculations.rb. Group by doesn't automatically perform an order by of the grouping field, so the test case was failing due to the assumption that the lowest value was listed first.
+
+Thu Apr  6 10:09:20 EEST 2006  bryan.a.soto@gmail.com
+  * og-postgres-sti-fix
+  Makes PsqlStore#eval_og_allocate use the same logic as SqlStore#eval_og_allocate when determining if a class is STI.
+
+Thu Apr 13 09:20:23 EEST 2006  bryan.a.soto@gmail.com
+  * og-aggregate-type-casting
+  Patch adds a new method, #type_cast, which ensures dates and times are returned as instances of Date and Time. Adds tests to tc_aggregations_calculations.rb.
+
+Thu Apr  6 08:14:41 EEST 2006  bryan.a.soto@gmail.com
+  * og-postgres-join-tables
+  Patch modifies the way Postgres accesses join table info to match other stores.
+
+Fri Apr  7 08:36:54 EEST 2006  bryan.a.soto@gmail.com
+  * og-tags
+  Modifies the query used for Tag selection. Uses subqueries. Passes tests on Mysql, Postgres and Sqlite.
+
+Wed Apr 12 23:14:23 EEST 2006  bryan.a.soto@gmail.com
+  * og-joins_many-relation
+  When using a through table, joins_many was assuming that the through table class was already enchanted. This modifies it to compute the table name.
+
+Thu Apr 13 02:42:36 EEST 2006  bryan.a.soto@gmail.com
+  * bugfix-nitro-R-operator
+  Fixes the R operator by setting the annotation it requires in the dispatcher when the controller is mounted to the mount point. Adds tests.
+
+Sat Apr 15 09:23:47 EEST 2006  bryan.a.soto@gmail.com
+  * test-fix-tc_aggregations_calculations
+  Modifies test case for tc_aggregations_calculations.rb. Group by doesn't automatically perform an order by of the grouping field, so the test case was failing due to the assumption that the lowest value was listed first.
+
+Tue Apr 18 17:16:33 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed from glue files that where added in Facets, adapted Nitro accordingly.
+
+Mon Apr 17 11:37:21 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible Script generator, the developer can use most of its features without a Client subclass.
+
+Mon Apr 17 11:18:15 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added context.no_sync! option, low level hack needed when modifying the users session in interesting ways ;-)
+
+Fri Apr 14 13:04:40 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Fri Apr 14 12:49:15 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small changes to make all tests pass.
+
+Fri Apr 14 10:50:41 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added new script to run all tests, lets get rid of the stupid rakefile.
+
+Thu Apr 13 14:39:02 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in output caching.
+
+Thu Apr 13 12:11:34 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented session garbage collection (simple).
+
+Thu Apr 13 11:50:56 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented global, more flexible and transparently supports distributed global variables, work in progress though.
+
+Wed Apr 12 20:18:42 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes.
+
+Tue Apr 11 10:57:05 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Made the router and nice url resolver a bit more intelligent.
+
+Tue Apr 11 10:14:48 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved Tag out of Glue namespace (temporarily).
+
+Tue Apr 11 09:59:10 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in fragments caching.
+
+Mon Apr 10 13:58:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved top level repo scripts in script
+
+Mon Apr 10 13:56:45 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up tabs.
+
+Mon Apr 10 13:26:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated AUTHORS.
+
+Mon Apr 10 13:21:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Add some simple options to the session vcr: --record session.yaml and --playback session.yaml, enjoy ;-)
+
+Mon Apr 10 13:08:42 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Keep the rendering level in the context to allow for conditional rendering on top_level actions (very useful ;-)).
+
+Mon Apr 10 12:01:44 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small updates in docs.
+
+Sun Apr  9 12:23:08 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up router implementation, added more intuitive 'global' setup (see rdocs). [james_b]
+
+Sun Apr  9 11:27:58 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better error report when a relation uses a non-existant class as the target.
+
+Sat Apr  8 20:39:04 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented absolutely magical record/playback functionality in the Webrick adapter to allow for fully automatic webapp testing. Use your browser to 'record' your test run of the application and playback many times to assert that it works as expected.
+
+Sat Apr  8 10:35:30 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated to prototype 1.5.0_rc0 / Scriptaculous 1.6.1
+
+Sat Mar 25 09:56:09 EET 2006  bryan.a.soto@gmail.com
+  * ajax-helper-params
+  Code submitted by Massimo Maria Ghisalberti nissl AT tiscali DOT it
+  Added testcase.
+  
+  Allows AJAX helper generated Javascript functions to take params.
+
+Tue Apr  4 09:33:14 EEST 2006  bryan.a.soto@gmail.com
+  * camel-case-table-naming
+  Fixes devlab bug #13. http://devlab.oree.ch/trac/nitroproject/ticket/13
+  Wasn't consistently determining field names.
+
+Fri Mar 10 14:53:03 EET 2006  Kashia Buch <kashia@vfemail.net>
+  * add testcase for joins with camel case
+
+Fri Apr  7 12:25:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some cookie related helpers.
+
+Fri Apr  7 10:14:12 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added boolean helpers in request object.
+
+Tue Apr  4 02:57:27 EEST 2006  bryan.a.soto@gmail.com
+  * og-sqlite-sti-fix
+  Sqlite3 store was not using fields_for_class defined in SqlStore, so it was improperly handling single table inheritance.
+
+Tue Apr  4 02:59:47 EEST 2006  bryan.a.soto@gmail.com
+  * og-sqlite-test-fix
+  Config setting was keeping Og test suite from running when using the Sqlite3 store. This probably just masks the symptom more than anything else though. The real culprit probably lies lurking somewhere.
+  
+
+Tue Mar 28 10:41:03 EEST 2006  bryan.a.soto@gmail.com
+  * kirby_fixes
+  Fixes to the Kirby store submitted by Dylan Bruzenak (dylanb AT digitalvalence DOT com). Had to integrate as the repo didn't apply correctly against devlab.
+
+Sun Apr  2 23:26:44 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added ignore_field/ignore_column annotation for Og. [kasia]
+
+Thu Mar 30 13:05:18 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumped version number to 0.30.0
+
+Thu Mar 30 12:11:55 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added query_by_example support in Og and the auto admin interface, minor improvements in form helper.
+
+Thu Mar 30 10:40:23 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed og startup optimization, doesnt work.
+
+Mon Mar 27 21:59:51 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Startup optimization, don't search in ObjectSpace for managed classes.
+
+Mon Mar 27 21:43:44 EEST 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Further improved configuration system, even added some ruby magic, check out the rdocs and the updated test case.
+
+Sat Mar 25 08:41:50 EET 2006  bryan.a.soto@gmail.com
+  * facets-1.2.0
+  Updates to Facets-1.2.0. Removes requires for calibre.
+
+Fri Mar 24 23:17:32 EET 2006  bryan.a.soto@gmail.com
+  * glue-taggable-join-update
+  Brings og/lib/glue/taggable.rb up to date with Rob's join patch.
+
+Mon Mar 13 12:13:26 EET 2006  rob@motionpath.com
+  * Add :table property to join relationships allowing you to specify a custom table (and have multiple different join relations with the same class). Test case demonstrating this.
+
+Tue Mar 14 09:05:15 EET 2006  m.fellinger@gmail.com
+  * small fix for flare-rss
+  
+  There still is the problem that we cannot provide a direct link to a comment,
+  since there is no action dedicated to view them, wich means i offer links
+  to the article the comment is related to.
+
+Wed Mar  8 17:26:29 EET 2006  rob@motionpath.com
+  * Stop empty cookies crashing Nitro
+
+Thu Mar 23 22:38:31 EET 2006  bryan.a.soto@gmail.com
+  * test-fix-glue-tc_configuration
+  This test was displaying evil knowledge of internals. It deleted _all_ settings currently stored causing things to fail in later tests.
+
+Thu Mar 23 21:52:06 EET 2006  bryan.a.soto@gmail.com
+  * georges-glue-configuration-improvements
+  Reimplemented Configuration system to be more flexible, added more comments and documentation.
+  
+  Written by gmosx. Ported by bryan.
+
+Thu Mar 23 02:33:16 EET 2006  bryan.a.soto@gmail.com
+  * glue-cache-file-fix
+  This time, I'm really adding my file-cacheable-fix.
+  
+  Win32 doesn't seem to like opening an existing file flocked with exclusive.
+  Also opens cache files in binary mode. Doesn't seem to make much difference
+  as Marshall seems to convert it to binary, but just to be safe.
+  
+
+Fri Mar 17 08:01:21 EET 2006  bryan.a.soto@gmail.com
+  * nitro-test-config
+  Adds a CONFIG.rb file to the nitro test suite. Sets $NITRO_NO_ENVIRONMENT to true and requires nitro. Ensures that the chdir isn't performed.
+
+Wed Mar 22 09:31:17 EET 2006  bryan.a.soto@gmail.com
+  * element-fix
+  Fix to #is_element?. PREFIX_RE is a regex and when it was being converted to a string, was causing the tag to be searched for incorrectly.
+
+Wed Mar 22 01:00:33 EET 2006  bryan.a.soto@gmail.com
+  * tests-add-sti-test
+  Adds a test to ensure that STI classes come back as the correct class.
+
+Sun Mar 19 14:41:44 EET 2006  Kashia Buch <kashia@vfemail.net>
+  * Nitro + facets 1.1.0 + calibre 1.2.0
+
+Tue Mar 14 23:15:41 EET 2006  bryan.a.soto@gmail.com
+  * nitro-fix-dot-in-urls
+  Should make Nitro process URLs with a '.' (dot/period) in them. 
+
+Tue Mar  7 21:12:09 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  UNDO: All compilers now have text and compiler as argument
+
+Fri Mar 10 11:41:44 EET 2006  vseguip@gmail.com
+  UNDO: Avoid name clash with GTK2
+  
+  This patch avoids a name clash between Og and the Glib ruby bindings.
+  It does so by renaming properties with og_properties and then aliasing 
+  og_properties with properties for backwards compatibility. It also avoids 
+  the internal use of "property" (which also clashes) using "prop_accessor"
+  instead.
+  
+
+Fri Mar 10 11:41:44 EET 2006  vseguip@gmail.com
+  * Avoid name clash with GTK2
+  
+  This patch avoids a name clash between Og and the Glib ruby bindings.
+  It does so by renaming properties with og_properties and then aliasing 
+  og_properties with properties for backwards compatibility. It also avoids 
+  the internal use of "property" (which also clashes) using "prop_accessor"
+  instead.
+  
+
+Tue Mar  7 21:12:09 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  * All compilers now have text and compiler as argument
+
+Sat Mar 18 08:40:06 EET 2006  bryan.a.soto@gmail.com
+  * guills-taggable-fixes
+  Guill's fixes for Glue::Taggable. Separated to a separate patch. Credit to guillaume.pierronnet AT gmail DOT com
+
+Sat Mar 18 08:27:33 EET 2006  bryan.a.soto@gmail.com
+  * guills-spark-fixes
+  Tiny spark fixes from Guillame Pierronnet. Separated out into a separate patch.
+  Credit guillaume.pierronnet AT gmail DOT com 
+
+Sat Mar 18 08:59:24 EET 2006  bryan.a.soto@gmail.com
+  * file-cacheable-fix
+  Win32 doesn't seem to like opening an existing file flocked with exclusive. Also opens cache files in binary mode. Doesn't seem to make much difference as Marshall seems to convert it to binary, but just to be safe.
+
+Tue Mar 14 09:11:25 EET 2006  m.fellinger@gmail.com
+  * removed restriction to 1000 characters for an Article-body
+
+Mon Mar 13 13:49:29 EET 2006  rob@motionpath.com
+  * George's fixes to his new routes system as a patch and a tiny fix for the case where params are nil
+
+Thu Mar  9 18:21:54 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  * Nitro::Element : removed unneeded 
+
+Tue Mar  7 18:22:20 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some small improvements in the Element code.
+
+Tue Mar  7 15:58:39 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  * Element enhanced
+
+Tue Mar  7 17:38:36 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor.
+
+--- 0.29.0 ---
+
+Tue Mar  7 17:34:13 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More test fixes.
+
+Tue Mar  7 17:17:51 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated the docs.
+
+Tue Mar  7 16:13:46 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some migration info in doc/MIGRATION.
+
+Tue Mar  7 16:07:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed control, action, and the controllers compiler as Jonas suggested. This code needs more thought and testing.
+
+Tue Mar  7 15:22:03 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for absolute hrefs in StaticInclude. Fix in quotea.
+
+Tue Mar  7 14:48:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added bicou's EZ array fix. [bicou]
+
+Tue Mar  7 14:37:40 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor...
+
+Tue Mar  7 14:36:33 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Better initialization of $global (context.global) backed by Glue::Cache stores.
+
+Tue Mar  7 14:09:38 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumped version numbers.
+
+Tue Mar  7 14:01:37 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Tue Mar  7 12:07:00 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Glue::FileCache improved: escaping bad characters in filenames
+
+Tue Mar  7 13:35:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed bugs in Taggable. While at it added some needed helpers plus garbage collection through ref counting. Taggable is much more useful now, but there are still some things left for a future version.
+
+Tue Mar  7 02:06:29 EET 2006  bryan.a.soto@gmail.com
+  * testfix-tc_inheritance
+  Repairs implementation of tc_inheritance test. Class.descendents is a Facet method that is implemented by iterating through ObjectSpace. It won't always return these descendents in the same order.
+
+Mon Mar  6 23:44:43 EET 2006  bryan.a.soto@gmail.com
+  * spark-style.css
+  Sets pre foreground color to white for easier reading.
+  
+  Credit to timh@dirtymonday.net
+
+Mon Mar  6 21:32:07 EET 2006  bryan.a.soto@gmail.com
+  * test-fix-tc_session
+  This must have been the one giving the security error. Fixed.
+
+Mon Mar  6 14:04:12 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Glue::FileCache: safe locking of files added, making this caching method safe for multiprocess
+
+Mon Mar  6 13:48:11 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor og tests fix. Thanks to Bryans hard work all tests now pass!
+
+Mon Mar  6 09:29:17 EET 2006  bryan.a.soto@gmail.com
+  * testfix-orderable
+  Repairs orderable to work with test case. Simple fix. It needed an aspect run on both :og_insert and :og_update. Removed a save from the test case as it was unnecessary.
+
+Mon Mar  6 06:45:59 EET 2006  bryan.a.soto@gmail.com
+  * test-fixes-taggable-override
+  Repairs taggable library using tc_taggable as a spec. Also adds a fix to tc_override, where it wasn't properly restoring the Og.prefix setting that broke taggable when running in the full suite.
+
+Sun Mar  5 21:16:50 EET 2006  bryan.a.soto@gmail.com
+  * test-fix-tc_cacheable
+  Fixes to File cache, files with a colon (:) are illegal on win32.
+  Fixes to tc_cacheable, sepearates each cache type test into it's own class as they wouldn't run otherwise.
+
+Mon Mar  6 11:27:30 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes to make some test cases pass.
+
+Mon Mar  6 11:05:48 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs
+
+Mon Mar  6 10:44:36 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed controls compiler from the default pipeline, this thing needs more thought/testing and certainly a better implementation. Some form of intuitive dynamic element style features is really need though. 
+
+Mon Mar  6 00:22:50 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up tabs and sources.
+
+Mon Mar  6 00:18:16 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed floating point counts bug.
+
+Mon Mar  6 00:13:04 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Mon Mar  6 00:12:49 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix for blog example.
+
+Sun Mar  5 23:50:07 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved StaticInclude compiler to take template_root stack into account. One step closer to truly reusable parts.
+
+Sun Mar  5 08:30:16 EET 2006  bryan.a.soto@gmail.com
+  * stringio-patch-modification
+  Patch modifies my earlier patch to undo a mistake I made that broke file uploads.
+
+Sun Mar  5 08:24:27 EET 2006  bryan.a.soto@gmail.com
+  * examples-ui-patch
+  Adds some begin/rescues to catch load errors. For example, the wee example will catch load errors of wee components and informs user that the example requires wee.
+
+Sun Mar  5 00:45:25 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved template_root stack system. Much more reusable in my part system. Will be improved more in the near future.
+
+Sat Mar  4 10:53:43 EET 2006  bryan.a.soto@gmail.com
+  * mysql-using-sqlutils
+  Removes unnecessary redefinition of MysqlUtils#quote that is inhereited from an included module, SqlUtils.
+
+Sat Mar  4 10:23:22 EET 2006  bryan.a.soto@gmail.com
+  * scaffolding-classes-defaults
+  When scaffolding a class, if options have already been stored, they should be updated rather than using a default.
+
+Sat Mar  4 10:06:48 EET 2006  bryan.a.soto@gmail.com
+  * blog-example-comment-fix
+  Renames a template file, comments.xhtml, which was causing the example to blow up. Fixes some time stamp format strings that weren't actually outputting anything.
+
+Sat Mar  4 09:07:44 EET 2006  bryan.a.soto@gmail.com
+  * mongrel_mime_type_fixes
+  Makes Mongrel adapter properly serve mime types and adds binary flag to file read so that graphics are served correctly.
+
+Fri Mar  3 17:47:44 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Tmp introduction for global variables (dont use yet).
+
+Fri Mar  3 15:26:34 EET 2006  fabian@fabian-buch.de
+  * alias_method :redirect_referrer, :redirect_referer
+  
+  Referrer is written with rr in English, but referer (with one r) became standard, because of a typo in the original RFC. But not everyone might know that, so might write it with two r, which shouldn't lead to the app not working.
+  
+
+Fri Mar  3 16:21:39 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some small flash fixes.
+
+Fri Mar  3 15:21:20 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some usefull helpers to flash (push/pop/join).
+
+Fri Mar  3 13:34:00 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added tiny nitro helpers.
+
+Thu Mar  2 10:04:09 EET 2006  bryan.a.soto@gmail.com
+  * test_fix_tc_session
+  Added back og cache test. Conditional run of memcached test.
+
+Thu Mar  2 09:23:44 EET 2006  bryan.a.soto@gmail.com
+  * test_fix_tc_property
+  Slightly modifies Rob's patch to maintain backwards compatibility.
+
+Fri Mar  3 09:31:38 EET 2006  bryan.a.soto@gmail.com
+  * test_add_og_tc_sti
+  Adds a test case to ensure STI parents and children return the same fields when creating a database table.
+
+Thu Mar  2 18:23:32 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in R.
+
+Wed Mar  1 18:11:25 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * little fixes on session handlers
+
+Wed Mar  1 18:08:33 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Nitro session memcached support (and session test case improved)
+
+Wed Mar  1 18:06:54 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Glue::MemCached implemented (and test case updated)
+
+Wed Mar  1 17:58:46 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * little Glue::Cache improvements
+
+Fri Feb 24 18:53:53 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * added --address and --port options to force server to run on those settings
+
+Fri Feb 24 18:52:27 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * cache improvements
+
+Wed Mar  1 18:21:52 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some cleanup in router.
+
+Wed Mar  1 18:16:33 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Recoded routing system from scratch, much more powerfull, added unit test. The new router supports two way routing (encoding/decoding). The R operator now respects routing rules.
+
+Wed Mar  1 15:14:10 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Experimental support for Camping style R (encode_url) operator, does not respect routig yet, has problems with hash ordering. Anyone has any ideas how to improve this?
+
+Wed Mar  1 01:24:42 EET 2006  bryan.a.soto@gmail.com
+  * bugfix_cgi_stringio_propagation
+  Changes Cgi.structure_param to ensure that StringIOs aren't placed in the params hash.
+
+Wed Mar  1 01:26:51 EET 2006  bryan.a.soto@gmail.com
+  * bugfix_array_control
+  Removes :selected option that isn't necessary for ArrayControl.
+
+Wed Mar  1 02:59:29 EET 2006  bryan.a.soto@gmail.com
+  * testfix_aggregate_tc_store
+  og/test/og/tc_store.rb looked to be using an old interface to the aggregate method defined in og/lib/og/store/sql.rb. Fixed the test and updated the RDocs to reflect the correct usage.
+
+Tue Feb 28 23:15:47 EET 2006  bryan.a.soto@gmail.com
+  * compiler_double_slash_test_case
+  Adds a test case for Rob's double slash patch. Hopefully more will be added.
+
+Tue Feb 28 21:14:45 EET 2006  bryan.a.soto@gmail.com
+  * comment_output_tc_hierarchial
+  Comments out the puts section of the test case so it runs quietly.
+
+Tue Feb 28 15:40:42 EET 2006  Kashia Buch <kashia@vfemail.net>
+  * hierarchical fix
+
+Mon Feb 20 18:13:49 EET 2006  rob@motionpath.com
+  * Memory session needs glue logger
+
+Tue Feb 28 14:34:11 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added Og aggregations / calculations. Code like this works automagically: User.min(:age), User.sum(:money, :group => :proffession), User.average(:age) etc. If a :group option is passed Og returns an aggregation.
+
+Tue Feb 28 10:09:08 EET 2006  bryan.a.soto@gmail.com
+  * mongrel_adapter_fix
+  Works around a bug or incorrect documentation in the Mongrel adaptor. RDocs say it should return a thread, but it currently returns a Fixnum. This is a
+  slightly more verbose way of getting the accepting Thread, so it doesn't need
+  to be changed later.
+
+Tue Feb 28 12:12:10 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated to script.aculo.us 1.5.3
+
+Tue Feb 28 11:55:08 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some small Og fixes.
+
+Tue Feb 28 11:54:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced call/answer. not working yet, do not use!
+
+Tue Feb 28 11:53:17 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced part.
+
+Tue Feb 28 09:08:38 EET 2006  bryan.a.soto@gmail.com
+  * gen_fixes
+  Bumps gen version number to 0.29.0.
+  Bugfix: changes include to Nitro::FormHelper.
+  Adds info on form plugin to USAGE of executable.
+
+Tue Feb 21 17:15:04 EET 2006  rob@motionpath.com
+  * Stop compiler exploding if people put double slashes in URLs
+
+Tue Feb 21 17:26:55 EET 2006  fabian@fabian-buch.de
+  * scriptcompiler fix for valid XHTML
+
+Mon Feb 20 19:30:55 EET 2006  rob@motionpath.com
+  * Added magic "oid" to scaffold post method for consistency with the other scaffold aspects
+
+Mon Feb 20 17:28:25 EET 2006  rob@motionpath.com
+  * Fix to property so scaffold fill treats empty integers as nil
+
+Fri Feb 24 12:03:24 EET 2006  rob@motionpath.com
+  * Nullification of broken relations fix (no crash)
+
+Thu Feb 23 17:32:32 EET 2006  rob@motionpath.com
+  * Act like the user accepted previous cookies in repeat unit-test requests
+
+Thu Feb 23 17:27:23 EET 2006  rob@motionpath.com
+  * Further unit test patches
+
+Thu Feb 23 16:42:37 EET 2006  rob@motionpath.com
+  * Changes to nitro unit testing library
+
+Mon Feb 27 11:27:37 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Greatly improved error reporting. Exact identification of the 'hot' line where the error hapens. Handles syntax errors in actions and templates and run time errors in action and templates.
+
+Fri Feb 17 09:18:16 EET 2006  bryan.a.soto@gmail.com
+  * tc_cacheable_test_fix
+  Some fixes to make tc_cacheable pass. Partial fix for tc_hierarchical. At least it makes it error out a bit further along.
+
+Fri Feb 17 22:20:42 EET 2006  bryan.a.soto@gmail.com
+  * part-admin_array_control_fix
+  Adds #emit_container_start, #emit_container_end to ArrayControl. Change to #emit_js to fix off by one error in remove array element button.
+  
+  Credit to aidan@infurious.com
+
+Fri Feb 17 09:00:50 EET 2006  bryan.a.soto@gmail.com
+  * more_glue_namespace_fixes
+  Adds module name to a few more classes. Removes some unneeded requires of glue files. 
+
+Wed Jan 25 17:13:18 EET 2006  rob@motionpath.com
+  * Nitro should not rely on Glue being in Object's namespace as this stops you using gems with conflicting class names (i.e ruby breakpoint). This patch is not well tested, it should be checked carefully by someone more familiar with Glue.
+
+Wed Feb 15 15:44:04 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Taggable: Moved the Tag class in the Glue namespace
+
+Tue Feb 14 13:40:16 EET 2006  rob@motionpath.com
+  * Improvement to error html output - displays source traces
+
+Tue Feb 14 15:53:02 EET 2006  rob@motionpath.com
+  * Allow finder methods to accept arrays to select multiple models at once (or from a list if using in find_one mode)
+
+Tue Feb 14 14:59:27 EET 2006  rob@motionpath.com
+  * Fix to earlier finder fix
+
+Mon Feb 13 23:05:31 EET 2006  bryan.a.soto@gmail.com
+  * prevent_multi_enchantments
+  This patch changes _no_ external behaviour. It only rejects classes already managed in Og::Manager#manage_classes from the collection returned from Og::Manager#manageable_classes.
+  
+  Also adds a method Og::Manager.managed_classes which returns all classes actually managed by Og, as opposed to Og::Manager.manageable_classes which returns all classes that are capable of being managed. A subtle difference perhaps, but it bugged me.
+
+Mon Feb 13 23:03:37 EET 2006  bryan.a.soto@gmail.com
+  * dispatch_test_case
+  Adds test for NoActionError to tc_dispatch.
+
+Mon Feb 13 23:15:47 EET 2006  bryan.a.soto@gmail.com
+  * og_thread_safe_fixes
+  Cleans up some further problems with Og.thread_safe. Og.thread_safe is global and Og::Manager changes behaviour based off the global setting, but wasn't properly adapting to the change. As an example, if Og.thread_safe is true when a manager is created, it will create a store. If Og.thread_safe is later changed to false, it ignores the pool to use the @store instance variable that was never assigned to returning nil.
+  
+  This should probably be a per manager setting, where managers store the value of Og.thread_safe at the time of creation and use it for their lifetime. This would allow you to mix managers, though I don't know if anyone actually needs that.
+
+Mon Feb 13 18:52:48 EET 2006  rob@motionpath.com
+  * Fix to finder so you can pass objects to find_all_by_a_and_b for relations and so that find conditions such as set_order are honoured
+
+Mon Feb 13 18:30:31 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Nitro::Action now import the controller's instance_vars unless a variable was already defined
+
+Mon Feb 13 10:50:34 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * [fix glue] Changed Nitro::Control to Nitro::Form::Control. I had forgetted this one.
+
+Mon Feb 13 12:12:21 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  * Set Glue's facet dependency to 1.0.3
+
+Sun Feb 12 17:14:01 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * [test fix] Dispatcher test fixed
+
+Sun Feb 12 16:56:57 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Controller : made template_root assignable
+
+Sun Feb 12 16:56:35 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Controls : moved the transorm order with Element
+
+Fri Feb 10 20:12:52 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Element transformer : avoid interpreting unknown elements so that controls can take care of it
+
+Fri Feb 10 20:09:13 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Controls : fix for the controls options
+
+Fri Feb 10 10:14:27 EET 2006  bryan.a.soto@gmail.com
+  * test_suite_cleanup
+  Some moves, some deletes, one fix and a modification to a Rakefile to make the filelist it generates match the rest.
+
+Fri Feb 10 08:57:48 EET 2006  bryan.a.soto@gmail.com
+  * sti_bugfix
+  Fixes STI bug where tables where evolved (fields dropped!).
+
+Fri Feb 10 22:53:55 EET 2006  bryan.a.soto@gmail.com
+  * bump_to_0.29.0
+  Bumps version numbers.
+
+Thu Feb  9 15:18:00 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * security fixes on ./og/lib/og/store/sql.rb
+
+Thu Feb  9 15:17:40 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * littles improvements on nitro/helper/table.rb
+
+Thu Feb  9 15:15:40 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * bugfix: autoreload messages sent to Logger instead of STDERR
+
+Wed Feb  8 14:35:28 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * supplementary check on calling Og.thread_safe
+
+Tue Feb  7 18:56:46 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * bugfix: on-the-fly Og.thread_safe mode changing
+
+Thu Feb  9 04:36:23 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  * Enhanced glycerin.rb with an optional NAVEL_ROOT path constant
+
+Thu Feb  9 04:06:59 EET 2006  Jonas Pfenniger <jonas@oree.ch>
+  * [flare skin] The skin's title was set to George Moschovitis intead of Blog.title
+
+Wed Feb  8 22:34:05 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Implemented a new Control system : Form Control moved in Nitro::Form, added a Controls transformer, Nitro::Action is a generic action
+
+Tue Feb  7 09:39:09 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * scaffolding and part/admin support managed classes in modules
+
+Wed Feb  8 11:04:59 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * part/admin : sorting of managed classes and system configuration
+
+Mon Feb  6 19:10:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor
+
+Mon Feb  6 18:04:26 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor...
+
+--- 0.28.0 ---
+
+Mon Feb  6 17:27:36 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed paramix/is problem.
+
+Mon Feb  6 17:06:53 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes for the new 1.0.1 gem
+
+Mon Feb  6 14:23:12 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Mon Feb  6 14:21:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added a tempora fix for paramix in glue. Will use the facets version of paramix in the next version.
+
+Mon Feb  6 13:55:42 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Many small fixes to make the tests pass again.
+
+Sat Feb  4 20:34:52 EET 2006  bryan.a.soto@gmail.com
+  * refix_test_suite
+  Removes some calls to Og.setup in test cases and uses $og1 set up in CONFIG.rb,
+  moves class definitions to namespace of test case to ensure unique tables are
+  created, removes some $DBG=true assigns to make sure things are quiet if the
+  tester wants them to be and moves a property definition to the beginning of
+  a class definition to ensure methods are defined later.
+
+Mon Feb  6 11:14:42 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix.
+
+Sun Feb  5 21:07:32 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to make the Blog example run, scaffolding options improved.
+
+Sun Feb  5 19:28:29 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Og.find handles block of EZ (ruby query lang) options, find_one improved like find.
+
+Sun Feb  5 19:14:08 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Docs update, fix in Taggable.
+
+Sun Feb  5 14:07:39 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in pager helper.
+
+Sat Feb  4 20:31:56 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * bugfix: wait Context#close to clean up Flash
+  Useful if you call differents controller's methods in the same request and want to keep flash during that request.
+
+Sat Feb  4 20:30:58 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * adjusted log level of SCGI adapter for some actions
+
+Sat Feb  4 20:28:42 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Glue::OgCache and Glue::FileCache implemented. Nitro sessions stores use them.
+
+Wed Feb  1 17:58:39 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * security bugfix: good escaping in taggable.rb
+
+Wed Feb  1 17:58:11 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * bugfix in orderable.rb
+
+Sat Feb  4 21:08:38 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated AUTHORS.
+
+Sat Feb  4 20:48:21 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed admin/manageable_classes bug.
+
+Sat Feb  4 20:04:21 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumped version numbers.
+
+Sat Feb  4 11:54:55 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Sat Feb  4 03:59:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added the Sqlite2 adapter provided by Mitchell Foral. [mforal]
+
+Sat Feb  4 03:58:31 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Thu Feb  2 22:46:01 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * System configuration is now sorted in part/admin
+
+Thu Feb  2 15:55:16 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added experimental support for Caboose/EZ for using ruby as an Og query language, more to come.
+
+Wed Feb  1 17:38:46 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More intellient resolve of find options in Og queries, handles String or Array instead of options hash (ex: User.find "name LIKE 'g%'") and better support for prepared statement like queries (ex: [ "name LIKE ? AND age > ?", 'g%', 15 ])
+
+Wed Feb  1 13:12:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor coding convention fixes in entity.
+
+Fri Jan 27 16:35:13 EET 2006  rob@motionpath.com
+  * Entity copying methods
+
+Mon Jan  2 08:38:48 EET 2006  rainhead@gmail.com
+  * Fix RELEASES so it doesn't break rdoc
+  rdoc generation was failing because some part of the code examples in the Version 11 release announcement was breaking it. I indented the code examples to make it clear that rdoc shouldn't look at 'em too closely, and now the docs generate again.
+
+Tue Jan 31 15:58:18 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in runner.
+
+Sat Jan 14 02:03:32 EET 2006  aleksi.niemela@helsinki.fi
+  * Guillaume's SCGI support improvement patch.
+
+Tue Jan 31 14:56:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added Joshua's mongrel adapter, and bugfixed it a little. [joshua]
+
+Tue Jan 31 06:12:15 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Clean up nitro caching implementation, reuses glue cache system, added more RDoc comments.
+
+Tue Jan 31 05:37:08 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Further cleanup of the session code, better integration with the glue cache system.
+
+Mon Jan 30 20:51:05 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Really minor.
+
+Sat Jan 28 12:31:02 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added temp fix for facets/paramix.rb Replace the gem version if you need to run the current Glycerin version (remember, you need facets 1.0.1).
+
+Sat Jan 28 12:23:39 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced Cache/Drb, Session uses the new generalized caching system, Added drb server helper script to keep all distributed caches/variables in one easy to manage server.
+
+Mon Jan 23 20:21:29 EET 2006  rob@motionpath.com
+  * Fix to autoreloader to stop it missing files
+
+Fri Jan 27 16:17:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Massive: converted to facets 1.0.1, there may be some problems lurking in the code...
+
+Fri Jan 27 11:18:31 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed Spoark WikiPage::Revision problems. [fang sun]
+
+Wed Jan 25 11:41:40 EET 2006  chrisfarms@gmail.com
+  * Speed optimization for HasManyControl
+
+Wed Jan 25 00:21:07 EET 2006  bryan.a.soto@gmail.com
+  * rakefile_fix
+  Fixes include directories in test task.
+
+Wed Jan 25 01:26:45 EET 2006  bryan.a.soto@gmail.com
+  * og_test_suite_fix
+  Changes the test suite to use global store configs $og1 and $og2 set up in CONFIG.rb. All test suites just call manage classes, which ignore's its arguments for some reason.
+  
+  Moves all class definitions to within the TestCase subclass definition to ensure that all managed classes have their own table.
+  
+  Various test case fixes, including:
+    Changing module names from Og to Glue.
+      tc_hierarchical
+      tc_optimistic_locking
+      tc_orderable
+    Fixed some asserts to actually pass.
+      tc_taggable
+      tc_multi_validations
+    Added a file
+      multi_validations_model
+    Commented out some tests that just don't work.
+      tc_kirby
+      tc_filesys
+
+Wed Jan 25 01:22:44 EET 2006  bryan.a.soto@gmail.com
+  * og_test_config_fix
+  Makes config responsible for setting up stores. Changes logger if debug is false so that logger doesn't dump to stdout.
+
+Wed Jan 25 00:23:41 EET 2006  bryan.a.soto@gmail.com
+  * og_manager_fix
+  Adds checks so that Og managers don't try to enchant an already enchanted class.
+
+Wed Jan 25 00:22:15 EET 2006  bryan.a.soto@gmail.com
+  * legacy_fix
+  Ensures the find_[all|by]_* methods work for legacy databases by retrieving the field name from the classes properties.
+
+Wed Jan 25 01:16:16 EET 2006  bryan.a.soto@gmail.com
+  * glue_taggable_fix
+  Fixes taggable to account for modules when adding a tag.
+
+Wed Jan 25 02:26:10 EET 2006  bryan.a.soto@gmail.com
+  * og_store_kirby_fix
+  Adds a couple of missing lines to eval_og_insert.
+
+Tue Jan 24 13:52:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added missing cacheable files.
+
+Tue Jan 24 13:51:23 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced Og Cacheable mixin.
+
+Tue Jan 24 13:49:46 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced the new generalized caching system in Glue. Initial implementation of MemoryStore. The new system will be used for fragment caching, og entity (model) caching, session store, application scoped variables and more.
+
+Tue Jan 24 01:18:57 EET 2006  bryan.a.soto@gmail.com
+  * bugfix_kirby_store
+  Repairs Kirby store goof I made.
+
+Mon Jan 23 17:49:40 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * NOT LIKE to be mysql compatible.
+
+Mon Jan 23 17:49:18 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Set Og.thread_safe = false in FCGI, CGI, ACGI.
+
+Mon Jan 23 16:56:56 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Corrected spark's &lt; &gt; in <code>
+
+Mon Jan 23 16:02:55 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Mon Jan 23 16:01:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix.
+
+Mon Jan 23 14:42:29 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Mon Jan 23 14:30:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some useful comments.
+
+Mon Jan 23 11:28:59 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * security bugfix: permissions on session's files
+
+Mon Jan 23 12:52:08 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed nasty compiler bug introduced by a previous patch.
+
+Fri Jan 20 11:22:42 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * bugfix: avoid mixin of nice urls and hash-type parameters
+
+Thu Jan 19 16:55:14 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * bugfix: paginate will return an empty array for items
+
+Thu Jan 19 01:15:36 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * template compilation bugfix
+
+Fri Jan 20 11:59:00 EET 2006  rob@motionpath.com
+  * parse_multipart test case for tc_cgi.rb
+
+Fri Jan 20 13:18:35 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Manually applied guill's condition.dup patch.
+
+Fri Jan 20 11:51:42 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed has_many bug. [aidan]
+
+Thu Jan 19 15:03:27 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added after_enchant Og callback, to be used in Cacheable.
+
+Mon Jan 16 15:34:28 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * handling of arguments in options[:condition] in a Ruby/DBI's style
+  auto escaping of arguments by passing an Array to options[:condition]. 
+  
+  Example: 
+  
+  User.find(:condition => [name = ? and create_time > ?", "toto", Time.now])
+
+Fri Jan 13 16:58:36 EET 2006  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * some streaming support fixes
+
+Wed Jan 18 02:35:05 EET 2006  bryan.a.soto@gmail.com
+  * sqlite_schema_evolution
+  Adds schema evolution support to Sqlite3 store.
+
+Wed Jan 18 17:11:52 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Integrated the latest version of the pure rub mysql adapter.
+
+Wed Jan 18 17:11:16 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in the blog example.
+
+--- 0.27.0 ---
+
+Mon Jan 16 13:42:31 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Mon Jan 16 13:14:37 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup
+
+Mon Jan 16 13:11:07 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated changelog.
+
+Wed Jan 18 17:11:16 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in the blog example.
+
+Mon Jan 16 13:42:31 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Mon Jan 16 13:14:37 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup
+
+Mon Jan 16 13:11:07 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated changelog.
+
+Mon Jan 16 13:08:15 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated RELEASES.
+
+Mon Jan 16 13:05:26 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes so tests pass.
+
+Mon Jan 16 12:40:57 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated flare for 0.27.0
+
+Mon Jan 16 11:54:54 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in generator.
+
+Sun Jan 15 14:05:41 EET 2006  kashia@vfemail.net
+  * Prototype of ACGI support
+
+Fri Jan 13 15:23:55 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed scaffolding of entities in modules. [guill, timl]
+
+Fri Jan 13 14:50:00 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed entity == [aidan]
+
+Fri Jan 13 14:27:04 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More updates to the docs.
+
+Tue Jan  3 09:47:20 EET 2006  bryan.a.soto@gmail.com
+  * patch_kirby_evolve_schema
+  
+  Adds support for schema evolution to KirbyBase store.
+  
+  Beginnings of join table support. Not functional.
+  
+
+Fri Jan 13 14:18:59 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated RELEASES.
+
+Fri Jan 13 14:15:46 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated RELEASES with 0.27.0 info.
+
+Thu Jan 12 20:29:32 EET 2006  chrisfarms@gmail.com
+  * dont call to_s on @params that could be Hash/Array
+
+Thu Jan 12 17:48:02 EET 2006  chrisfarms@gmail.com
+  * Update/Fix to last @params patch, recursive this.this.name --into-- {this => {this => {name => 'val'}}} works, fixed issue of Array in Array for multipart forms
+
+Thu Jan 12 14:52:56 EET 2006  chrisfarms@gmail.com
+  * typo in utils.rb
+
+Tue Jan 10 17:27:44 EET 2006  chrisfarms@gmail.com
+  * Don't raise an errror from admin part /sytlesheet
+
+Fri Jan  6 16:03:28 EET 2006  chrisfarms@gmail.com
+  * oid issues
+
+Fri Jan  6 14:12:38 EET 2006  chrisfarms@gmail.com
+  * more little multipart improovements - to_s wasn't rewinding, so could only be used once (not very to_s like)
+
+Fri Jan  6 13:35:00 EET 2006  chrisfarms@gmail.com
+  * Make populate_property more compatible with multipart-forms
+
+Thu Dec 22 18:30:33 EET 2005  rob@motionpath.com
+  * Fix so delete_all on an STI class doesn't delete other classes records
+
+Fri Jan  6 10:17:39 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Corrected small bug. part/admin was using RenderExit instead of Nitro::RenderExit
+
+Fri Jan  6 10:15:08 EET 2006  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Added password control
+
+Thu Jan 12 15:45:04 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed ajax example (replaced by flickr example).
+
+Thu Jan 12 15:44:15 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes, cleanup and changes so that tests and examples work again.
+
+Thu Jan 12 13:37:57 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved Og rdoc comments.
+
+Thu Jan 12 13:16:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Slightly improved glue rdocs.
+
+Thu Jan 12 12:59:07 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved Gen rdoc comments.
+
+Thu Jan 12 12:51:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumped version numbers.
+
+Wed Jan 11 16:19:50 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added a simple layout helper.
+
+Wed Jan 11 15:25:44 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Some cleanup.
+
+Wed Jan 11 15:24:24 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Adde latest revision of table helper by Kashia + test case. [kashia]
+
+Wed Jan 11 15:21:44 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Make all sub-elements implicitly named.
+
+Wed Jan 11 15:15:51 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Nitro automatically converts templates in Element.template_root into Element classes. Added more comments to the Elements implementation.
+
+Mon Jan  9 16:48:26 EET 2006  kashia@vfemail.net
+  * TableHelper sort implementation
+
+Mon Jan  9 13:27:04 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added test case for inheritance behaviour. [epiperak]
+
+Thu Jan  5 19:34:46 EET 2006  chrisfarms@gmail.com
+  * Use multipart forms with scaffolding, standby for Blob upload Control
+
+Thu Jan  5 19:31:47 EET 2006  chrisfarms@gmail.com
+  * Start of Array control + small fix
+
+Thu Jan  5 19:16:25 EET 2006  chrisfarms@gmail.com
+  * Fixes the @params to contain the same 'clever' structure for this[that] type post data when using Multipart form data.
+
+Tue Jan  3 16:03:39 EET 2006  chrisfarms@gmail.com
+  * Runner has the autoreload require only in the debug setup
+
+Fri Dec 23 12:20:24 EET 2005  chrisfarms@gmail.com
+  * options should be optional (Control#fetch)
+
+Fri Dec 23 11:29:29 EET 2005  chrisfarms@gmail.com
+  * More controls work: ability to disbale controls, made the little +/- buttons work (tho this should be a propper spinner at some point)
+
+Wed Dec 21 22:08:57 EET 2005  chrisfarms@gmail.com
+  * Neatening up of the Control code
+
+Mon Jan  2 02:56:53 EET 2006  kashia@vfemail.net
+  * helper_table_cleanup
+
+Thu Jan  5 15:45:00 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible elements, auto inject ElementMixin if needed, handle elements in Nitro::Element namespace (safer), rdoc fixes.
+
+Thu Jan  5 13:17:14 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved wee into helpers from adapter, some rdocs.
+
+Wed Jan  4 18:47:03 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Add db dump/reload functionality, fixed some bugs too.
+
+Wed Jan  4 13:20:06 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Charset setting for admin part.
+
+Tue Jan  3 19:30:28 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for WebFiles (ie file uploads) featuring imagemagick integration, thumbnails etc. Based on OgFile. Still under construction. Also added a new Gallery example to demonstrate this.
+
+Tue Jan  3 12:56:19 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some template_root autodetection code, for more intelligent Template.root defaults.
+
+Tue Jan  3 11:55:22 EET 2006  George Moschovitis <george.moschovitis@gmail.com>
+  * More rdoc stuff, og store fix.
+
+Wed Dec 28 01:43:24 EET 2005  bryan.a.soto@gmail.com
+  * fix_gen_executable
+  
+  Makes reap generate a gen executable.
+  
+
+Fri Dec 30 23:05:08 EET 2005  bryan.a.soto@gmail.com
+  * bugfix_scaffold
+  
+  Specifies Nitro namespace so scaffolding can correctly fill Og objects if user didn't include Nitro namespace in his app.
+  
+
+Fri Dec 30 13:53:26 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Better handling of errors on transactions. [timlarson]
+
+Fri Dec 30 13:35:24 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More Rdocs and small fixes here and there...
+
+Fri Dec 30 13:09:21 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Better handling of NoAction error. [tsume]
+
+Fri Dec 30 12:22:54 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated ProjectInfo's to generate rdocs, added some more rdocs comments here and there.
+
+Fri Dec 30 11:24:19 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Bug fixed and optimized new reloader. Since the optimization is so efficient autoreloading is enabled for live (production) sites by default.
+
+Thu Dec 29 18:33:34 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented autoreload optimization (check for dirty). Much faster development mode. [timlarson]
+
+Thu Dec 29 16:24:11 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Even more CGI fixes. [james_b]
+
+Thu Dec 29 15:49:13 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to the Cgi infrastructure.
+
+Thu Dec 29 14:04:49 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed obsolete files and directories.
+
+Thu Dec 29 13:55:16 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated INSTALL docs. [tsume]
+
+Thu Dec 29 13:40:08 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for auto accumulation in Og collections + test case. [epiperak]
+
+Thu Dec 29 13:02:26 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated to scriptaculous 1.5.1
+
+Thu Dec 29 12:44:14 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in Rakefiles.
+
+Thu Dec 29 12:26:13 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Use the generic setup.rb method for non-gem installation. [tsume]
+
+Wed Dec 28 14:06:43 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Script compiler fixes, builder fixes, bumped version.
+
+Tue Dec 27 14:23:18 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * The helper also requires the file (temp implementation).
+
+Tue Dec 27 14:22:00 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Show off builder in flickr example.
+
+Tue Dec 27 14:00:36 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More great javascript improvements, auto_require needed javascript files.
+
+Tue Dec 27 13:28:21 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Draggable, AutoComplete, many improvements to the javascript helper.
+
+Tue Dec 27 12:44:44 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Pass compiler to morphers, compiler.shared for compiler-stage shared memory and more compiler improvement.s
+
+Tue Dec 27 12:25:26 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up flickr.
+
+Tue Dec 27 11:24:50 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored javascript helper.
+
+Tue Dec 27 10:56:06 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small beautifications to the flickr example.
+
+Fri Dec 23 18:56:40 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented INCREDIBLE scriptgenerator for dead easy dhtml/ajax effects. Updated Flickr example.
+
+Fri Dec 23 15:34:02 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented client-side morphers.
+
+Fri Dec 23 15:33:13 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added new flickr example.
+
+Fri Dec 23 11:15:12 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Thu Dec 22 20:52:08 EET 2005  rob@motionpath.com
+  * Fix to the glue mailer so bcc and cc work
+
+Fri Dec 23 00:08:06 EET 2005  chrisfarms@gmail.com
+  * Add Nitro:: scope to Server in admin part
+
+Thu Dec 22 14:44:09 EET 2005  rob@motionpath.com
+  * Test cases need gems and facets
+
+Thu Dec 22 00:46:59 EET 2005  bryan.a.soto@gmail.com
+  * tc_nitro_controller_aspect
+  
+  Makes the test case pass.
+  
+
+Thu Dec 22 00:05:52 EET 2005  bryan.a.soto@gmail.com
+  * bugfix_remove_breakpoint
+  
+  Removes breakpoint call from test case. Was loading active_support (Yes, Rails) from rake test runs.
+  
+Fri Dec 23 11:01:49 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  tagged 0.26.0
+
+Thu Dec 22 00:18:54 EET 2005  bryan.a.soto@gmail.com
+  UNDO: bugfix_rakefile_test_libs
+  
+  Sets up location of dev libs in relation to Rakefiles. Ensures that tests run against dev version.
+  
+  Still requires RUBYOPT=-rubygems for facets, etc.
+  
+
+Thu Dec 22 00:18:54 EET 2005  bryan.a.soto@gmail.com
+  * bugfix_rakefile_test_libs
+  
+  Sets up location of dev libs in relation to Rakefiles. Ensures that tests run against dev version.
+  
+  Still requires RUBYOPT=-rubygems for facets, etc.
+  
+
+Thu Dec 22 16:27:25 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added ProjectInfo for examples.
+
+Thu Dec 22 14:16:45 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in nitrogen.
+
+Thu Dec 22 13:33:51 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added 'created' hook to session (to allow for easy initial values setup).
+
+Wed Dec 21 14:38:56 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added reap ProjectInfo's for spark and flare (Trans rules ;-)).
+
+Wed Dec 21 14:10:11 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in ProjectInfo.
+
+Wed Dec 21 14:09:44 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed unfinished client example.
+
+Wed Dec 21 14:02:13 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Even more minor stuff.
+
+--- 0.26.0 ---
+
+Wed Dec 21 13:55:01 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor fixes.
+
+Wed Dec 21 13:29:50 EET 2005  chrisfarms@gmail.com
+  * Remove reduntant lines from a handful of Controls
+
+Wed Dec 21 13:16:49 EET 2005  chrisfarms@gmail.com
+  * Updates to Control system, allow preprocessing of posted values by the controls themselves (or via a method specified on property/relation).
+
+Tue Dec 20 15:06:21 EET 2005  chrisfarms@gmail.com
+  * When an obj is pushed into a collection any existing version of obj needs removing first.
+
+Tue Dec 20 15:05:32 EET 2005  chrisfarms@gmail.com
+  * What is the patch name? Rebuild of Controls; a Control instance is now made for each obj,property pairing when required, this stops the need to continully pass the obj,prop to each instance method.
+
+Tue Dec 20 12:00:27 EET 2005  chrisfarms@gmail.com
+  * Repaired scaffold delete (missing '@')
+
+Wed Dec 21 13:14:08 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some more small fixes.
+
+Wed Dec 21 13:02:25 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented bryans validation_key idea to avoid multiple validations [bryan].
+
+Wed Dec 21 12:41:20 EET 2005  rob@motionpath.com
+  * Don't infinite loop if PostgreSQL database is damaged
+
+Wed Dec 21 12:38:02 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Wed Dec 21 12:23:30 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Multiple small fixes in flare.
+
+Tue Dec 20 18:49:41 EET 2005  rob@motionpath.com
+  * Heavy duty startup patch to PostgreSQL
+  Allows you to do crazy things like run 50 concurrent connections at once destroying
+  the tables while other Og processes are trying to load
+
+Tue Dec 20 16:38:52 EET 2005  rob@motionpath.com
+  * PostgreSQL fix to allow tolerance of multiple programs meddling with the database structure
+
+Mon Dec 19 21:05:06 EET 2005  rob@motionpath.com
+  * PostgreSQL improvements, change to manager, enhancement and change to error logger, call create_table on STI classes again
+  This patch tidies up the old foreign key constraint creation and also offers a new rapid method that is called post setup. A similar technique could be used to offer an alternate table creation mechanism greatly increasing load performance.
+  Error logger was not verbose enough so I made it more verbose when Og.setup throws exceptions. I also made it exit the program if $DBG was set to make this easier to spot.
+  For some reason create_table was explicitly not being called on tables with schema inheritance set. This is a mistake I think, there is no reason why you cannot use the schema inheritance base class and we do.
+  
+
+Tue Dec 20 03:10:45 EET 2005  chrisfarms@gmail.com
+  * More scaffolding related bits. A HasMany/JoinsMany control, Repaired the redirect after save, removed obsolete scaffold.js
+
+Fri Dec 16 19:33:09 EET 2005  chrisfarms@gmail.com
+  * Some mailservers reject mail requests if they lie about their HELO statement.... This patch makes the default domain for Glue::Mailer the hostname of the machine running the app (I think this is better default behaviour)
+
+Tue Dec 20 14:40:35 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Mon Dec 19 15:49:33 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added delete/destroy in main admin page.
+
+Tue Dec 20 11:04:27 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More templates for blog example.
+
+Tue Dec 20 11:03:46 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Tue Dec 20 11:03:29 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in flare.
+
+Fri Dec 16 19:56:02 EET 2005  rob@motionpath.com
+  * Another postgresql race condition...
+
+Fri Dec 16 18:46:03 EET 2005  rob@motionpath.com
+  * Og.setup error logger now more chatty and exits the program if $DBG is set (program is useless if it's broken)
+
+Fri Dec 16 18:39:27 EET 2005  rob@motionpath.com
+  * Fixes another race condition
+
+Fri Dec 16 18:29:23 EET 2005  rob@motionpath.com
+  * Stop race condition with PostgreSQL
+
+Fri Dec 16 18:21:12 EET 2005  rob@motionpath.com
+  * PostgreSQL auto-stripping of broken relations fix
+
+Mon Dec 12 17:35:34 EET 2005  rob@motionpath.com
+  * Og was incorrectly using a case-sensitive comparison to see if it should append SELECT klass::OGTABLE but SQL is case-insensitive. Fixed.
+
+Fri Dec 16 00:15:39 EET 2005  chrisfarms@gmail.com
+  * Scaffolding and part/admin updates. Notable changes new scaffold_all method instead of the mounted hack, sprinkling of aspects in the scaffold code for pre :on => scaffold_save etc (handy for restricting control), cleaner stylesheet handling from part/admin, scaffold method defaults to :mount => true ... seems silly adding this everytime... search gives a "not implimented" error if no serach method found instead of raising /error... +other bits
+
+Wed Dec  7 16:17:07 EET 2005  chrisfarms@gmail.com
+  * TEMP: fix _oid issues ... abandon once new scaffold operational
+
+Tue Dec  6 14:23:01 EET 2005  chrisfarms@gmail.com
+  * TEMP: fix to refers_to scaffold relation in populate when :none is allowed
+
+Fri Dec 16 17:33:49 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small changes in runner.
+
+Fri Dec 16 12:02:49 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Dont dump access_log to STDERR by default on windows.
+
+Thu Dec 15 17:58:33 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Hack fixed PROTO_DIR/index bug. A better solution (template_root stack) will be available in 0.27.0
+
+Thu Dec 15 17:27:17 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added enumerable accumulate helper.
+
+Thu Dec 15 16:25:38 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Confirm before delete in the admin screens.
+
+Thu Dec 15 15:34:15 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored, improved, fixed blog example.
+
+Thu Dec 15 15:16:10 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added fragment caching helper to sweeper, small fixes in fragment caching.
+
+Thu Dec 15 13:22:57 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Thu Dec 15 12:13:33 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes on guill's session patch.
+
+Wed Dec 14 18:33:22 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * nitro session code refactored, og session store added, test case updated
+
+Fri Dec  9 19:31:59 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * webrick adapter: avoid warning on streaming with http/1.0
+
+Fri Dec  9 14:12:32 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * @out can be an IO in case of streaming, and don't have empty? method
+
+Fri Dec  9 14:05:32 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * request.ajax? removed and aliased to xml_http_request? instead
+
+Wed Dec 14 21:49:51 EET 2005  rainhead@gmail.com
+  * Updated docs for RELEASES and javascript
+
+Wed Dec 14 13:59:59 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to the examples to make them work with the latest nitro.
+
+Wed Dec 14 13:47:02 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small changes to make the tests pass again.
+
+Wed Dec 14 13:06:58 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Upgrated to Prototype 1.4 and Scriptaculous 1.5
+
+Wed Dec 14 12:58:27 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs to prepare for new release.
+
+Sun Dec 11 16:57:17 EET 2005  brian@xsi-design.com
+  * improved_validations
+
+Tue Dec 13 17:30:39 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Use DATETIME instead of timestamp by default on Mysql.
+
+Tue Dec 13 17:06:44 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Reordered default compiler pipeline, better tradeoff.
+
+Tue Dec 13 15:32:51 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Inline admin css.
+
+Tue Dec 13 15:32:29 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Temp many_to_many implementation.
+
+Mon Dec 12 18:08:12 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Add to_s for tags (scaffold friendly).
+
+Mon Dec 12 17:40:02 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added the new sweeper.
+
+Mon Dec 12 17:38:49 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Add Revisable, Sweeper support in spark.
+
+Mon Dec 12 17:38:33 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved Revisable.
+
+Mon Dec 12 17:36:29 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * CacheSweeper -> Sweeper, allow for non cache cleanups.
+
+Mon Dec 12 17:32:11 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated RELEASES.
+
+Mon Dec 12 17:31:08 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Sweeper support in flare.
+
+Sun Dec 11 11:24:37 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc changes.
+
+Sat Dec 10 00:22:44 EET 2005  bryan.a.soto@gmail.com
+  * bugfix_validate_unique
+  
+  Modifies validate_unique to use new find_all_by_* methods which return an array.
+  Adds tests.
+
+Fri Dec  9 08:23:48 EET 2005  rainhead@gmail.com
+  * Some documentation for Javascript mixin
+
+Thu Dec  8 01:01:36 EET 2005  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Added CheckboxControl, linked to TrueClass and changed sql to parse 'true', '1' and 't' to true
+
+Thu Dec  8 13:04:11 EET 2005  Jonas Pfenniger <zimba.tm@gmail.com>
+  * Removed all ms ^M
+
+Thu Dec  8 16:04:54 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed the new validation code, buggy, waiting for a new patch.
+
+Thu Dec  8 15:33:36 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added force_save.
+
+Thu Dec  8 15:30:44 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in timestamp.
+
+Thu Dec  8 01:06:12 EET 2005  brian@xsi-design.com
+  * Improving validation support and enabling validation before a save.  Fixed a bug where calling #valid? would cause an endless loop.  Fixed a bug where calling #valid? and then extending a class to add new validations would cause those validations to be ignored.
+
+Wed Dec  7 18:06:17 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More small things.
+
+Wed Dec  7 15:08:26 EET 2005  rob@motionpath.com
+  * PostgreSQL foreign key constraints fixes and improvements
+  Now deletes join table rows as it did before (this is needed since Og has applied a NOT NULL constraint to join tables). The framework is in place for the ability to specify foreign key reactions.
+
+Wed Dec  7 15:05:18 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed some old :editors.
+
+Wed Dec  7 14:41:24 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes.
+
+Wed Dec  7 14:31:04 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in flare
+
+Wed Dec  7 13:25:23 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes in evolution.
+
+Wed Dec  7 12:54:54 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added searchable, the scaffolder also supports searching.
+
+Wed Dec  7 12:13:47 EET 2005  rob@motionpath.com
+  * Patch to allow multiple other databases to be used with PostgreSQL
+
+Wed Dec  7 12:05:42 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added pager in the admin screens (dont forget the system.css file)
+
+Wed Dec  7 12:04:40 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc fixes in the admin/scaffold code.
+
+Wed Dec  7 00:02:26 EET 2005  chrisfarms@gmail.com
+  * Attempt at making the error handling for @out a little neater
+
+Tue Dec  6 23:59:47 EET 2005  chrisfarms@gmail.com
+  * More consistancy between compiler and the cool new dispatcher, raise NoActionError for 404 type situations
+
+Wed Dec  7 10:49:39 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added guill's kirby test case. [guill]
+
+Tue Dec  6 18:40:36 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * fixed: bad handling of @oid in og/store/kirby.rb
+
+Tue Dec  6 18:00:58 EET 2005  rob@motionpath.com
+  * PostgreSQL foreign key constraints fixes
+  This patch will cause Og to strip out all constraints it has previously added to a database on startup unless you use the :leave_constraints option by setting it to true within the database options. It is safe to allow it to do this always. There has been a change in that all constraints now set NULL on deletes rather than cascading the delete which was appropriate to join tables but not appropriate to other relationships. This is a safe fix to use for now, also removes the need for the seperate sceript and manual intervention and should stay in Og while the cascade behaviour of relationships is discussed on the Mailinglist.
+  
+
+Tue Dec  6 13:16:06 EET 2005  rob@motionpath.com
+  * Added loopback to the list of ignored proxy addresses (some ad-blocking software uses this)
+
+Tue Dec  6 17:58:27 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More small fixes.
+
+Tue Dec  6 17:44:43 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added old why_wiki code too.
+
+Tue Dec  6 17:43:24 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some fixes to make Publishables work again.
+
+Tue Dec  6 17:42:46 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented why_wiki example.
+
+Tue Dec  6 17:08:07 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added the extremely useful CacheSweeper mixin.
+
+Tue Dec  6 16:41:32 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up dispatcher.
+
+Tue Dec  6 16:38:09 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Further improvements to the scaffoliding / admin code.
+
+Tue Dec  6 14:18:24 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * compiler/morphing.rb not stripping doctype anymore
+
+Tue Dec  6 14:17:42 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * base and meta tags added to cleaned up html tags
+
+Thu Dec  1 08:11:31 EET 2005  rainhead@gmail.com
+  * Allow fixtures with ".yaml" extension
+
+Mon Dec  5 21:19:32 EET 2005  zimba.tm@gmail.com
+  * Glycerin require facility
+
+Sun Nov 27 13:07:02 EET 2005  zimba.tm@gmail.com
+  * removed ms carriage-return
+
+Mon Dec  5 16:19:24 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Use the new KirbyBase 2.5 gem, which works perfectly with the latest code (no more db corruption on reload).
+
+Mon Dec  5 15:25:47 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Continued work on the new scaffolder, initial support for relation, more cleanups, navigation and more improvements.
+
+Mon Dec  5 13:03:47 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Executables in ProjectInfo. [trans]
+
+Sat Dec  3 04:34:28 EET 2005  rainhead@gmail.com
+  * Type-o in nitro/ProjectInfo
+
+Mon Dec  5 12:35:26 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added Rob's kill-constrains script. [rob]
+
+Mon Dec  5 11:37:43 EET 2005  rob@motionpath.com
+  * Improvements to PostgreSQL foreign key constraints
+  Now tracks record fields as well as join tables. Will automatically set corrupt relations that were in place before adding the constraints to NULL if evolve_schema_cautious is set to false. Otherwise, logs an error, doesn't add the constraint and allows Og to continue loading.
+  The code is simplified.
+
+Thu Nov 17 12:45:00 EET 2005  rob@motionpath.com
+  * Allows simple (not heavily tested) usage of primary keys with a different field name to the relation name (useful for legacy applicatons)
+
+Mon Dec  5 12:21:59 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented the new intelligent dispatcher that combines the functionality of the older general and nice dispatchers and allows for completely free structure and nice urls without rewrites. Pure magic!
+
+Sun Dec  4 20:29:55 EET 2005  chrisfarms@gmail.com
+  * FIX: Elements not getting aliased as ElementProcessor propperly
+  --test cases are useful
+
+Sun Dec  4 20:17:59 EET 2005  chrisfarms@gmail.com
+  * By putting the morphing compiler after the elements compiler we are able to use morhping code within elements, but lose the ability to morph an element!
+
+Sun Dec  4 20:10:45 EET 2005  chrisfarms@gmail.com
+  * FIX: whoops!... changes to cleanup stopped the render,inject etc tags rendering
+
+Sun Dec  4 16:54:03 EET 2005  chrisfarms@gmail.com
+  * Tiny bit of refactoring in compiler, easier to read
+
+Fri Dec  2 19:09:26 EET 2005  chrisfarms@gmail.com
+  * Stop Runner silently catching errors in external config files (was confusing, and hard to find bugs)
+
+Mon Nov 28 18:30:58 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * ajax? method for request
+
+Mon Nov 28 17:31:33 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * mysql store evolve_schema support
+  this is mainly a recopy of code. Needs to be refactored.
+
+Sat Nov 19 03:43:35 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * taggable: avoid key conflict by filtering already tagged objects
+
+Fri Nov 18 12:46:30 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * og sqlite small bugfix
+
+Fri Dec  2 19:00:34 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some simple relation controls, refactoring and fixes, still under construction.
+
+Fri Dec  2 16:50:00 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Started working on new form helper, this patch contains changes for scaffolding, compiler and more to support this. Under construction.
+
+Fri Dec  2 11:18:04 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Manually added the cleanup compiler.
+
+Fri Dec  2 11:17:07 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Annotation bug fix in update_routes (hopefully this fixes the hard to track annotation bug).
+
+Fri Dec  2 11:16:33 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small updates after chris's patch.
+
+Fri Dec  2 07:38:32 EET 2005  chrisfarms@gmail.com
+  * Allow use of symbols for set_order options (kirby)
+
+Fri Dec  2 07:37:42 EET 2005  chrisfarms@gmail.com
+  * Change some debug/display info in runner
+
+Fri Dec  2 07:32:00 EET 2005  chrisfarms@gmail.com
+  * Updates to morphing... order that morphers are added dictates priority for that morpher, added select_if, checked_if, select_unless etc. attributes for use with <option> and checkbox elements.
+  
+  should now be possible todo
+  <select>
+  <option each="this in that" selected_if="this == 1">#{this}</option>
+  </select>
+  and simular
+  
+  not heavily tested.
+
+Fri Dec  2 07:29:24 EET 2005  chrisfarms@gmail.com
+  * allow searching of templates to fall back to Template.root if not found in self.template_root
+
+Fri Dec  2 07:25:59 EET 2005  chrisfarms@gmail.com
+  * Use a Cleanup.transform to perform the Glue::HTML cleanup function
+  ...this might be better built directly into Template.transform's function ?
+
+Fri Dec  2 07:21:01 EET 2005  chrisfarms@gmail.com
+  * Move the ElementProcessor => Elements compiler module to keep everything organised
+
+Fri Dec  2 07:18:38 EET 2005  chrisfarms@gmail.com
+  * Only apply the Glue cleanup method to certain html element to make output more IE friendly
+  InternetExplorer would cry if it saw <div /> or worse <script />
+
+Fri Dec  2 03:35:36 EET 2005  chrisfarms@gmail.com
+  * some more simple request.from_xxx? methods in utils
+
+Thu Dec  1 22:26:44 EET 2005  chrisfarms@gmail.com
+  * Missing </li> in proto index.xhtml - was annoying me
+
+Thu Dec  1 00:03:50 EET 2005  chrisfarms@gmail.com
+  * Error information for when Og.setup fails, very useful in early stages
+
+Wed Nov 30 23:38:03 EET 2005  chrisfarms@gmail.com
+  * allow markup pipeline to be access from the Nitro namespace (keeping glue behind the scenes is more intuative)
+
+Thu Dec  1 18:20:50 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * A big patch that introduces the new scaffolding system. Many many changes and improvements to dispatcher, compiler etc to support this. This is work in progress and will most probably change a lot.
+
+Thu Dec  1 12:09:22 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Totaly recoded morphing subsystem, allows for userned, pluggable morphers, multiple key attributes per element and more.
+
+Thu Dec  1 12:08:17 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Initial commit of new example.
+
+Wed Nov 30 17:28:08 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Modified default compilere pipeline to include all the common modules.
+
+Wed Nov 30 12:07:34 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced some new js helpers, no code yet, ignore for the moment.
+
+Tue Nov 29 21:22:40 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix boolean handling. [timl]
+
+Fri Nov 25 18:34:55 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some comments on revisable.
+
+Fri Nov 25 18:31:21 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented an Og Revisable mixin, based on original code by Dirk Barnikel.
+
+Fri Nov 25 17:09:58 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed dangerous aspects patch.
+
+Fri Nov 25 17:01:27 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Dynamic finder with block and refactoring. [aleksi]
+
+Fri Nov 25 14:29:50 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some comments here and there...
+
+Fri Nov 25 14:29:14 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix author in Flare. [manveru]
+
+Thu Nov 24 14:05:21 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Argh!
+
+Thu Nov 24 13:07:28 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added small pager helper method.
+
+Thu Nov 24 11:30:26 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed aspects not included bug. [manveru, bryan]
+
+Wed Nov 23 17:19:31 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed again cgi query_string handling.
+
+Wed Nov 23 11:22:31 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Applied some patches from zimba and manveru.
+
+Tue Nov 22 16:01:54 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added test case for the previous fix.
+
+Fri Nov 18 22:43:33 EET 2005  bryan.a.soto@gmail.com
+  * bugfix_eval_validate
+  
+  By catching all NoMethodErrors and performing a retry, an endless loop
+  occurred if a NoMethodError was thrown during validation.
+  
+  This fixes that by just handling the call to validate and raising the
+  original exception for anything else.
+  
+
+Tue Nov 22 15:42:25 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Bumped version number.
+
+Tue Nov 22 15:28:58 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Temp fix for Admin/Unmanageable bug.
+
+Mon Nov 21 14:20:54 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added chdir again.
+
+Mon Nov 21 13:12:05 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix for load_path.
+
+Mon Nov 21 12:25:58 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in markup.
+
+Thu Nov 17 17:35:43 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added Template.strip_xml_comments setting to make guille's patch optional.
+
+Thu Nov 17 12:41:55 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * small bugfix
+
+Thu Nov 17 12:40:41 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * compiler/morphing.rb and elements.rb bugfixes
+
+Thu Nov 17 15:22:58 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * cgi adapter fixes
+
+Thu Nov 17 15:19:56 EET 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * nitro.rb cleanup
+
+Thu Nov 17 11:31:41 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed buggy drb runner.
+
+Thu Nov 17 11:14:35 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small updates in ProjectInfo's
+
+Thu Nov 17 11:10:31 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes to prepare for release.
+
+Thu Nov 17 10:59:15 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in Og example.
+
+Thu Nov 17 10:58:52 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated release docs.
+
+Thu Nov 17 10:58:09 EET 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved apply.rb
+
+--- 0.25.0 ---
+
+Wed Nov 16 18:15:00 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small changes
+
+Wed Nov 16 11:57:49 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes and small improvements in output caching.
+
+Wed Nov 16 10:09:15 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added redirect_home helper.
+
+Wed Nov 16 09:59:35 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added --daemon option in drbserver, autostart drb session server from runner when using distributed sessions.
+
+Wed Nov 16 09:59:19 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added daemons dependency.
+
+Tue Nov 15 18:27:26 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Taggable delete hook to cleanup relations.
+
+Tue Nov 15 18:27:05 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor stuff...
+
+Mon Nov 14 16:57:50 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Don't override to_href if exists when scaffolding.
+
+Mon Nov 14 16:37:44 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Integrated latest version of kirbybase.
+
+Mon Nov 14 15:27:07 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added ultra-useful StaticInclude compiler module.
+
+Mon Nov 14 13:44:02 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Add new scriptaculous files.
+
+Mon Nov 14 13:43:11 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added toggleable javascript helper.
+
+Mon Nov 14 13:42:18 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Flare: better login system, fixes in javascript, post comments.
+
+Mon Nov 14 13:29:03 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated to latest versions of prototype/scriptaculous.
+
+Mon Nov 14 09:59:01 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in flare.
+
+Sun Nov 13 13:02:57 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Little things.
+
+Sun Nov 13 13:01:52 GTB Standard Time 2005  Bryan Soto <bryan.a.soto@gmail.com>
+  * Fixed webrick rewrite problem. [tlarson]
+
+Sun Nov 13 11:17:47 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed static inclusion, <?include ..?>.
+
+Sun Nov 13 10:14:01 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed set_order.
+
+Sun Nov 13 09:44:06 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated ProjectInfo's, added missing dependencies.
+
+Fri Nov 11 17:56:37 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Page titles in spark.
+
+Fri Nov 11 17:31:38 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated spark to use the new tag system.
+
+Fri Nov 11 16:55:35 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Multiple small fixes to make the tests run again, helper tests.
+
+Fri Nov 11 15:02:39 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added TimestampedOnCreate.
+
+Fri Nov 11 12:45:10 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in helper system, removed duplicate file.
+
+Thu Nov 10 17:45:19 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved taggable (keep count/freq).
+
+Wed Nov  9 16:51:33 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup of taggable.
+
+Wed Nov  9 16:47:11 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Brand new taggable mixin, supports polymophism, eval-free implementation.
+
+Wed Nov  9 14:54:20 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Sqlite as default store, start alias for Og.setup.
+
+Wed Nov  9 14:51:48 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for Og scoped queries and collection subqueries (ex: user.articles.find :condition => 'hits > 1000')
+
+Wed Nov  9 10:54:11 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor typo fix.
+
+Tue Nov  8 17:38:43 GTB Standard Time 2005  chrisfarms@gmail.com
+  * Better matching of "for" attribute in Morphing code to allow real html for attributes too
+
+Tue Nov  8 13:36:14 GTB Standard Time 2005  chrisfarms@gmail.com
+  * FIX user_agent issues in cgi/utils
+
+Fri Nov  4 13:15:38 GTB Standard Time 2005  chrisfarms@gmail.com
+  * fixed scaffold not saving relations on new records
+
+Tue Nov  8 17:49:47 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Ehm, to fix the wrong credit for the previous commit I added a new feature: find_or_create_by_xxx. (there is a saying about fame, the feature rocks though). 
+
+Tue Nov  8 17:40:15 GTB Standard Time 2005  Bryan Soto <bryan.a.soto@gmail.com>
+  * Added support for dynamically generated finders (ex: find_by_name_and_age).
+
+Mon Nov  7 18:42:51 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Readded gen.rb
+
+Mon Nov  7 18:38:14 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed app gen.
+
+Mon Nov  7 15:27:06 GTB Standard Time 2005  Bryan Soto <bryan.a.soto@gmail.com>
+  * Small fix in the form generator.
+
+Mon Nov  7 15:25:42 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added skin template in proto.
+
+Mon Nov  7 15:24:47 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Access the controller from context.
+
+Mon Nov  7 18:32:34 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed app gen.
+
+Mon Nov  7 13:26:33 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes in morphing.
+
+Mon Nov  7 13:16:06 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Fixed morphing compiler for nested elements.
+
+Sat Nov  5 12:15:18 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * A helper to sync with nitro-repository@rubyforge.org
+
+Sat Nov  5 12:00:48 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some simple security support in the AdminController.
+
+Sat Nov  5 11:58:22 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated Flare docs.
+
+Sat Nov  5 10:26:57 GTB Standard Time 2005  Bryan Soto
+  * Fixed validate_unique.
+
+Fri Nov  4 16:01:49 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Default name for sqlite stores.
+
+Fri Nov  4 15:57:10 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Small fixes in the SCGI adapter.
+
+Fri Nov  4 14:51:36 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Minor change.
+
+Fri Nov  4 14:06:04 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Commented out the list_tables stuff in manager.
+
+Fri Nov  4 14:05:17 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added comment tha points to og/validation.
+
+Fri Nov  4 13:28:24 GTB Standard Time 2005  rob@motionpath.com
+  * STI Fixes
+  
+  options[:type] is not always set for example when doing Class.first so I have patched the SQL adapter to do another check so that ogtype is always checked when it's supposed to (another example being Class[oid]).
+  
+  SuperClass[oid] will now return a result of type child class if the oid is actually an STI child of SuperClass.
+
+Thu Nov  3 19:16:58 GTB Standard Time 2005  rob@motionpath.com
+  * Join table fixes
+  
+  This patch causes the PostgreSQL adapter to create proper database driven foreign key constraints on join table fields causing changes to the oid number or deletes to be fully replicated to all appropriate placess. The implementation is a little slow on startup but I could not think of a cleaner way to do it without violating the paradigm that og stores should be essentially independent.
+  
+  It also does a final sweep within the sql adapter for other databases to kick out any joins still left lying around (happened to me with self join cases).
+  
+  Please feel free to improve this if you can. The PGConn adapter now provides you with all the information you need.
+
+Thu Nov  3 15:43:00 GTB Standard Time 2005  rob@motionpath.com
+  * Aggregate function fixed to take STI into account
+
+Thu Nov  3 13:15:40 GTB Standard Time 2005  rob@motionpath.com
+  * Table destruction for PostgreSQL
+  
+  Added the following flag to Og.setup: 
+   => :destroy_tables - If set to true will drop all the tables in a database on startup.
+  
+  This is preferred to dropping the whole database with a system command for many reasons, including using only PostgreSQL commands, working over remote connections and not requiring interactive input. The main :destroy function was not modified incase some people may prefer the old mechanics and also because the function is not wholly identical (but should be in practice); there is no equivilent :create by nature.
+  
+
+Thu Nov  3 12:24:43 GTB Standard Time 2005  rob@motionpath.com
+  * Schema Evolution for PostgreSQL patch
+  
+  Added Og database setup options:
+  
+   => :evolve_schema - When set to true, automatically adds new fields to db tables.
+   => :evolve_schema_cautions - When set to false causes fields that are no longer in use to be droped from db tables.
+   => :evolve_schema_purge_tables - When set to true causes tables not managed by og (probably obsolete) to be dropped from the database.
+  
+  All evolve schema options also require evolve_schema to be set.
+  
+  Will inform you with info level log output if these activities would be performed but are not enabled allowing you to make the required changes manually.
+  
+  Also modified PostgreSQL adapter and changed PostgreSQL store to properly check if tables exist first rather than trying to create them and catching table-exists errors.
+
+Thu Nov  3 02:03:20 GTB Standard Time 2005  chrisfarms@gmail.com
+  * :join_tables array annotation was getting reset everytime a join table was added to the list.
+
+Wed Nov  2 16:07:07 GTB Standard Time 2005  chrisfarms@gmail.com
+  * Improvements to __force_ functions, including hashed date support (like the Hashed Time support)... removed the now obsolete __force_hash_ function.
+
+Wed Nov  2 01:51:12 GTB Standard Time 2005  chrisfarms@gmail.com
+  * Dont unessacellarly save entities when adding them to a joins_many collection. (previously quite a large performance hit)
+
+Wed Nov  2 01:47:51 GTB Standard Time 2005  chrisfarms@gmail.com
+  * None of the Og::Taggable time fields should be displayed in scaffold.
+
+Wed Nov  2 01:47:09 GTB Standard Time 2005  chrisfarms@gmail.com
+  * FIX: dateselect was displaying incorrect values
+
+Wed Nov  2 01:44:31 GTB Standard Time 2005  chrisfarms@gmail.com
+  * FIXED: user_agent is different on WEBrick / Apache ... patch takes this into account using request.user_agent method.
+
+Wed Nov  2 01:09:25 GTB Standard Time 2005  chrisfarms@gmail.com
+  * Marked a useless line of code for removal
+
+Thu Nov  3 16:56:13 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Brought back proto directory (was bad idea).
+
+Thu Nov  3 16:47:14 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for named elements, fixed nasty element hierarchy bug.
+
+Thu Nov  3 16:47:05 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in Gen.
+
+Wed Nov  2 18:03:12 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Convert to ann.self (from ann.this).
+
+Tue Nov  1 19:24:31 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More fixes to get some examples to run.
+
+Tue Nov  1 19:18:15 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More conversions to the updated helper system.
+
+Tue Nov  1 19:10:16 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added og/markers and glue/markup.
+
+Tue Nov  1 19:09:59 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added Expirable.
+
+Tue Nov  1 19:07:35 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Huge refactoring, converted nitro mixins to helpers, use the new helper keyword, use is XXX to include modules, moved Og mixins to the Glue namespace for better looking source code, markup moved to glue and more.
+
+Tue Nov  1 15:07:35 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed some obsolete files.
+
+Tue Nov  1 12:50:10 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added missing og vendor dir to the repo.
+
+Tue Nov  1 12:33:41 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small source updates.
+
+Tue Nov  1 12:24:23 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Reverted to the old taggable.
+
+Tue Nov  1 11:40:49 GTB Standard Time 2005  Thomas Sawyer <transfire@gmail.com>
+  * Refacotred Entity, Relation and mixins.
+
+Sat Oct 29 13:04:21 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved more proto files in the base nitro dir.
+
+Sat Oct 29 13:03:32 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed proto, moved its subdirs in the base nitro dir.
+
+Sat Oct 29 12:53:48 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fix in Cgi adapter. [fbach]
+
+--- 0.24.0 ---
+
+Sat Oct 29 12:53:10 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes before release.
+
+Thu Oct 27 22:41:45 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated build script.
+
+Thu Oct 27 22:36:01 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Require latest facets.
+
+Thu Oct 27 22:20:06 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up source code removed windows EOL.
+
+Thu Oct 27 21:37:55 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added some js files in the repo.
+
+Thu Oct 27 21:36:31 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added latest version of Prototype/Scriptaculous 1.4.rc_0
+
+Thu Oct 27 15:06:03 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added Flare and Sparcs in the public repository.
+
+Thu Oct 27 14:10:21 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated Reap files, fixed property bug.
+
+Thu Oct 27 13:41:05 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in scaffold.
+
+Thu Oct 27 13:21:50 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Readded morphing compiler.
+
+Thu Oct 27 13:21:04 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Added file session support.
+
+Thu Oct 27 13:19:32 GTB Standard Time 2005  Chris Farmiloe <chris@motionpath.com>
+  * Fixes in scaffold, form, admin.
+
+Thu Oct 27 13:10:18 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@gmail.com>
+  * Streaming support fix.
+
+Mon Oct 24 12:38:40 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Fixes in form mixin, scaffold, sti, psql adapter and properties.
+
+Fri Oct 21 13:31:09 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * FCGI compatible query_string calculation.
+
+Fri Oct 21 12:37:52 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes to make spark run with fcgi.
+
+Thu Oct 20 19:05:43 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Readded scgi in the repo.
+
+Thu Oct 20 17:57:03 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Many fixes to the scaffolding code.
+
+Thu Oct 20 16:25:56 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated AUTHORS.
+
+Thu Oct 20 16:23:26 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added needed require. [rob]
+
+Thu Oct 20 16:23:08 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix in scgi adapter.
+
+Thu Oct 20 15:27:49 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated scgi adapter.
+
+Thu Oct 20 14:20:40 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated Changelog.
+
+Thu Oct 20 14:08:07 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Imported all files in the new repo.
+
+Mon Oct 17 15:27:49 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved javascript mixin.
+
+Mon Oct 17 15:27:15 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed some old dirs and files.
+
+Mon Oct 17 15:25:44 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Many changes to make compatible with latest facets.
+
+Fri Oct 14 15:28:35 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in Rakefiles and Docs.
+
+Fri Oct 14 10:30:16 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed flash session bug (context propagation in included fragments).
+
+Fri Oct 14 10:24:53 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up relation resolver, fixed polymorphic relations.
+
+Thu Oct 13 15:08:32 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for title in RSS helper. [drak]
+
+Thu Oct 13 14:44:28 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Temporal simple fix for scaffoliding template_root problem.
+
+Thu Oct 13 14:43:00 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed and cleaned up blog example.
+
+Thu Oct 13 14:00:06 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Added support for custum per-tag editors.
+
+Thu Oct 13 13:59:21 GTB Standard Time 2005  Emmanuel Piperakis <epiperak@softlab.ece.ntua.gr>
+  * Small fix in popup helper.
+
+Thu Oct 13 13:58:20 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc small fixes
+
+Thu Oct 13 13:57:40 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated documentation, added standard docs for gen.
+
+Wed Oct 12 16:51:36 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Many many small Og fixes to make STI and some test cases to work again.
+
+Wed Oct 12 16:51:19 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated docs.
+
+Wed Oct 12 16:49:44 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed some 'included' bugs.
+
+Tue Oct 11 18:52:10 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented KirbyBase store.
+
+Tue Oct 11 18:51:36 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes
+
+Tue Oct 11 18:51:12 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Hack fix for aspects.
+
+Mon Oct 10 17:17:49 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved blog templates into template.
+
+Mon Oct 10 17:17:05 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed various append_features not calling include.
+
+Mon Oct 10 17:15:34 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in blog example.
+
+Mon Oct 10 15:32:46 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Multiple fixes to make Og tests pass.
+
+Mon Oct 10 15:17:18 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes to make nitro tests pass.
+
+Mon Oct 10 15:07:42 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Many many small fixes to make glue tests pass again.
+
+Mon Oct 10 13:37:59 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted postgres store.
+
+Mon Oct 10 13:34:12 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted mysql store to latest codebase.
+
+Mon Oct 10 13:33:43 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved docs.
+
+Mon Oct 10 12:49:22 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes in examples and docs.
+
+Mon Oct 10 12:48:51 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved store/experimental to store/alpha.
+
+Mon Oct 10 12:47:01 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved unfinished og stores into store/experimental.
+
+Mon Oct 10 12:16:30 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added app generator.
+
+Mon Oct 10 12:15:14 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated for latest facets, fixed polymorphic bug.
+
+Mon Oct 10 12:15:01 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Worked on release docs.
+
+Mon Oct 10 12:11:57 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved generator infrastructure.
+
+Fri Oct  7 12:16:23 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Small reload fix.
+
+Fri Oct  7 12:15:58 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Made taggable more fault tolerant.
+
+Fri Oct  7 12:15:23 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated authors and credits.
+
+Fri Oct  7 11:32:25 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Brand new property system based on Facets annotations. MANY CHANGES.
+
+Tue Oct  4 18:15:05 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented aspects on top of mega/ingeritor. At last ;-)
+
+Tue Oct  4 16:24:08 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Use mega annotations in controller and compiler, removed the old implementation.
+
+Tue Oct  4 14:28:59 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Entity.assign_properties
+
+Tue Oct  4 14:28:28 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Some improvements in the auto admin code.
+
+Tue Oct  4 14:27:56 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added children alias in Element.
+
+Tue Oct  4 14:27:24 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed fill from context.
+
+Tue Oct  4 14:26:26 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Temporarily moved fill method here.
+
+Fri Sep 30 14:27:27 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Greatly improved scaffolding code, now handles more cases and all relation types.
+
+Fri Sep 30 14:26:53 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Recoded request.fill method.
+
+Fri Sep 30 14:23:26 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Improvements in Property.
+
+Fri Sep 30 11:00:29 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored to support scgi
+
+Fri Sep 30 10:59:17 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Added cgi/stream.rb
+
+Fri Sep 30 10:55:59 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Added some simple support for streaming.
+
+Tue Sep 27 17:39:13 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed logger format overloading to avoid conflict with 1.8.3
+
+Mon Sep 26 19:05:37 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added render exit helper.
+
+Mon Sep 26 19:04:56 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added propagate_param helper.
+
+Mon Sep 26 19:04:31 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed name from excluded parameters.
+
+Mon Sep 26 14:09:10 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed <textarea></textarea> problem. [fbuch]
+
+Mon Sep 26 13:44:06 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed SimpleController (was a hack).
+
+Mon Sep 26 13:38:57 GTB Standard Time 2005  Emmanuel Piperakis <epiperak@softlab.ece.ntua.gr>
+  * Fixed class.delete in entity.
+
+Mon Sep 26 13:21:19 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted template_root to a method for extra flexibility. [pabrahamsen]
+
+Mon Sep 26 12:46:26 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added cascade parameter to entity.delete. [epiperak]
+
+Sat Sep 24 11:46:38 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved table mixin.
+
+Sat Sep 24 11:45:38 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Worked on integrating Zed's SCGI adapter.
+
+Sat Sep 24 11:45:24 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated AUTHORS.
+
+Sat Sep 24 11:45:01 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Sat Sep 24 11:42:28 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Refactored Cgi related code to make more flexible and cleaner.
+
+Tue Sep 20 12:50:27 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added hook for customizing webrick.
+
+Tue Sep 20 11:43:36 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Add support for programmatically shuting down the webrick adapter. [jamesb]
+
+Tue Sep 20 11:30:59 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Option to hide fields from autogenerated forms. [epiperak]
+
+Tue Sep 20 11:30:07 GTB Standard Time 2005  Chris Farmiloe <chris.farmiloe@farmiloe.com>
+  * Fix for xxxaction actions.
+
+Fri Sep 16 16:47:00 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated to latest nano/mega.
+
+Fri Sep 16 16:46:22 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added various Og helper methods.
+
+Fri Sep 16 16:44:25 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for precompiling templates, usefull for dynamic css.
+
+Fri Sep 16 16:43:26 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Experimentation with nano annotations.
+
+Tue Sep 13 10:51:12 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updates for the latest nano/mega.
+
+Fri Sep  9 18:58:42 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added session all helper.
+
+Fri Sep  9 18:58:16 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added js helper for humanized time distance.
+
+Fri Sep  9 18:55:21 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Pass path to mounted callback.
+
+Fri Sep  9 18:54:40 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Temporarily disabled flashing by default.
+
+Fri Sep  9 18:53:45 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed <render> for relative urls.
+
+Fri Sep  9 10:53:04 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced Gen code generation framework.
+
+Fri Sep  9 10:50:39 GTB Standard Time 2005  Aleksi Niemela <Aleksi.Niemela@cs.helsinki.fi>
+  * Escape error in default error handler.
+
+Fri Sep  9 10:50:00 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Skip relations option in form builder.
+
+Thu Sep  8 15:24:44 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Experimentation with metadata.
+
+Thu Sep  8 15:19:43 GTB Standard Time 2005  TRANS <transfire@gmail.com>
+  * Small fix for nitrogen
+
+Thu Sep  8 15:17:51 GTB Standard Time 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Orderable move_to
+  * pager_key
+  * fixed mysql boolean
+  * fixed collection delete_all
+
+Fri Sep  2 18:41:09 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixes in form calculation. [reid]
+
+Fri Sep  2 18:40:50 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Unescape action parameters.
+
+Fri Sep  2 18:40:29 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed nano recurse bug.
+
+Fri Sep  2 18:39:57 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Small fixes.
+
+Fri Sep  2 18:39:37 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed plasma from public dir
+
+Wed Aug 31 15:35:12 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup.
+
+Wed Aug 31 15:34:30 GTB Standard Time 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Created new repository.
+
+Wed Aug 31 14:29:17 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed a redirect problem.
+
+Wed Aug 31 14:28:48 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Misc stuff for release.
+
+Wed Aug 31 12:41:43 EEST 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Fixed :include for many_to_many.
+
+Wed Aug 31 12:22:50 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed many_to_many unjoin bug.
+
+Wed Aug 31 12:22:31 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Improved taggable support.
+
+Tue Aug 30 15:00:49 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added popup helper. 
+
+Tue Aug 30 13:45:29 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Better (less obtrusive) Logger implementation.
+
+Tue Aug 30 13:04:22 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Many changes to make the blog example and some tests work again.
+
+Tue Aug 30 12:56:36 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed redirect bug.
+
+Tue Aug 30 10:45:24 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted to latest nano/mega.
+
+Mon Aug 29 16:52:47 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented Taggable mixin.
+
+Mon Aug 29 11:36:33 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleanup.
+
+Mon Aug 29 11:28:51 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Import to the new public directory.
+
+Fri Aug 26 15:59:52 EEST 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Fixed syntax error.
+
+Thu Aug 25 15:38:57 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Benchmark mixin.
+
+Thu Aug 25 15:37:41 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Support for scaffolding the relations of objects.
+
+Thu Aug 25 15:35:11 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Support for assigning compound objects from the request.
+
+Thu Aug 25 15:32:47 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed annotation.rb
+
+Thu Aug 25 12:38:02 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Support for compound object request parameters.
+
+Wed Aug 24 14:05:11 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Element emit customization and datetime_select helper.
+
+Wed Aug 24 13:41:51 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Combined options_values for options helper.
+
+Wed Aug 24 12:21:52 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Mount time callback for controllers.
+
+Wed Aug 24 12:21:13 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted to latest nano/mega.
+
+Tue Aug 23 17:20:58 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More flexible scaffoliding, uses external template files.
+
+Tue Aug 23 16:44:22 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Reimplemented form mixin.
+
+Tue Aug 23 16:43:39 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Renamed prop.meta to prop.metadata for consistenct [ysabel]
+
+Tue Aug 23 16:40:41 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Cleaned up main files.
+
+Tue Aug 23 13:21:53 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Update scaffold to latest code.
+
+Tue Aug 23 13:10:59 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Support absolute and relative urls/paths in redirect/render.
+
+Mon Aug 22 12:44:05 EEST 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Og inheritance fixes.
+
+Sat Aug 20 16:46:07 EEST 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Added :options settings in Server (for extra customization).
+
+Sat Aug 20 15:53:22 EEST 2005  Guillaume Pierronnet <guillaume.pierronnet@laposte.net>
+  * Better ssl support.
+
+Sat Aug 20 15:52:21 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Updated Nitro AUTHORS.
+
+Sat Aug 20 09:38:31 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Moved Spark to a separate darcs repository.
+
+Fri Aug 19 12:22:28 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More informative startup text on Webrick.
+
+Fri Aug 19 12:16:20 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Better logging in xmlrpc service.
+
+Fri Aug 19 12:09:13 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted to latest nano/mega.
+
+Thu Aug 18 23:37:53 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * More elegant inflection in Og relations.
+
+Thu Aug 18 12:52:07 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Made og example more mysql friendly [bcandler].
+
+Wed Aug 17 14:29:14 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Implemented store.evolve_table.
+
+Wed Aug 17 12:41:56 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Helper for easy access to the mysql backend.
+
+Wed Aug 17 10:37:47 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Don't use deprecated string utils.
+
+Sat Aug 13 16:42:47 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed autoreload.
+
+Sat Aug 13 16:37:36 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed more obsolete files or files implemented in nano.
+
+Sat Aug 13 16:19:36 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed unneeded glue files, or stuff implemented in nano/mega.
+  Changed all refs to old code.
+
+Sat Aug 13 15:54:48 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed vendor, all stuff allready in nano/mega.
+
+Sat Aug 13 15:52:49 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Converted from facets to nano/mega.
+
+Sat Aug 13 12:44:37 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fixed session garbage collection.
+
+Sat Aug 13 12:33:43 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Introduced settings for drb session server.
+
+Sat Aug 13 12:30:23 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Removed SessionStore.
+
+Sat Aug 13 12:28:17 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added support for session garbage collection.
+
+Fri Aug 12 11:38:15 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Fix cookie expire in constructor.
+
+Fri Aug 12 09:42:53 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added all files in the darcs repository.
+
+Fri Aug 12 09:27:40 EEST 2005  George Moschovitis <george.moschovitis@gmail.com>
+  * Added top level scripts.
+
+
+
+>>> for older changes, have a look at doc/CHANGELOG.x
+

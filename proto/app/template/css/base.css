@@ -1,0 +1,51 @@
+/* 
+  This is the base CSS file. Include this in all your CSS 
+  files.
+*/
+
+/* Enforce standard default rules on all browsers. */
+
+html, body, form, fieldset {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+h1, h2, h3, h4, h5, h6, p, pre,
+blockquote, ul, ol, dl, address {
+  margin: 1em 0;
+  padding: 0;
+}
+
+li, dd, blockquote {
+  margin-left: 1em;
+}
+
+form label {
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+}
+
+input, select, textarea {
+  font-size: 1em;
+  font-family: inherit;
+}
+
+
+body { 
+  line-height: 1.4em;
+  background: #fff;
+}
+
+a img {
+  border: none;
+}
+
+/*
+ small: 0.875em;
+ big: 1.125em;
+*/

@@ -1,0 +1,73 @@
+.pager {
+  clear: both;
+  margin-top: 40px; margin-bottom: 50px;
+}
+
+.pager .first {
+  float: left;  
+}
+
+.pager .previous {
+  float: left;
+  margin-left: 5px;
+}
+
+.pager .next {
+  float: right;  
+  margin-right: 5px;
+}
+
+.pager .last {
+  float: right;
+}
+
+.pager ul {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.pager li {
+  float: left;
+  display: inline;
+  margin: 0px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin-left: 5px;
+  background: none;
+}
+
+.pager li:hover {
+  color: #fff;
+}
+
+.pager li:hover a {
+  color: #fff;
+}
+
+.pager .pbutt {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.pager .pbutt:hover {
+  color: #fff;
+  background: #2285fe;
+  border: 1px solid #2285fe;
+}
+
+.pager .pbutt:hover a {
+  color: #fff;
+}
+
+.pager .active {
+  color: #fff;
+  background: #0063dc;
+  border: 1px solid #0063dc;  
+}
+
+.noitems {
+  padding: 5px;
+  text-align: center;
+}      
+

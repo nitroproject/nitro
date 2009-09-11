@@ -1,0 +1,42 @@
+= Blog
+
+The canonical Nitro example.
+
+=== Instructions
+
+To run this example you need mysql installed. You should change conf/debug.rb
+according to your installation. If you don't have mysql you can use the sqlite3 or
+postgresql adapter by simply changing the corresponding line.
+
+You can start the application with:
+
+./app.rb
+
+or
+
+ruby app.rb
+
+or simply
+
+nitro
+
+If you have pulled the code from the repository, you many want to use the supplied
+glycerin.rb script to setup the RUBYOPT environment variable.
+
+  
+=== About
+
+This example demonstrates several of Nitro's features:
+
+- Page caching and sweeping
+- Multiple rendering formats, automatic conversion (for example append .atom
+  to every url for ATOM representation, .json for json representation, etc)
+- Normalized controllers. Every object MyObject has a corresponding
+  MyObject::Controller.
+- Universal templating engine. You can dynamically generate every 
+  format supported by nitro. Just add x to the extension, for example
+  .htmlx, .cssx, etc. For example dynamic css files can use all
+  of Nitro's advanced features (includes, morphing, caching, etc)
+
+
+  

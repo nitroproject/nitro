@@ -1,0 +1,1688 @@
+17-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.13.0 ---
+
+  * lib/nitro/adapters/fastcgi.rb: better check for Og.
+
+  * lib/nitro/adapters/webrick.rb: better check for Og.
+
+  * test/*: many changes to make tests pass again.
+
+  * examples/*: updated all apache configuration files.
+
+  * examples/blog/src/views/blog_entry_email.xhtml: introduced.
+
+  * examples/blog/src/mailer.rb: introduced,
+  mail sent!
+
+  * examples/no_xsl_blog/*: converted to new codebase.
+
+16-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/*: many changes to convert to new codebase.
+  excellent, runs with separated templates!
+
+  * examples/ajax/*: converted to new codebase.
+
+  * examples/tiny/*: converted to new codebase.
+
+  * lib/nitro/render.rb: template_root, renamed from base,
+  dont pass template_root.
+
+  * public/error.xhtml: added.
+
+  * lib/nitro/dispatcher.rb: separate template_root / public_root for extra
+  security and flexibility,
+  (#dispatch): don't calculate template_root.
+
+  * public/index.xhtml: updated.
+
+  * bin/proto: removed.
+
+  * run.rb: introduced.
+
+  * public/media: introduced.
+
+  * experimented with proto directory structure.
+
+  * public/js/ajax.js: (ajax_async_get): implemented.
+
+15-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/nitro/tc_mail.rb: added tests.
+
+  * lib/nitro/template.rb (FileTemplate): introduced,
+  added caching support.
+  MEGA, extend FileTemplate form Flexob and use some binding
+  magic to provide the environment.  
+
+  * lib/nitro/mail.rb (#encoded): introduced,
+  (#create): implemented,
+  (#deliver): implemented.
+  (Mail): added support for additional headers.
+  (#quoted_printable): added.
+  yeah, delivery works!!
+  (#render_body): simple implementation,
+  use the new Flexob based FileTemplate.
+
+14-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/nitro/tc_mail.rb: introduced.
+
+  * lib/nitro/mail.rb: worked on mailer implementation.
+
+13-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/mail.rb: introduced Mailer.
+
+12-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/ajax/controller.rb (#get_word): implemented.
+  Yeah, the autocompletion works!!
+
+  * examples/ajax/*: copied stuff from public,
+  yeah, I got a simple xmlhttp request working.
+
+11-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * public/js/ajax.js: introduced.
+  (#xml_http_request): implemented,
+  (#xml_http_request_object): implemented.
+
+  * public/js: introduced.
+
+  * public/*: introduced.
+
+  * examples/ajax/*: introduced ajax example.
+
+  * doc/faq.txt: introduced.
+
+10-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro.rb: removed Name.
+
+  * lib/parts: deprecated.
+
+  * examples/no_xsl_blog/lib/content.rb: moved from parts.
+
+  * examples/blog/lib/content.rb: moved from parts.
+
+  * vendor/*: removed parse_tree files.
+
+  * Rakefile: updated, removed Og dependencies,
+  added ruby-breakpoint dependency.
+
+  * yeah, the examples run again.
+
+  * splitted project in 4 parts: nitro, og, gen (internal, not released), glue.
+
+  * lib/og/adapters/psql.rb: use system in create/drop db to avoid shell expansion. [sjenkins]
+
+  * lib/og/adapters/mysql.rb: use system in create/drop db to avoid shell expansion. [sjenkins]
+
+09-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/glue/validation.rb (#validate_format): don't quote the regexp. [dbovensiepen] 
+
+  * lib/og/meta.rb: check_implicit_graph_changes. [mneumann]
+
+  * worked on and uploaded Nitro web site.
+
+08-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/template.rb: allow entities in the following form: %ent;
+  to be more xsl friendly.
+  
+  * worked on a simple Nitro web site.
+  
+07-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.12.0 ---
+  
+  * lib/og/adapters/mysql.rb: overide create_fields.
+
+  * examples/why_wiki: updated, added nice urls.
+
+  * lib/nitro/adapters/webrick.rb: use CgiUtils.parse_params and
+  CgiUtils.parse_cookies to be more compatible with FastiCGI, and
+  fix some bugs.
+
+  * examples/blog/roor/base.xsl: moved temporarily here.
+
+  * lib/xsl: deprecated.
+
+  * lib/nitro.rb: removed resolve_action_arguments option.
+
+  * examples/no_xsl_blog/*: updated.
+
+  * RELEASES.og: updated.
+
+  * RELEASES: updated.
+
+  * bin/cluster: deprecated.
+
+  * doc/LICENCE: moved from root.
+
+  * doc/AUTHORS: moved from root.
+
+  * after some fixes, tests pass again.
+
+  * test/nitro/ui/sitemap.rb:  deprecated.
+
+  * lib/nitro/ui/sitemap.rb:  deprecated.
+
+  * lib/nitro/controller.rb (#action_methods): better removal of pp methods,
+  remove Controller methods.
+
+  * lib/nitro/render.rb: no require of nitro, caused problems.
+
+  * lib/og/adapters/*: added typcast overrides to the other
+  adapters.
+
+  * test/og/tc_observer.rb: added tests.
+
+06-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/meta.rb: fixed linkback to_s bug.
+
+  * test/og/tc_observer.rb: implemeted, many cases.
+
+  * lib/og.rb: added og_pre_read / og_post_read callbacks.
+
+  * lib/og/adapter.rb (#eval_lifecycle_methods): evaluate callbacks,
+  (#eval_og_insert): evaluate observer callbacks,
+  fix for class observer,
+  (#eval_og_update): evaluate observer callbacks,
+  (#eval_og_update): evaluate observer callbacks.
+
+  * lib/og/observer.rb: scrapped the STUPID rails design,
+  introduced an ultra cool, efficient, and ruby compatible design.
+  (#add_observer): accepts multiple observers.
+
+05-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/root/error.xhtml: click to reload.
+
+  * lib/nitro/runner.rb: added --crawl option.
+  added --render option.
+
+  * examples/blog/root/shader.xsl: fixed base href bug.
+
+  * lib/nitro/template.rb: #() alias, useful in xslt stylesheets.
+
+  * examples/blog/root/*: use scaffolded view_uri.
+
+  * lib/nitro/scaffold.rb: add support for routes.
+  :nosuffix option.
+
+  * lib/nitro/controller.rb (#action): implemented.
+  (#update_routes): implemented.
+  (ActionParam): implemented.
+  (ActionMeta): implemented.
+  (#action_method_arguments): deprecated.
+
+04-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/controller.rb: introduced the concept of the action
+  keyword.
+
+  * lib/nitro/routing.rb: introduced,
+  (Router): introduced.
+  (#route): works.
+
+  * lib/nitro/dispatcher.rb: added routes map,
+  experimental rewrite support.
+
+  * lib/og/adapters/*: added support for multiple many_to_many relations.
+
+  * test/og/tc_many_to_many.rb: implemented.
+
+  * lib/og/meta.rb: accept :linkback as symbol,
+  added support for multiple many_to_many relations. [mneumann]
+
+  * lib/og/adapter.rb (join_table): encode a field name
+  to allow for multiple many_to_many relations with the same klass. [mneumann]
+
+  * lib/nitro/markup.rb: markup >, <.
+
+  * examples/blog/root/error.xhtml: Introduced and made really
+  useful.
+
+  * lib/nitro/render.rb (#log_error): reimplemented
+  to be more flexible and allow for much better error reporting.
+
+  * lib/nitro/context.rb (#out): override, to catch errors.
+
+  * lib/nitro/shaders.rb (RubyShader): use the TemplateMixin.
+
+  * RELEASES: updated.
+
+  * lib/nitro/template.rb: factored out TemplateMixin,
+  improved API.
+
+03-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/template.rb: introduced as standalone template engine,
+  pass binding and buffer to store the result.
+
+01-03-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/enchant.rb: COOL: generate finders for all properties,
+  take :unique into account when generating finders,
+  finders use typecast system.
+  find* alias for select* methods.
+  converted Og.db -> @@og_db.
+
+  * lib/og/adapter.rb: use :unique metadata,
+  introduced typecast system.
+
+  * lib/og.rb: better comments.
+
+  * test/og/tc_observer.rb: introduced.
+
+  * lib/og/observer.rb: introduced,
+  (Observable): implemented.
+
+  * lib/nitro/ui/select.rb: deprecated.
+
+28-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.11.0 ---
+
+  * lib/nitro/controller.rb (#action_method_arguments): implemented.
+
+  * lib/nitro.rb: added resolve_action_arguments,
+  define Nitro before requiring.
+
+  * lib/nitro/render.rb: added a simple check for ParseTree.
+
+  * Rakefile: no ParseTree dependency,
+  include og_config/og_tutorial in the docs.
+
+  * use 127.0.0.1 as default address Windows gets fucked with 0.0.0.0
+
+  * lib/nitro/simple.rb: hack fix for SimpleController problem.
+
+  * lib/og/adapters/oracle.rb: small fixes [mbowen].
+
+  * lib/og/adapter.rb: fixed DEFAULT NOT NULL to make oracle compaible [mbowen].
+
+  * doc/og_tutorial.txt: more fixes [james_b],
+  made more compatible with RDoc.
+
+27-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/adapters/xhtml.rb (#submit): introduced.
+
+  * lib/nitro/request.rb (#path_info): introduced.
+
+  * lib/nitro/adapters/webrick.rb (#start): check for Conf instead of Flexob.
+
+  * examples/why_wiki/run.rb: introduced the wiki example from
+  redhanded.hobix.com (btw, why_ fuckin RULEZ!),
+  converted to use the programmatic render,
+  more fixes, now fully working, better than why_'s original.
+
+  * many small fixes to make tests pass again.
+
+  * lib/controller.rb (#action_methods): temp fix for pretty_print
+  methods, argh!
+
+  * examples/*: added apache configuration to all examples,
+  updated fcgi.rb in examples.
+
+  * examples/blog/conf/apache.conf: pass -rubygems -I.. to make compatible
+  with lhttpd.
+
+  * Rakefile: added ParseTree requirement,
+  fixed test without og test-cases.
+
+  * RELEASES: updated.
+
+  * doc/og_tutorial.tx: more fixes. 
+
+27-02-2005  Matt Bowen  <matt.bowen@farweststeel.com>
+
+  * doc/og_tutorial.txt: many, many fixes to this text.
+
+26-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/glue/*: cleaned up various files.
+
+  * doc/og_tutorial.txt: small fixes [marioh].
+
+  * test/tc_og.rb: a bit more flexible, fixes.
+
+  * lib/og/adapters/oracle.rb: small fixes to the adapter.
+
+26-02-2005  Matt Bowen  <matt.bowen@farweststeel.com>
+
+  * lib/og/meta.rb (#many_to_many): don't use AS in join queries
+  to make more compatible with Oracle.
+
+  * lib/og/adapters/oracle.rb: many fixes to the adapter.
+
+25-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * vendor/: added ParseTree files,
+  copied latest breakpointer files.
+
+  * lib/nitro/render.rb: some guarding code for ParseTree, argh.
+
+  * lib/nitro/runner.rb: clearly show where the application is
+  listening.
+
+  * lib/nitro/conf.rb: use 0.0.0.0 by default to make the app accessible both
+  localy and remotely,
+  use 9999 as default port, easier to remember.
+
+  * doc/og_config.txt: wrote first version.
+
+  * doc/og_tutorial.txt: wrote first version.
+
+24-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/tc_og.rb: added extra checks.
+
+  * lib/og/adapter.rb (#create_fields): set default value,
+  (#parse_timestamp): handle nil strings.
+
+  * lib/og/adapters/*: better default values (NULL) [mneumann]
+
+  * lib/og/adapters/mysql.rb: fixed props_for_insert.
+
+  * lib/og/adapters/oracle.rb: worked on this.
+  removed write_prop/read_prop.
+
+  * lib/nitro/render.rb (#o): convienience method.
+
+  * lib/nitro/builders/*: render -> build,
+  recoded abstract builders.
+
+  * lib/nitro/builders/form: introduced mixin.
+
+  * lib/nitro/context.rb: use the output buffer.
+
+  * lib/nitro/output.rb (OutputBuffer): introduced.
+
+  * lib/nitro/builders/rss: introduced mixin.
+
+  * lib/og/meta.rb (Relation): added foreign_class alias.
+
+  * doc/*: cleaned up.
+
+  * doc/configuration_params.txt: introduced.
+
+  * RELEASES: updated.
+
+  * README: updated.
+
+23-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/og/tc_meta.rb: implemented.
+
+  * lib/og/enchant.rb (#properties_and_relations): added.
+
+  * lib/og/typemacros.rb: introduced, copied code from meta.
+
+  * lib/og/meta.rb: added more metainfo in relations to facilitate
+  even more advanced scaffoliding [mneumann],
+  encapsulated type macros in Og namespace [mneumann],
+  define Relation classes as extension to properties [mneumann],
+  use meta[:descendants] to store cascading delete metadata.
+
+  * lib/glue/property.rb: added property alias for prop_accessor. [mneumann],
+  added more comments.
+  (#meta): *val packs arguments in array.
+  also keep properties in meta[:properties_and_relations]
+
+  * lib/og.rb: added 'create_schema' configuration variable, when
+  set to false, the applications start much faster.
+
+22-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * yeah, fastcgi works better on lhttpd and apache.
+
+  * lib/nitro/request.rb (#referer): fixed NASTY bug in non-webrick mode.
+
+  * lib/nitro/adapters/cgi.rb (#response_headers): added Date to headers,
+  after some changes, I got apache to kinda work,
+  proto parameter, fixes apache.
+
+  * lib/nitro/dispatcher.rb: correct handling of default api.
+
+  * lib/nitro/context.rb (#initialize): init status.
+
+  * test/nitro/builders/tc_table.rb: introduced.
+
+  * lib/og/adapters/odbc.rb: introduced.
+
+  * lib/nitro/builders/table.rb (TableBuilderMixin): introduced,
+  (TableBuilder): implemented.
+  (#render_table): implemented simple version.
+
+  * example/wee_style/run.rb: use components.
+
+21-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/adapter.rb (#table): use og prefix to be compatible with oracle [mbowen],
+  (#join_table): use og prefix instead of '_' [mbowen].
+
+  * lib/glue/property.rb (#meta): fix, should call enchant(self).
+
+  * test/tc_og.rb: added more tests to check new feature and
+  fixes,
+  added test for many_to_many relations.
+
+  * lib/og/meta.rb: removed uneeded extra parameter from
+  some meta_methods.
+  (#many_to_many): allow yield block in add_xxx,
+  save target_objects!,
+
+  * lib/og/adapters/oracle.rb: cleanup.
+  
+21-02-2005  Michael Neumann  <mneumann@ntecs.de>
+
+  * lib/og/meta.rb: (#has_many): allow yield block in add_xxx,
+  added some standard typemacros.
+
+20-02-2005  Matt Bowen  <matt.bowen@farweststeel.com>
+
+  * lib/og/adapters/oracle.rb: introduced, and initial implementation.
+
+20-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/conf/apache.rb: implemented, mostly works!
+
+  * experimented with method injection, it can be done!!
+
+  * lib/nitro/render.rb: added ParseTree/SexpProcessor,
+  (#compile_action): handle action with parameters and
+  automatically lookup request parameters.
+  (#compile_action): added sync to be more thread safe.
+
+  * experimented with ParseTree, this lib is ultracool.
+
+19-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/runner.rb: no duplicate lhttpd,
+  added apache option,
+  fixed parameter passing to apachectl.
+
+  * lib/og/*: converted Og to a Module to be includeable.
+
+  * Rakefile: put RDoc files in doc/rdoc.
+
+  * doc/*: moved some files from root dir here.
+
+  * lib/og/adapters/*: small changes.
+
+  * lib/og/adapters/filesys.rb: introduced,
+  (#db_dir): added.
+  create class 'tables' and sequence.
+  (#load/#save): temp hacks, but this works!!
+  This kinda works :)
+
+18-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * doc/apache.txt: introduced.
+
+  * doc/tutorial.txt: started working on this.
+
+  * lib/nitro/session/drb.rb: yeah, distributed session
+  works correctly.
+
+  * lib/nitro/context.rb: removed sessions attribute,
+  (#close): implemented.
+
+  * lib/nitro/session.rb: added ctime, mtime, atime and
+  aliases,
+  (#touch!): introduced.
+  collection -> store.
+
+  * lib/nitro/session/drbserver.rb: added debug mode.
+
+17-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/session/memory.rb: implemented.
+
+  * YEAH, i got drb sessions working again.
+
+  * lib/nitro/session/drb.rb: implemented.
+
+  * lib/nitro/session.rb: added store configuration parameter,
+  FIX: use SafeHash for session collections.
+
+  * lib/nitro/session/drbserver.rb: implemented,
+  added command line parameters.
+
+  * lib/glue/hash.rb: cleaned up.
+
+  * lib/nitro/component.rb: introduced.
+
+16-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb: SECURITY FIX: only render action_methods.
+
+  * test/nitro/tc_controller.rb: fixes, more tests.
+
+  * lib/nitro/controller.rb (#action_methods): introduced. 
+
+15-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.10.0 ---
+    
+  * INSTALL: added some text for manual installation.
+
+  * examples/no_xsl_blog/*: misc fixes.
+
+  * lib/nitro/dispatcher.rb (#dispatch): pass context to fix reload bug.
+
+  * examples/og/run.rb: updated.
+
+  * lib/og/meta.rb (#many_to_many): fixed bug.
+
+  * lib/nitro/controller.rb: introduced simple controller to protect
+  the base controller.
+
+  * lib/nitro/runner.rb (#run): call setup_debug/stage/live,
+  more fixes in setup.
+
+  * Rakefile: added flexmock dependency,
+  removed database dependencies (RubyGems is too picky),
+  added install.rb in distribution.
+
+  * test/: fixed some type_checking bugs.
+
+  * lib/glue/property.rb: type_checking = false by default.
+
+  * test/nitro/adapters: renamed from adaptors.
+
+14-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og.rb: require validation.
+
+  * lib/nitro.rb: require runner.
+
+  * lib/nitro/runner.rb: moved from adapters,
+  (self.run): added helper.
+  split setup in many methods to allow for overrides.
+
+  * examples/no_xsl_blog: converted.
+
+  * lib/nitro/render.rb: use @request as alias to @context.
+
+  * lib/nitro/builders/xml.rb: handle single tags like
+  <br/>, <hr/> etc.
+
+  * examples/wee_style/run.rb: converted,
+  cleaned up programmatic code.
+
+  * examples/flash: converted.
+
+  * examples/tiny: converted.
+
+  * README: updated.
+
+  * examples/README.windows: added.
+
+  * examples/: updated docs.
+
+  * lib/nitro/adapters/runner.rb: more comments,
+  (#run): accept hash as conf, 
+  converted methods to non static,
+  (#setup): implemented,
+  fixed version printing,
+  use ENV to pass invoke methods,
+  ULTRA COOL: --console parameter works again.
+
+  * I love Stella (asteraki) :)
+
+13-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/adapters/runner.rb: improved,
+  added fcgi_proc action.
+
+  * examples/blog/run.rb: introduced, runnable from everywhere.
+
+  * lib/nitro/conf.rb: introduced, default configuration paramters.
+
+  * changed base dir in applications, to be runnuble from 
+  everywhere.
+
+12-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * INSTALL: updated.
+
+  * install.rb: implemented, refined.
+
+  * updated all example confg files.
+
+  * Introduced the 'tml' nick in the docs. :)
+
+  * README: updated.
+
+  * README.og: updated.
+
+  * lib/xsl/base.xsl: removed old tags.
+
+  * lib/glue/string.rb (#to_greeklish): removed,
+  (#screen_ip_address): removed.
+
+  * lib/glue/macro.rb: deprecated.
+
+  * Many fixes to many files to improve the generated RDoc
+  documentation.
+
+  * lib/nitro/controller.rb (#inherited): fixed caller index.
+
+  * YEAH, using a RUBYOPT trick I can develop my rubygems.
+
+  * lib/nitro/dispatcher.rb (#dispatch): beutify, added comments,
+  (#controller_class_for): implemented, allows for autoreloading
+  of controllers,
+  dispatcher[:index] -> dispatcher[:root], this is a better (less
+  confusing) name.
+
+  * small fix in ctl's.
+
+  * lib/nitro/adapters/runner.rb: added --filelog option,
+  some fixes,
+  execution modes, better handling of Rendering.reload.
+
+11-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/adapters/sqlite.rb: added missing res.close,
+  use more queries to avoid array creations.
+
+  * lib/nitro/adapters/*: renamed from adaptors.
+
+  * test/tc_og.rb: added test for override db.
+
+  * lib/og/adapters/*: don't use entity,
+  (#calc_field_index): ensure res.close in 
+  (#create_table): use conn.store to avoid catching the errors.
+
+  * lib/og/adapters/mysql.rb: reintroduced,
+  SOS: use res.free in MysqlAdapter,
+  set_query_with_result,
+  passes tests.
+
+10-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * bin/proto/conf/app.conf.rb: updated.
+
+  * Yeah, nitro/og is in the path now, no need for File.join tricks.
+
+  * Rakefile: recoded/simplified. 
+
+  * bin/nitro: introduced.
+
+  * nitro.gemspec: introduced, 
+  cleaned up, add full dependencies.
+
+09-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/adapters/psql.rb: reintroduced,
+  use serial to make more compatible with mysql/sqlite,
+  more careful resultset clearing,
+  yeah, it works again.
+
+  * benchmark/og/bench.rb: introduced,
+  made a test with prepared statements, not a big difference.
+
+  * test/tc_og.rb: more tests.
+
+  * lib/og.rb (#adapter): introduced.
+
+  * lib/og/adapter.rb: made a singleton.
+  (#for_name): implemented,
+  pass db to all eval methods.
+
+  * lib/og/database.rb (#drop_db/#create_db): use adapter,
+  keep adapter.
+
+  * lib/og/*: renamed deserialize to read,
+  after MANY changes, this passes the simple test case.
+
+  * lib/og/adapters/sqlite.rb: reimplemented many methods,
+  (#count): fixed.
+
+  * lib/og/connection.rb: removed code from methods, will be implemented by the adpters,
+  removed deserialize option, always deserialize,
+  renamed conn attribute to store to avoid ubiquity.
+
+08-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/adapter.rb: introduced, removed adapters/base.rb,
+  (#new_connection): implemented.
+
+  * lib/og/adapters/sqlite.rb: reintroduced.
+
+  * lib/og/database.rb: introduced, copied database related stuff from og.rb
+
+  * lib/og/adapters: renamed from adaptors.
+
+07-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/backends/psql.rb (#initialize): use config[:address]. [rbaduin]
+
+  * lib/og/backends/sqlite.rb: passes some tests thanx to some fixes to 
+  sqlite3 library by jamis buck,
+  (#start): fixed,
+  (#commit): fixed.
+  yeah it passes tc_og.rb !!
+
+  * test/nitro/adaptors/tc_cgi.rb (#test_parse_multipart): introduced.
+
+  * lib/nitro/adaptors/cgi.rb (#read_multipart): made compatible with nitro,
+  corect parsing of multivalues in multipart,
+  (#parse_multipart): custom method.
+  (Cgi): introduced.
+  (Cgi.buffer_size): introduced.
+
+  * examples/tiny/index.xhtml: upload form.
+
+06-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/markup.rb: changes for type_checking.
+
+  * test/glue/tc_property_type_checking.rb: implemented.
+
+  * lib/glue/property.rb: added type_checking support.
+
+  * INSTALL: added.
+
+  * lib/og/adaptors/base.rb: introduced.
+
+  * lib/og/backends/sqlite.rb: switched to sqlite3,
+  fixed stupid create join tables bug,
+  (#create_table): correct rescue exceptions,
+  (#calc_field_index): fixed.
+
+  * lib/og/backends/psql.rb: fixed stupid create tables bug.
+
+05-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * cleaned up docs in many files.
+
+  * test/tc_og.rb: don't use global ($og),
+  run tests for all backends.
+
+  * lib/og/*: small cleanups.
+
+  * lib/og/backends/sqlite.rb (#calc_fields_index): fixed,
+  (#query/safe_query): fixed.
+  after many fixes, it kinda works.
+
+  * lib/nitro/adaptors/runner.rb: fixed lhttpd option string. [james_b]
+
+04-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/backends/sqlite.rb: implemented many methods.
+
+  * lib/og/backends/filesys.rb: introduced.
+
+  * lib/og/version.rb: removed.
+
+  * lib/nitro/version.rb: removed.
+
+  * lib/nitro.rb: version, libpath here.
+
+  * lib/og.rb: version, libpath here.
+
+  * --- VERSION 0.9.5 ---
+
+  * lib/nitro/adaptors/fastcgi.rb: convert conf to Flexob.
+
+  * lib/nitro/adaptors/webrick.rb: added REQUEST_MUTEX to temp-fix windows bug.
+
+03-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/glue/*: cleaned up some files.
+
+  * lib/og/*: cleaned up some files.
+
+  * lib/nitro/dispatchers.rb (#initialize): accept class as input.
+
+  * Updated all examples.
+
+  * lib/nitro/context.rb: out == XhtmlString to allow convienient
+  access to the programmatic rendering functionality and make
+  the wee example cooler.
+
+  * lib/nitro/adaptors/webrick.rb (#start): better handling of conf parameters,
+  better handling of logging,
+  autoconvert conf to Flexob if needed.
+
+  * examples/wee_style/wee.rb: implemented,
+  looks cool (but useles? :-))
+
+  * examples/wee_style/README: introduced.
+
+  * examples/wee_style/*: introduced wee-style example.
+
+  * examples/blog/lib/blog.rb: updated for new RSS.
+
+  * test/nitro/builders/tc_rss.rb: introduced.
+
+  * lib/nitro/builders/rss.rb: pass parameters,
+  (#render): now alias for render_0_9
+
+  * lib/og/meta.rb (#joins): introduced new metadata macro.
+
+02-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.9.4 ---
+
+  * lib/og/backends/sqlite.rb: introduced.
+  
+  * lib/og/backends/psql.rb: minor cleanup.
+
+  * examples/blog/root/style.css: fixes for IE, more needed.
+
+  * lib/nitro/adaptors/fastcgi.rb (#handle): restore Og connection.
+
+  * lib/nitro/adaptors/webrick.rb (#handle): restore Og connection, fixes
+  Windows deadlock. [james_b]
+
+  * examples/no_xsl_blog/lib/blog/template.rb: fixed ruby in template (login).
+
+  * changed default port to 8069, to avoid conflicts with
+  other servers (8080 was too common). [james_b]
+
+01-02-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * updated Rubyforge page, added wiki.
+  
+  * --- VERSION 0.9.3 ---
+
+  * small fixes to make tests pass again.
+
+  * lib/nitro/adaptors/webrick.rb: update headers with req.meta_vars.
+  
+  * lib/nitro/request.rb (#host): better calculation,
+    made compatible with IE/windows.
+
+  * examples/no_xsl_blog/lib/blog/template.rb: fixes.
+  
+  * examples/blog/root/style.xsl: fixes.
+
+  * README: updated.
+
+  * lib/nitro/controller.rb (#method_missing): :partial reload hack fix.
+
+31-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/no_xsl_blog/lib/blog/template.rb: fixed rest links.
+
+  * Yeah, the no_xsl_blog example runs under windows.
+
+  * lib/nitro/adaptors/fastcgi.rb: some changes, now POST works.
+
+  * lib/nitro/adaptors/cgi.rb (#parse_params): introduced from cgi.rb,
+  (#parse_cookies): get context, no return.
+
+  * lib/nitro/request.rb: env_table alias, for compatibility with
+  cgi.rb.
+
+  * Fixed lhttpd.conf to all examples and proto.
+
+  * Fixed many inconsistencies in the README files.
+
+  * lib/nitro/adaptors/runner.rb: log_to_file option,
+  use lighttpd as name to be more compatible.
+
+30-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/adaptors/runner.rb: fixed bug with fcgi.
+
+  * lib/nitro/adaptors/webrick.rb: upcase headers, fixes bug.
+
+  * README: fixed bugs and obsolete documentation.
+
+  * lib/glue/object.rb: remove class support.
+
+  * lib/nitro/controller.rb: keep classdef_file with inherited. [mneumann]
+
+  * lib/og/*: cleaned up by removing Og::*.
+
+  * lib/og/meta.rb (MetaUtils#resolve_class): implemented.
+
+  * lib/nitro/events.rb: deprecated, rails-style filter achieve the same effect
+  more elegantly and more optimized.
+
+  * lib/og/backends/mysql.rb (#deserialize_all): return [] if no rows. [mneumann]
+
+  * lib/og/backends/psql.rb (#deserialize_all): return [] if no rows. [mneumann]
+
+  * lib/og/connection.rb: use meta[:has] instead of og_descendants.
+
+  * test/tc_og.rb: added more tests.
+
+  * lib/og/meta.rb (#belongs_to): add meta data [mneumann],
+  (#has_one): add meta data - removed descndants [mneumann],
+  (#has_many): add meta data - removed descendants [mneumann],
+  (#many_to_many): add medata [mneumann],
+  (#refers_to): add metadata, also ads :has metadata [mneuamann].
+
+  * lib/og/enchant.rb: added Class.get alias. [mneumann]
+
+28-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/localization.rb: renamed from l10n.rb,
+  (Localization): introduced.
+
+  * etc: removed.
+
+  * RELEASES.og: updated.
+
+  * RELEASES: updated.
+
+  * README.og: updated.
+
+  * lib/nitro/controller.rb (#method_missing): more flexible.
+
+  * lib/nitro/render.rb (#compile_action): hack fixed non-action bug.
+
+  * examples/no_xsl_blog/*: renamed from plainblog, converted,
+  converted template.
+
+  * lib/nitro/adaptors/runner.rb: implemented,
+  Runner is used in all ctls.
+
+  * lib/xsl/xforms.xsl: obsolete, removed.
+
+  * lib/xsl/ui.xsl: obsolete, removed.
+
+  * examples/flash/*: updated.
+
+  * bin/proto: new and improved index page for the prototype
+  application,
+  added gfx and minimal help.
+
+  * examples/tiny/*: use ctl.
+
+  * lib/og/*: cleaned up some sourcefiles.
+
+  * install.rb: introduced.
+
+  * lib/og.rb (Og): cleaned up, use cattr_accessor for setup.
+
+  * lib/og/backends/mysql.rb (#write_prop): fixed boolean.
+
+28-01-2005  Michael Neumann  <mneumann@ntecs.de>
+
+  * lib/og/backends/psql.rb (#write_prop): fixed boolean.
+
+27-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * README: updated and fixed many bugs,
+  updated features.
+
+  * examples/blog/ctl: introduced,
+  runs the WEBrick server,
+  runs the Lighttpd server.
+
+  * lib/og/backends/psql.rb (#read_prop): fixed boolean read [mneumann].
+  fixed boolean type (tinyint).
+
+  * lib/og/backends/psql.rb (#read_prop): fixed boolean read [mneumann].
+
+  * lib/nitro/dispatcher (#dispatch): fixed bug.
+
+  * some changes to make the tests pass again.
+
+  * test/nitro/server: deprecated.
+
+  * lib/nitro/ui/sitemap.rb: moved here!
+
+  * lib/nitro/server.rb: deprecated.
+
+  * lib/nitro/service.rb: deprecated.
+
+  * lib/nitro/config.rb: deprecated.
+
+  * lib/nitro/server/*: deprecated.
+  
+26-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+  
+  * lib/nitro/scaffold.rb: updated.
+
+  * lib/nitro/dispatcher.rb (#dispatch): return content_type.
+
+  * lib/nitro/context.rb (#fill): added.
+
+  * lib/nitro/ui/pager.rb: updated for lates code.
+
+  * lib/nitro/render.rb: request alias for context,
+  (#redirect): fixed.
+  (#render): raise when no controller found.
+  (#render): fixed template extension selection,
+  (#compile_action): don't set content_type.
+
+  * lib/nitro/controller.rb: include Scaffolding, Filtering.
+  
+  * examples/blog/*: many changes to support new code,
+  yeah, it kinda works!
+  index session with symbols.
+
+  * examples/blog/lib/*: changed sirectory structure.
+
+25-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/*: conversion to new code.
+
+  * lib/nitro/render.rb: call Rendering.reset.
+
+  * lib/glue/misc.rb (#delete_class_hierarchy): introduced.
+
+  * lib/nitro/context.rb: lazy session lookup.
+
+  * lib/nitro/adaptors/fastcgi.rb: no session lookup.
+
+  * lib/nitro/adaptors/webrick.rb (#handle): no session lookup.
+
+  * lib/nitro/shaders.rb (RubyShader#process): <include>-><render>
+
+  * lib/nitro/dispatcher.rb (#dispatch): better handle tha base calc.
+
+  * lib/nitro/buffering.rb: copied buffering code here.
+
+  * lib/glue/flexob.rb: introduced.
+
+24-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * benchmark/nitro: added first benchmarks.
+
+  * lib/nitro/adaptors/webrick.rb: works with new cookie code.
+
+  * yeah, sessions and cookies work with fastcgi.
+
+  * lib/nitro/cookie.rb: implemented.
+
+  * lib/nitro/session.rb: converted to new cookie code.
+
+  * lib/nitro/html.rb: deprecated.
+
+  * lib/nitro/http.rb: deprecated.
+
+  * lib/nitro/user.rb: deprecated.
+
+  * test/nitro/adaptors/tc_cgi.rb: introduced.
+
+  * lib/nitro/adaptors/cgi.rb: introduced.
+  (CgiUtils): introduced.
+  (CgiUtils#parse_query_string): implemented.
+  (CgiUtils#parse_cookies): implemented.
+  (CgiUtils#response_headers): implemented.
+
+  * examples/tiny: cleanup, new dir structure.
+
+  * examples/tiny/conf/nitro.conf.rb: introduced.
+
+  * examples/tiny/conf/lhttpd.conf: introduced,
+  improved redirect scheme, keeps request_uri correct!
+
+  * examples/tiny/conf: introduced.
+
+  * lib/glue/misc.rb (#silence_warnings): introduced.
+
+  * create fastcgi redirect for lighthttpd.
+
+  * lib/nitro/adaptors/fastcgi.rb: introduced,
+  Wrapper Class like the webrick adaptor,
+  parse query string.
+
+  * lib/og/enchant.rb (#each): added iterator support [mneumann],
+  include Enumeration [mneumann]
+
+23-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/tiny: yeah, sessions work again.
+
+  * lib/nitro/render.rb (#render): allow for nested calls.
+
+  * lib/nitro/context.rb: store conf.
+  first cut of session code.
+
+  * lib/nitro/adaptor/webrick.rb: better handling of conf,
+  extend WEBrick::HTTPResponse to make compatible with Nitro.
+
+  * lib/nitro/controller.rb (#method_missing): moved here.
+
+  * test/nitro/tc_session.rb: introduced.
+
+  * lib/nitro/session.rb: introduced.
+  (#create_id): implemented.
+  (#lookup): implemented.
+  (Session): extend from Hash.
+
+22-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/adaptors/webrick.rb: pass query.
+
+  * lib/nitro.rb: added default requires.
+
+  * examples/tiny/app2.rb: testbed for new Nitro.
+
+  * lib/nitro/render.rb (RenderExit): defined again,
+  (#method_missing): ultracool remove_method trick to support script
+  reloading.
+
+  * lib/nitro/adaptors/webrick.rb (#start): get and store conf.
+
+  * lib/nitro/request.rb (#referer): added.
+
+  * lib/nitro/context.rb: requires.
+
+21-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/dispatcher.rb: keeps root dir.
+
+  * stopped using N prefix all around.
+
+  * lib/nitro/render.rb: fixed method_missing.
+  correct shader mattr.
+
+  * lib/nitro/response.rb (#content_type=): implemented.
+
+  * test/nitro/tc_controller.rb: introduced.
+
+20-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb (OutputBuffering): moved output
+  buffering methods to a separate module.
+
+  * lib/nitro/context.rb: includes Request/Response.
+
+  * lib/nitro/request.rb: converted to module.
+
+  * lib/nitro/response.rb: converted to module.
+
+  * lib/nitro/adaptors/webrick.rb (#handle): streamlined
+  using Context.
+
+  * test/nitro/tc_dispatcher.rb: introduced.
+
+  * lib/nitro/mail.rb: use mattr.
+
+  * lib/nitro/controller.rb: introduced.
+
+  * lib/nitro/dispatcher.rb (resolve_path): changed return order,
+  encode api in the action,
+  (#dispatch): renamed from resolve_path,
+  only returns cklass and action.
+  (#add_api): support for multi-api dispatchers.
+
+19-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb: no params,
+  (Rendering): added mattrs,
+
+  * lib/nitro/shaders.rb: moved outside.
+
+18-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/render.rb: introduced new version.
+
+  * lib/nitro/request.rb (#method): implemented,
+  (#remote_ip): implemented.
+  implemented more methods.
+
+17-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/glue.rb: define module N.
+
+  * lib/nitro/filters: introduced.
+
+  * lib/nitro/server/dispatcher.rb: don't use $og.
+
+  * lib/nitro/adaptors/webrick: new implementation.
+  (WebrickAdaptor): introduced.
+  (Webrick#start): introtuced.
+
+  * lib/nitro/server/filters: deprecated.
+
+  * lib/nitro/server/filters.rb: deprecated.
+
+  * cleaned up many files.
+
+  * lib/nitro/server/handlers.rb: deprecated.
+
+  * lib/nitro/server/fragment.rb: deprecated.
+
+  * lib/nitro/server/script.rb: deprecated.
+
+  * updated svn repository.
+
+16-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/adaptors: introduced.
+
+  * examples/plainblog/README: updated docs.
+
+  * examples/plainblog/lib/template.rb: implemented.
+  Yeah, the plainblog example works without xslt.
+
+  * examples/plainblog: introduced,
+  converted all pages to the simple templating system.
+
+15-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * cleaned up many files.
+
+  * lib/nitro/application.rb: cleanup.
+
+14-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/tc_og.rb: added more tests.
+
+  * lib/og/version: no more a global variable.
+
+  * test/glue/tc_property.rb: test for macro params.
+
+  * lib/glue/property.rb (PropertyUtils#resolve_prop_params): 
+  factors out common code between the propXXX methods,
+  extra checks for the params,
+  removed dupplicate code from propXXX methods [mneumann].
+
+  * lib/og/enchant.rb (#enchant): #create captures the given block
+  and propagates to the objects constructor.
+
+  * AUTHORS: updated.
+
+  * lib/og/meta.rb (MetaLanguage#refers_to): implemented [mneumann].
+  (#has_one): creates delete_xxx method.
+  (#has_many): creates delete_all_xxx method.
+  removed del_xxx alias [mneumann].
+
+  * examples/og/run.rb: use delete_xxx in many_to_many [mneumann]. 
+
+14-01-2005  Michael Neumann  <mneumann@ntecs.de>
+
+  * lib/glue/property.rb (#prop): changed expansion to allow for
+  macro parameters.
+
+13-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og.rb: Og.include_meta_language by default is FALSE [mneumann].
+
+  * lib/glue/property.rb (PropertyUtils#include_meta_mixins): introduced.
+  (#prop): include Og::MetaLanguage.
+
+12-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * --- VERSION 0.8.0 ---
+
+  * RELEASES.og: updated.
+
+  * RELEASES: updated.
+
+  * README: updated.
+
+  * README.og: updated.
+
+  * lib/glue/property.rb (#prop): include N::Validation when appending
+  a managed module.
+
+  * examples/blog/root/entr_form.xhtml: added error reporting.
+  
+  * found out NASTY reload bug, temporarily dissabled!
+
+  * lib/glue/logger.rb: (Logger#error): added.
+
+  * lib/server/render.rb: improved source,
+  (#render): dissabled reloading.
+  (#redirect_referer): optional postfix.
+
+  * lib/nitro/markup.rb: fixed namespace,
+  (#expand/#compact): excluded wiki markup from default.
+
+  * examples/blog/config.rb: require markup, validation.
+
+  * examples/blog/root/style.xsl: <x:error> introduced.
+
+  * examples/blog/lib/blog.rb: extend from content,
+  use auto markup functionality,
+  thanks for the magic of auto markup, comments get 
+  expanded correctly now, for free :),
+  (#new_entry): added validation/error reporting!
+  (#get_errors): useful prefilter,
+  (Common): made this a module (mixin).
+
+11-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/glue/tc_validation.rb (#test_validate_length): implemented.
+  cooler, all tests pass.
+
+  * lib/glue/validation.rb (#validate_length): implemented,
+  allow sprintf style error messages,
+  (#validate_inclusion): implemented.
+
+10-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/nitro/builders/tx_xhtml.rb: introduced,
+  yeah, cases pass :)
+
+  * lib/og/enchant.rb (#enchant): #one alias for #select_one [mneumann].
+
+  * lib/nitro/builders/xhtml.rb: introduced.
+  (#options): implemented,
+  (#select): implemented.
+
+  * lib/nitro/builders/xml.rb (#method_missing): added support
+  for blocks in tags,
+  (#comment): implemented.
+
+09-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/nitro/builders/tc_xml.rb: introduced,
+  (#test_missing): implemented.
+
+  * lib/nitro/builders/xml.rb: introduced,
+  (#start_tag, #end_tag): implemented.
+  (#method_missing): implemented,
+  (XmlBuilder): implemented.
+
+  * vendor/blankslate.rb: integrated blankslate lib by
+  Jim Weirich <jim@weirichhouse.org> [jweirich].
+
+08-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/glue/vaildation.rb (#validate_confirmation): implemented,
+  (MetaLanguage): customization options,
+  (#validate_value): implemented,
+
+07-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/glue/tc_validation.rb: implemented many tests.
+
+  * lib/glue/property.rb (#prop): auto include the N::Validation module
+  in the parent class if defined!
+  (PropertyUtils#get_prop): implemented.
+
+  * lib/glue/validation.rb (Validation::Errors): introduced,
+  empty, size, add methods.
+  recoded validation code and now works!
+  (eval_validate): fixed for multiple objects.
+  (Validation::Errors): keep error strings here.
+  (MetaLanguage): introduced.
+  MEGA: use meta :validations to store validations!
+  (Validation::Errors): each, clear.
+
+05-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/*: cleaned up some unit tests.
+
+  * lib/*: removed all $log references!
+
+  * lib/glue/*: use N:: prefix for all files.
+
+04-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/glue/tc_attribute.rb: implemented.
+  
+  * lib/glue/attribute.rb: introduced,
+  default value for module/class attributes.
+
+  * lib/glue/validation.rb: introduced,
+  (Validation#validate_format): implemented.
+  (Validator): introduced,
+  (Validator#eval_validation_method): introduced.
+
+  * README: running units section.
+
+03-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/builders/form.rb (#render): emmit id's to make
+  the generated forms more style-able.
+
+  * lib/glue.rb: removed EMPTY_STRING constant [mneumann].
+
+  * Rakefile: include vendor in Og distribution.
+
+02-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * vendor/extensions: integrated extensions library by
+  Gavin Sinclair <gsinclair@soyabean.com.au>
+
+  * test/glue/tc_logger.rb: introduced.
+
+  * lib/og.rb: removed logger methods.
+
+  * lib/glue/logger.rb: added static methods and global logger,
+  (#i, #d): removed.
+  (#trace): added trace method from dev-utils by 
+  Gavin Sinclair <gsinclair@soyabean.com.au>,
+  fixed Binding.of_caller bug.
+  (#get): implemented.
+
+01-01-2005  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * started using the $:.unshift File.join trick.
+
+30-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/mock.rb: include Og::Enchant,
+  some more fixes to make this work.
+
+  * lib/og/enchant.rb: introduced, factors out some code used
+  by the MockDatabase.
+
+  * lib/og/*: converted to new code.
+
+  * lib/og/meta.rb: don't use $og. [mneumann]
+
+  * lib/og.rb: made Og a class,
+  removed $og_xx_xx options, use class methods [mneumann]
+  (Og##use): introduced.
+  (#enchant): use Og.db.connection.
+  (Database): create!/drop! aliases,
+  include Og::Enchant.
+  introduced Og.log.
+
+29-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/mysql.rb: removed Og::Utils, integrated methods in Backend.  
+
+  * lib/og/psql.rb: removed Og::Utils, integrated methods in Backend.  
+
+  * lib/og/backend.rb: removed Og::Utils, integrated methods in Backend, 
+  to allow for multiple backend is one App [bcandler].
+
+  * lib/og.rb (#enchant): enchant methods DONT use $og anymmore. [mneumann]
+
+  * AUTHORS: updated.
+
+  * examples/og/mysql_to_psql.rb: introduced and implemented.
+
+27-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/parts/content.rb (CreateTime): introduced.
+
+  * lib/parts/README: introduced.
+
+  * --- VERSION 0.7.0 ---
+  
+  * lib/og/mock.rb: fix, don't wrap methods.
+
+  * Rakefile: fix.
+
+26-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/server/render.rb (#compile_xxx_method): better handling
+  of redirects,
+  (RenderExit): introduced,
+  (#redirect): rewritten, raise RenderExit.
+
+  * lib/nitro/markup.rb (PropertyUtils#prop_setter): override.
+  (#markup): removed.
+  (#expand, #narrow): fixed,
+  YEAH, markup works.
+
+  * lib/glue/property.rb (PropertyUtils#prop_setter): factored out.
+
+  * lib/nitro/markup.rb: narrow -> compact (better english) [knasis].
+
+25-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * MERRY XMAS :)
+
+22-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/nitro/markup.rb: introduced,
+  (#markup): implemented.
+
+  * lib/nitro/server/render.rb: stop the pipeline if return false,
+  fixed redirect bug.
+
+  * lib/nitro/server/dispatcher.rb: dump rendering_errors in error page.
+
+  * lib/parts/content.rb: working with modules,
+  (Markup): introduced.
+
+  * lib/nitro/builders/form.rb: :ui modifier instead of :form,
+  (#render): handle the :markup meta data.
+
+  * Rakefile: og distribution includes tests + Rakefile [tquas]
+
+21-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/mock.rb: Call wrap methods.
+  
+  * test/glue/tc_property_mixins.rb: automanagement unit tests [by tquas],
+  made it pass.
+  
+  * test/og/tc_lifecycle.rb: lifecycle unit tests [by tquas]
+  
+  * lib/og/meta.rb (#has_many): enchant with add_XXX the container
+  class [mneumann].
+  
+  * test/tc_og.rb: added test for create.
+
+  * Rakefile: add ChangeLog in og distribution.
+
+  * lib/og/backend.rb (#table): use the $og_table_prefix.
+
+  * lib/og.rb: $og_table_prefix,
+  (#enchant): use module_eval with __FILE__, __LINE__,
+  (#enchant): add create method [mneumann]
+
+  * README: updated with breakpoint info.
+
+  * lib/og/mock.rb: fixed [tquas].
+
+  * vendor: added 'breakpoint' by Florian Gross [fgross].
+  tested breakpoint integration, it works!
+
+20-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * test/glue/tc_propert.rb: fixed test.
+
+  * lib/glue/propery.rb: (#prop) totaly recoded, doesnt polute Module any
+  more,
+  (#__add_prop): recoded, gets target, no more reader, writer params.
+  use <<-"end_eval" to get better error reporting!
+  (#property): ultra cool append feature hack avoids passing @@__props from
+  a Module to the Class that includes it --> BLACK MAGIC.
+  (Property#enchant): implemented.
+  (PropertyUtils): introduced.
+  (PropertyUtils#add_prop): yeah, removed from Module!
+  (#meta): recoded.
+  (PropertyUtils#*): also handle meta.
+  (#inherit_meta): removed.
+  (#meta): fixed bug.
+  fix: no more @@__props redifen warnings when running with -w [tquas]
+  
+  * lib/og.rb: (#initialize): automanage classes that include a manageable
+  Module (hack),
+  (#convert): convert classes that include a manageable Module (hack).
+  (#convert): no need to call inherit_meta.
+  
+19-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * benchmark/nitro: introduced.
+
+  * benchmark/og: introduced.
+
+18-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * README: updated some texts,
+  added description of contents section.
+
+17-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * bin/new_app.rb: made win32 compatible.
+
+  * lib/nitro/server/webrick.rb: win32 compatible.
+
+  * bin/new_form.rb: introduced and implemented.
+
+  * lib/nitro/builders/form.rb: require safehash,
+  better formatting.
+
+16-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/meta.rb (many_to_many): changed API.
+  
+  * test/tc_og.rb: updated.
+
+  * lib/og/backends/mysql.rb (#create_table): use create_fields,
+  NOT NULL in join tables.
+  
+  * lib/og/backends/psql.rb (#create_table): use create_fields,
+  NOT NULL in join tables.
+
+  * lib/og/backend.rb (#create_fields): implemented,
+  also use :extra_sql modifier [req tquas].
+
+15-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * bin/new_app.rb: handle trailing '/'.
+
+  * bin/proto/root/style.css: cleaned up.
+
+  * bin/proto/root/style.xsl: cleaned up.
+  
+  * bin/proto/root/index.xhtml: cleaned up.
+  
+  * lib/parts/content.rb: introduced,
+  (Content): introduced,
+  (Category): introduced,
+  (ACL): introduced.
+  
+  * lib/og/meta.rb: changed has_one signature [patch by tquas]
+  
+  * examples/og/mock_example.rb: introduced,
+  improved, added test-unit code.
+
+  * lib/og/mock.rb: implemented mock database. [patch by tquas]
+
+14-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * examples/blog/root/style.xsl: fixed a bug.
+
+13-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/shaders.rb (RubyShader): added support for statically including
+  files.
+  
+  * lib/server/render.rb (RenderUtils): dump method helps in debugging.
+  
+  * examples/flash/lib/flash.rb: introduced service,
+  yeah with some SHITY ming code the example works.
+  
+  * examples/flash: introduced flash example.
+  
+10-12-2004  George Moschovitis  <george.moschovitis@gmail.com>
+
+  * lib/og/backends/psql-pr.rb: introduced Postgres-PR backend.
+  
+  * --- VERSION 0.6.0 ---
+  
+  * bin/new_app.rb: remove .svn dirs.
+  
+  * final preparations for release.
+
+  * ChangeLog: branched from 'doc/ChangeLog.1'.

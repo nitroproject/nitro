@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Nitro, Feel the magic!</title>
+  <style>
+    body { margin: 10px; background-color: #fff; color: #333; }
+
+    body, p, ol, ul, td {
+      font-family: verdana, arial, helvetica, sans-serif;
+      font-size:   12px;
+      line-height: 18px;
+    }
+
+    h1 { margin-top: 15px; margin-bottom: 45px; }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+
+    img { border: none; }
+  </style>
+</head>
+<body>
+
+<a href="http://nitro.rubyforge.org" target="_blank"><img src="media/nitro.png" /></a>
+
+<h1>You have successfully installed Nitro!</h1>
+
+<p><b>Before you move on</b>, verify that the following conditions have been met:</p>
+
+<ol>
+  <li>The log directory and the empty log files must be writable to the web server (<code>chmod -R 666 log/*</code>).</li>
+  <li>
+    The shebang line in app.rb must reference your Ruby installation. <br/>
+    You might need to change it from <code>#!/usr/bin/env ruby</code> to point directly at the installation.
+  </li>
+</ol>
+
+<p>There are a few examples bundled with Nitro:
+</p>
+
+<ol>
+  <li><b>examples/blog</b>: A simple blog example.</li>
+  <li><b>examples/hello</b>: Nitro's 'Hello World!'.</li>
+</ol>
+
+<p>Here is <b>what do next</b>:</p>
+
+<ol>
+  <li>Add your html files in the 'app/template' directory. Those files are
+    automagically converted to controller actions by Nitro
+  </li>
+  <li>Place additional media files, css, or xsl files in the public directory.</li>
+  <li>Create your models and controllers.</li>
+  <li>Develop your application utilizing Nitro's powerful features.</li>
+</ol>
+
+<br />
+
+<p>
+  <b>Having problems getting up and running?</b><br />
+   First try debugging it yourself by looking at the log files. 
+  If you get stuck, post your problem to the <a href="http://rubyforge.org/mailman/listinfo/nitro-general">Nitro Mailing
+  List</a> at <a href="http://www.rubyforge.com">Rubyforge</a>.
+</p>
+
+<br /><br />
+</body>
+</html>

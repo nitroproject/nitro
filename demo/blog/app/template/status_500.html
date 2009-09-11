@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <script lang="javascript" type="text/javascript">
+    // <!--
+    function toggleVisible(element) {
+      if (element.style.display == 'block') {
+        element.style.display = 'none';
+       } else {
+         element.style.display = 'block';
+       }
+       return false;      
+    }          
+    // -->
+    </script>
+    <title>Error</title>
+    <style>
+      .path { 
+        padding: 5px;
+        font-size: 140%;
+        background: #ddd;
+      }
+      .error { 
+        padding: 5px;
+        padding-top: 15px;
+        font-size: 140%;
+        color: #f00;
+      }
+      .load {
+        padding: 5px;
+        color: #555;
+      }
+      .source {
+        border: 1px solid #ccc; 
+        padding: 10px;
+        margin-top: 10px; margin-bottom: 10px;
+      }
+      h2 {
+        padding-left: 5px;
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Internal Server Error</h1>
+
+<?r 
+    require 'cgi'
+    error = context.session[:RENDERING_ERROR]
+?>
+    <div class="path">
+      <strong>Path:</strong> #{request.uri}
+    </div>
+    <div class="load">
+      <strong><a href="#{request.uri}">Reload</a></strong> this page. 
+      Go to the <strong><a href="#{request.referer}">referer</a></strong> or the <strong><a href="/">home page</a></strong>.
+    </div>
+<?r unless Nitro.live? ?> 
+    <div class="error"><strong>#{CGI.escapeHTML(error.to_s)}</strong></div>
+    <div class="source">
+      <pre>#{CGI.escapeHTML(extract_source_from(error).join("\n"))}</pre>
+    </div>
+
+    <h2><a href="#" onclick="return toggleVisible(document.getElementById('request'));">Request</a></h2>
+    <div id="request" style="display: none">
+      <p><strong>Parameters:</strong> #{request.params.reject{ |k,v| k == :__RELOADED__ }.inspect}</p>  
+      <p><strong>Cookies:</strong> #{request.cookies.inspect}</p>  
+      <p><strong>Headers:</strong><br />#{request.headers.collect { |k, v| "#{k} => #{v}" }.join('<br />')}</p>  
+    </div>
+
+    <h2><a href="#" onclick="return toggleVisible(document.getElementById('response'));">Response</a></h2>
+    <div id="response" style="display: none">
+      <p><strong>Headers:</strong> #{request.response_headers.inspect}</p>  
+      <p><strong>Cookies:</strong> #{request.response_cookies.inspect}</p>  
+    </div>
+
+    <h2><a href="#" onclick="return toggleVisible(document.getElementById('session'));">Session</a></h2>
+    <div id="session" style="display: none">
+      <p><strong>Values:</strong> #{session.inspect}</p>  
+    </div>
+<?r end ?>    
+
+    <br /><br />
+    Powered by <a href="http://www.nitroproject.org">Nitro</a> version #{Nitro::Version}
+  </body>
+</html>
