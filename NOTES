@@ -1,0 +1,4 @@
+
+The Rakefile will need to be reworked as it applied to
+all subprojects (og, raw, etc) as a whole.
+
